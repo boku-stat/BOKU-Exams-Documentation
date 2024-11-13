@@ -22,8 +22,8 @@ The first section Data Generation, is marked by a code chunk, which is different
 
 The other three sections are marked as follows
 
-``` r
-Question3
+``` markdown
+Question
 ========
 text is written here. 
 ... 
@@ -31,6 +31,10 @@ text is written here.
 Solution
 ========
 more text is written here. 
+
+Meta-information 
+================
+even more text here. 
 ```
 
 ## Data Generation
@@ -39,11 +43,11 @@ In this section of the .Rmd-file, the questions (including answer options for si
 
 ### Description of the lists
 
-The five necessary lists are `questions`, `solutions`, `types`, `explanations` and `tolerances`, which all have the same length, which is equal to the number of questions in the exercise. For example, in an exercise with 5 multiple choice questions, the length of the lists is 5.
+The five necessary lists are `questions`, `solutions`, `types`, `explanations` and `tolerances`, which all have the same length, which is equal to the number of questions in the exercise. For example, in an exam with 5 multiple choice questions, the length of the lists is 5.
 
 Depending on the type and simplicity of the question, some of the lists might not be necessary. (see ??????)
 
-The list `questions` contains the answer options for single choice/multiple choice questions, not the questions itself. The actual questions are written down in the section "Question". For numeric and string questions, this list contains placeholders "", since no answer options are given. (more on the types of questios see ??????)
+The list `questions` contains the answer options for single choice/multiple choice questions, not the questions itself. The actual questions are written down in the section "Question". For numeric and string questions, this list contains placeholders "", since no answer options are given. (more on the types of questions see ??????)
 
 The list `solutions` contains the solutions for all the questions. For numeric questions, that is a number, (e.g: `123`), for string questions a string like `"hello world"` is expected. The solution for single & multiple choiche questions is a boolean vector containing `TRUE/FALSE`. For each answer option, one instance of `TRUE` or `FALSE` is needed. For example, a multiple choice question with 5 answer options, where one option (in this case the second answer option) is correct, would have a solution vector like this:
 
@@ -61,7 +65,7 @@ The list `types` specifies the type of question for each individual question. Po
 
 -   multiple choice ("mchoice")
 
-The list `explanations` contains the feedback that is shown. This can be the complete solutions or additional information like the seed, that was used to create this exercise, session info, etc.
+The optional list `explanations` contains the feedback that is shown. This can be the complete solutions (it should be then formatted as a list) or additional information like the seed, that was used to create this exercise, session info, etc., which can be written in the "Solution" section. (see ??????)
 
 The list `tolerances` is only necessary for numeric questions, where it is desired to have an interval, in which the solution is accepted as correct, even though the numbers are not perfectly equal. This is important for accommodating rounding differences.
 
@@ -71,7 +75,7 @@ Careful when random generating numbers and setting an (absolute) tolerance inter
 
 ### Creating the lists
 
-They are initailized as empty lists, which are later filled with the desired information via subsetting. see ?????
+They are initialized as empty lists, which are later filled with the desired information via sub-setting. see ?????
 
 ``` r
 questions <- list() 
@@ -83,9 +87,9 @@ tolerances <- list()
 
 ## Question
 
-In this section, all the questions, that should be included in the exam, are written down. This is done in natural language, however bits of code (including objects), graphs, data, etc. can be included (see ??????)
+In this section, all the questions, that should be included in the exam, are written down. This is done in natural language, however bits of code (including R objects), graphs, data, etc. can be included (see ??????)
 
-Addional text, like instructions, hints, context, etc. is also written down in this section.
+Additonal text, like instructions, hints, context, etc. is also written down in this section.
 
 ### Questions with answer fields
 
@@ -98,7 +102,7 @@ Answer fields are marked by `##ANSWERi##`where i is the number of the question, 
 
 Numeric question: How many continents are there? `##ANSWER1##`
 
-In this case, the answer field is a placeholder, nothing will be displayed, which equals an empty answer field in moodle.
+In this case, the answer field is a place-holder, nothing will be displayed, which equals an empty answer field in moodle.
 :::
 
 For single/multiple choice questions, `##ANSWERi##` represents the answer options.
@@ -108,7 +112,7 @@ For single/multiple choice questions, `##ANSWERi##` represents the answer option
 
 Single choice question: Is Vienna the capital of Austria? `##ANSWER2##`
 
-With the correct setup, this will display `yes/no` instead of the answer field. In moodle this is a drop-down menu with the two answer options.
+With the correct set-up, this will display `yes/no` instead of the answer field. In moodle this is a drop-down menu with the two answer options.
 :::
 
 ::: callout-tip
@@ -121,54 +125,137 @@ Possible answer options are "greater than", "smaller than", "equal to", which wo
 
 possible add-ons: pictures, graphs, data, csv.files tables, R-code, etc. see description later
 
-The function answerlist() from R/exams package converts the answer options, which are stored in the list object "questions" into the necessary format.
-
-```{r}
-1+1
-
-#answerlist(unlist(questions), markup = "markdown")
-
-```
-
-``` {{r}}
-1+1
-
-answerlist(unlist(questions), markup = "markdown")
-```
+The function `answerlist()` from `R/exams` package converts the answer options, which are stored in the list object `questions` into the necessary format.
 
 ``` r
-1+1
-
 answerlist(unlist(questions), markup = "markdown")
 ```
 
 ## Solution
 
-the Solution part is used to provide the correct solution to a question and display it in the generated output. This part is not used directly for grading but serves as documentation or a reference for review and to explain the answer. It is usefull to document the seed used to generate all the data. This is done by accesing the Seed by ??????? "Seed: r seed". If your solutions list has "TRUE/FALSE"-vectors, they need to be converted into string.
+The section "Solution" can be used to provide solutions in the form of explanations. It does not create the solutions to the questions (see ?????) and nor is it responsible for assessing/grading questions. Instead it can be used as a reference to review questions or provide feedback. This type of information is created in this section.
 
-## MetaInformation
+The `solutions` **list** contains the actual solutions to the questions, which are used for deeming an answer correct/incorrect, however these are **not directly displayed in this section**.
 
-To create the exercise via the exams-package it is necessary to define special properties of that exercise. The key information we need are:
+The `explanations` list **holds any information that can be possibly given as feedback**. This can, but does not have to, include the actual solutions, depending on the type of exam one is aiming for.
 
-exname: Exercise name, typically a unique identifier for each exercise, helping to manage and retrieve exercises easily from an exercise pool
+### Actual Solutions as explanations
 
-extitel: Sets the title of the exercise. Titles can be dynamically generated by embedding R code within backticks to adapt based on the exercise context.
+The correct solutions to the questions can be displayed in the appropriate format in the generated output.
 
-extype: Specifies the type of exercise. Since we want to use are mixture of different types, we mainly use cloze
-
-exsolution: Defines the correct solutions to the exercise. Since in our exercises mostly multiple answers are needed, the different solutions are separated by \|.
-
-exclozetypes: When using the cloze types, we have to define each subtypes for the cloze questions, which we saved in our list obejct "types". Once again they need to be separated by \|.
-
-extol: Defines the acceptable tolerance for numeric answers, typically used for cloze questions where each gap has a numeric solution with a margin of error.
-
-???? backticks temporarily removed due to error with code execution
+Some solutions need to be converted to a more understandable format before being displayed. The solutions to schoice/mchoice questions are stored as `TRUE/FALSE` vectors and in the following code chunk they are converted to "True" and "False" strings, which are then displayed as explanations to the schoice and mchoice questions.
 
 ``` r
-exname: name of the exercise
-extitle: titel of the exercise
-extype: cloze
-exsolution: r paste(solutions, collapse = "|")
-exclozetype: r paste(types, collapse = "|")
-extol: r paste(tolerances, collapse = "|")
+for (x in 1:length(solutions)) {
+
+  if (types[x] %in% c("schoice", "mchoice) { 
+    explanations[x] <- solutions[x] |> lapply(function(x) ifelse(x, "True", "False"))
+  } 
+  
+  else {
+    explanations[x] <- solutions[x]
+  }
+}
 ```
+
+Then the function `answerlist()` from `R/exams` processes the `explanations` list to adjust it to the format needed for conversion of the .Rmd-file to the desired output.
+
+``` r
+answerlist(unlist(explanations), markup = "markdown")
+```
+
+### Other types of explanations
+
+In some cases it can be useful to document the seed used, for example when randomly generating numbers or doing any kind of sampling. Providing this information in the "Solution" section to either students or even oneself, when for example reviewing questions, can ensure reproducibility.
+
+See ???? for more information on how to dynamically display R objects (like seeds) in the exam.
+
+## Meta-information
+
+This section contains all the information necessary for the conversion from an .Rmd-file to the desired output (HTML, Moodle (xml), pdf, ...) see ???
+
+| Tag        | Description                                                                                      |
+|--------------------|----------------------------------------------------|
+| exname     | name for the exam, should be short and informative                                               |
+| extitle    | longer name for the exam, displayed in Moodle                                                    |
+| extype     | specification of the type of exam, e.g: "cloze"                                                  |
+| exsolution | solutions to the questions                                                                       |
+| extypes    | specification of the types of questions used in the exam                                         |
+| extol      | tolerances used for numeric questions                                                            |
+| exshuffle  | logical or numeric value, if/how answer options for schoice/mchoice questions should be shuffled |
+| exversion  | version of the exam                                                                              |
+
+: Meta-information
+
+Also see vignette `R/exams` for additional tags and more information.
+
+### Types of Meta-information tags
+
+#### exname  
+
+Exercise name, typically a unique identifier for each exercise, helping to manage and retrieve exercises easily from an exercise pool.
+
+#### extitle 
+
+Sets the title of the exercise. Titles can be dynamically generated by embedding R objects in the text to adapt the title based on the exam context. see ?????
+
+#### extype
+
+Specifies the type of exam. This is different to the list object `types` from the "Data generation" section. A very common type is "cloze", which is a type of exam which contains different types of questions, for example a combination of numeric and schoice questions in one exam. If the exam just contains one type of question, for example only multiple choice questions, then this can be specified as well. see ???? for more information on non-cloze exams.
+
+#### exsolution
+
+contains the correct solutions for the exam in the necessary format for the conversion of the .Rmd-file. When more than one question (and therefore more than one solution) is created, all solutions need to be in the order of the questions and separated by "\|". This can either be achieved by manually writing down all solutions or with the following code chunk:
+
+``` r
+paste(solutions, collapse = "|")
+```
+
+The resulting R object needs to be dynmically included in the .Rmd-file (see ?????? for details).
+
+#### exclozetypes
+
+When creating an exam of the type "cloze" (the exam contains different types of questions), the type of each question has to be specified. This information is stored in the list `types`from above. When more than one question (and therefore more than one type) is created, all types need to be in the order of the questions and separated by "\|". This can either be achieved by manually writing down all solutions or with the following code chunk:
+
+``` r
+paste(types, collapse = "|")
+```
+
+The resulting R object needs to be dynmically included in the .Rmd-file (see ?????? for details).
+
+#### extol
+
+contains the tolerances used for the answers to numeric questions. When creating an exam of type "cloze", the tolerances are stored in the list `tolerances`. They need to be in the order of the questions with empty interations for questions where tolerances are not applicable, e.g. string questions. For details see ??????? (subsetting the lists). All tolerances need to be seperated by "\|". This can either be achieved by manually writing down all solutions or with the following code chunk:
+
+``` r
+paste(tolerances, collapse = "|")
+```
+
+The resulting R object needs to be dynmically included in the .Rmd-file (see ?????? for details).
+
+#### exshuffle 
+Can be a logical or an integer and determines if or how the answer options are shuffled. When it is set to `TRUE` the answer options are not always displayed in the same order, for example when creating multiple versions of the same exam. When set to an integer, this determines the number of multiple choice answer options shown. For example, when 6 answer options are available through the list object `questions` and exshuffle is set to 4, then 4 out of 6 questions (always including the true option(s)) are displayed. 
+
+#### exversion 
+Specifies the version of the exam, useful for distinction when altering the .Rmd-file and creating a new set of exercises. 
+
+### Examplary structure of the Meta-information
+
+Below is an example of how the "meta-information" section could look with some of the `R/exams` tags explained above, as well as automatic conversion to the correct format with `paste()`. 
+
+``` markdown
+Meta-information
+================
+exname: Abcde
+extitle: Abcde: topic xyz 
+extype: cloze
+exsolution: `\r paste(solutions, collapse = "|")`
+exclozetype: `\r paste(types, collapse = "|")`
+extol: `\r paste(tolerances, collapse = "|")`
+exshuffle: TRUE
+exversion: v1
+```
+
+????? remove backslashes for execution 
+
+

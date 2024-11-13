@@ -10,6 +10,11 @@ This is the page for future ideas and important notes for documentation.
 
 -   include r chunks with visible settings
 
--   order of chapters/information -\> develop structure of website
+Writing style (internal)
 
--   FAQ section
+-   Functions are written with () at the end and in backticks. Example: `answerlist()`
+
+-   Backticks `test` for all R objects. Examples: `questions`, `TRUE`
+ 
+
+

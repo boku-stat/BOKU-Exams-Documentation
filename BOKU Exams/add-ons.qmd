@@ -3,3 +3,5 @@ title: "Add-ons of .Rmd-files"
 ---
 
 This will describe how to include additional things, e.g: tables, pictures, graphs, csv-files, etc.
+
+## Including inline code 
