@@ -148,7 +148,7 @@ Some solutions need to be converted to a more understandable format before being
 ``` r
 for (x in 1:length(solutions)) {
 
-  if (types[x] %in% c("schoice", "mchoice) { 
+  if (types[x] %in% c("schoice", "mchoice") { 
     explanations[x] <- solutions[x] |> lapply(function(x) ifelse(x, "True", "False"))
   } 
   
@@ -249,9 +249,9 @@ Meta-information
 exname: Abcde
 extitle: Abcde: topic xyz 
 extype: cloze
-exsolution: `\r paste(solutions, collapse = "|")`
-exclozetype: `\r paste(types, collapse = "|")`
-extol: `\r paste(tolerances, collapse = "|")`
+exsolution: `r paste(solutions, collapse = "|")`
+exclozetype: `r paste(types, collapse = "|")`
+extol: `r paste(tolerances, collapse = "|")`
 exshuffle: TRUE
 exversion: v1
 ```

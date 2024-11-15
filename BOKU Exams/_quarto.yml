@@ -27,6 +27,11 @@ website:
         contents: 
         - href: structure-Rmd.qmd
           text: Structure
+        - href: creation-Rmd.qmd
+          text: Creation of the .Rmd-file
+          
+      - section: R-file 
+        contents: 
         - href: conversion.qmd
           text: Conversion of .Rmd-file 
           

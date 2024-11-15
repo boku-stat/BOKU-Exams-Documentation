@@ -1,0 +1,11 @@
+---
+title: "Creation of the .Rmd file"
+---
+
+this section contains info on how to subset the lists in the rmd-file
+
+-   subsetting
+
+-   what type of content needs to be in the lists
+
+-   limitations

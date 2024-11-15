@@ -3,3 +3,21 @@ title: "R/exams"
 ---
 
 This will give general information on the R/exams package and links to existing documentation.
+
+R is an open source software
+
+statistical applications
+
+many extra packages that can easily be installed
+
+Rstudio IDE
+
+Exams is a package used for automatucally generating and evaluating exams.
+
+Link to CRAN:
+
+developed by ....
+
+a lot of possibilities, with existing documentation, also stack overflow
+
+this documentation focuses on the use at BOKU and the parts of R/exams that are used by the Institute of Statistics

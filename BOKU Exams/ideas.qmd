@@ -10,6 +10,8 @@ This is the page for future ideas and important notes for documentation.
 
 -   include r chunks with visible settings
 
+-   recommended order of reading documentation 
+
 Writing style (internal)
 
 -   Functions are written with () at the end and in backticks. Example: `answerlist()`

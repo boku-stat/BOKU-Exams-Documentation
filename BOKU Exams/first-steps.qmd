@@ -2,4 +2,54 @@
 title: "First Steps"
 ---
 
-This will give an introduction and simple examples.
+# Purpose of R/exams
+
+Automatic generation and evaluation of exercises
+
+Used by institute of statistics at BOKU for the generation of homework, exercises and exams also in combination with Moodle (boku learn) . Currently mostly used for statistics courses, but goal is to widen the application cases at BOKU, not limited to statistics, see hydrologie examples ......
+
+This documentation should serve as a basic first introduction and how-to for anyone interested in using R/exams for their courses at BOKU.
+
+# What is possible? 
+
+## Structure 
+
+The generation of exams/exercises is happening within RStudio. (see ... for information on how to install R and Rstudio ????)
+
+A structure of folders and files (see template here ????) which all have one specific purpose
+
+Two types of files: .Rmd and .R files
+
+.Rmd are files written in markdown, a markup language, where it is possible to process text, code and other things and generate HTML, pdf, word files etc.
+
+.R files contain R code.
+
+## file content overview
+
+the .Rmd file contains the questions, answers and other necessary parameters for creating the exam (see ????? for more details) -\> need to be written according to a certain strucutre, see template, written by person creating the exam
+
+The .R file contains the code that converts the questions in the .Rmd-file into the pdf/html/moodle exam. (see ??? for more details) based on the R/exams package
+
+separate r file can contain additional objects that can be used in the questions (see ???? (stories etc))
+
+## content details 
+
+many different types of question, suitable for calculation questions, multiple or single questions, open answer questions (single-word or essay questions) or upload points (moodle). any combination in one exam possible, eg. two numeric and three multiple choice questions
+
+insert example
+
+-\> not only statistical applications
+
+possible to include data, graphs, pictures etc, etc. see ??? add-ons)
+
+## Automation
+
+when creating an exam for 100 students, Possible to automatically change numbers/text for every student
+
+-\> cheating prohibited
+
+automatic creation of solutions for each exam, also correction
+
+see correction methods moodle ????
+
+see correction methods PDF etc.
