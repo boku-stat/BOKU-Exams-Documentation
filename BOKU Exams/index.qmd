@@ -1,5 +1,8 @@
 ---
 title: "BOKU Exams"
+engine: knitr
 ---
 
 Documentation for R/exams at BOKU.
+
+Last updated: `r Sys.Date()`
