@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.33">
+<meta name="generator" content="quarto-1.6.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,10 +34,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2486e1f0a3ee9ee1fc393803a1361cdb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ff847f2eedcc037b25bdee0168ca0643.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-a22b2360445850eff3e0a1e9554f39c8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -242,11 +242,11 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p>How to include r markdown chunks (which are not executable)</p>
 <ul>
-<li>https://quarto.org/docs/authoring/markdown-basics.html#source-code</li>
+<li><a href="https://quarto.org/docs/authoring/markdown-basics.html#source-code" class="uri">https://quarto.org/docs/authoring/markdown-basics.html#source-code</a></li>
 </ul></li>
 <li><p>include r chunks with visible settings</p></li>
-<li><p>recommended order of reading documentation</p></li>
 </ul>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream - recommended order of reading documentation ======= - If a document contains no R code chunks, the default inline syntax using curly braces, e. g. <code>`{r}`</code>, will not work. Instead, the engine must be set to knitr in the YAML header like this: <code>engine: knitr</code>, and no curly braces must be used in the inline code: <code>`r`</code>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> &gt;&gt;&gt;&gt;&gt;&gt;&gt; Stashed changes</p>
 <p>Writing style (internal)</p>
 <ul>
 <li><p>Functions are written with () at the end and in backticks. Example: <code>answerlist()</code></p></li>
@@ -255,7 +255,13 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p><a href="https://stackoverflow.com/questions/78569518/why-is-r-inline-code-not-executed-in-quarto-in-some-situations" class="uri">https://stackoverflow.com/questions/78569518/why-is-r-inline-code-not-executed-in-quarto-in-some-situations</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -348,7 +354,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/boku-stat\.github\.io\/BOKU-Exams-Documentation\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

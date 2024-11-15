@@ -1,118 +1,5 @@
 [
   {
-    "objectID": "first-steps.html",
-    "href": "first-steps.html",
-    "title": "First Steps",
-    "section": "",
-    "text": "Automatic generation and evaluation of exercises\nUsed by institute of statistics at BOKU for the generation of homework, exercises and exams also in combination with Moodle (boku learn) . Currently mostly used for statistics courses, but goal is to widen the application cases at BOKU, not limited to statistics, see hydrologie examples ……\nThis documentation should serve as a basic first introduction and how-to for anyone interested in using R/exams for their courses at BOKU.",
-    "crumbs": [
-      "First Steps"
-    ]
-  },
-  {
-    "objectID": "first-steps.html#structure",
-    "href": "first-steps.html#structure",
-    "title": "First Steps",
-    "section": "Structure",
-    "text": "Structure\nThe generation of exams/exercises is happening within RStudio. (see … for information on how to install R and Rstudio ????)\nA structure of folders and files (see template here ????) which all have one specific purpose\nTwo types of files: .Rmd and .R files\n.Rmd are files written in markdown, a markup language, where it is possible to process text, code and other things and generate HTML, pdf, word files etc.\n.R files contain R code.",
-    "crumbs": [
-      "First Steps"
-    ]
-  },
-  {
-    "objectID": "first-steps.html#file-content-overview",
-    "href": "first-steps.html#file-content-overview",
-    "title": "First Steps",
-    "section": "file content overview",
-    "text": "file content overview\nthe .Rmd file contains the questions, answers and other necessary parameters for creating the exam (see ????? for more details) -&gt; need to be written according to a certain strucutre, see template, written by person creating the exam\nThe .R file contains the code that converts the questions in the .Rmd-file into the pdf/html/moodle exam. (see ??? for more details) based on the R/exams package\nseparate r file can contain additional objects that can be used in the questions (see ???? (stories etc))",
-    "crumbs": [
-      "First Steps"
-    ]
-  },
-  {
-    "objectID": "first-steps.html#content-details",
-    "href": "first-steps.html#content-details",
-    "title": "First Steps",
-    "section": "content details",
-    "text": "content details\nmany different types of question, suitable for calculation questions, multiple or single questions, open answer questions (single-word or essay questions) or upload points (moodle). any combination in one exam possible, eg. two numeric and three multiple choice questions\ninsert example\n-&gt; not only statistical applications\npossible to include data, graphs, pictures etc, etc. see ??? add-ons)",
-    "crumbs": [
-      "First Steps"
-    ]
-  },
-  {
-    "objectID": "first-steps.html#automation",
-    "href": "first-steps.html#automation",
-    "title": "First Steps",
-    "section": "Automation",
-    "text": "Automation\nwhen creating an exam for 100 students, Possible to automatically change numbers/text for every student\n-&gt; cheating prohibited\nautomatic creation of solutions for each exam, also correction\nsee correction methods moodle ????\nsee correction methods PDF etc.",
-    "crumbs": [
-      "First Steps"
-    ]
-  },
-  {
-    "objectID": "add-ons.html",
-    "href": "add-ons.html",
-    "title": "Add-ons of .Rmd-files",
-    "section": "",
-    "text": "This will describe how to include additional things, e.g: tables, pictures, graphs, csv-files, etc.",
-    "crumbs": [
-      "Add-ons",
-      "Add-ons to .Rmd-files"
-    ]
-  },
-  {
-    "objectID": "add-ons.html#including-inline-code",
-    "href": "add-ons.html#including-inline-code",
-    "title": "Add-ons of .Rmd-files",
-    "section": "Including inline code",
-    "text": "Including inline code",
-    "crumbs": [
-      "Add-ons",
-      "Add-ons to .Rmd-files"
-    ]
-  },
-  {
-    "objectID": "faq.html",
-    "href": "faq.html",
-    "title": "FAQ",
-    "section": "",
-    "text": "This will describe frequently asked questions and common mistakes.",
-    "crumbs": [
-      "FAQ"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "BOKU Exams",
-    "section": "",
-    "text": "Documentation for R/exams at BOKU.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "conversion.html",
-    "href": "conversion.html",
-    "title": "Conversion of an .Rmd-file",
-    "section": "",
-    "text": "This will describe the process of converting the .Rmd-file to HTML/pdf/Moodle.",
-    "crumbs": [
-      "R-file",
-      "Conversion of .Rmd-file"
-    ]
-  },
-  {
-    "objectID": "ideas.html",
-    "href": "ideas.html",
-    "title": "Ideas",
-    "section": "",
-    "text": "This is the page for future ideas and important notes for documentation.\n\nHow to include r markdown chunks (which are not executable)\n\nhttps://quarto.org/docs/authoring/markdown-basics.html#source-code\n\ninclude r chunks with visible settings\nrecommended order of reading documentation\n\nWriting style (internal)\n\nFunctions are written with () at the end and in backticks. Example: answerlist()\nBackticks test for all R objects. Examples: questions, TRUE",
-    "crumbs": [
-      "Ideas"
-    ]
-  },
-  {
     "objectID": "structure-Rmd.html",
     "href": "structure-Rmd.html",
     "title": "Structure of an .Rmd-file",
@@ -168,20 +55,63 @@
     ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BOKU Exams",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "Documentation for R/exams at BOKU.\nLast updated: 2024-11-16",
+    "crumbs": [
+      "Home"
+    ]
   },
   {
-    "objectID": "r-exams.html",
-    "href": "r-exams.html",
-    "title": "R/exams",
+    "objectID": "first-steps.html",
+    "href": "first-steps.html",
+    "title": "First Steps",
     "section": "",
-    "text": "This will give general information on the R/exams package and links to existing documentation.\nR is an open source software\nstatistical applications\nmany extra packages that can easily be installed\nRstudio IDE\nExams is a package used for automatucally generating and evaluating exams.\nLink to CRAN:\ndeveloped by ….\na lot of possibilities, with existing documentation, also stack overflow\nthis documentation focuses on the use at BOKU and the parts of R/exams that are used by the Institute of Statistics",
+    "text": "Automatic generation and evaluation of exercises\nUsed by institute of statistics at BOKU for the generation of homework, exercises and exams also in combination with Moodle (boku learn) . Currently mostly used for statistics courses, but goal is to widen the application cases at BOKU, not limited to statistics, see hydrologie examples ……\nThis documentation should serve as a basic first introduction and how-to for anyone interested in using R/exams for their courses at BOKU.",
     "crumbs": [
-      "R/exams Info"
+      "First Steps"
+    ]
+  },
+  {
+    "objectID": "first-steps.html#structure",
+    "href": "first-steps.html#structure",
+    "title": "First Steps",
+    "section": "Structure",
+    "text": "Structure\nThe generation of exams/exercises is happening within RStudio. (see … for information on how to install R and Rstudio ????)\nA structure of folders and files (see template here ????) which all have one specific purpose\nTwo types of files: .Rmd and .R files\n.Rmd are files written in markdown, a markup language, where it is possible to process text, code and other things and generate HTML, pdf, word files etc.\n.R files contain R code.",
+    "crumbs": [
+      "First Steps"
+    ]
+  },
+  {
+    "objectID": "first-steps.html#file-content-overview",
+    "href": "first-steps.html#file-content-overview",
+    "title": "First Steps",
+    "section": "file content overview",
+    "text": "file content overview\nthe .Rmd file contains the questions, answers and other necessary parameters for creating the exam (see ????? for more details) -&gt; need to be written according to a certain strucutre, see template, written by person creating the exam\nThe .R file contains the code that converts the questions in the .Rmd-file into the pdf/html/moodle exam. (see ??? for more details) based on the R/exams package\nseparate r file can contain additional objects that can be used in the questions (see ???? (stories etc))",
+    "crumbs": [
+      "First Steps"
+    ]
+  },
+  {
+    "objectID": "first-steps.html#content-details",
+    "href": "first-steps.html#content-details",
+    "title": "First Steps",
+    "section": "content details",
+    "text": "content details\nmany different types of question, suitable for calculation questions, multiple or single questions, open answer questions (single-word or essay questions) or upload points (moodle). any combination in one exam possible, eg. two numeric and three multiple choice questions\ninsert example\n-&gt; not only statistical applications\npossible to include data, graphs, pictures etc, etc. see ??? add-ons)",
+    "crumbs": [
+      "First Steps"
+    ]
+  },
+  {
+    "objectID": "first-steps.html#automation",
+    "href": "first-steps.html#automation",
+    "title": "First Steps",
+    "section": "Automation",
+    "text": "Automation\nwhen creating an exam for 100 students, Possible to automatically change numbers/text for every student\n-&gt; cheating prohibited\nautomatic creation of solutions for each exam, also correction\nsee correction methods moodle ????\nsee correction methods PDF etc.",
+    "crumbs": [
+      "First Steps"
     ]
   },
   {
@@ -193,6 +123,130 @@
     "crumbs": [
       "Rmd-file",
       "Creation of the .Rmd-file"
+    ]
+  },
+  {
+    "objectID": "add-ons.html",
+    "href": "add-ons.html",
+    "title": "Add-ons of .Rmd-files",
+    "section": "",
+    "text": "This will describe how to include additional things, e.g: tables, pictures, graphs, csv-files, etc.",
+    "crumbs": [
+      "Add-ons",
+      "Add-ons to .Rmd-files"
+    ]
+  },
+  {
+    "objectID": "add-ons.html#including-inline-code",
+    "href": "add-ons.html#including-inline-code",
+    "title": "Add-ons of .Rmd-files",
+    "section": "Including inline code",
+    "text": "Including inline code",
+    "crumbs": [
+      "Add-ons",
+      "Add-ons to .Rmd-files"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "conversion.html",
+    "href": "conversion.html",
+    "title": "Conversion of an .Rmd-file",
+    "section": "",
+    "text": "TODO: for now, the script 10_kontingenztafel_erstellen.Rmd is the only one that is up to date like it is described here. The other scripts need to be updated to the new structure.\nThe directory of each exercise contains an Rmarkdown file called exname_erstellen.Rmd, where exname is the name of that exercise. The code chunks in this file can be executed to generate HTML previews of the exercise or XML files which can be imported into Moodle.",
+    "crumbs": [
+      "R-file",
+      "Conversion of .Rmd-file"
+    ]
+  },
+  {
+    "objectID": "conversion.html#setup",
+    "href": "conversion.html#setup",
+    "title": "Conversion of an .Rmd-file",
+    "section": "Setup",
+    "text": "Setup\n\n\n\n\n\n\nNote\n\n\n\nRun this code chunk once before any of the others.\n\n\nThis code chunk does not require any edits by the user.\nWhen executed, the exams library is loaded. R will try to automatically set the working directory to the source file location. If this fails and the paths to the exercise files cannot be found, this must be done manually.\nFor correctly displaying mathematical expressions and tables, pandoc is set to be used by the exams package to convert the exercise files to HTML.\nIn some exercises, the localization and encoding might be set to German UTF-8 to ensure that special characters are displayed correctly.",
+    "crumbs": [
+      "R-file",
+      "Conversion of .Rmd-file"
+    ]
+  },
+  {
+    "objectID": "conversion.html#parameters",
+    "href": "conversion.html#parameters",
+    "title": "Conversion of an .Rmd-file",
+    "section": "Parameters",
+    "text": "Parameters\n\n\n\n\n\n\nNote\n\n\n\nRun this code chunk once after setup or when using new parameters.\n\n\nThis code chunk contains the parameters set by the users to generate the exercises.\nFirst, a seed must be set. This ensures that the same set of exercises is generated each time the code is run.\n\n\n\n\n\n\nTip\n\n\n\nWhen generating exercises for a course, it is recommended to set the seed to a fixed value and note it down. At the start of each semester, a new seed should be set to ensure that the exercises are different from the previous semester.\n\n\nThen, the number of times the exercise should be generated is set with the copies parameter. If parts of the exercise are randomized (e.g., drawing from a distribution or a random subset), each copy will be randomly generated. However, the seed ensures that always the same set of randomized exercises is generated.\nThe paths to the directories containing the exercise and data files must each be set, as well as the name of the exercise file. The name of the directory storing temporary files must also be set. If not present, the directory will be created.\n\n\n\n\n\n\nWarning\n\n\n\nAll files in the temporary directory will be deleted when the code is run!\n\n\nFinally, the base name of the output files is set.",
+    "crumbs": [
+      "R-file",
+      "Conversion of .Rmd-file"
+    ]
+  },
+  {
+    "objectID": "conversion.html#html-preview",
+    "href": "conversion.html#html-preview",
+    "title": "Conversion of an .Rmd-file",
+    "section": "HTML preview",
+    "text": "HTML preview\nThe preview code chunk generates an HTML preview of the exercise, which will open in the default browser. Intermediary files are stored in the temporary directory, which are deleted after the preview is generated and prior to that (in case an error interrupted the process and removal of temporary files).\nInformation about the generated exercise are stored in the exinfo object in the R workspace. This object can be inspected to check the exercise’s metadata.",
+    "crumbs": [
+      "R-file",
+      "Conversion of .Rmd-file"
+    ]
+  },
+  {
+    "objectID": "conversion.html#xml-generation",
+    "href": "conversion.html#xml-generation",
+    "title": "Conversion of an .Rmd-file",
+    "section": "XML generation",
+    "text": "XML generation\nThe generate code chunk generates the XML files for the exercises. The XML files are stored in the exercise’s root directory. Intermediary files are stored in the temporary directory, which are deleted after the preview is generated and prior to that (in case an error interrupted the process and removal of temporary files).\nInformation about the generated exercises are stored in the exinfo object in the R workspace. This object can be inspected to check the exercise’s metadata, or be analyzed further, e. g. to plot the distribution of answers if the exercise utilizes randomization.\n\nPassing external parameters\nThe number of exercise copies specified by the copies parameter will be generated in a loop, using the exams function expar() to pass external parameters to the exercise. For example, the incrementing number of the loop can be passed to the exercise where it is used as index to draw a subset of data. The advantage of this approach is that the subsets are drawn deterministically instead of randomly (which could lead to duplicates or missing subsets).\nThe function takes the exercise file and the external variables as arguments. It then saves an temporary Rmarkdown file of the exercise with the external parameters set. The list of these temporary files is then passed to the exams2moodle() function to generate the XML files.\n\n\nChecking the distribution of drawn subsets\nTo make sure that the proportions of the drawn subsets are equal, the plot-distribution code chunk can be run. It will show a barplot of the number of times each subset was drawn.\n\n\n\n\n\n\nTip\n\n\n\nThe number of copies should be set to a multiple of the number of subsets to ensure that each subset is drawn an equal number of times.",
+    "crumbs": [
+      "R-file",
+      "Conversion of .Rmd-file"
+    ]
+  },
+  {
+    "objectID": "faq.html",
+    "href": "faq.html",
+    "title": "FAQ",
+    "section": "",
+    "text": "This will describe frequently asked questions and common mistakes.",
+    "crumbs": [
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "ideas.html",
+    "href": "ideas.html",
+    "title": "Ideas",
+    "section": "",
+    "text": "This is the page for future ideas and important notes for documentation.\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream - recommended order of reading documentation ======= - If a document contains no R code chunks, the default inline syntax using curly braces, e. g. `{r}`, will not work. Instead, the engine must be set to knitr in the YAML header like this: engine: knitr, and no curly braces must be used in the inline code: `r`.1 &gt;&gt;&gt;&gt;&gt;&gt;&gt; Stashed changes\nWriting style (internal)",
+    "crumbs": [
+      "Ideas"
+    ]
+  },
+  {
+    "objectID": "ideas.html#footnotes",
+    "href": "ideas.html#footnotes",
+    "title": "Ideas",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nhttps://stackoverflow.com/questions/78569518/why-is-r-inline-code-not-executed-in-quarto-in-some-situations↩︎",
+    "crumbs": [
+      "Ideas"
+    ]
+  },
+  {
+    "objectID": "r-exams.html",
+    "href": "r-exams.html",
+    "title": "R/exams",
+    "section": "",
+    "text": "This will give general information on the R/exams package and links to existing documentation.\nR is an open source software\nstatistical applications\nmany extra packages that can easily be installed\nRstudio IDE\nExams is a package used for automatucally generating and evaluating exams.\nLink to CRAN:\ndeveloped by ….\na lot of possibilities, with existing documentation, also stack overflow\nthis documentation focuses on the use at BOKU and the parts of R/exams that are used by the Institute of Statistics",
+    "crumbs": [
+      "R/exams Info"
     ]
   }
 ]
