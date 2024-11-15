@@ -107,7 +107,7 @@
     "href": "ideas.html",
     "title": "Ideas",
     "section": "",
-    "text": "This is the page for future ideas and important notes for documentation.\n\nHow to include r markdown chunks (which are not executable)\n\nhttps://quarto.org/docs/authoring/markdown-basics.html#source-code\n\ninclude r chunks with visible settings\n\nWriting style (internal)\n\nFunctions are written with () at the end and in backticks. Example: answerlist()\nBackticks test for all R objects. Examples: questions, TRUE",
+    "text": "This is the page for future ideas and important notes for documentation.\n\nHow to include r markdown chunks (which are not executable)\n\nhttps://quarto.org/docs/authoring/markdown-basics.html#source-code\n\ninclude r chunks with visible settings\nrecommended order of reading documentation\n\nWriting style (internal)\n\nFunctions are written with () at the end and in backticks. Example: answerlist()\nBackticks test for all R objects. Examples: questions, TRUE",
     "crumbs": [
       "Ideas"
     ]
