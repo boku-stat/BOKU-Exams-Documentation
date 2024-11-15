@@ -224,7 +224,7 @@
     "href": "ideas.html",
     "title": "Ideas",
     "section": "",
-    "text": "This is the page for future ideas and important notes for documentation.\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream - recommended order of reading documentation ======= - If a document contains no R code chunks, the default inline syntax using curly braces, e. g. `{r}`, will not work. Instead, the engine must be set to knitr in the YAML header like this: engine: knitr, and no curly braces must be used in the inline code: `r`.1 &gt;&gt;&gt;&gt;&gt;&gt;&gt; Stashed changes\nWriting style (internal)",
+    "text": "This is the page for future ideas and important notes for documentation.\nWriting style (internal)",
     "crumbs": [
       "Ideas"
     ]
