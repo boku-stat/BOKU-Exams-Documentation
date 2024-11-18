@@ -116,7 +116,51 @@
     "href": "conversion.html",
     "title": "Conversion of an .Rmd-file",
     "section": "",
-    "text": "This will describe the process of converting the .Rmd-file to HTML/pdf/Moodle.",
+    "text": "TODO: for now, the script 10_kontingenztafel_erstellen.Rmd is the only one that is up to date like it is described here. The other scripts need to be updated to the new structure.\nThe directory of each exercise contains an Rmarkdown file called exname_erstellen.Rmd, where exname is the name of that exercise. The code chunks in this file can be executed to generate HTML previews of the exercise or XML files which can be imported into Moodle.",
+    "crumbs": [
+      "R-file",
+      "Conversion of .Rmd-file"
+    ]
+  },
+  {
+    "objectID": "conversion.html#setup",
+    "href": "conversion.html#setup",
+    "title": "Conversion of an .Rmd-file",
+    "section": "Setup",
+    "text": "Setup\n\n\n\n\n\n\nNote\n\n\n\nRun this code chunk once before any of the others.\n\n\nThis code chunk does not require any edits by the user.\nWhen executed, the exams library is loaded. R will try to automatically set the working directory to the source file location. If this fails and the paths to the exercise files cannot be found, this must be done manually.\nFor correctly displaying mathematical expressions and tables, pandoc is set to be used by the exams package to convert the exercise files to HTML.\nIn some exercises, the localization and encoding might be set to German UTF-8 to ensure that special characters are displayed correctly.",
+    "crumbs": [
+      "R-file",
+      "Conversion of .Rmd-file"
+    ]
+  },
+  {
+    "objectID": "conversion.html#parameters",
+    "href": "conversion.html#parameters",
+    "title": "Conversion of an .Rmd-file",
+    "section": "Parameters",
+    "text": "Parameters\n\n\n\n\n\n\nNote\n\n\n\nRun this code chunk once after setup or when using new parameters.\n\n\nThis code chunk contains the parameters set by the users to generate the exercises.\nFirst, a seed must be set. This ensures that the same set of exercises is generated each time the code is run.\n\n\n\n\n\n\nTip\n\n\n\nWhen generating exercises for a course, it is recommended to set the seed to a fixed value and note it down. At the start of each semester, a new seed should be set to ensure that the exercises are different from the previous semester.\n\n\nThen, the number of times the exercise should be generated is set with the copies parameter. If parts of the exercise are randomized (e.g., drawing from a distribution or a random subset), each copy will be randomly generated. However, the seed ensures that always the same set of randomized exercises is generated.\nThe paths to the directories containing the exercise and data files must each be set, as well as the name of the exercise file. The name of the directory storing temporary files must also be set. If not present, the directory will be created.\n\n\n\n\n\n\nWarning\n\n\n\nAll files in the temporary directory will be deleted when the code is run!\n\n\nFinally, the base name of the output files is set.",
+    "crumbs": [
+      "R-file",
+      "Conversion of .Rmd-file"
+    ]
+  },
+  {
+    "objectID": "conversion.html#html-preview",
+    "href": "conversion.html#html-preview",
+    "title": "Conversion of an .Rmd-file",
+    "section": "HTML preview",
+    "text": "HTML preview\nThe preview code chunk generates an HTML preview of the exercise, which will open in the default browser. Intermediary files are stored in the temporary directory, which are deleted after the preview is generated and prior to that (in case an error interrupted the process and removal of temporary files).\nInformation about the generated exercise are stored in the exinfo object in the R workspace. This object can be inspected to check the exercise’s metadata.",
+    "crumbs": [
+      "R-file",
+      "Conversion of .Rmd-file"
+    ]
+  },
+  {
+    "objectID": "conversion.html#xml-generation",
+    "href": "conversion.html#xml-generation",
+    "title": "Conversion of an .Rmd-file",
+    "section": "XML generation",
+    "text": "XML generation\nThe generate code chunk generates the XML files for the exercises. The XML files are stored in the exercise’s root directory. Intermediary files are stored in the temporary directory, which are deleted after the preview is generated and prior to that (in case an error interrupted the process and removal of temporary files).\nInformation about the generated exercises are stored in the exinfo object in the R workspace. This object can be inspected to check the exercise’s metadata, or be analyzed further, e. g. to plot the distribution of answers if the exercise utilizes randomization.\n\nPassing external parameters\nThe number of exercise copies specified by the copies parameter will be generated in a loop, using the exams function expar() to pass external parameters to the exercise. For example, the incrementing number of the loop can be passed to the exercise where it is used as index to draw a subset of data. The advantage of this approach is that the subsets are drawn deterministically instead of randomly (which could lead to duplicates or missing subsets).\nThe function takes the exercise file and the external variables as arguments. It then saves an temporary Rmarkdown file of the exercise with the external parameters set. The list of these temporary files is then passed to the exams2moodle() function to generate the XML files.\n\n\nChecking the distribution of drawn subsets\nTo make sure that the proportions of the drawn subsets are equal, the plot-distribution code chunk can be run. It will show a barplot of the number of times each subset was drawn.\n\n\n\n\n\n\nTip\n\n\n\nThe number of copies should be set to a multiple of the number of subsets to ensure that each subset is drawn an equal number of times.",
     "crumbs": [
       "R-file",
       "Conversion of .Rmd-file"
@@ -127,14 +171,24 @@
     "href": "Examples /Example questions.html",
     "title": "Question",
     "section": "",
-    "text": "data &lt;- sample(1:20, size = 10, replace = TRUE)\n\nquestions &lt;- list()\nsolutions &lt;- list() \nexplanations &lt;- list() \ntypes &lt;- list()\ntolerances &lt;- list()\n\n#Question 1 \nsolutions[[1]] &lt;- mean(data)\ntypes[[1]] &lt;- \"num\"\n\n#Question 2 \nsolutions[[2]] &lt;- \"variance\"\ntypes[[2]] &lt;- \"string\"\n\n#Question 3 \nquestions[[3]] &lt;- c(\"The mean is a measure of central tendency.\", \"The mean is a measure of measure of dispersion.\", \"The mean is affected by outliers.\", \"The mean is unaffected by outliers.\")\nsolutions[[3]] &lt;- c(TRUE, FALSE, TRUE, FALSE)\ntypes[[3]] &lt;- \"mchoice\"\n\n#Question 4 \nquestions[[4]] &lt;- c(\"yes\", \"no\")\nsolutions[[4]] &lt;- c(TRUE, FALSE)\ntypes[[4]] &lt;- \"schoice\"\n\n\nQuestion\nWhat is the mean of the data? ##ANSWER1##\nWhat is the paramter \\(\\sigma ^2\\), which is the standard deviation squared, called? ##ANSWER2##\nPlease select the correct statments: ##ANSWER3##\nIs the following formula for the arithmetic mean correct? $$ {x} = _{i = 1}^n{x_i}\n$$ ##ANSWER4##\n\n\nMeta-information\nexname: exsolution: 10.6, variance, c(TRUE, FALSE, TRUE, FALSE), c(TRUE, FALSE)"
+    "text": "data &lt;- sample(1:20, size = 10, replace = TRUE)\n\nquestions &lt;- list()\nsolutions &lt;- list() \nexplanations &lt;- list() \ntypes &lt;- list()\ntolerances &lt;- list()\n\n#Question 1 \nsolutions[[1]] &lt;- mean(data)\ntypes[[1]] &lt;- \"num\"\n\n#Question 2 \nsolutions[[2]] &lt;- \"variance\"\ntypes[[2]] &lt;- \"string\"\n\n#Question 3 \nquestions[[3]] &lt;- c(\"The mean is a measure of central tendency.\", \"The mean is a measure of measure of dispersion.\", \"The mean is affected by outliers.\", \"The mean is unaffected by outliers.\")\nsolutions[[3]] &lt;- c(TRUE, FALSE, TRUE, FALSE)\ntypes[[3]] &lt;- \"mchoice\"\n\n#Question 4 \nquestions[[4]] &lt;- c(\"yes\", \"no\")\nsolutions[[4]] &lt;- c(TRUE, FALSE)\ntypes[[4]] &lt;- \"schoice\"\n\n\nQuestion\nWhat is the mean of the data? ##ANSWER1##\nWhat is the paramter \\(\\sigma ^2\\), which is the standard deviation squared, called? ##ANSWER2##\nPlease select the correct statments: ##ANSWER3##\nIs the following formula for the arithmetic mean correct? $$ {x} = _{i = 1}^n{x_i}\n$$ ##ANSWER4##\n\n\nMeta-information\nexname: exsolution: 11.5, variance, c(TRUE, FALSE, TRUE, FALSE), c(TRUE, FALSE)"
   },
   {
     "objectID": "ideas.html",
     "href": "ideas.html",
     "title": "Ideas",
     "section": "",
-    "text": "This is the page for future ideas and important notes for documentation.\n\nHow to include r markdown chunks (which are not executable)\n\nhttps://quarto.org/docs/authoring/markdown-basics.html#source-code\n\ninclude r chunks with visible settings\nREADME? recommended order of reading documentation\n\nWriting style (internal)\n\nFunctions are written with () at the end and in backticks. Example: answerlist()\nBackticks test for all R objects. Examples: questions, TRUE",
+    "text": "This is the page for future ideas and important notes for documentation.\nWriting style (internal)",
+    "crumbs": [
+      "Ideas"
+    ]
+  },
+  {
+    "objectID": "ideas.html#footnotes",
+    "href": "ideas.html#footnotes",
+    "title": "Ideas",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nhttps://stackoverflow.com/questions/78569518/why-is-r-inline-code-not-executed-in-quarto-in-some-situations↩︎",
     "crumbs": [
       "Ideas"
     ]
