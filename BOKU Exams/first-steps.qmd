@@ -12,7 +12,7 @@ This documentation should serve as a basic first introduction and a how-to for a
 
 # Using R/exams
 
-## What program and what files are used? 
+## What program and what files are used?
 
 The generation of the exams is happening within RStudio. See [how to install R and RStudio](https://statistik.boku.ac.at/stat-lehre/doku.php?id=statistik_mit_r:rstudio:rstudio_installation:start).
 
@@ -30,7 +30,7 @@ The .R file contains the code, which converts the questions that are written in 
 
 An additonal separate .R-file can contain other R objects, which are then (dynamically) used in exam questions, however this is not a necessary component. For more information about add ons see ????.
 
-## What does the exam look like? 
+## What does the exam look like?
 
 An exam can contain many different types of questions. R/exams is suitable for creating not only calculation questions, but also multiple or single questions, open answer questions (single word or essay questions) or including upload points in Moodle exams. It is possible to use any combination in one exam, eg. two numeric and three multiple choice questions.
 
@@ -38,11 +38,11 @@ insert example ????
 
 R/exams does not only have statistical applications, the look of the exam is entirely customizable. It is also possible to include data, graphs, pictures and other things, see ????.
 
-## How can R/exams prohibit cheating?   
+## How can R/exams prohibit cheating?
 
 With R/exams it is possible to create a (very) large number of different versions of the same exam. (see ???? conversion) Slight automatic alterations lead to an individualized exam for each student. For example, this can be used to be able to use the same materials for different exercise groups or to prohibit cheating by having slighty different questions for each student.
 
-## In what ways can an exam be individualized? 
+## In what ways can an exam be individualized?
 
 changing text/context/stories
 
@@ -54,7 +54,7 @@ creating a pool of true/false statements -\> randomly drawn
 
 different answer options for single/mutiple choice
 
-## How can the exams be corrected? 
+## How can the exams be corrected?
 
 Different methods for different output formats
 

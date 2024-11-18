@@ -242,10 +242,11 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p>How to include r markdown chunks (which are not executable)</p>
 <ul>
-<li>https://quarto.org/docs/authoring/markdown-basics.html#source-code</li>
+<li><a href="https://quarto.org/docs/authoring/markdown-basics.html#source-code" class="uri">https://quarto.org/docs/authoring/markdown-basics.html#source-code</a></li>
 </ul></li>
 <li><p>include r chunks with visible settings</p></li>
 <li><p>README? recommended order of reading documentation</p></li>
+<li><p>If a document contains no R code chunks, the default inline syntax using curly braces, e. g. <code>`{r}`</code>, will not work. Instead, the engine must be set to knitr in the YAML header like this: <code>engine: knitr</code>, and no curly braces must be used in the inline code: <code>`r`</code>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p></li>
 </ul>
 <p>Writing style (internal)</p>
 <ul>
@@ -255,7 +256,13 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p><a href="https://stackoverflow.com/questions/78569518/why-is-r-inline-code-not-executed-in-quarto-in-some-situations" class="uri">https://stackoverflow.com/questions/78569518/why-is-r-inline-code-not-executed-in-quarto-in-some-situations</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

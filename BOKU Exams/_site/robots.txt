@@ -1,0 +1,1 @@
+Sitemap: https://boku-stat.github.io/BOKU-Exams-Documentation/sitemap.xml
