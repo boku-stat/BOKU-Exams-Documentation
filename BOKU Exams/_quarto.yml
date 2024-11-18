@@ -21,7 +21,7 @@ website:
       - href: first-steps.qmd
         text: First Steps 
       - href: r-exams.qmd
-        text: R/exams Info
+        text: R and R/exams Info
       
       - section: Rmd-file
         contents: 
