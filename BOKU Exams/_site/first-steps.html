@@ -142,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-exams.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R/exams Info</span></a>
+ <span class="menu-text">R and R/exams Info</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -219,12 +219,14 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#purpose-of-rexams" id="toc-purpose-of-rexams" class="nav-link active" data-scroll-target="#purpose-of-rexams">Purpose of R/exams</a></li>
-  <li><a href="#what-is-possible" id="toc-what-is-possible" class="nav-link" data-scroll-target="#what-is-possible">What is possible?</a>
+  <li><a href="#using-rexams" id="toc-using-rexams" class="nav-link" data-scroll-target="#using-rexams">Using R/exams</a>
   <ul class="collapse">
-  <li><a href="#structure" id="toc-structure" class="nav-link" data-scroll-target="#structure">Structure</a></li>
-  <li><a href="#file-content-overview" id="toc-file-content-overview" class="nav-link" data-scroll-target="#file-content-overview">file content overview</a></li>
-  <li><a href="#content-details" id="toc-content-details" class="nav-link" data-scroll-target="#content-details">content details</a></li>
-  <li><a href="#automation" id="toc-automation" class="nav-link" data-scroll-target="#automation">Automation</a></li>
+  <li><a href="#what-program-and-what-files-are-used" id="toc-what-program-and-what-files-are-used" class="nav-link" data-scroll-target="#what-program-and-what-files-are-used">What program and what files are used?</a></li>
+  <li><a href="#what-is-in-the-files" id="toc-what-is-in-the-files" class="nav-link" data-scroll-target="#what-is-in-the-files">What is in the files?</a></li>
+  <li><a href="#what-does-the-exam-look-like" id="toc-what-does-the-exam-look-like" class="nav-link" data-scroll-target="#what-does-the-exam-look-like">What does the exam look like?</a></li>
+  <li><a href="#how-can-rexams-prohibit-cheating" id="toc-how-can-rexams-prohibit-cheating" class="nav-link" data-scroll-target="#how-can-rexams-prohibit-cheating">How can R/exams prohibit cheating?</a></li>
+  <li><a href="#in-what-ways-can-an-exam-be-individualized" id="toc-in-what-ways-can-an-exam-be-individualized" class="nav-link" data-scroll-target="#in-what-ways-can-an-exam-be-individualized">In what ways can an exam be individualized?</a></li>
+  <li><a href="#how-can-the-exams-be-corrected" id="toc-how-can-the-exams-be-corrected" class="nav-link" data-scroll-target="#how-can-the-exams-be-corrected">How can the exams be corrected?</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -253,38 +255,48 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="purpose-of-rexams" class="level1">
 <h1>Purpose of R/exams</h1>
-<p>Automatic generation and evaluation of exercises</p>
-<p>Used by institute of statistics at BOKU for the generation of homework, exercises and exams also in combination with Moodle (boku learn) . Currently mostly used for statistics courses, but goal is to widen the application cases at BOKU, not limited to statistics, see hydrologie examples ……</p>
-<p>This documentation should serve as a basic first introduction and how-to for anyone interested in using R/exams for their courses at BOKU.</p>
+<p>R/exams is used to automatically generate and evaluate exam questions. see here for more info about R and R/exams ?????</p>
+<p>At BOKU, it is used by the Institute for Statistics in several courses. Homework, review exercises and exams in the form of paper exams, as well as online quizes on BOKUlearn are all created with R/exams. Currently this is mostly used for (introductory) courses for statistics, however, the application is not limited to statistical applications at all.</p>
+<p>This documentation should serve as a basic first introduction and a how-to for anyone interested in using R/exams for teaching their courses at BOKU.</p>
 </section>
-<section id="what-is-possible" class="level1">
-<h1>What is possible?</h1>
-<section id="structure" class="level2">
-<h2 class="anchored" data-anchor-id="structure">Structure</h2>
-<p>The generation of exams/exercises is happening within RStudio. (see … for information on how to install R and Rstudio ????)</p>
-<p>A structure of folders and files (see template here ????) which all have one specific purpose</p>
-<p>Two types of files: .Rmd and .R files</p>
-<p>.Rmd are files written in markdown, a markup language, where it is possible to process text, code and other things and generate HTML, pdf, word files etc.</p>
-<p>.R files contain R code.</p>
+<section id="using-rexams" class="level1">
+<h1>Using R/exams</h1>
+<section id="what-program-and-what-files-are-used" class="level2">
+<h2 class="anchored" data-anchor-id="what-program-and-what-files-are-used">What program and what files are used?</h2>
+<p>The generation of the exams is happening within RStudio. See <a href="https://statistik.boku.ac.at/stat-lehre/doku.php?id=statistik_mit_r:rstudio:rstudio_installation:start">how to install R and RStudio</a>.</p>
+<p>Generally, a structure of folders and files (see template here ????) are used, which all have a specific purpose. For a basic implementation, two types of files are necessary, namely .R-files and .Rmd-files.</p>
+<p>.R-files are scripts written in R, where R code is written and evaluated.</p>
+<p>.Rmd-files are files written in markdown, a markup language, where it is possible to process normal text, (R) code and other components and generate reports in various formats (pdf, Word etc.) as well as web applications such as HTML pages.</p>
 </section>
-<section id="file-content-overview" class="level2">
-<h2 class="anchored" data-anchor-id="file-content-overview">file content overview</h2>
-<p>the .Rmd file contains the questions, answers and other necessary parameters for creating the exam (see ????? for more details) -&gt; need to be written according to a certain strucutre, see template, written by person creating the exam</p>
-<p>The .R file contains the code that converts the questions in the .Rmd-file into the pdf/html/moodle exam. (see ??? for more details) based on the R/exams package</p>
-<p>separate r file can contain additional objects that can be used in the questions (see ???? (stories etc))</p>
+<section id="what-is-in-the-files" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-in-the-files">What is in the files?</h2>
+<p>The .Rmd-file contains the questions, answers and other necessary parameters for creating the exam (see ????? for more details). These components are created by the person wanting to create an exam, however they need to be written according to a certain structure, see here ?????.</p>
+<p>The .R file contains the code, which converts the questions that are written in the .Rmd-file into the actual exam in a certain output format. Several formats are possible, such as .pdf, HTML and .xml for Moodle quizzes. (see ??? for more details) This code is based on the functionality of the R/exams package.</p>
+<p>An additonal separate .R-file can contain other R objects, which are then (dynamically) used in exam questions, however this is not a necessary component. For more information about add ons see ????.</p>
 </section>
-<section id="content-details" class="level2">
-<h2 class="anchored" data-anchor-id="content-details">content details</h2>
-<p>many different types of question, suitable for calculation questions, multiple or single questions, open answer questions (single-word or essay questions) or upload points (moodle). any combination in one exam possible, eg. two numeric and three multiple choice questions</p>
-<p>insert example</p>
-<p>-&gt; not only statistical applications</p>
-<p>possible to include data, graphs, pictures etc, etc. see ??? add-ons)</p>
+<section id="what-does-the-exam-look-like" class="level2">
+<h2 class="anchored" data-anchor-id="what-does-the-exam-look-like">What does the exam look like?</h2>
+<p>An exam can contain many different types of questions. R/exams is suitable for creating not only calculation questions, but also multiple or single questions, open answer questions (single word or essay questions) or including upload points in Moodle exams. It is possible to use any combination in one exam, eg. two numeric and three multiple choice questions.</p>
+<p>insert example ????</p>
+<p>R/exams does not only have statistical applications, the look of the exam is entirely customizable. It is also possible to include data, graphs, pictures and other things, see ????.</p>
 </section>
-<section id="automation" class="level2">
-<h2 class="anchored" data-anchor-id="automation">Automation</h2>
-<p>when creating an exam for 100 students, Possible to automatically change numbers/text for every student</p>
-<p>-&gt; cheating prohibited</p>
-<p>automatic creation of solutions for each exam, also correction</p>
+<section id="how-can-rexams-prohibit-cheating" class="level2">
+<h2 class="anchored" data-anchor-id="how-can-rexams-prohibit-cheating">How can R/exams prohibit cheating?</h2>
+<p>With R/exams it is possible to create a (very) large number of different versions of the same exam. (see ???? conversion) Slight automatic alterations lead to an individualized exam for each student. For example, this can be used to be able to use the same materials for different exercise groups or to prohibit cheating by having slighty different questions for each student.</p>
+</section>
+<section id="in-what-ways-can-an-exam-be-individualized" class="level2">
+<h2 class="anchored" data-anchor-id="in-what-ways-can-an-exam-be-individualized">In what ways can an exam be individualized?</h2>
+<p>changing text/context/stories</p>
+<p>this can also be used for tailoring the exam across programs at BOKU</p>
+<p>changing data/numbers</p>
+<p>creating a pool of true/false statements -&gt; randomly drawn</p>
+<p>different answer options for single/mutiple choice</p>
+</section>
+<section id="how-can-the-exams-be-corrected" class="level2">
+<h2 class="anchored" data-anchor-id="how-can-the-exams-be-corrected">How can the exams be corrected?</h2>
+<p>Different methods for different output formats</p>
+<p>moodle -&gt; automatic correction, solution imported</p>
+<p>pdf: solutions, also possible to scan answer sheets for mchoice schoice</p>
 <p>see correction methods moodle ????</p>
 <p>see correction methods PDF etc.</p>
 
