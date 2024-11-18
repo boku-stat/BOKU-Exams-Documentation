@@ -4,63 +4,51 @@ title: "First Steps"
 
 # Purpose of R/exams
 
-R/exams is used to automatically generate and evaluate exam questions. see here for more info about R and R/exams ?????
+Automatic generation and evaluation of exercises
 
-At BOKU, it is used by the Institute for Statistics in several courses. Homework, review exercises and exams in the form of paper exams, as well as online quizes on BOKUlearn are all created with R/exams. Currently this is mostly used for (introductory) courses for statistics, however, the application is not limited to statistical applications at all.
+Used by institute of statistics at BOKU for the generation of homework, exercises and exams also in combination with Moodle (boku learn) . Currently mostly used for statistics courses, but goal is to widen the application cases at BOKU, not limited to statistics, see hydrologie examples ......
 
-This documentation should serve as a basic first introduction and a how-to for anyone interested in using R/exams for teaching their courses at BOKU.
+This documentation should serve as a basic first introduction and how-to for anyone interested in using R/exams for their courses at BOKU.
 
-# Using R/exams
+# What is possible? 
 
-## What program and what files are used? 
+## Structure 
 
-The generation of the exams is happening within RStudio. See [how to install R and RStudio](https://statistik.boku.ac.at/stat-lehre/doku.php?id=statistik_mit_r:rstudio:rstudio_installation:start).
+The generation of exams/exercises is happening within RStudio. (see ... for information on how to install R and Rstudio ????)
 
-Generally, a structure of folders and files (see template here ????) are used, which all have a specific purpose. For a basic implementation, two types of files are necessary, namely .R-files and .Rmd-files.
+A structure of folders and files (see template here ????) which all have one specific purpose
 
-.R-files are scripts written in R, where R code is written and evaluated.
+Two types of files: .Rmd and .R files
 
-.Rmd-files are files written in markdown, a markup language, where it is possible to process normal text, (R) code and other components and generate reports in various formats (pdf, Word etc.) as well as web applications such as HTML pages.
+.Rmd are files written in markdown, a markup language, where it is possible to process text, code and other things and generate HTML, pdf, word files etc.
 
-## What is in the files?
+.R files contain R code.
 
-The .Rmd-file contains the questions, answers and other necessary parameters for creating the exam (see ????? for more details). These components are created by the person wanting to create an exam, however they need to be written according to a certain structure, see here ?????.
+## file content overview
 
-The .R file contains the code, which converts the questions that are written in the .Rmd-file into the actual exam in a certain output format. Several formats are possible, such as .pdf, HTML and .xml for Moodle quizzes. (see ??? for more details) This code is based on the functionality of the R/exams package.
+the .Rmd file contains the questions, answers and other necessary parameters for creating the exam (see ????? for more details) -\> need to be written according to a certain strucutre, see template, written by person creating the exam
 
-An additonal separate .R-file can contain other R objects, which are then (dynamically) used in exam questions, however this is not a necessary component. For more information about add ons see ????.
+The .R file contains the code that converts the questions in the .Rmd-file into the pdf/html/moodle exam. (see ??? for more details) based on the R/exams package
 
-## What does the exam look like? 
+separate r file can contain additional objects that can be used in the questions (see ???? (stories etc))
 
-An exam can contain many different types of questions. R/exams is suitable for creating not only calculation questions, but also multiple or single questions, open answer questions (single word or essay questions) or including upload points in Moodle exams. It is possible to use any combination in one exam, eg. two numeric and three multiple choice questions.
+## content details 
 
-insert example ????
+many different types of question, suitable for calculation questions, multiple or single questions, open answer questions (single-word or essay questions) or upload points (moodle). any combination in one exam possible, eg. two numeric and three multiple choice questions
 
-R/exams does not only have statistical applications, the look of the exam is entirely customizable. It is also possible to include data, graphs, pictures and other things, see ????.
+insert example
 
-## How can R/exams prohibit cheating?   
+-\> not only statistical applications
 
-With R/exams it is possible to create a (very) large number of different versions of the same exam. (see ???? conversion) Slight automatic alterations lead to an individualized exam for each student. For example, this can be used to be able to use the same materials for different exercise groups or to prohibit cheating by having slighty different questions for each student.
+possible to include data, graphs, pictures etc, etc. see ??? add-ons)
 
-## In what ways can an exam be individualized? 
+## Automation
 
-changing text/context/stories
+when creating an exam for 100 students, Possible to automatically change numbers/text for every student
 
-this can also be used for tailoring the exam across programs at BOKU
+-\> cheating prohibited
 
-changing data/numbers
-
-creating a pool of true/false statements -\> randomly drawn
-
-different answer options for single/mutiple choice
-
-## How can the exams be corrected? 
-
-Different methods for different output formats
-
-moodle -\> automatic correction, solution imported
-
-pdf: solutions, also possible to scan answer sheets for mchoice schoice
+automatic creation of solutions for each exam, also correction
 
 see correction methods moodle ????
 

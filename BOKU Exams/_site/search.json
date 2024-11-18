@@ -4,67 +4,47 @@
     "href": "first-steps.html",
     "title": "First Steps",
     "section": "",
-    "text": "R/exams is used to automatically generate and evaluate exam questions. see here for more info about R and R/exams ?????\nAt BOKU, it is used by the Institute for Statistics in several courses. Homework, review exercises and exams in the form of paper exams, as well as online quizes on BOKUlearn are all created with R/exams. Currently this is mostly used for (introductory) courses for statistics, however, the application is not limited to statistical applications at all.\nThis documentation should serve as a basic first introduction and a how-to for anyone interested in using R/exams for teaching their courses at BOKU.",
+    "text": "Automatic generation and evaluation of exercises\nUsed by institute of statistics at BOKU for the generation of homework, exercises and exams also in combination with Moodle (boku learn) . Currently mostly used for statistics courses, but goal is to widen the application cases at BOKU, not limited to statistics, see hydrologie examples ……\nThis documentation should serve as a basic first introduction and how-to for anyone interested in using R/exams for their courses at BOKU.",
     "crumbs": [
       "First Steps"
     ]
   },
   {
-    "objectID": "first-steps.html#what-program-and-what-files-are-used",
-    "href": "first-steps.html#what-program-and-what-files-are-used",
+    "objectID": "first-steps.html#structure",
+    "href": "first-steps.html#structure",
     "title": "First Steps",
-    "section": "What program and what files are used?",
-    "text": "What program and what files are used?\nThe generation of the exams is happening within RStudio. See how to install R and RStudio.\nGenerally, a structure of folders and files (see template here ????) are used, which all have a specific purpose. For a basic implementation, two types of files are necessary, namely .R-files and .Rmd-files.\n.R-files are scripts written in R, where R code is written and evaluated.\n.Rmd-files are files written in markdown, a markup language, where it is possible to process normal text, (R) code and other components and generate reports in various formats (pdf, Word etc.) as well as web applications such as HTML pages.",
+    "section": "Structure",
+    "text": "Structure\nThe generation of exams/exercises is happening within RStudio. (see … for information on how to install R and Rstudio ????)\nA structure of folders and files (see template here ????) which all have one specific purpose\nTwo types of files: .Rmd and .R files\n.Rmd are files written in markdown, a markup language, where it is possible to process text, code and other things and generate HTML, pdf, word files etc.\n.R files contain R code.",
     "crumbs": [
       "First Steps"
     ]
   },
   {
-    "objectID": "first-steps.html#what-is-in-the-files",
-    "href": "first-steps.html#what-is-in-the-files",
+    "objectID": "first-steps.html#file-content-overview",
+    "href": "first-steps.html#file-content-overview",
     "title": "First Steps",
-    "section": "What is in the files?",
-    "text": "What is in the files?\nThe .Rmd-file contains the questions, answers and other necessary parameters for creating the exam (see ????? for more details). These components are created by the person wanting to create an exam, however they need to be written according to a certain structure, see here ?????.\nThe .R file contains the code, which converts the questions that are written in the .Rmd-file into the actual exam in a certain output format. Several formats are possible, such as .pdf, HTML and .xml for Moodle quizzes. (see ??? for more details) This code is based on the functionality of the R/exams package.\nAn additonal separate .R-file can contain other R objects, which are then (dynamically) used in exam questions, however this is not a necessary component. For more information about add ons see ????.",
+    "section": "file content overview",
+    "text": "file content overview\nthe .Rmd file contains the questions, answers and other necessary parameters for creating the exam (see ????? for more details) -&gt; need to be written according to a certain strucutre, see template, written by person creating the exam\nThe .R file contains the code that converts the questions in the .Rmd-file into the pdf/html/moodle exam. (see ??? for more details) based on the R/exams package\nseparate r file can contain additional objects that can be used in the questions (see ???? (stories etc))",
     "crumbs": [
       "First Steps"
     ]
   },
   {
-    "objectID": "first-steps.html#what-does-the-exam-look-like",
-    "href": "first-steps.html#what-does-the-exam-look-like",
+    "objectID": "first-steps.html#content-details",
+    "href": "first-steps.html#content-details",
     "title": "First Steps",
-    "section": "What does the exam look like?",
-    "text": "What does the exam look like?\nAn exam can contain many different types of questions. R/exams is suitable for creating not only calculation questions, but also multiple or single questions, open answer questions (single word or essay questions) or including upload points in Moodle exams. It is possible to use any combination in one exam, eg. two numeric and three multiple choice questions.\ninsert example ????\nR/exams does not only have statistical applications, the look of the exam is entirely customizable. It is also possible to include data, graphs, pictures and other things, see ????.",
+    "section": "content details",
+    "text": "content details\nmany different types of question, suitable for calculation questions, multiple or single questions, open answer questions (single-word or essay questions) or upload points (moodle). any combination in one exam possible, eg. two numeric and three multiple choice questions\ninsert example\n-&gt; not only statistical applications\npossible to include data, graphs, pictures etc, etc. see ??? add-ons)",
     "crumbs": [
       "First Steps"
     ]
   },
   {
-    "objectID": "first-steps.html#how-can-rexams-prohibit-cheating",
-    "href": "first-steps.html#how-can-rexams-prohibit-cheating",
+    "objectID": "first-steps.html#automation",
+    "href": "first-steps.html#automation",
     "title": "First Steps",
-    "section": "How can R/exams prohibit cheating?",
-    "text": "How can R/exams prohibit cheating?\nWith R/exams it is possible to create a (very) large number of different versions of the same exam. (see ???? conversion) Slight automatic alterations lead to an individualized exam for each student. For example, this can be used to be able to use the same materials for different exercise groups or to prohibit cheating by having slighty different questions for each student.",
-    "crumbs": [
-      "First Steps"
-    ]
-  },
-  {
-    "objectID": "first-steps.html#in-what-ways-can-an-exam-be-individualized",
-    "href": "first-steps.html#in-what-ways-can-an-exam-be-individualized",
-    "title": "First Steps",
-    "section": "In what ways can an exam be individualized?",
-    "text": "In what ways can an exam be individualized?\nchanging text/context/stories\nthis can also be used for tailoring the exam across programs at BOKU\nchanging data/numbers\ncreating a pool of true/false statements -&gt; randomly drawn\ndifferent answer options for single/mutiple choice",
-    "crumbs": [
-      "First Steps"
-    ]
-  },
-  {
-    "objectID": "first-steps.html#how-can-the-exams-be-corrected",
-    "href": "first-steps.html#how-can-the-exams-be-corrected",
-    "title": "First Steps",
-    "section": "How can the exams be corrected?",
-    "text": "How can the exams be corrected?\nDifferent methods for different output formats\nmoodle -&gt; automatic correction, solution imported\npdf: solutions, also possible to scan answer sheets for mchoice schoice\nsee correction methods moodle ????\nsee correction methods PDF etc.",
+    "section": "Automation",
+    "text": "Automation\nwhen creating an exam for 100 students, Possible to automatically change numbers/text for every student\n-&gt; cheating prohibited\nautomatic creation of solutions for each exam, also correction\nsee correction methods moodle ????\nsee correction methods PDF etc.",
     "crumbs": [
       "First Steps"
     ]
@@ -123,18 +103,11 @@
     ]
   },
   {
-    "objectID": "Examples /Example questions.html",
-    "href": "Examples /Example questions.html",
-    "title": "Question",
-    "section": "",
-    "text": "data &lt;- sample(1:20, size = 10, replace = TRUE)\n\nquestions &lt;- list()\nsolutions &lt;- list() \nexplanations &lt;- list() \ntypes &lt;- list()\ntolerances &lt;- list()\n\n#Question 1 \nsolutions[[1]] &lt;- mean(data)\ntypes[[1]] &lt;- \"num\"\n\n#Question 2 \nsolutions[[2]] &lt;- \"variance\"\ntypes[[2]] &lt;- \"string\"\n\n#Question 3 \nquestions[[3]] &lt;- c(\"The mean is a measure of central tendency.\", \"The mean is a measure of measure of dispersion.\", \"The mean is affected by outliers.\", \"The mean is unaffected by outliers.\")\nsolutions[[3]] &lt;- c(TRUE, FALSE, TRUE, FALSE)\ntypes[[3]] &lt;- \"mchoice\"\n\n#Question 4 \nquestions[[4]] &lt;- c(\"yes\", \"no\")\nsolutions[[4]] &lt;- c(TRUE, FALSE)\ntypes[[4]] &lt;- \"schoice\"\n\n\nQuestion\nWhat is the mean of the data? ##ANSWER1##\nWhat is the paramter \\(\\sigma ^2\\), which is the standard deviation squared, called? ##ANSWER2##\nPlease select the correct statments: ##ANSWER3##\nIs the following formula for the arithmetic mean correct? $$ {x} = _{i = 1}^n{x_i}\n$$ ##ANSWER4##\n\n\nMeta-information\nexname: exsolution: 10.6, variance, c(TRUE, FALSE, TRUE, FALSE), c(TRUE, FALSE)"
-  },
-  {
     "objectID": "ideas.html",
     "href": "ideas.html",
     "title": "Ideas",
     "section": "",
-    "text": "This is the page for future ideas and important notes for documentation.\n\nHow to include r markdown chunks (which are not executable)\n\nhttps://quarto.org/docs/authoring/markdown-basics.html#source-code\n\ninclude r chunks with visible settings\nREADME? recommended order of reading documentation\n\nWriting style (internal)\n\nFunctions are written with () at the end and in backticks. Example: answerlist()\nBackticks test for all R objects. Examples: questions, TRUE",
+    "text": "This is the page for future ideas and important notes for documentation.\n\nHow to include r markdown chunks (which are not executable)\n\nhttps://quarto.org/docs/authoring/markdown-basics.html#source-code\n\ninclude r chunks with visible settings\nrecommended order of reading documentation\n\nWriting style (internal)\n\nFunctions are written with () at the end and in backticks. Example: answerlist()\nBackticks test for all R objects. Examples: questions, TRUE",
     "crumbs": [
       "Ideas"
     ]
@@ -204,11 +177,11 @@
   {
     "objectID": "r-exams.html",
     "href": "r-exams.html",
-    "title": "R and R/exams",
+    "title": "R/exams",
     "section": "",
-    "text": "This will give general information on the R/exams package and links to existing documentation.\nR is an open source software\nstatistical applications\nmany extra packages that can easily be installed\nRstudio IDE\nExams is a package used for automatically generating and evaluating exams.\nLink to CRAN:\ndeveloped by ….\na lot of possibilities, with existing documentation, also stack overflow\nthis documentation focuses on the use at BOKU and the parts of R/exams that are used by the Institute of Statistics",
+    "text": "This will give general information on the R/exams package and links to existing documentation.\nR is an open source software\nstatistical applications\nmany extra packages that can easily be installed\nRstudio IDE\nExams is a package used for automatucally generating and evaluating exams.\nLink to CRAN:\ndeveloped by ….\na lot of possibilities, with existing documentation, also stack overflow\nthis documentation focuses on the use at BOKU and the parts of R/exams that are used by the Institute of Statistics",
     "crumbs": [
-      "R and R/exams Info"
+      "R/exams Info"
     ]
   },
   {

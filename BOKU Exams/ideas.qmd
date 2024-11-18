@@ -10,7 +10,7 @@ This is the page for future ideas and important notes for documentation.
 
 -   include r chunks with visible settings
 
--   README? recommended order of reading documentation
+-   recommended order of reading documentation 
 
 Writing style (internal)
 
