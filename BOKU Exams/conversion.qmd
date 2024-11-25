@@ -2,6 +2,8 @@
 title: "Conversion of an .Rmd-file"
 ---
 
+!!! WARNING - Outdated !!!
+
 TODO: for now, the script `10_kontingenztafel_erstellen.Rmd` is the only one that is up to date like it is described here. The other scripts need to be updated to the new structure.
 
 The directory of each exercise contains an Rmarkdown file called `exname_erstellen.Rmd`, where `exname` is the name of that exercise. The code chunks in this file can be executed to generate HTML previews of the exercise or XML files which can be imported into Moodle.
