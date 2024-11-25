@@ -1,7 +1,10 @@
 ---
 title: "BOKU Exams"
+engine: knitr
 ---
 
 Documentation for R/exams at BOKU.
 
 ![](https://boku.ac.at/fileadmin/data/themen/Marketing/Downloads/BOKU_Hauptlogo_RGB.png){width=40%}
+
+Last updated: `r Sys.Date()`
