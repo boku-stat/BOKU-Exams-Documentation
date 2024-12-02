@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./conversion.html">R-file</a></li><li class="breadcrumb-item"><a href="./conversion.html">Conversion of .Rmd-file</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./structure-R.html">R-file</a></li><li class="breadcrumb-item"><a href="./conversion.html">Conversion of .Rmd-file</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -179,6 +179,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./structure-R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Structure of the .R-file</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./conversion.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Conversion of .Rmd-file</span></a>
   </div>
@@ -218,15 +224,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#basic-structure" id="toc-basic-structure" class="nav-link active" data-scroll-target="#basic-structure">Basic structure</a>
+  <li><a href="#basic-workflow" id="toc-basic-workflow" class="nav-link active" data-scroll-target="#basic-workflow">Basic workflow</a>
   <ul class="collapse">
-  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
-  <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters</a></li>
+  <li><a href="#setting-the-parameters" id="toc-setting-the-parameters" class="nav-link" data-scroll-target="#setting-the-parameters">Setting the parameters</a></li>
+  </ul></li>
+  <li><a href="#structure-of-the-conversion-script" id="toc-structure-of-the-conversion-script" class="nav-link" data-scroll-target="#structure-of-the-conversion-script">Structure of the conversion script</a>
+  <ul class="collapse">
   <li><a href="#html-preview" id="toc-html-preview" class="nav-link" data-scroll-target="#html-preview">HTML preview</a></li>
   <li><a href="#xml-generation" id="toc-xml-generation" class="nav-link" data-scroll-target="#xml-generation">XML generation</a>
   <ul class="collapse">
   <li><a href="#passing-external-parameters" id="toc-passing-external-parameters" class="nav-link" data-scroll-target="#passing-external-parameters">Passing external parameters</a></li>
-  <li><a href="#checking-the-distribution-of-drawn-subsets" id="toc-checking-the-distribution-of-drawn-subsets" class="nav-link" data-scroll-target="#checking-the-distribution-of-drawn-subsets">Checking the distribution of drawn subsets</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -235,7 +242,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./conversion.html">R-file</a></li><li class="breadcrumb-item"><a href="./conversion.html">Conversion of .Rmd-file</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./structure-R.html">R-file</a></li><li class="breadcrumb-item"><a href="./conversion.html">Conversion of .Rmd-file</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Conversion of an .Rmd-file</h1>
 </div>
@@ -254,56 +261,85 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>TODO: for now, the script <code>10_kontingenztafel_erstellen.Rmd</code> is the only one that is up to date like it is described here. The other scripts need to be updated to the new structure.</p>
-<p>The directory of each exercise contains an Rmarkdown file called <code>exname_erstellen.Rmd</code>, where <code>exname</code> is the name of that exercise. The code chunks in this file can be executed to generate HTML previews of the exercise or XML files which can be imported into Moodle.</p>
-<section id="basic-structure" class="level1">
-<h1>Basic structure</h1>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For now, the script <code>10_kontingenztafel_conversion.R</code> is the only one that is up to date like it is described here. The other scripts need to be updated to the new structure.</p>
+</div>
+</div>
+<p>The directory of each exercise contains an R script called <code>exname_conversion.R</code>, where <code>exname</code> is the name of that exercise. This script can be run to generate HTML previews of the exercise or XML files which can be imported into Moodle. Parameters for converting the exercises (e.g., the seed, number of copies, and paths to the exercise and data files) are set in the config file of the exercise, <code>exname_config.R</code>, which can be found in the directory of each exercise.</p>
+<p>If no specific story is selected, the conversion script will cycle through all stories of the selected programs and generate an exercise for each story. The number of exercises generated is determined by the <code>copies</code> parameter.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Set the <code>copies</code> parameter to a multiple of the number of subsets to ensure that each subset is drawn an equal number of times.</p>
+</div>
+</div>
+<p>By default, HTML previews of the exercises are opened in the default browser. The XML files are stored in the exercise’s root directory.</p>
+<section id="basic-workflow" class="level1">
+<h1>Basic workflow</h1>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You must have R and optionally RStudio installed on your computer to run the R scripts. Within R, the <code>exams</code> package must be installed. <a href="./first-steps.html">This section</a> explains how to install R, RStudio, and the <code>exams</code> package.</p>
+</div>
+</div>
+<p>To generate the exercises in HTML or XML format, there are two options:</p>
+<ol type="1">
+<li>Run the R script in RStudio by opening the script and clicking the “Run” button.</li>
+<li>Run the R script in the terminal by executing <code>Rscript exname_conversion.R</code> in the directory of the exercise.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In case of an error that the file was not found, you might need to set the working directory to the directory of the exercise. This can be done by executing <code>setwd("path/to/exercise")</code> in the R console or using the “Session” -&gt; “Set Working Directory” -&gt; “To Source File Location” option in RStudio.</p>
+</div>
+</div>
+<section id="setting-the-parameters" class="level2">
+<h2 class="anchored" data-anchor-id="setting-the-parameters">Setting the parameters</h2>
+<p>In the exercise config file <code>exname_config.R</code>, the parameters for generating the exercises are set. The following parameters are available:</p>
 <ul>
-<li>Setup</li>
-<li>Parameters</li>
-<li>HTML preview</li>
-<li>XML generation</li>
-<li>[Checking the distribution of drawn subsets]</li>
+<li><code>seed</code>: A seed for the random number generator. This ensures that the same <strong>set of exercises</strong> is generated each time the code is run.</li>
+<li><code>copies</code>: The number of times the exercise should be generated when using the XML format. If parts of the exercise are randomized (e.g., drawing from a distribution or a random subset), each copy will be randomly generated. However, the seed ensures that always the same set of randomized exercises is generated.</li>
+<li><code>program</code>: Select one or more programs from which the stories will be drawn. See the file containing the stories for the available programs. <code>NULL</code> will use all programs.</li>
+<li><code>story</code>: Select a specific story to be used. <code>NULL</code> will randomly select a story from the selected programs.</li>
+<li><code>exercise_seed</code>: A seed for the random number generator within the exercise. This ensures that the same specific exercise is generated each time the code is run. If <code>NULL</code>, the seed will be randomly generated using the <code>seed</code> parameter.</li>
+<li><code>converter</code>: The converter to be used by the <code>exams</code> package to convert the exercise Rmarkdown files.</li>
+<li><code>exercise_dir</code>: The path to the directory containing the exercise Rmarkdown file.</li>
+<li><code>exercise_file</code>: The name of the exercise Rmarkdown file.</li>
+<li><code>data_dir</code>: The path to the directory containing the data files.</li>
+<li><code>temp_dir</code>: The name of the directory storing temporary files. If not present, the directory will be created. <strong>Warning:</strong> All files in the temporary directory will be deleted when the code is run!</li>
+<li><code>out_basename</code>: The base name of the output files.</li>
+<li><code>out_type</code>: The type of the output files. Can be either <code>html</code> for a preview in the browser or <code>xml</code> for import into Moodle.</li>
 </ul>
-<p>To generate the exercises, set the parameters in the <code>parameters</code> code chunk and run the <code>generate</code> code chunk to create the XML files ready for import into Moodle. To first preview a single exercises in HTML format, run the <code>preview</code> code chunk.</p>
-<p>For a more detailed explanation of the structure, see the following sections.</p>
-<section id="setup" class="level2">
-<h2 class="anchored" data-anchor-id="setup">Setup</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Run this code chunk once before any of the others.</p>
-</div>
-</div>
-<p>This code chunk does not require any edits by the user.</p>
-<p>When executed, the <code>exams</code> library is loaded. R will try to automatically set the working directory to the source file location. If this fails and the paths to the exercise files cannot be found, this must be done manually.</p>
-<p>For correctly displaying mathematical expressions and tables, <code>pandoc</code> is set to be used by the <code>exams</code> package to convert the exercise files to HTML.</p>
-<p>In some exercises, the localization and encoding might be set to German UTF-8 to ensure that special characters are displayed correctly.</p>
-</section>
-<section id="parameters" class="level2">
-<h2 class="anchored" data-anchor-id="parameters">Parameters</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Run this code chunk once after setup or when using new parameters.</p>
-</div>
-</div>
-<p>This code chunk contains the parameters set by the users to generate the exercises.</p>
-<p>First, a seed must be set. This ensures that the same set of exercises is generated each time the code is run.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -317,53 +353,32 @@ Tip
 <p>When generating exercises for a course, it is recommended to set the seed to a fixed value and note it down. At the start of each semester, a new seed should be set to ensure that the exercises are different from the previous semester.</p>
 </div>
 </div>
-<p>Then, the number of times the exercise should be generated is set with the <code>copies</code> parameter. If parts of the exercise are randomized (e.g., drawing from a distribution or a random subset), each copy will be randomly generated. However, the seed ensures that always the same set of randomized exercises is generated.</p>
-<p>The paths to the directories containing the exercise and data files must each be set, as well as the name of the exercise file. The name of the directory storing temporary files must also be set. If not present, the directory will be created.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>All files in the temporary directory will be deleted when the code is run!</p>
-</div>
-</div>
-<p>Finally, the base name of the output files is set.</p>
 </section>
+</section>
+<section id="structure-of-the-conversion-script" class="level1">
+<h1>Structure of the conversion script</h1>
+<p>The conversion script is structured as follows:</p>
+<ol type="1">
+<li>Load the <code>exams</code> package.</li>
+<li>Set the encoding/locale to German UTF-8.</li>
+<li>Load the exercise config file.</li>
+<li>Set the seed for the random number generator.</li>
+<li>Create the temporary directory, which <strong>will be deleted</strong> after the code is run.</li>
+<li>Generate the exercise in the desired format.</li>
+</ol>
 <section id="html-preview" class="level2">
 <h2 class="anchored" data-anchor-id="html-preview">HTML preview</h2>
-<p>The <code>preview</code> code chunk generates an HTML preview of the exercise, which will open in the default browser. Intermediary files are stored in the temporary directory, which are deleted after the preview is generated and prior to that (in case an error interrupted the process and removal of temporary files).</p>
-<p>Information about the generated exercise are stored in the <code>exinfo</code> object in the R workspace. This object can be inspected to check the exercise’s metadata.</p>
+<p>::: div callout-info The HTML preview of the exercise is not interactive and uses a different styling. The preview looks different from the exercises in Moodle, but can be used to check the content of the exercise. :::</p>
+<p>If the <code>out_type</code> parameter is set to <code>html</code>, an HTML preview will be generated which will open in the default browser. Intermediary files are stored in the temporary directory, which are deleted after the preview is generated.</p>
 </section>
 <section id="xml-generation" class="level2">
 <h2 class="anchored" data-anchor-id="xml-generation">XML generation</h2>
-<p>The <code>generate</code> code chunk generates the XML files for the exercises. The XML files are stored in the exercise’s root directory. Intermediary files are stored in the temporary directory, which are deleted after the preview is generated and prior to that (in case an error interrupted the process and removal of temporary files).</p>
-<p>Information about the generated exercises are stored in the <code>exinfo</code> object in the R workspace. This object can be inspected to check the exercise’s metadata, or be analyzed further, e. g. to plot the distribution of answers if the exercise utilizes randomization.</p>
+<p>If the <code>out_type</code> parameter is set to <code>xml</code>, an XML file will be generated which can be imported into Moodle. The XML files are stored in the exercise’s root directory with the <code>out_basename</code>. Intermediary files are stored in the temporary directory, which are deleted after the preview is generated.</p>
 <section id="passing-external-parameters" class="level3">
 <h3 class="anchored" data-anchor-id="passing-external-parameters">Passing external parameters</h3>
 <p>The number of exercise copies specified by the <code>copies</code> parameter will be generated in a loop, using the <code>exams</code> function <code>expar()</code> to pass external parameters to the exercise. For example, the incrementing number of the loop can be passed to the exercise where it is used as index to draw a subset of data. The advantage of this approach is that the subsets are drawn deterministically instead of randomly (which could lead to duplicates or missing subsets).</p>
 <p>The function takes the exercise file and the external variables as arguments. It then saves an temporary Rmarkdown file of the exercise with the external parameters set. The list of these temporary files is then passed to the <code>exams2moodle()</code> function to generate the XML files.</p>
-</section>
-<section id="checking-the-distribution-of-drawn-subsets" class="level3">
-<h3 class="anchored" data-anchor-id="checking-the-distribution-of-drawn-subsets">Checking the distribution of drawn subsets</h3>
-<p>To make sure that the proportions of the drawn subsets are equal, the <code>plot-distribution</code> code chunk can be run. It will show a barplot of the number of times each subset was drawn.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The number of copies should be set to a multiple of the number of subsets to ensure that each subset is drawn an equal number of times.</p>
-</div>
-</div>
+<p>If the <code>copies</code> parameter is a multiple of the number of stories, each story will be drawn an equal number of times.</p>
 
 
 </section>
@@ -798,7 +813,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p><b>This documenation is currently in development and not complete. </b></p>
+<p><b>This documentation is currently in development and not complete. </b></p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

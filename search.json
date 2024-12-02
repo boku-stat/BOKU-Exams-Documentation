@@ -4,7 +4,7 @@
     "href": "first-steps.html",
     "title": "First Steps",
     "section": "",
-    "text": "R/exams is used to automatically generate and evaluate exam questions. see here for more info about R and R/exams ?????\nAt BOKU, it is used by the Institute for Statistics in several courses. Homework, review exercises and exams in the form of paper exams, as well as online quizes on BOKUlearn are all created with R/exams. Currently this is mostly used for (introductory) courses for statistics, however, the application is not limited to statistical applications at all.\nThis documentation should serve as a basic first introduction and a how-to for anyone interested in using R/exams for teaching their courses at BOKU.",
+    "text": "R/exams is used to automatically generate and evaluate exam questions. See here for more info about R and R/exams ?????\nAt BOKU, it is used by the Institute for Statistics in several courses. Homework, review exercises and exams in the form of paper exams, as well as online quizes on BOKUlearn are all created with R/exams. Currently this is mostly used for (introductory) courses for statistics, however, the application is not limited to statistical applications at all.\nThis documentation should serve as a basic first introduction and a how-to for anyone interested in using R/exams for teaching their courses at BOKU.",
     "crumbs": [
       "First Steps"
     ]
@@ -44,7 +44,7 @@
     "href": "first-steps.html#how-can-rexams-prohibit-cheating",
     "title": "First Steps",
     "section": "How can R/exams prohibit cheating?",
-    "text": "How can R/exams prohibit cheating?\nWith R/exams it is possible to create a (very) large number of different versions of the same exam. (see ???? conversion) Slight automatic alterations lead to an individualized exam for each student. For example, this can be used to be able to use the same materials for different exercise groups or to prohibit cheating by having slighty different questions for each student.",
+    "text": "How can R/exams prohibit cheating?\nWith R/exams it is possible to create a (very) large number of different versions of the same exam. (see ???? conversion) Slight automatic alterations lead to an individualized exam for each student. For example, this can be used to be able to use the same materials for different exercise groups or to prohibit cheating by having slightly different questions for each student.",
     "crumbs": [
       "First Steps"
     ]
@@ -54,7 +54,7 @@
     "href": "first-steps.html#in-what-ways-can-an-exam-be-individualized",
     "title": "First Steps",
     "section": "In what ways can an exam be individualized?",
-    "text": "In what ways can an exam be individualized?\nchanging text/context/stories\nthis can also be used for tailoring the exam across programs at BOKU\nchanging data/numbers\ncreating a pool of true/false statements -&gt; randomly drawn\ndifferent answer options for single/mutiple choice",
+    "text": "In what ways can an exam be individualized?\nThere are multiple ways of individualizing an exam, for example dynamically changing the (con)text of the questions. This is also particularly useful when creating exams used for multiple study programs at BOKU in order to have tailored exams for each of them.\nNumbers or data can also be randomly sampled, meaning each student will get individual results.\nIt is also possible to create a pool of True/False statements which are then randomly drawn when creating an exam. In addition, the answer options for multiple choice questions can be individualized in a similar way.\nFor implementations and tutorials see ????",
     "crumbs": [
       "First Steps"
     ]
@@ -64,7 +64,7 @@
     "href": "first-steps.html#how-can-the-exams-be-corrected",
     "title": "First Steps",
     "section": "How can the exams be corrected?",
-    "text": "How can the exams be corrected?\nDifferent methods for different output formats\nmoodle -&gt; automatic correction, solution imported\npdf: solutions, also possible to scan answer sheets for mchoice schoice\nsee correction methods moodle ????\nsee correction methods PDF etc.",
+    "text": "How can the exams be corrected?\nFor each output format, there is a different method for correcting the exams.\nFor Moodle quizzes, the correct solutions are imported automatically as well, meaning they are graded automatically. The allocation of points can also be adjusted using R/exams. See ????\nFor pdf exams, an answer sheet is provided, but it is also possible to automatically grade scans of the students’ multiple choice exams using R/exams. See ????",
     "crumbs": [
       "First Steps"
     ]
@@ -92,99 +92,21 @@
     ]
   },
   {
-    "objectID": "faq.html",
-    "href": "faq.html",
-    "title": "FAQ",
+    "objectID": "r-exams.html",
+    "href": "r-exams.html",
+    "title": "R, RStudio and R/exams",
     "section": "",
-    "text": "This will describe frequently asked questions and common mistakes.",
+    "text": "This page gives a bit more general information about R, RStudio and R/exams, however in general the documentation focuses on the parts of R/exams that are relevant for creating the exams at BOKU. It is by no mean comprehensive and there already exists a lot of documentation for R, RStudio and R/exams.\n\nR\nR is an open source software and freely available for all common platforms. It has many statistical applications, but is also used in various other fields. There are many extra packages that can easily be installed from CRAN (Comprehensive R Archive Network), where a lot of packages are maintained.\nDownload R here from CRAN.\nSee how to install R and RStudio.\nHow to install packages like R/exams:\ninstall.packages(\"package_name\") #insert the name of the package instead of package_name\n\ninstall.packages(\"exams\") #install the exams package \nlibrary(exams) #loads the contents of the package to make them available \n\n\nRStudio\nRStudio is an integrated development environment (IDE) for R. An IDE is useful for writing and editing code, as it includes additional windows besides the console where both code and results are printed, such as an editing window, a help page, a viewer for plots and many more. All in all, it makes writing in R more comfortable and helps to keep an overview.\nDownload Rstudio here.\n\n\nR/exams\nThe R/exams package is used for automatically generating and evaluating exams. It was developed by Achim Zeileis.\nIt can be found at CRAN here.",
     "crumbs": [
-      "FAQ"
+      "R and R/exams Info"
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "BOKU Exams",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "Documentation for R/exams at BOKU.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "conversion.html",
-    "href": "conversion.html",
-    "title": "Conversion of an .Rmd-file",
-    "section": "",
-    "text": "TODO: for now, the script 10_kontingenztafel_erstellen.Rmd is the only one that is up to date like it is described here. The other scripts need to be updated to the new structure.\nThe directory of each exercise contains an Rmarkdown file called exname_erstellen.Rmd, where exname is the name of that exercise. The code chunks in this file can be executed to generate HTML previews of the exercise or XML files which can be imported into Moodle.",
-    "crumbs": [
-      "R-file",
-      "Conversion of .Rmd-file"
-    ]
-  },
-  {
-    "objectID": "conversion.html#setup",
-    "href": "conversion.html#setup",
-    "title": "Conversion of an .Rmd-file",
-    "section": "Setup",
-    "text": "Setup\n\n\n\n\n\n\nNote\n\n\n\nRun this code chunk once before any of the others.\n\n\nThis code chunk does not require any edits by the user.\nWhen executed, the exams library is loaded. R will try to automatically set the working directory to the source file location. If this fails and the paths to the exercise files cannot be found, this must be done manually.\nFor correctly displaying mathematical expressions and tables, pandoc is set to be used by the exams package to convert the exercise files to HTML.\nIn some exercises, the localization and encoding might be set to German UTF-8 to ensure that special characters are displayed correctly.",
-    "crumbs": [
-      "R-file",
-      "Conversion of .Rmd-file"
-    ]
-  },
-  {
-    "objectID": "conversion.html#parameters",
-    "href": "conversion.html#parameters",
-    "title": "Conversion of an .Rmd-file",
-    "section": "Parameters",
-    "text": "Parameters\n\n\n\n\n\n\nNote\n\n\n\nRun this code chunk once after setup or when using new parameters.\n\n\nThis code chunk contains the parameters set by the users to generate the exercises.\nFirst, a seed must be set. This ensures that the same set of exercises is generated each time the code is run.\n\n\n\n\n\n\nTip\n\n\n\nWhen generating exercises for a course, it is recommended to set the seed to a fixed value and note it down. At the start of each semester, a new seed should be set to ensure that the exercises are different from the previous semester.\n\n\nThen, the number of times the exercise should be generated is set with the copies parameter. If parts of the exercise are randomized (e.g., drawing from a distribution or a random subset), each copy will be randomly generated. However, the seed ensures that always the same set of randomized exercises is generated.\nThe paths to the directories containing the exercise and data files must each be set, as well as the name of the exercise file. The name of the directory storing temporary files must also be set. If not present, the directory will be created.\n\n\n\n\n\n\nWarning\n\n\n\nAll files in the temporary directory will be deleted when the code is run!\n\n\nFinally, the base name of the output files is set.",
-    "crumbs": [
-      "R-file",
-      "Conversion of .Rmd-file"
-    ]
-  },
-  {
-    "objectID": "conversion.html#html-preview",
-    "href": "conversion.html#html-preview",
-    "title": "Conversion of an .Rmd-file",
-    "section": "HTML preview",
-    "text": "HTML preview\nThe preview code chunk generates an HTML preview of the exercise, which will open in the default browser. Intermediary files are stored in the temporary directory, which are deleted after the preview is generated and prior to that (in case an error interrupted the process and removal of temporary files).\nInformation about the generated exercise are stored in the exinfo object in the R workspace. This object can be inspected to check the exercise’s metadata.",
-    "crumbs": [
-      "R-file",
-      "Conversion of .Rmd-file"
-    ]
-  },
-  {
-    "objectID": "conversion.html#xml-generation",
-    "href": "conversion.html#xml-generation",
-    "title": "Conversion of an .Rmd-file",
-    "section": "XML generation",
-    "text": "XML generation\nThe generate code chunk generates the XML files for the exercises. The XML files are stored in the exercise’s root directory. Intermediary files are stored in the temporary directory, which are deleted after the preview is generated and prior to that (in case an error interrupted the process and removal of temporary files).\nInformation about the generated exercises are stored in the exinfo object in the R workspace. This object can be inspected to check the exercise’s metadata, or be analyzed further, e. g. to plot the distribution of answers if the exercise utilizes randomization.\n\nPassing external parameters\nThe number of exercise copies specified by the copies parameter will be generated in a loop, using the exams function expar() to pass external parameters to the exercise. For example, the incrementing number of the loop can be passed to the exercise where it is used as index to draw a subset of data. The advantage of this approach is that the subsets are drawn deterministically instead of randomly (which could lead to duplicates or missing subsets).\nThe function takes the exercise file and the external variables as arguments. It then saves an temporary Rmarkdown file of the exercise with the external parameters set. The list of these temporary files is then passed to the exams2moodle() function to generate the XML files.\n\n\nChecking the distribution of drawn subsets\nTo make sure that the proportions of the drawn subsets are equal, the plot-distribution code chunk can be run. It will show a barplot of the number of times each subset was drawn.\n\n\n\n\n\n\nTip\n\n\n\nThe number of copies should be set to a multiple of the number of subsets to ensure that each subset is drawn an equal number of times.",
-    "crumbs": [
-      "R-file",
-      "Conversion of .Rmd-file"
-    ]
-  },
-  {
-    "objectID": "ideas.html",
-    "href": "ideas.html",
-    "title": "Ideas",
-    "section": "",
-    "text": "This is the page for future ideas and important notes for documentation.\nWriting style (internal)",
-    "crumbs": [
-      "Ideas"
-    ]
-  },
-  {
-    "objectID": "ideas.html#footnotes",
-    "href": "ideas.html#footnotes",
-    "title": "Ideas",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nhttps://stackoverflow.com/questions/78569518/why-is-r-inline-code-not-executed-in-quarto-in-some-situations↩︎",
-    "crumbs": [
-      "Ideas"
-    ]
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
     "objectID": "structure-Rmd.html",
@@ -242,20 +164,87 @@
     ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "ideas.html",
+    "href": "ideas.html",
+    "title": "Ideas",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "This is the page for future ideas and important notes for documentation.\nWriting style (internal)",
+    "crumbs": [
+      "Ideas"
+    ]
   },
   {
-    "objectID": "r-exams.html",
-    "href": "r-exams.html",
-    "title": "R and R/exams",
-    "section": "",
-    "text": "This will give general information on the R/exams package and links to existing documentation.\nR is an open source software\nstatistical applications\nmany extra packages that can easily be installed\nRstudio IDE\nExams is a package used for automatically generating and evaluating exams.\nLink to CRAN:\ndeveloped by ….\na lot of possibilities, with existing documentation, also stack overflow\nthis documentation focuses on the use at BOKU and the parts of R/exams that are used by the Institute of Statistics",
+    "objectID": "ideas.html#footnotes",
+    "href": "ideas.html#footnotes",
+    "title": "Ideas",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nhttps://stackoverflow.com/questions/78569518/why-is-r-inline-code-not-executed-in-quarto-in-some-situations↩︎",
     "crumbs": [
-      "R and R/exams Info"
+      "Ideas"
+    ]
+  },
+  {
+    "objectID": "conversion.html",
+    "href": "conversion.html",
+    "title": "Conversion of an .Rmd-file",
+    "section": "",
+    "text": "Caution\n\n\n\nFor now, the script 10_kontingenztafel_conversion.R is the only one that is up to date like it is described here. The other scripts need to be updated to the new structure.\nThe directory of each exercise contains an R script called exname_conversion.R, where exname is the name of that exercise. This script can be run to generate HTML previews of the exercise or XML files which can be imported into Moodle. Parameters for converting the exercises (e.g., the seed, number of copies, and paths to the exercise and data files) are set in the config file of the exercise, exname_config.R, which can be found in the directory of each exercise.\nIf no specific story is selected, the conversion script will cycle through all stories of the selected programs and generate an exercise for each story. The number of exercises generated is determined by the copies parameter.\nBy default, HTML previews of the exercises are opened in the default browser. The XML files are stored in the exercise’s root directory.",
+    "crumbs": [
+      "R-file",
+      "Conversion of .Rmd-file"
+    ]
+  },
+  {
+    "objectID": "conversion.html#setting-the-parameters",
+    "href": "conversion.html#setting-the-parameters",
+    "title": "Conversion of an .Rmd-file",
+    "section": "Setting the parameters",
+    "text": "Setting the parameters\nIn the exercise config file exname_config.R, the parameters for generating the exercises are set. The following parameters are available:\n\nseed: A seed for the random number generator. This ensures that the same set of exercises is generated each time the code is run.\ncopies: The number of times the exercise should be generated when using the XML format. If parts of the exercise are randomized (e.g., drawing from a distribution or a random subset), each copy will be randomly generated. However, the seed ensures that always the same set of randomized exercises is generated.\nprogram: Select one or more programs from which the stories will be drawn. See the file containing the stories for the available programs. NULL will use all programs.\nstory: Select a specific story to be used. NULL will randomly select a story from the selected programs.\nexercise_seed: A seed for the random number generator within the exercise. This ensures that the same specific exercise is generated each time the code is run. If NULL, the seed will be randomly generated using the seed parameter.\nconverter: The converter to be used by the exams package to convert the exercise Rmarkdown files.\nexercise_dir: The path to the directory containing the exercise Rmarkdown file.\nexercise_file: The name of the exercise Rmarkdown file.\ndata_dir: The path to the directory containing the data files.\ntemp_dir: The name of the directory storing temporary files. If not present, the directory will be created. Warning: All files in the temporary directory will be deleted when the code is run!\nout_basename: The base name of the output files.\nout_type: The type of the output files. Can be either html for a preview in the browser or xml for import into Moodle.\n\n\n\n\n\n\n\nTip\n\n\n\nWhen generating exercises for a course, it is recommended to set the seed to a fixed value and note it down. At the start of each semester, a new seed should be set to ensure that the exercises are different from the previous semester.",
+    "crumbs": [
+      "R-file",
+      "Conversion of .Rmd-file"
+    ]
+  },
+  {
+    "objectID": "conversion.html#html-preview",
+    "href": "conversion.html#html-preview",
+    "title": "Conversion of an .Rmd-file",
+    "section": "HTML preview",
+    "text": "HTML preview\n::: div callout-info The HTML preview of the exercise is not interactive and uses a different styling. The preview looks different from the exercises in Moodle, but can be used to check the content of the exercise. :::\nIf the out_type parameter is set to html, an HTML preview will be generated which will open in the default browser. Intermediary files are stored in the temporary directory, which are deleted after the preview is generated.",
+    "crumbs": [
+      "R-file",
+      "Conversion of .Rmd-file"
+    ]
+  },
+  {
+    "objectID": "conversion.html#xml-generation",
+    "href": "conversion.html#xml-generation",
+    "title": "Conversion of an .Rmd-file",
+    "section": "XML generation",
+    "text": "XML generation\nIf the out_type parameter is set to xml, an XML file will be generated which can be imported into Moodle. The XML files are stored in the exercise’s root directory with the out_basename. Intermediary files are stored in the temporary directory, which are deleted after the preview is generated.\n\nPassing external parameters\nThe number of exercise copies specified by the copies parameter will be generated in a loop, using the exams function expar() to pass external parameters to the exercise. For example, the incrementing number of the loop can be passed to the exercise where it is used as index to draw a subset of data. The advantage of this approach is that the subsets are drawn deterministically instead of randomly (which could lead to duplicates or missing subsets).\nThe function takes the exercise file and the external variables as arguments. It then saves an temporary Rmarkdown file of the exercise with the external parameters set. The list of these temporary files is then passed to the exams2moodle() function to generate the XML files.\nIf the copies parameter is a multiple of the number of stories, each story will be drawn an equal number of times.",
+    "crumbs": [
+      "R-file",
+      "Conversion of .Rmd-file"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BOKU Exams",
+    "section": "",
+    "text": "Documentation for R/exams at BOKU.\n\nLast updated: 2024-12-02",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "faq.html",
+    "href": "faq.html",
+    "title": "FAQ",
+    "section": "",
+    "text": "This will describe frequently asked questions and common mistakes.",
+    "crumbs": [
+      "FAQ"
     ]
   },
   {

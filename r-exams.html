@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>R and R/exams – BOKU Exams</title>
+<title>R, RStudio and R/exams – BOKU Exams</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -179,6 +213,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./structure-R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Structure of the .R-file</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./conversion.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Conversion of .Rmd-file</span></a>
   </div>
@@ -213,15 +253,23 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#r" id="toc-r" class="nav-link active" data-scroll-target="#r">R</a></li>
+  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio">RStudio</a></li>
+  <li><a href="#rexams" id="toc-rexams" class="nav-link" data-scroll-target="#rexams">R/exams</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">R and R/exams</h1>
+<h1 class="title">R, RStudio and R/exams</h1>
 </div>
 
 
@@ -238,18 +286,30 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This will give general information on the R/exams package and links to existing documentation.</p>
-<p>R is an open source software</p>
-<p>statistical applications</p>
-<p>many extra packages that can easily be installed</p>
-<p>Rstudio IDE</p>
-<p>Exams is a package used for automatically generating and evaluating exams.</p>
-<p>Link to CRAN:</p>
-<p>developed by ….</p>
-<p>a lot of possibilities, with existing documentation, also stack overflow</p>
-<p>this documentation focuses on the use at BOKU and the parts of R/exams that are used by the Institute of Statistics</p>
+<p>This page gives a bit more general information about R, RStudio and R/exams, however in general the documentation focuses on the parts of R/exams that are relevant for creating the exams at BOKU. It is by no mean comprehensive and there already exists a lot of documentation for R, RStudio and R/exams.</p>
+<section id="r" class="level1">
+<h1>R</h1>
+<p>R is an open source software and freely available for all common platforms. It has many statistical applications, but is also used in various other fields. There are many extra packages that can easily be installed from CRAN (Comprehensive R Archive Network), where a lot of packages are maintained.</p>
+<p>Download R <a href="https://cran.r-project.org">here from CRAN</a>.</p>
+<p>See <a href="https://statistik.boku.ac.at/stat-lehre/doku.php?id=statistik_mit_r:rstudio:rstudio_installation:start">how to install R and RStudio</a>.</p>
+<p>How to install packages like <code>R/exams:</code></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"package_name"</span>) <span class="co">#insert the name of the package instead of package_name</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"exams"</span>) <span class="co">#install the exams package </span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(exams) <span class="co">#loads the contents of the package to make them available </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="rstudio" class="level1">
+<h1>RStudio</h1>
+<p>RStudio is an integrated development environment (IDE) for R. An IDE is useful for writing and editing code, as it includes additional windows besides the console where both code and results are printed, such as an editing window, a help page, a viewer for plots and many more. All in all, it makes writing in R more comfortable and helps to keep an overview.</p>
+<p>Download Rstudio <a href="https://posit.co/download/rstudio-desktop/">here</a>.</p>
+</section>
+<section id="rexams" class="level1">
+<h1>R/exams</h1>
+<p>The R/exams package is used for automatically generating and evaluating exams. It was developed by Achim Zeileis.</p>
+<p>It can be found at CRAN <a href="https://cran.r-project.org/package=exams">here</a>.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -679,7 +739,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p><b>This documenation is currently in development and not complete. </b></p>
+<p><b>This documentation is currently in development and not complete. </b></p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

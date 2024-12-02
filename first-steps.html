@@ -179,6 +179,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./structure-R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Structure of the .R-file</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./conversion.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Conversion of .Rmd-file</span></a>
   </div>
@@ -255,7 +261,7 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="purpose-of-rexams" class="level1">
 <h1>Purpose of R/exams</h1>
-<p>R/exams is used to automatically generate and evaluate exam questions. see here for more info about R and R/exams ?????</p>
+<p>R/exams is used to automatically generate and evaluate exam questions. See here for more info about R and R/exams ?????</p>
 <p>At BOKU, it is used by the Institute for Statistics in several courses. Homework, review exercises and exams in the form of paper exams, as well as online quizes on BOKUlearn are all created with R/exams. Currently this is mostly used for (introductory) courses for statistics, however, the application is not limited to statistical applications at all.</p>
 <p>This documentation should serve as a basic first introduction and a how-to for anyone interested in using R/exams for teaching their courses at BOKU.</p>
 </section>
@@ -282,23 +288,20 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="how-can-rexams-prohibit-cheating" class="level2">
 <h2 class="anchored" data-anchor-id="how-can-rexams-prohibit-cheating">How can R/exams prohibit cheating?</h2>
-<p>With R/exams it is possible to create a (very) large number of different versions of the same exam. (see ???? conversion) Slight automatic alterations lead to an individualized exam for each student. For example, this can be used to be able to use the same materials for different exercise groups or to prohibit cheating by having slighty different questions for each student.</p>
+<p>With R/exams it is possible to create a (very) large number of different versions of the same exam. (see ???? conversion) Slight automatic alterations lead to an individualized exam for each student. For example, this can be used to be able to use the same materials for different exercise groups or to prohibit cheating by having slightly different questions for each student.</p>
 </section>
 <section id="in-what-ways-can-an-exam-be-individualized" class="level2">
 <h2 class="anchored" data-anchor-id="in-what-ways-can-an-exam-be-individualized">In what ways can an exam be individualized?</h2>
-<p>changing text/context/stories</p>
-<p>this can also be used for tailoring the exam across programs at BOKU</p>
-<p>changing data/numbers</p>
-<p>creating a pool of true/false statements -&gt; randomly drawn</p>
-<p>different answer options for single/mutiple choice</p>
+<p>There are multiple ways of individualizing an exam, for example dynamically changing the (con)text of the questions. This is also particularly useful when creating exams used for multiple study programs at BOKU in order to have tailored exams for each of them.</p>
+<p>Numbers or data can also be randomly sampled, meaning each student will get individual results.</p>
+<p>It is also possible to create a pool of True/False statements which are then randomly drawn when creating an exam. In addition, the answer options for multiple choice questions can be individualized in a similar way.<br>
+For implementations and tutorials see ????</p>
 </section>
 <section id="how-can-the-exams-be-corrected" class="level2">
 <h2 class="anchored" data-anchor-id="how-can-the-exams-be-corrected">How can the exams be corrected?</h2>
-<p>Different methods for different output formats</p>
-<p>moodle -&gt; automatic correction, solution imported</p>
-<p>pdf: solutions, also possible to scan answer sheets for mchoice schoice</p>
-<p>see correction methods moodle ????</p>
-<p>see correction methods PDF etc.</p>
+<p>For each output format, there is a different method for correcting the exams.</p>
+<p>For Moodle quizzes, the correct solutions are imported automatically as well, meaning they are graded automatically. The allocation of points can also be adjusted using R/exams. See ????</p>
+<p>For pdf exams, an answer sheet is provided, but it is also possible to automatically grade scans of the students’ multiple choice exams using R/exams. See ????</p>
 
 
 </section>
@@ -732,7 +735,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p><b>This documenation is currently in development and not complete. </b></p>
+<p><b>This documentation is currently in development and not complete. </b></p>
 </div>
     <div class="nav-footer-right">
       &nbsp;
