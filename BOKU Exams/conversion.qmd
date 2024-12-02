@@ -24,29 +24,29 @@ You must have R and optionally RStudio installed on your computer to run the R s
 
 To generate the exercises in HTML or XML format, there are two options:
 
-1. Run the R script in RStudio by opening the script and clicking the "Run" button.
-2. Run the R script in the terminal by executing `Rscript exname_conversion.R` in the directory of the exercise.
+1.  Run the R script in RStudio by opening the script and clicking the "Run" button.
+2.  Run the R script in the terminal by executing `Rscript exname_conversion.R` in the directory of the exercise.
 
 ::: callout-tip
-In case of an error that the file was not found, you might need to set the working directory to the directory of the exercise. This can be done by executing `setwd("path/to/exercise")` in the R console or using the "Session" -> "Set Working Directory" -> "To Source File Location" option in RStudio.
+In case of an error that the file was not found, you might need to set the working directory to the directory of the exercise. This can be done by executing `setwd("path/to/exercise")` in the R console or using the "Session" -\> "Set Working Directory" -\> "To Source File Location" option in RStudio.
 :::
 
 ## Setting the parameters
 
 In the exercise config file `exname_config.R`, the parameters for generating the exercises are set. The following parameters are available:
 
-- `seed`: A seed for the random number generator. This ensures that the same **set of exercises** is generated each time the code is run.
-- `copies`: The number of times the exercise should be generated when using the XML format. If parts of the exercise are randomized (e.g., drawing from a distribution or a random subset), each copy will be randomly generated. However, the seed ensures that always the same set of randomized exercises is generated.
-- `program`: Select one or more programs from which the stories will be drawn. See the file containing the stories for the available programs. `NULL` will use all programs.
-- `story`: Select a specific story to be used. `NULL` will randomly select a story from the selected programs.
-- `exercise_seed`: A seed for the random number generator within the exercise. This ensures that the same specific exercise is generated each time the code is run. If `NULL`, the seed will be randomly generated using the `seed` parameter.
-- `converter`: The converter to be used by the `exams` package to convert the exercise Rmarkdown files.
-- `exercise_dir`: The path to the directory containing the exercise Rmarkdown file.
-- `exercise_file`: The name of the exercise Rmarkdown file.
-- `data_dir`: The path to the directory containing the data files.
-- `temp_dir`: The name of the directory storing temporary files. If not present, the directory will be created. **Warning:** All files in the temporary directory will be deleted when the code is run!
-- `out_basename`: The base name of the output files.
-- `out_type`: The type of the output files. Can be either `html` for a preview in the browser or `xml` for import into Moodle.
+-   `seed`: A seed for the random number generator. This ensures that the same **set of exercises** is generated each time the code is run.
+-   `copies`: The number of times the exercise should be generated when using the XML format. If parts of the exercise are randomized (e.g., drawing from a distribution or a random subset), each copy will be randomly generated. However, the seed ensures that always the same set of randomized exercises is generated.
+-   `program`: Select one or more programs from which the stories will be drawn. See the file containing the stories for the available programs. `NULL` will use all programs.
+-   `story`: Select a specific story to be used. `NULL` will randomly select a story from the selected programs.
+-   `exercise_seed`: A seed for the random number generator within the exercise. This ensures that the same specific exercise is generated each time the code is run. If `NULL`, the seed will be randomly generated using the `seed` parameter.
+-   `converter`: The converter to be used by the `exams` package to convert the exercise Rmarkdown files.
+-   `exercise_dir`: The path to the directory containing the exercise Rmarkdown file.
+-   `exercise_file`: The name of the exercise Rmarkdown file.
+-   `data_dir`: The path to the directory containing the data files.
+-   `temp_dir`: The name of the directory storing temporary files. If not present, the directory will be created. **Warning:** All files in the temporary directory will be deleted when the code is run!
+-   `out_basename`: The base name of the output files.
+-   `out_type`: The type of the output files. Can be either `html` for a preview in the browser or `xml` for import into Moodle.
 
 ::: callout-tip
 When generating exercises for a course, it is recommended to set the seed to a fixed value and note it down. At the start of each semester, a new seed should be set to ensure that the exercises are different from the previous semester.
@@ -56,18 +56,16 @@ When generating exercises for a course, it is recommended to set the seed to a f
 
 The conversion script is structured as follows:
 
-1. Load the `exams` package.
-2. Set the encoding/locale to German UTF-8.
-3. Load the exercise config file.
-4. Set the seed for the random number generator.
-5. Create the temporary directory, which **will be deleted** after the code is run.
-6. Generate the exercise in the desired format.
+1.  Load the `exams` package.
+2.  Set the encoding/locale to German UTF-8.
+3.  Load the exercise config file.
+4.  Set the seed for the random number generator.
+5.  Create the temporary directory, which **will be deleted** after the code is run.
+6.  Generate the exercise in the desired format.
 
 ## HTML preview
 
-::: div callout-info
-The HTML preview of the exercise is not interactive and uses a different styling. The preview looks different from the exercises in Moodle, but can be used to check the content of the exercise.
-:::
+::: div callout-info The HTML preview of the exercise is not interactive and uses a different styling. The preview looks different from the exercises in Moodle, but can be used to check the content of the exercise. :::
 
 If the `out_type` parameter is set to `html`, an HTML preview will be generated which will open in the default browser. Intermediary files are stored in the temporary directory, which are deleted after the preview is generated.
 

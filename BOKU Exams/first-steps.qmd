@@ -4,7 +4,7 @@ title: "First Steps"
 
 # Purpose of R/exams
 
-R/exams is used to automatically generate and evaluate exam questions. see here for more info about R and R/exams ?????
+R/exams is used to automatically generate and evaluate exam questions. See here for more info about R and R/exams ?????
 
 At BOKU, it is used by the Institute for Statistics in several courses. Homework, review exercises and exams in the form of paper exams, as well as online quizes on BOKUlearn are all created with R/exams. Currently this is mostly used for (introductory) courses for statistics, however, the application is not limited to statistical applications at all.
 
@@ -40,28 +40,21 @@ R/exams does not only have statistical applications, the look of the exam is ent
 
 ## How can R/exams prohibit cheating?
 
-With R/exams it is possible to create a (very) large number of different versions of the same exam. (see ???? conversion) Slight automatic alterations lead to an individualized exam for each student. For example, this can be used to be able to use the same materials for different exercise groups or to prohibit cheating by having slighty different questions for each student.
+With R/exams it is possible to create a (very) large number of different versions of the same exam. (see ???? conversion) Slight automatic alterations lead to an individualized exam for each student. For example, this can be used to be able to use the same materials for different exercise groups or to prohibit cheating by having slightly different questions for each student.
 
 ## In what ways can an exam be individualized?
 
-changing text/context/stories
+There are multiple ways of individualizing an exam, for example dynamically changing the (con)text of the questions. This is also particularly useful when creating exams used for multiple study programs at BOKU in order to have tailored exams for each of them.
 
-this can also be used for tailoring the exam across programs at BOKU
+Numbers or data can also be randomly sampled, meaning each student will get individual results.
 
-changing data/numbers
-
-creating a pool of true/false statements -\> randomly drawn
-
-different answer options for single/mutiple choice
+It is also possible to create a pool of True/False statements which are then randomly drawn when creating an exam. In addition, the answer options for multiple choice questions can be individualized in a similar way. \
+For implementations and tutorials see ????
 
 ## How can the exams be corrected?
 
-Different methods for different output formats
+For each output format, there is a different method for correcting the exams.
 
-moodle -\> automatic correction, solution imported
+For Moodle quizzes, the correct solutions are imported automatically as well, meaning they are graded automatically. The allocation of points can also be adjusted using R/exams. See ????
 
-pdf: solutions, also possible to scan answer sheets for mchoice schoice
-
-see correction methods moodle ????
-
-see correction methods PDF etc.
+For pdf exams, an answer sheet is provided, but it is also possible to automatically grade scans of the students' multiple choice exams using R/exams. See ????

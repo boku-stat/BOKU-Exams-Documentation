@@ -1,23 +1,34 @@
 ---
-title: "R and R/exams"
+title: "R, RStudio and R/exams"
 ---
 
-This will give general information on the R/exams package and links to existing documentation.
+This page gives a bit more general information about R, RStudio and R/exams, however in general the documentation focuses on the parts of R/exams that are relevant for creating the exams at BOKU. It is by no mean comprehensive and there already exists a lot of documentation for R, RStudio and R/exams.
 
-R is an open source software
+# R
 
-statistical applications
+R is an open source software and freely available for all common platforms. It has many statistical applications, but is also used in various other fields. There are many extra packages that can easily be installed from CRAN (Comprehensive R Archive Network), where a lot of packages are maintained.
 
-many extra packages that can easily be installed
+Download R [here from CRAN](https://cran.r-project.org).
 
-Rstudio IDE
+See [how to install R and RStudio](https://statistik.boku.ac.at/stat-lehre/doku.php?id=statistik_mit_r:rstudio:rstudio_installation:start).
 
-Exams is a package used for automatically generating and evaluating exams.
+How to install packages like `R/exams:`
 
-Link to CRAN:
+``` r
+install.packages("package_name") #insert the name of the package instead of package_name
 
-developed by ....
+install.packages("exams") #install the exams package 
+library(exams) #loads the contents of the package to make them available 
+```
 
-a lot of possibilities, with existing documentation, also stack overflow
+# RStudio
 
-this documentation focuses on the use at BOKU and the parts of R/exams that are used by the Institute of Statistics
+RStudio is an integrated development environment (IDE) for R. An IDE is useful for writing and editing code, as it includes additional windows besides the console where both code and results are printed, such as an editing window, a help page, a viewer for plots and many more. All in all, it makes writing in R more comfortable and helps to keep an overview.
+
+Download Rstudio [here](https://posit.co/download/rstudio-desktop/).
+
+# R/exams
+
+The R/exams package is used for automatically generating and evaluating exams. It was developed by Achim Zeileis.
+
+It can be found at CRAN [here](https://cran.r-project.org/package=exams).

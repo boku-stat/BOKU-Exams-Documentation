@@ -1,0 +1,8 @@
+```{r data generation, echo = FALSE, results = "hide"}
+answers <- list()
+solutions <- list()
+types <- list()
+explanations <- list() 
+tolerances <- list()
+### fill in lists here 
+```

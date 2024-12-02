@@ -1,0 +1,61 @@
+```{r data generation, echo = FALSE, results = "hide"}
+# empty lists for answers, questions, types, explanations and tolerances
+answers <- list()
+solutions <- list()
+types <- list()
+explanations <- list()
+tolerances <- list()
+
+### fill in lists here 
+```
+
+# Question
+
+*Write the question text here*
+
+```{r questionlist, echo = FALSE, results = "asis"}
+for (x in 1:length(types)) {
+  if (types[x] %in% c("num", "string")) { # num and string questions do not have answer options given (opposed to schoice/mchoice questions -> "" as placeholders)
+    answers[x] <- ""
+  }
+}
+answerlist(unlist(answers), markup = "markdown") # answerlist for exams2html/exams2moodle created from answers list
+```
+
+# Solution
+
+*Write the feedback here*
+
+```{r solutionlist, echo = FALSE, results = "asis"}
+# feedback format changed from TRUE/FALSE in a vector to strings "True" and "False"
+for (x in 1:length(solutions)) {
+  if (types[x] == "schoice") { # only applicable for schoice/mchoice questions
+    explanations[x] <- solutions[x] |> lapply(function(x) ifelse(x, "True", "False"))
+  } else {
+    explanations[x] <- solutions[x]
+  }
+}
+
+answerlist(unlist(explanations), markup = "markdown") # answerlist for exams2html/exams2moodle created from solutions/explanations list -> feedback
+```
+
+```{r meta, echo = FALSE, results = 'hide'}
+# change solution format from TRUE/FALSE vector to 1/0 string
+for (x in 1:length(solutions)) {
+  if (types[x] == "schoice") { # only applicable for schoice/mchoice questions
+    solutions[x] <- solutions[x] |>
+      unlist() |>
+      mchoice2string()
+  }
+}
+```
+
+# Meta-information
+exname: *write a name here* 
+extitle: *write a title here* 
+extype: cloze 
+exsolution: `r paste(solutions, collapse = "|")` 
+exclozetype: `r paste(types, collapse = "|")` 
+extol: `r paste(tolerances, collapse = "|")` 
+exshuffle: TRUE 
+exversion: v1

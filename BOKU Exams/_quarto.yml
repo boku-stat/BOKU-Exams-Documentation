@@ -4,7 +4,7 @@ project:
 website:
   title: "BOKU Exams"
   page-footer:
-    center: "<b>This documenation is currently in development and not complete. </b>"
+    center: "<b>This documentation is currently in development and not complete. </b>"
     background: info
     
 
@@ -32,6 +32,8 @@ website:
           
       - section: R-file 
         contents: 
+        - href: structure-R.qmd
+          text: Structure of the .R-file 
         - href: conversion.qmd
           text: Conversion of .Rmd-file 
           
