@@ -2,73 +2,78 @@
 title: "Conversion of an .Rmd-file"
 ---
 
-!!! WARNING - Outdated !!!
-
-TODO: for now, the script `10_kontingenztafel_erstellen.Rmd` is the only one that is up to date like it is described here. The other scripts need to be updated to the new structure.
-
-The directory of each exercise contains an Rmarkdown file called `exname_erstellen.Rmd`, where `exname` is the name of that exercise. The code chunks in this file can be executed to generate HTML previews of the exercise or XML files which can be imported into Moodle.
-
-# Basic structure
-
--   Setup
--   Parameters
--   HTML preview
--   XML generation
--   \[Checking the distribution of drawn subsets\]
-
-To generate the exercises, set the parameters in the `parameters` code chunk and run the `generate` code chunk to create the XML files ready for import into Moodle. To first preview a single exercises in HTML format, run the `preview` code chunk.
-
-For a more detailed explanation of the structure, see the following sections.
-
-## Setup
-
-::: callout-note
-Run this code chunk once before any of the others.
+::: callout-caution
+For now, the script `10_kontingenztafel_conversion.R` is the only one that is up to date like it is described here. The other scripts need to be updated to the new structure.
 :::
 
-This code chunk does not require any edits by the user.
+The directory of each exercise contains an R script called `exname_conversion.R`, where `exname` is the name of that exercise. This script can be run to generate HTML previews of the exercise or XML files which can be imported into Moodle. Parameters for converting the exercises (e.g., the seed, number of copies, and paths to the exercise and data files) are set in the config file of the exercise, `exname_config.R`, which can be found in the directory of each exercise.
 
-When executed, the `exams` library is loaded. R will try to automatically set the working directory to the source file location. If this fails and the paths to the exercise files cannot be found, this must be done manually.
+If no specific story is selected, the conversion script will cycle through all stories of the selected programs and generate an exercise for each story. The number of exercises generated is determined by the `copies` parameter.
 
-For correctly displaying mathematical expressions and tables, `pandoc` is set to be used by the `exams` package to convert the exercise files to HTML.
-
-In some exercises, the localization and encoding might be set to German UTF-8 to ensure that special characters are displayed correctly.
-
-## Parameters
-
-::: callout-note
-Run this code chunk once after setup or when using new parameters.
+::: callout-tip
+Set the `copies` parameter to a multiple of the number of subsets to ensure that each subset is drawn an equal number of times.
 :::
 
-This code chunk contains the parameters set by the users to generate the exercises.
+By default, HTML previews of the exercises are opened in the default browser. The XML files are stored in the exercise's root directory.
 
-First, a seed must be set. This ensures that the same set of exercises is generated each time the code is run.
+# Basic workflow
+
+::: callout-note
+You must have R and optionally RStudio installed on your computer to run the R scripts. Within R, the `exams` package must be installed. [This section](first-steps.qmd) explains how to install R, RStudio, and the `exams` package.
+:::
+
+To generate the exercises in HTML or XML format, there are two options:
+
+1. Run the R script in RStudio by opening the script and clicking the "Run" button.
+2. Run the R script in the terminal by executing `Rscript exname_conversion.R` in the directory of the exercise.
+
+::: callout-tip
+In case of an error that the file was not found, you might need to set the working directory to the directory of the exercise. This can be done by executing `setwd("path/to/exercise")` in the R console or using the "Session" -> "Set Working Directory" -> "To Source File Location" option in RStudio.
+:::
+
+## Setting the parameters
+
+In the exercise config file `exname_config.R`, the parameters for generating the exercises are set. The following parameters are available:
+
+- `seed`: A seed for the random number generator. This ensures that the same **set of exercises** is generated each time the code is run.
+- `copies`: The number of times the exercise should be generated when using the XML format. If parts of the exercise are randomized (e.g., drawing from a distribution or a random subset), each copy will be randomly generated. However, the seed ensures that always the same set of randomized exercises is generated.
+- `program`: Select one or more programs from which the stories will be drawn. See the file containing the stories for the available programs. `NULL` will use all programs.
+- `story`: Select a specific story to be used. `NULL` will randomly select a story from the selected programs.
+- `exercise_seed`: A seed for the random number generator within the exercise. This ensures that the same specific exercise is generated each time the code is run. If `NULL`, the seed will be randomly generated using the `seed` parameter.
+- `converter`: The converter to be used by the `exams` package to convert the exercise Rmarkdown files.
+- `exercise_dir`: The path to the directory containing the exercise Rmarkdown file.
+- `exercise_file`: The name of the exercise Rmarkdown file.
+- `data_dir`: The path to the directory containing the data files.
+- `temp_dir`: The name of the directory storing temporary files. If not present, the directory will be created. **Warning:** All files in the temporary directory will be deleted when the code is run!
+- `out_basename`: The base name of the output files.
+- `out_type`: The type of the output files. Can be either `html` for a preview in the browser or `xml` for import into Moodle.
 
 ::: callout-tip
 When generating exercises for a course, it is recommended to set the seed to a fixed value and note it down. At the start of each semester, a new seed should be set to ensure that the exercises are different from the previous semester.
 :::
 
-Then, the number of times the exercise should be generated is set with the `copies` parameter. If parts of the exercise are randomized (e.g., drawing from a distribution or a random subset), each copy will be randomly generated. However, the seed ensures that always the same set of randomized exercises is generated.
+# Structure of the conversion script
 
-The paths to the directories containing the exercise and data files must each be set, as well as the name of the exercise file. The name of the directory storing temporary files must also be set. If not present, the directory will be created.
+The conversion script is structured as follows:
 
-::: callout-warning
-All files in the temporary directory will be deleted when the code is run!
-:::
-
-Finally, the base name of the output files is set.
+1. Load the `exams` package.
+2. Set the encoding/locale to German UTF-8.
+3. Load the exercise config file.
+4. Set the seed for the random number generator.
+5. Create the temporary directory, which **will be deleted** after the code is run.
+6. Generate the exercise in the desired format.
 
 ## HTML preview
 
-The `preview` code chunk generates an HTML preview of the exercise, which will open in the default browser. Intermediary files are stored in the temporary directory, which are deleted after the preview is generated and prior to that (in case an error interrupted the process and removal of temporary files).
+::: div callout-info
+The HTML preview of the exercise is not interactive and uses a different styling. The preview looks different from the exercises in Moodle, but can be used to check the content of the exercise.
+:::
 
-Information about the generated exercise are stored in the `exinfo` object in the R workspace. This object can be inspected to check the exercise's metadata.
+If the `out_type` parameter is set to `html`, an HTML preview will be generated which will open in the default browser. Intermediary files are stored in the temporary directory, which are deleted after the preview is generated.
 
 ## XML generation
 
-The `generate` code chunk generates the XML files for the exercises. The XML files are stored in the exercise's root directory. Intermediary files are stored in the temporary directory, which are deleted after the preview is generated and prior to that (in case an error interrupted the process and removal of temporary files).
-
-Information about the generated exercises are stored in the `exinfo` object in the R workspace. This object can be inspected to check the exercise's metadata, or be analyzed further, e. g. to plot the distribution of answers if the exercise utilizes randomization.
+If the `out_type` parameter is set to `xml`, an XML file will be generated which can be imported into Moodle. The XML files are stored in the exercise's root directory with the `out_basename`. Intermediary files are stored in the temporary directory, which are deleted after the preview is generated.
 
 ### Passing external parameters
 
@@ -76,10 +81,4 @@ The number of exercise copies specified by the `copies` parameter will be genera
 
 The function takes the exercise file and the external variables as arguments. It then saves an temporary Rmarkdown file of the exercise with the external parameters set. The list of these temporary files is then passed to the `exams2moodle()` function to generate the XML files.
 
-### Checking the distribution of drawn subsets
-
-To make sure that the proportions of the drawn subsets are equal, the `plot-distribution` code chunk can be run. It will show a barplot of the number of times each subset was drawn.
-
-::: callout-tip
-The number of copies should be set to a multiple of the number of subsets to ensure that each subset is drawn an equal number of times.
-:::
+If the `copies` parameter is a multiple of the number of stories, each story will be drawn an equal number of times.
