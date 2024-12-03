@@ -9,7 +9,8 @@ tolerances <- list()
 ### fill in lists here 
 ```
 
-# Question
+Question
+========
 
 *Write the question text here*
 
@@ -22,7 +23,8 @@ for (x in 1:length(types)) {
 answerlist(unlist(answers), markup = "markdown") # answerlist for exams2html/exams2moodle created from answers list
 ```
 
-# Solution
+Solution
+========
 
 *Write the feedback here*
 

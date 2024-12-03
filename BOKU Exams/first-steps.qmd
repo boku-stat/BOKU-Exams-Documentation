@@ -48,7 +48,7 @@ There are multiple ways of individualizing an exam, for example dynamically chan
 
 Numbers or data can also be randomly sampled, meaning each student will get individual results.
 
-It is also possible to create a pool of True/False statements which are then randomly drawn when creating an exam. In addition, the answer options for multiple choice questions can be individualized in a similar way. \
+It is also possible to create a pool of True/False statements which are then randomly drawn when creating an exam. In addition, the answer options for multiple choice questions can be individualized in a similar way.\
 For implementations and tutorials see ????
 
 ## How can the exams be corrected?

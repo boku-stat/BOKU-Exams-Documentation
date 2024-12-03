@@ -22,6 +22,7 @@ for (x in 1:length(types)) {
 }
 answerlist(unlist(answers), markup = "markdown")
 ```
+
 Solution
 ========
 
@@ -48,7 +49,8 @@ for (x in 1:length(solutions)) {
 }
 ```
 
-# Meta-information
+Meta-information
+========
 exname: *write a name here*
 extitle: *write a title here*
 extype: cloze

@@ -22,6 +22,7 @@ for (x in 1:length(types)) {
 }
 answerlist(unlist(answers), markup = "markdown")
 ```
+
 Solution
 ========
 
@@ -48,12 +49,11 @@ for (x in 1:length(solutions)) {
 }
 ```
 
-# Meta-information
-exname: *write a name here*
-extitle: *write a title here*
-extype: cloze
-exsolution: `r paste(solutions, collapse = "|")`
-exclozetype: `r paste(types, collapse = "|")`
-extol: `r paste(tolerances, collapse = "|")`
-exshuffle: TRUE
+Meta-information
+======== \ exname: *write a name here* \ extitle: *write a title here* 
+extype: cloze 
+exsolution: `r paste(solutions, collapse = "|")` 
+exclozetype: `r paste(types, collapse = "|")` 
+extol: `r paste(tolerances, collapse = "|")` 
+exshuffle: TRUE 
 exversion: v1
