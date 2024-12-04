@@ -45,6 +45,11 @@ website:
       - href: faq.qmd 
         text: FAQ
         
+      - href: download.qmd
+        text: Download Template
+
+
+        
         
         
         
@@ -63,6 +68,7 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
+    
 
 editor: visual
 

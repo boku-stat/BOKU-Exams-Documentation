@@ -5,7 +5,23 @@ types <- list()
 explanations <- list() 
 tolerances <- list()
 
-### fill in lists here
+answers[[1]] <- 
+solutions[[1]] <- 
+types[[1]] <- 
+explanations[[1]] <- 
+tolerances[[1]] <- 
+
+answers[[2]] <- 
+solutions[[2]] <- 
+types[[2]] <- 
+explanations[[2]] <- 
+tolerances[[2]] <- 
+
+answers[[3]] <- 
+solutions[[3]] <- 
+types[[3]] <- 
+explanations[[3]] <- 
+tolerances[[3]] <- 
 
 ```
 
@@ -51,11 +67,12 @@ for (x in 1:length(solutions)) {
 
 Meta-information
 ========
-exname: *write a name here*
-extitle: *write a title here*
-extype: cloze
-exsolution: `r paste(solutions, collapse = "|")`
-exclozetype: `r paste(types, collapse = "|")`
-extol: `r paste(tolerances, collapse = "|")`
-exshuffle: TRUE
+
+exname: *write a name here* 
+extitle: *write a title here* 
+extype: cloze 
+exsolution: `r paste(solutions, collapse = "|")` 
+exclozetype: `r paste(types, collapse = "|")` 
+extol: `r paste(tolerances, collapse = "|")` 
+exshuffle: TRUE 
 exversion: v1

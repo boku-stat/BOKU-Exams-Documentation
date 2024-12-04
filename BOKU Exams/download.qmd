@@ -1,5 +1,13 @@
-#shiny ui 
+---
+title: "Download Template"
+filters:
+  - shinylive
+---
+
+```{shinylive-r}
+#| standalone: true
 library(shiny)
+library(bslib)
 
 source("test template.R", local = TRUE)
 
@@ -27,3 +35,4 @@ server <- function(input, output, session){
 }
 
 shinyApp(ui, server)
+```
