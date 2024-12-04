@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/first-steps.html</loc>
-    <lastmod>2024-12-02T16:31:28.161Z</lastmod>
+    <lastmod>2024-12-03T16:21:40.137Z</lastmod>
   </url>
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/add-ons.html</loc>
@@ -17,20 +17,24 @@
     <lastmod>2024-11-06T14:49:35.660Z</lastmod>
   </url>
   <url>
-    <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/structure-Rmd.html</loc>
-    <lastmod>2024-11-20T13:40:17.553Z</lastmod>
-  </url>
-  <url>
-    <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/ideas.html</loc>
-    <lastmod>2024-12-02T16:35:27.348Z</lastmod>
+    <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/index.html</loc>
+    <lastmod>2024-12-02T16:35:28.104Z</lastmod>
   </url>
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/conversion.html</loc>
     <lastmod>2024-12-02T17:59:39.284Z</lastmod>
   </url>
   <url>
-    <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/index.html</loc>
-    <lastmod>2024-12-02T16:35:28.104Z</lastmod>
+    <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/ideas.html</loc>
+    <lastmod>2024-12-02T16:35:27.348Z</lastmod>
+  </url>
+  <url>
+    <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/structure-Rmd.html</loc>
+    <lastmod>2024-11-20T13:40:17.553Z</lastmod>
+  </url>
+  <url>
+    <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/download.html</loc>
+    <lastmod>2024-12-04T15:57:40.842Z</lastmod>
   </url>
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/faq.html</loc>

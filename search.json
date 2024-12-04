@@ -109,6 +109,80 @@
     "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BOKU Exams",
+    "section": "",
+    "text": "Documentation for R/exams at BOKU.\n\nLast updated: 2024-12-04",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "conversion.html",
+    "href": "conversion.html",
+    "title": "Conversion of an .Rmd-file",
+    "section": "",
+    "text": "Caution\n\n\n\nFor now, the script 10_kontingenztafel_conversion.R is the only one that is up to date like it is described here. The other scripts need to be updated to the new structure.\nThe directory of each exercise contains an R script called exname_conversion.R, where exname is the name of that exercise. This script can be run to generate HTML previews of the exercise or XML files which can be imported into Moodle. Parameters for converting the exercises (e.g., the seed, number of copies, and paths to the exercise and data files) are set in the config file of the exercise, exname_config.R, which can be found in the directory of each exercise.\nIf no specific story is selected, the conversion script will cycle through all stories of the selected programs and generate an exercise for each story. The number of exercises generated is determined by the copies parameter.\nBy default, HTML previews of the exercises are opened in the default browser. The XML files are stored in the exercise’s root directory.",
+    "crumbs": [
+      "R-file",
+      "Conversion of .Rmd-file"
+    ]
+  },
+  {
+    "objectID": "conversion.html#setting-the-parameters",
+    "href": "conversion.html#setting-the-parameters",
+    "title": "Conversion of an .Rmd-file",
+    "section": "Setting the parameters",
+    "text": "Setting the parameters\nIn the exercise config file exname_config.R, the parameters for generating the exercises are set. The following parameters are available:\n\nseed: A seed for the random number generator. This ensures that the same set of exercises is generated each time the code is run.\ncopies: The number of times the exercise should be generated when using the XML format. If parts of the exercise are randomized (e.g., drawing from a distribution or a random subset), each copy will be randomly generated. However, the seed ensures that always the same set of randomized exercises is generated.\nprogram: Select one or more programs from which the stories will be drawn. See the file containing the stories for the available programs. NULL will use all programs.\nstory: Select a specific story to be used. NULL will randomly select a story from the selected programs.\nexercise_seed: A seed for the random number generator within the exercise. This ensures that the same specific exercise is generated each time the code is run. If NULL, the seed will be randomly generated using the seed parameter.\nconverter: The converter to be used by the exams package to convert the exercise Rmarkdown files.\nexercise_dir: The path to the directory containing the exercise Rmarkdown file.\nexercise_file: The name of the exercise Rmarkdown file.\ndata_dir: The path to the directory containing the data files.\ntemp_dir: The name of the directory storing temporary files. If not present, the directory will be created. Warning: All files in the temporary directory will be deleted when the code is run!\nout_basename: The base name of the output files.\nout_type: The type of the output files. Can be either html for a preview in the browser or xml for import into Moodle.\n\n\n\n\n\n\n\nTip\n\n\n\nWhen generating exercises for a course, it is recommended to set the seed to a fixed value and note it down. At the start of each semester, a new seed should be set to ensure that the exercises are different from the previous semester.",
+    "crumbs": [
+      "R-file",
+      "Conversion of .Rmd-file"
+    ]
+  },
+  {
+    "objectID": "conversion.html#html-preview",
+    "href": "conversion.html#html-preview",
+    "title": "Conversion of an .Rmd-file",
+    "section": "HTML preview",
+    "text": "HTML preview\n::: div callout-info The HTML preview of the exercise is not interactive and uses a different styling. The preview looks different from the exercises in Moodle, but can be used to check the content of the exercise. :::\nIf the out_type parameter is set to html, an HTML preview will be generated which will open in the default browser. Intermediary files are stored in the temporary directory, which are deleted after the preview is generated.",
+    "crumbs": [
+      "R-file",
+      "Conversion of .Rmd-file"
+    ]
+  },
+  {
+    "objectID": "conversion.html#xml-generation",
+    "href": "conversion.html#xml-generation",
+    "title": "Conversion of an .Rmd-file",
+    "section": "XML generation",
+    "text": "XML generation\nIf the out_type parameter is set to xml, an XML file will be generated which can be imported into Moodle. The XML files are stored in the exercise’s root directory with the out_basename. Intermediary files are stored in the temporary directory, which are deleted after the preview is generated.\n\nPassing external parameters\nThe number of exercise copies specified by the copies parameter will be generated in a loop, using the exams function expar() to pass external parameters to the exercise. For example, the incrementing number of the loop can be passed to the exercise where it is used as index to draw a subset of data. The advantage of this approach is that the subsets are drawn deterministically instead of randomly (which could lead to duplicates or missing subsets).\nThe function takes the exercise file and the external variables as arguments. It then saves an temporary Rmarkdown file of the exercise with the external parameters set. The list of these temporary files is then passed to the exams2moodle() function to generate the XML files.\nIf the copies parameter is a multiple of the number of stories, each story will be drawn an equal number of times.",
+    "crumbs": [
+      "R-file",
+      "Conversion of .Rmd-file"
+    ]
+  },
+  {
+    "objectID": "ideas.html",
+    "href": "ideas.html",
+    "title": "Ideas",
+    "section": "",
+    "text": "This is the page for future ideas and important notes for documentation.\nWriting style (internal)",
+    "crumbs": [
+      "Ideas"
+    ]
+  },
+  {
+    "objectID": "ideas.html#footnotes",
+    "href": "ideas.html#footnotes",
+    "title": "Ideas",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nhttps://stackoverflow.com/questions/78569518/why-is-r-inline-code-not-executed-in-quarto-in-some-situations↩︎",
+    "crumbs": [
+      "Ideas"
+    ]
+  },
+  {
     "objectID": "structure-Rmd.html",
     "href": "structure-Rmd.html",
     "title": "Structure of an .Rmd-file",
@@ -164,77 +238,13 @@
     ]
   },
   {
-    "objectID": "ideas.html",
-    "href": "ideas.html",
-    "title": "Ideas",
+    "objectID": "download.html",
+    "href": "download.html",
+    "title": "Download Template",
     "section": "",
-    "text": "This is the page for future ideas and important notes for documentation.\nWriting style (internal)",
+    "text": "#| '!! shinylive warning !!': |\n#|   shinylive does not work in self-contained HTML documents.\n#|   Please set `embed-resources: false` in your metadata.\n#| standalone: true\nlibrary(shiny)\nlibrary(bslib)\n\nsource(\"test template.R\", local = TRUE)\n\nui &lt;- fluidPage(\n  textInput(\"filename\", \"Please provide a filename\"),\n  numericInput(\"n\", \"Number of Questions\", value = NULL, min = 0), \n  downloadButton(\"download\", \"Download Template\")\n)\n\nserver &lt;- function(input, output, session){\n  \n    output$download &lt;- downloadHandler(\n      filename = function(){\n        paste0(input$filename, \".Rmd\")\n      },\n      content = function(file){\n        write(basic_template(n = input$n), file = file)\n      }\n    )\n    \n    session$onSessionEnded(function() {\n      stopApp()\n    })\n  \n}\n\nshinyApp(ui, server)",
     "crumbs": [
-      "Ideas"
-    ]
-  },
-  {
-    "objectID": "ideas.html#footnotes",
-    "href": "ideas.html#footnotes",
-    "title": "Ideas",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nhttps://stackoverflow.com/questions/78569518/why-is-r-inline-code-not-executed-in-quarto-in-some-situations↩︎",
-    "crumbs": [
-      "Ideas"
-    ]
-  },
-  {
-    "objectID": "conversion.html",
-    "href": "conversion.html",
-    "title": "Conversion of an .Rmd-file",
-    "section": "",
-    "text": "Caution\n\n\n\nFor now, the script 10_kontingenztafel_conversion.R is the only one that is up to date like it is described here. The other scripts need to be updated to the new structure.\nThe directory of each exercise contains an R script called exname_conversion.R, where exname is the name of that exercise. This script can be run to generate HTML previews of the exercise or XML files which can be imported into Moodle. Parameters for converting the exercises (e.g., the seed, number of copies, and paths to the exercise and data files) are set in the config file of the exercise, exname_config.R, which can be found in the directory of each exercise.\nIf no specific story is selected, the conversion script will cycle through all stories of the selected programs and generate an exercise for each story. The number of exercises generated is determined by the copies parameter.\nBy default, HTML previews of the exercises are opened in the default browser. The XML files are stored in the exercise’s root directory.",
-    "crumbs": [
-      "R-file",
-      "Conversion of .Rmd-file"
-    ]
-  },
-  {
-    "objectID": "conversion.html#setting-the-parameters",
-    "href": "conversion.html#setting-the-parameters",
-    "title": "Conversion of an .Rmd-file",
-    "section": "Setting the parameters",
-    "text": "Setting the parameters\nIn the exercise config file exname_config.R, the parameters for generating the exercises are set. The following parameters are available:\n\nseed: A seed for the random number generator. This ensures that the same set of exercises is generated each time the code is run.\ncopies: The number of times the exercise should be generated when using the XML format. If parts of the exercise are randomized (e.g., drawing from a distribution or a random subset), each copy will be randomly generated. However, the seed ensures that always the same set of randomized exercises is generated.\nprogram: Select one or more programs from which the stories will be drawn. See the file containing the stories for the available programs. NULL will use all programs.\nstory: Select a specific story to be used. NULL will randomly select a story from the selected programs.\nexercise_seed: A seed for the random number generator within the exercise. This ensures that the same specific exercise is generated each time the code is run. If NULL, the seed will be randomly generated using the seed parameter.\nconverter: The converter to be used by the exams package to convert the exercise Rmarkdown files.\nexercise_dir: The path to the directory containing the exercise Rmarkdown file.\nexercise_file: The name of the exercise Rmarkdown file.\ndata_dir: The path to the directory containing the data files.\ntemp_dir: The name of the directory storing temporary files. If not present, the directory will be created. Warning: All files in the temporary directory will be deleted when the code is run!\nout_basename: The base name of the output files.\nout_type: The type of the output files. Can be either html for a preview in the browser or xml for import into Moodle.\n\n\n\n\n\n\n\nTip\n\n\n\nWhen generating exercises for a course, it is recommended to set the seed to a fixed value and note it down. At the start of each semester, a new seed should be set to ensure that the exercises are different from the previous semester.",
-    "crumbs": [
-      "R-file",
-      "Conversion of .Rmd-file"
-    ]
-  },
-  {
-    "objectID": "conversion.html#html-preview",
-    "href": "conversion.html#html-preview",
-    "title": "Conversion of an .Rmd-file",
-    "section": "HTML preview",
-    "text": "HTML preview\n::: div callout-info The HTML preview of the exercise is not interactive and uses a different styling. The preview looks different from the exercises in Moodle, but can be used to check the content of the exercise. :::\nIf the out_type parameter is set to html, an HTML preview will be generated which will open in the default browser. Intermediary files are stored in the temporary directory, which are deleted after the preview is generated.",
-    "crumbs": [
-      "R-file",
-      "Conversion of .Rmd-file"
-    ]
-  },
-  {
-    "objectID": "conversion.html#xml-generation",
-    "href": "conversion.html#xml-generation",
-    "title": "Conversion of an .Rmd-file",
-    "section": "XML generation",
-    "text": "XML generation\nIf the out_type parameter is set to xml, an XML file will be generated which can be imported into Moodle. The XML files are stored in the exercise’s root directory with the out_basename. Intermediary files are stored in the temporary directory, which are deleted after the preview is generated.\n\nPassing external parameters\nThe number of exercise copies specified by the copies parameter will be generated in a loop, using the exams function expar() to pass external parameters to the exercise. For example, the incrementing number of the loop can be passed to the exercise where it is used as index to draw a subset of data. The advantage of this approach is that the subsets are drawn deterministically instead of randomly (which could lead to duplicates or missing subsets).\nThe function takes the exercise file and the external variables as arguments. It then saves an temporary Rmarkdown file of the exercise with the external parameters set. The list of these temporary files is then passed to the exams2moodle() function to generate the XML files.\nIf the copies parameter is a multiple of the number of stories, each story will be drawn an equal number of times.",
-    "crumbs": [
-      "R-file",
-      "Conversion of .Rmd-file"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "BOKU Exams",
-    "section": "",
-    "text": "Documentation for R/exams at BOKU.\n\nLast updated: 2024-12-02",
-    "crumbs": [
-      "Home"
+      "Download Template"
     ]
   },
   {
