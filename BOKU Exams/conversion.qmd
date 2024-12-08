@@ -27,8 +27,8 @@ To generate the exercises in HTML or XML format, there are two options:
 1.  Run the R script in RStudio by opening the script and clicking the "Run" button.
 2.  Run the R script in the terminal by executing `Rscript exname_conversion.R` in the directory of the exercise.
 
-::: callout-tip
-In case of an error that the file was not found, you might need to set the working directory to the directory of the exercise. This can be done by executing `setwd("path/to/exercise")` in the R console or using the "Session" -\> "Set Working Directory" -\> "To Source File Location" option in RStudio.
+::: callout-note
+In case of an error that the file was not found, you might need to set the working directory to the directory of the exercise. This can be done by executing `setwd("path/to/exercise")` in the R console or using the "Session" → "Set Working Directory" → "To Source File Location" option in RStudio.
 :::
 
 ## Setting the parameters
@@ -65,7 +65,9 @@ The conversion script is structured as follows:
 
 ## HTML preview
 
-::: div callout-info The HTML preview of the exercise is not interactive and uses a different styling. The preview looks different from the exercises in Moodle, but can be used to check the content of the exercise. :::
+::: callout-note 
+The HTML preview of the exercise is not interactive and uses a different styling. The preview looks different from the exercises in Moodle, but can be used to check the content of the exercise. 
+:::
 
 If the `out_type` parameter is set to `html`, an HTML preview will be generated which will open in the default browser. Intermediary files are stored in the temporary directory, which are deleted after the preview is generated.
 
