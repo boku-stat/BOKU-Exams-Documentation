@@ -1,0 +1,74 @@
+```{r data generation, echo = FALSE, results = "hide"}
+answers <- list()
+solutions <- list()
+types <- list()
+explanations <- list() 
+tolerances <- list()
+
+answers[[1]] <- 
+solutions[[1]] <- 
+types[[1]] <- "numeric"
+explanations[[1]] <- 
+tolerances[[1]] <- 
+
+answers[[2]] <- 
+solutions[[2]] <- 
+types[[2]] <- "single choice"
+explanations[[2]] <- 
+tolerances[[2]] <- 
+
+
+
+```
+
+Question
+========
+
+*Write the question text here*
+
+```{r questionlist, echo = FALSE, results = "asis"}
+for (x in 1:length(types)) {
+	if (types[x] %in% c("num", "string")) {
+		answers[x] <- ""
+	}
+}
+answerlist(unlist(answers), markup = "markdown")
+```
+
+Solution
+========
+
+*Write the feedback here*
+
+```{r solutionlist, echo = FALSE, results = "asis"}  
+for (x in 1:length(solutions)) {  
+  if (types[x] == "schoice") {
+    explanations[x] <- solutions[x] |> lapply(function(x) ifelse(x, "True", "False"))  
+  } else {  
+    explanations[x] <- solutions[x]  
+  }  
+}  
+answerlist(unlist(explanations), markup = "markdown")  
+```
+
+```{r meta, echo = FALSE, results = 'hide'}
+for (x in 1:length(solutions)) {
+  if (types[x] == "schoice") {
+    solutions[x] <- solutions[x] |>
+      unlist() |>
+      mchoice2string()
+  }
+}
+```
+
+Meta-information
+========
+
+exname: *write a name here* 
+extitle: *write a title here* 
+extype: cloze 
+exsolution: `r paste(solutions, collapse = "|")` 
+exclozetype: `r paste(types, collapse = "|")` 
+extol: `r paste(tolerances, collapse = "|")` 
+exshuffle: TRUE 
+exversion: v1

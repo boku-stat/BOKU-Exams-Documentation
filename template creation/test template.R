@@ -1,13 +1,13 @@
 # create an automatic .Rmd template for R/exams -> later integration into website with adjustable parameters?
 
-# basic tempalte  generation
-basic_template <- function(n = NULL){
+# basic template  generation
+basic_template <- function(n, meta_name, meta_title, meta_version, types = NULL, ex_type){
   header <- "\`\`\`{r data generation, echo = FALSE, results = \"hide\"}\n"
   lists <- "answers <- list()\nsolutions <- list()\ntypes <- list()\nexplanations <- list() \ntolerances <- list()\n\n"
   lists_assignment <- NULL
   if(!is.null(n)){ 
     for(i in 1:n){
-      lists_assignment <- paste0(lists_assignment, "answers[[", i, "]] <- \nsolutions[[", i, "]] <- \ntypes[[", i,"]] <- \nexplanations[[", i, "]] <- \ntolerances[[", i, "]] <- \n\n")
+      lists_assignment <- paste0(lists_assignment, "answers[[", i, "]] <- \nsolutions[[", i, "]] <- \ntypes[[", i,"]] <- \"", types[i], "\"", "\nexplanations[[", i, "]] <- \ntolerances[[", i, "]] <- \n\n")
       end <- "\n\n\`\`\`\n\n"
     }
   }else{
@@ -28,11 +28,12 @@ basic_template <- function(n = NULL){
   
   content <- paste0(content, solution, solution_list, meta_list)
   
-  metainfo <- "Meta-information\n========\n\nexname: *write a name here* \nextitle: *write a title here* \nextype: cloze \nexsolution: \`r paste(solutions, collapse = \"|\")\` \nexclozetype: \`r paste(types, collapse = \"|\")\` \nextol: \`r paste(tolerances, collapse = \"|\")\` \nexshuffle: TRUE \nexversion: v1"
+  metainfo <- paste0("Meta-information\n========\n\nexname: ", meta_name, " \nextitle: ", meta_title, " \nextype: ", ex_type, "\nexsolution: \`r paste(solutions, collapse = \"|\")\` \nexclozetype: \`r paste(types, collapse = \"|\")\` \nextol: \`r paste(tolerances, collapse = \"|\")\` \nexshuffle: TRUE \nexversion: ", meta_version) 
   
   content <- paste0(content, metainfo) 
   return(content)
 }
+
 
 
 
