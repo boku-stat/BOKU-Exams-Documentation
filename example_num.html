@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Creation of the .Rmd file – BOKU Exams</title>
+<title>example_num – BOKU Exams</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -66,6 +66,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -79,7 +108,9 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./structure-Rmd.html">Rmd-file</a></li><li class="breadcrumb-item"><a href="./creation-Rmd.html">Creation of the .Rmd-file</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      BOKU Exams
+      </li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -162,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./creation-Rmd.html" class="sidebar-item-text sidebar-link active">
+  <a href="./creation-Rmd.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Creation of the .Rmd-file</span></a>
   </div>
 </li>
@@ -242,39 +273,70 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#question" id="toc-question" class="nav-link active" data-scroll-target="#question">Question</a>
+  <ul class="collapse">
+  <li><a href="#answerlist" id="toc-answerlist" class="nav-link" data-scroll-target="#answerlist">Answerlist</a></li>
+  </ul></li>
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution">Solution</a>
+  <ul class="collapse">
+  <li><a href="#answerlist-1" id="toc-answerlist-1" class="nav-link" data-scroll-target="#answerlist-1">Answerlist</a></li>
+  </ul></li>
+  <li><a href="#meta-information" id="toc-meta-information" class="nav-link" data-scroll-target="#meta-information">Meta-information</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./structure-Rmd.html">Rmd-file</a></li><li class="breadcrumb-item"><a href="./creation-Rmd.html">Creation of the .Rmd-file</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Creation of the .Rmd file</h1>
+
+
+
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Paket 'exams' wurde unter R Version 4.3.1 erstellt</code></pre>
 </div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>this section contains info on how to subset the lists in the rmd-file</p>
+</div>
+<section id="question" class="level1">
+<h1>Question</h1>
+<p><em>Question 1</em></p>
+<p>What is the atomic number of hydrogen in the periodic table? ##ANSWER1##</p>
+<p><em>Question 2</em></p>
+<p>Calculate the molar mass of water (<span class="math inline">\(H_2O\)</span>). Use the following molar masses:</p>
 <ul>
-<li><p>subsetting</p></li>
-<li><p>what type of content needs to be in the lists</p></li>
-<li><p>limitations</p></li>
+<li><p>Hydrogen (<span class="math inline">\(H\)</span>): 1.008 <span class="math inline">\(g/mol\)</span></p></li>
+<li><p>Oxygen (<span class="math inline">\(O\)</span>): 16 <span class="math inline">\(g/mol\)</span></p></li>
 </ul>
+<p>Provide your answer in grams per mole (<span class="math inline">\(g/mol\)</span>). ##ANSWER2##</p>
+<section id="answerlist" class="level2">
+<h2 class="anchored" data-anchor-id="answerlist">Answerlist</h2>
+<ul>
+<li></li>
+<li></li>
+</ul>
+</section>
+</section>
+<section id="solution" class="level1">
+<h1>Solution</h1>
+<section id="answerlist-1" class="level2">
+<h2 class="anchored" data-anchor-id="answerlist-1">Answerlist</h2>
+<ul>
+<li>The atomic number of hydrogen is <span class="math inline">\(1\)</span> because it has one proton in its nucleus.</li>
+<li>The molar mass of H2O is calculated by adding the molar masses of two hydrogen atoms and one oxygen atom.</li>
+</ul>
+<p><span class="math inline">\(M_{H_{2}O} = 2 \cdot M_H + M_O = 2 \cdot 1.008 + 16 = 18.016\)</span> (g/mol)</p>
+</section>
+</section>
+<section id="meta-information" class="level1">
+<h1>Meta-information</h1>
+<p>exname: example_num extitle: molmass of water extype: cloze exsolution: 1|18.016 exclozetype: num|num extol: 0|0.5 exshuffle: TRUE exversion: v1</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

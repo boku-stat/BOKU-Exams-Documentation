@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Creation of the .Rmd file – BOKU Exams</title>
+<title>Example 2 – BOKU Exams</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -38,6 +72,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-a22b2360445850eff3e0a1e9554f39c8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/downloadthis-1.9.1/downloadthis.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -79,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./structure-Rmd.html">Rmd-file</a></li><li class="breadcrumb-item"><a href="./creation-Rmd.html">Creation of the .Rmd-file</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./example1.html">Examples</a></li><li class="breadcrumb-item"><a href="./example2.html">Example 2</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -162,7 +197,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./creation-Rmd.html" class="sidebar-item-text sidebar-link active">
+  <a href="./creation-Rmd.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Creation of the .Rmd-file</span></a>
   </div>
 </li>
@@ -231,7 +266,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./example2.html" class="sidebar-item-text sidebar-link">
+  <a href="./example2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Example 2</span></a>
   </div>
 </li>
@@ -242,15 +277,24 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#creating-the-list-structure" id="toc-creating-the-list-structure" class="nav-link active" data-scroll-target="#creating-the-list-structure">Creating the List Structure</a></li>
+  <li><a href="#question-section" id="toc-question-section" class="nav-link" data-scroll-target="#question-section">Question Section</a></li>
+  <li><a href="#solution-section" id="toc-solution-section" class="nav-link" data-scroll-target="#solution-section">Solution Section</a></li>
+  <li><a href="#meta-information-section" id="toc-meta-information-section" class="nav-link" data-scroll-target="#meta-information-section">Meta Information Section</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./structure-Rmd.html">Rmd-file</a></li><li class="breadcrumb-item"><a href="./creation-Rmd.html">Creation of the .Rmd-file</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./example1.html">Examples</a></li><li class="breadcrumb-item"><a href="./example2.html">Example 2</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Creation of the .Rmd file</h1>
+<h1 class="title">Example 2</h1>
 </div>
 
 
@@ -267,14 +311,110 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>this section contains info on how to subset the lists in the rmd-file</p>
-<ul>
-<li><p>subsetting</p></li>
-<li><p>what type of content needs to be in the lists</p></li>
-<li><p>limitations</p></li>
-</ul>
+<p>This is an exercise containing two text questions.</p>
+<p>The whole example can be downloaded here:</p>
+<p><a href="#dnldts18020" onclick="fetch('data:text/plain;base64,YGBge3IgYW5zd2Vycy9zb2x1dGlvbnMsIGVjaG8gPSBGQUxTRSwgcmVzdWx0cyA9ICJoaWRlIn0NCmxpYnJhcnkoZXhhbXMpDQojIEluaXRpYWxpemUgbGlzdHMgZm9yIHRoZSBxdWVzdGlvbnMsIGFuc3dlcnMsIHNvbHV0aW9ucywgdHlwZXMsIGV4cGxhbmF0aW9ucyAodG9sZXJhbmNlcyBhcmUgbm90IG5lZWRlZCBpZiB0aGVyZSBhcmUgbm8gbnVtZXJpYyBxdWVzdGlvbnMpDQphbnN3ZXJzIDwtIGxpc3QoKQ0Kc29sdXRpb25zIDwtIGxpc3QoKQ0KdHlwZXMgPC0gbGlzdCgpDQpleHBsYW5hdGlvbnMgPC0gbGlzdCgpDQoNCiMgRGVmaW5lIFF1ZXN0aW9uIDE6IGZpcnN0IGVsZW1lbnQgaW4gcGVyaW9kaWMgdGFibGU/DQphbnN3ZXJzW1sxXV0gPC0gIiIgICMgTm8gcHJlZGVmaW5lZCBhbnN3ZXIgZm9yIHN0cmluZw0Kc29sdXRpb25zW1sxXV0gPC0gIkh5ZHJvZ2VuIg0KdHlwZXNbWzFdXSA8LSAic3RyaW5nIg0KZXhwbGFuYXRpb25zW1sxXV0gPC0gIlRoZSBmaXJzdCBlbGVtZW50IGluIHRoZSBwZXJpb2RpYyB0YWJsZSBpcyBIeWRyb2dlbiBiZWNhdXNlIGl0IGhhcyBhbiBhdG9taWMgbnVtYmVyIG9mIDEuIg0KDQojIERlZmluZSBRdWVzdGlvbiAyOiBlbGVtZW50IHdpdGggdGhlIGFiYnJldmlhdGlvbiBPPw0KYW5zd2Vyc1tbMl1dIDwtICIiICAjIE5vIHByZWRlZmluZWQgYW5zd2VyIGZvciBzdHJpbmcNCnNvbHV0aW9uc1tbMl1dIDwtICJPeHlnZW4iDQp0eXBlc1tbMl1dIDwtICJzdHJpbmciDQpleHBsYW5hdGlvbnNbWzJdXSA8LSAiVGhlIGVsZW1lbnQgd2l0aCB0aGUgYWJicmV2aWF0aW9uIE8gaXMgT3h5Z2VuLCBhIGNydWNpYWwgZWxlbWVudCBmb3IgcmVzcGlyYXRpb24gYW5kIHdhdGVyLiINCmBgYA0KDQpRdWVzdGlvbg0KPT09PT09PT0NCipRdWVzdGlvbnMgMSoNCg0KV2hhdCBpcyB0aGUgbmFtZSBvZiB0aGUgZmlyc3QgZWxlbWVudCBpbiB0aGUgcGVyaW9kaWMgdGFibGU/ICMjQU5TV0VSMSMjDQoNCipRdWVzdGlvbiAyKg0KDQpXaGF0IGlzIHRoZSBlbGVtZW50IHdpdGggdGhlIGFiYnJldmlhdGlvbiBPPyAjI0FOU1dFUjIjIw0KDQpgYGB7ciBxdWVzdGlvbmxpc3QsIGVjaG8gPSBGQUxTRSwgcmVzdWx0cyA9ICJhc2lzIn0NCmFuc3dlcmxpc3QodW5saXN0KGFuc3dlcnMpLCBtYXJrdXAgPSAibWFya2Rvd24iKQ0KYGBgDQoNClNvbHV0aW9uDQo9PT09PT09PQ0KYGBge3Igc29sdXRpb25saXN0LCBlY2hvID0gRkFMU0UsIHJlc3VsdHMgPSAiYXNpcyJ9DQphbnN3ZXJsaXN0KHVubGlzdChleHBsYW5hdGlvbnMpLCBtYXJrdXAgPSAibWFya2Rvd24iKQ0KYGBgDQoNCk1ldGEtaW5mb3JtYXRpb24NCj09PT09PT09PT09PT09PT0NCmV4bmFtZTogZXhhbXBsZV9zdHJpbmcNCmV4dGl0bGU6IGVsZW1lbnRzDQpleHR5cGU6IGNsb3plDQpleHNvbHV0aW9uOiBgciBwYXN0ZShzb2x1dGlvbnMsIGNvbGxhcHNlID0gInwiKWANCmV4Y2xvemV0eXBlOiBgciBwYXN0ZSh0eXBlcywgY29sbGFwc2UgPSAifCIpYA0KZXhzaHVmZmxlOiBUUlVFDQpleHZlcnNpb246IHYxDQo=').then(res => res.blob()).then(blob => {
+      const downloadURL = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      document.body.appendChild(a);
+      a.href = downloadURL;
+      a.download = 'string_example.Rmd'; a.click();
+      window.URL.revokeObjectURL(downloadURL);
+      document.body.removeChild(a);
+        });"><button class="btn btn-default downloadthis  " id="dnldts18020"><i class="bi bi-download"></i> Download </button></a></p>
+<section id="creating-the-list-structure" class="level2">
+<h2 class="anchored" data-anchor-id="creating-the-list-structure">Creating the List Structure</h2>
+<p>This section creates and fills the lists which contain the questions, answers, etc.. The <code>answer</code> list is empty, because no answer options are needed for text questions, as they are answered with a string.</p>
+<p>The solution to the question, the type of question, as well as a more elaborate explanation are specified for each question.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The following code has to be placed within a code chunk in the .Rmd-file. See here ?????</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(exams)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Paket 'exams' wurde unter R Version 4.3.1 erstellt</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize lists for the questions, answers, solutions, types, explanations (tolerances are not needed if there are no numeric questions)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>answers <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>solutions <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>types <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>explanations <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Define Question 1: first element in periodic table?</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>answers[[<span class="dv">1</span>]] <span class="ot">&lt;-</span> <span class="st">""</span>  <span class="co"># No predefined answer for string</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>solutions[[<span class="dv">1</span>]] <span class="ot">&lt;-</span> <span class="st">"Hydrogen"</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>types[[<span class="dv">1</span>]] <span class="ot">&lt;-</span> <span class="st">"string"</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>explanations[[<span class="dv">1</span>]] <span class="ot">&lt;-</span> <span class="st">"The first element in the periodic table is Hydrogen because it has an atomic number of 1."</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Define Question 2: element with the abbreviation O?</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>answers[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="st">""</span>  <span class="co"># No predefined answer for string</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>solutions[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="st">"Oxygen"</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>types[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="st">"string"</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>explanations[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="st">"The element with the abbreviation O is Oxygen, a crucial element for respiration and water."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="question-section" class="level2">
+<h2 class="anchored" data-anchor-id="question-section">Question Section</h2>
+<p>The next section contains the question text, including the marked spaces <code>##ANSWERi##</code> for the answer fields and a necessary code section, which does some formating which is required for the later conversion. This is markdown text, which will appear bold/italic/etc. after conversion.</p>
+<p>It also includes a code chunk, which converts the <code>answers</code> list to the necessary format.</p>
+<div class="sourceCode" id="cb4" data-startfrom="22"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown" style="counter-reset: source-line 21;"><span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>Question</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="fu">========</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>*Questions 1*</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>What is the name of the first element in the periodic table? ##ANSWER1##</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>*Question 2*</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>What is the element with the abbreviation O? ##ANSWER2##</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="in">```{r questionlist, echo = FALSE, results = "asis"}</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="in">answerlist(unlist(answers), markup = "markdown")</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="solution-section" class="level2">
+<h2 class="anchored" data-anchor-id="solution-section">Solution Section</h2>
+<p>In this section, additional information and/or the exact solutions can be given. In this case, the information which is stored in the <code>explanations</code> list is pasted here through this code chunk.</p>
+<div class="sourceCode" id="cb5" data-startfrom="36"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown" style="counter-reset: source-line 35;"><span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>Solution</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="fu">========</span></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a><span class="in">```{r solutionlist, echo = FALSE, results = "asis"}</span></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a><span class="in">answerlist(unlist(explanations), markup = "markdown")</span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="meta-information-section" class="level2">
+<h2 class="anchored" data-anchor-id="meta-information-section">Meta Information Section</h2>
+<div class="sourceCode" id="cb6" data-startfrom="42"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown" style="counter-reset: source-line 41;"><span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>Meta-information</span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a><span class="fu">================</span></span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>exname: example_string</span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>extitle: elements</span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>extype: cloze</span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>exsolution: <span class="in">`r paste(solutions, collapse = "|")`</span></span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>exclozetype: <span class="in">`r paste(types, collapse = "|")`</span></span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>exshuffle: TRUE</span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>exversion: v1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Meta-information</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">================</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>exname: example_string</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>extitle: elements</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>extype: cloze</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>exsolution: Hydrogen|Oxygen</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>exclozetype: string|string</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>exshuffle: TRUE</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>exversion: v1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
