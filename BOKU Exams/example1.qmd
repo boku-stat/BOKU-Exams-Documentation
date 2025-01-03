@@ -1,0 +1,125 @@
+---
+title: "Example 1"
+filters:
+   - include-code-files
+   - downloadthis
+---
+
+TODO: description of knitr tags 
+
+
+This is an example about molar masses of hydrogen, oxygen and H~2~0, which contains two numeric questions.
+
+The whole example as an .Rmd-file can be downloaded here: 
+
+{{< downloadthis example_num.Rmd dname="numeric_example" >}} 
+
+After conversion with `R/exams` the exercise looks like this for different output types. 
+
+::: {.panel-tabset}
+
+# HTML 
+![](images/num_html.png)
+
+# PDF 
+![](images/num_pdf.png)
+
+# Moodle
+![](images/num_moodle.png)
+
+::: 
+
+### Data Generation
+
+First is the so-called data generating process. In this case no real data is being generated **within in this code chunk**, it just includes some preparatory work of defining variables and creating the objects needed later.  
+
+For a simple example, giving this process its own section might seem a bit like going overboard, however, once examples become more complex, it is easier to handle this as the first part in a separate section.
+
+::: callout-warning 
+The following code has to be placed within a code chunk in the .Rmd-file. See here ????? 
+:::
+
+```{r data generation, results = "hide"}
+library(exams) #exams package needs to be loaded for all functions to be available 
+
+#atomic number of H
+n_H <- 1
+# Define the molar masses of hydrogen (H) and oxygen (O)
+m_h <- 1.008 # molar mass of hydrogen in g/mol
+m_o <- 16.00 # molar mass of oxygen in g/mol
+
+# Calculate the molar mass of the water molecule (H2O)
+m_h2o <- 2 * m_h + m_o
+```
+
+### Creating the List Structure
+
+The next step is to create and fill the lists needed for creating the exam. This is done **within a code chunk**. (see here and here for a detailed explanation of these processes, here for an explanation of the structure ???? )
+
+First the empty lists are created and then they are filled question by question. Each question can have answer options, however for numeric questions, these are not needed. (see here for single/multiple choice example ?????). A solution is provided for each question using the predefined variables from the data generation section. Using named variables instead of the number itself, gives a better overview and allows for easier adjustment, as only the number in the data generating section has to be adjusted. The type also has to be specified for each question, in this case "num" for numeric. In addition, explanations are also added, these are optional but provide extra information as feedback. The tolerances are set in a separate list as well.
+
+::: callout-warning 
+The following code has to be placed within a code chunk in the .Rmd-file. See here ????? 
+:::
+
+```{r answers/solutions, results = "hide"}
+# Create lists for necessary information
+answers <- list()
+solutions <- list()
+types <- list()
+explanations <- list()
+tolerances <- list()
+
+# Define Question 1: atomic number of hydrogen
+answers[[1]] <- ""  # No answer options needed for numeric questions
+solutions[[1]] <- n_H
+types[[1]] <- "num" #numeric
+explanations[[1]] <- "The atomic number of hydrogen is $1$ because it has one proton in its nucleus."
+tolerances[[1]] <- 0  # No tolerance
+
+# Define Question 2: molar mass of water
+answers[[2]] <- "" # no answer options needed for numeric questions. 
+solutions[[2]] <- m_h2o
+types[[2]] <- "num" 
+explanations[[2]] <- "The molar mass of H2O is calculated by adding the molar masses of two hydrogen atoms and one oxygen atom."
+tolerances[[2]] <- 0.5 # Allow for small rounding errors
+```
+
+### Question Section 
+
+The next section contains the question text, including the marked spaces `##ANSWERi##` for the answer fields and a necessary code section, which does some formating which is required for the later conversion.
+
+```{.markdown include="example_num.Rmd" start-line=36 end-line=55}
+```
+
+### Solution Section 
+
+In this section, additional information and/or the exact solutions can be given. In this case, the explanations from the `explanations` list are pasted here and an additionl formula is provided. 
+
+```{.markdown include="example_num.Rmd" start-line=57 end-line=64}
+```
+
+### Meta Information Section 
+
+This contains the meta information needed for conversion. See here ????? 
+
+The "source code" is written in markdown and contains inline R code. 
+```{.markdown include="example_num.Rmd" start-line=66 end-line=81}
+```
+
+If the "code" above is evaluated, the section looks like this: 
+``` markdown
+Meta-information
+================
+exname: example_num
+extitle: molmass of water 
+extype: cloze
+exsolution: `r paste(solutions, collapse = "|")`
+exclozetype: `r paste(types, collapse = "|")`
+extol: `r paste(tolerances, collapse = "|")`
+exshuffle: TRUE
+exversion: v1
+```
+
+
+

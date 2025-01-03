@@ -1,0 +1,76 @@
+---
+title: "Example 2"
+filters:
+   - include-code-files
+   - downloadthis
+---
+
+This is an exercise containing two text questions.
+
+The whole example can be downloaded here:
+
+{{< downloadthis example_string.Rmd dname="string_example" >}}
+
+## Creating the List Structure 
+This section creates and fills the lists which contain the questions, answers, etc.. The `answer` list is empty, because no answer options are needed for text questions, as they are answered with a string. 
+
+The solution to the question, the type of question, as well as a more elaborate explanation are specified for each question. 
+
+::: callout-warning 
+The following code has to be placed within a code chunk in the .Rmd-file. See here ????? 
+:::
+
+```{r answers/solutions, results = "hide"}
+library(exams)
+# Initialize lists for the questions, answers, solutions, types, explanations (tolerances are not needed if there are no numeric questions)
+answers <- list()
+solutions <- list()
+types <- list()
+explanations <- list()
+
+# Define Question 1: first element in periodic table?
+answers[[1]] <- ""  # No predefined answer for string
+solutions[[1]] <- "Hydrogen"
+types[[1]] <- "string"
+explanations[[1]] <- "The first element in the periodic table is Hydrogen because it has an atomic number of 1."
+
+# Define Question 2: element with the abbreviation O?
+answers[[2]] <- ""  # No predefined answer for string
+solutions[[2]] <- "Oxygen"
+types[[2]] <- "string"
+explanations[[2]] <- "The element with the abbreviation O is Oxygen, a crucial element for respiration and water."
+```
+
+## Question Section 
+
+The next section contains the question text, including the marked spaces `##ANSWERi##` for the answer fields and a necessary code section, which does some formating which is required for the later conversion. This is markdown text, which will appear bold/italic/etc. after conversion. 
+
+It also includes a code chunk, which converts the `answers` list to the necessary format. 
+
+```{.markdown include="example_string.Rmd" start-line=22 end-line=35}
+```
+
+
+## Solution Section 
+
+In this section, additional information and/or the exact solutions can be given. In this case, the information which is stored in the `explanations` list is pasted here through this code chunk. 
+
+```{.markdown include="example_string.Rmd" start-line=36 end-line=41}
+```
+
+## Meta Information Section 
+
+```{.markdown include="example_string.Rmd" start-line=42 end-line=51}
+```
+
+```markdown 
+Meta-information
+================
+exname: example_string
+extitle: elements
+extype: cloze
+exsolution: `r paste(solutions, collapse = "|")`
+exclozetype: `r paste(types, collapse = "|")`
+exshuffle: TRUE
+exversion: v1
+```

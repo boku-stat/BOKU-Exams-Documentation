@@ -16,9 +16,11 @@ The .Rmd is the main file, where all the information about the exercise is conta
 
 The first section Data Generation, is marked by a code chunk, which is different from the other three sections.
 
+````         
 ``` {{r}}
 # code is placed here 
 ```
+````
 
 The other three sections are marked as follows
 
@@ -136,7 +138,7 @@ The section "Solution" can be used to provide solutions in the form of explanati
 
 The `solutions` **list** contains the actual solutions to the questions, which are used for deeming an answer correct/incorrect, however these are **not directly displayed in this section**.
 
-The `explanations` list **holds any information that can be possibly given as feedback**. This can, but does not have to, include the actual solutions, depending on the type of exam one is aiming for. This list is optional, general feedback can be normally written as text in this section. See ???? two sections below 
+The `explanations` list **holds any information that can be possibly given as feedback**. This can, but does not have to, include the actual solutions, depending on the type of exam one is aiming for. This list is optional, general feedback can be normally written as text in this section. See ???? two sections below
 
 ### Actual Solutions as explanations
 
@@ -165,14 +167,14 @@ answerlist(unlist(explanations), markup = "markdown")
 
 ### Other types of explanations
 
-When the desired feedback is any type of text, like in-depth explanations or providing more context, or more technical details like calculation steps, the `explanations` list is not needed. It can simple written as normal text in the .Rmd file under the "Solution" section. 
+When the desired feedback is any type of text, like in-depth explanations or providing more context, or more technical details like calculation steps, the `explanations` list is not needed. It can simple written as normal text in the .Rmd file under the "Solution" section.
 
-Examples of feedback: 
+Examples of feedback:
 
 ::: callout-tip
 ### numeric example
 
-```markdown
+``` markdown
 The correct answer is 7, because there are seven recognized continents on Earth: 
 Africa, Antarctica, Asia, Europe, North America, Oceania (or Australia), and South America.
 ```
@@ -180,7 +182,8 @@ Africa, Antarctica, Asia, Europe, North America, Oceania (or Australia), and Sou
 
 ::: callout-tip
 ### mchoice example
-```markdown
+
+``` markdown
 The correct answers are "A" and "C." 
 Option A is correct because..., and Option C is correct because... 
 Option B, however, is incorrect because .....
@@ -195,16 +198,16 @@ See ???? for more information on how to dynamically display R objects (like seed
 
 This section contains all the information necessary for the conversion from an .Rmd-file to the desired output (HTML, Moodle (xml), pdf, ...) see ???
 
-| Tag        | Description                                                                                      |
-|----------------------|--------------------------------------------------|
-| exname     | name for the exam, should be short and informative                                               |
-| extitle    | longer name for the exam, displayed in Moodle                                                    |
-| extype     | specification of the type of exam, e.g: "cloze"                                                  |
-| exsolution | solutions to the questions                                                                       |
-| extypes    | specification of the types of questions used in the exam                                         |
-| extol      | tolerances used for numeric questions                                                            |
-| exshuffle  | logical or numeric value, if/how answer options for schoice/mchoice questions should be shuffled |
-| exversion  | version of the exam                                                                              |
+| Tag | Description |
+|----------------------|-------------------------------------------------|
+| exname | name for the exam, should be short and informative |
+| extitle | longer name for the exam, displayed in Moodle |
+| extype | specification of the type of exam, e.g: "cloze" |
+| exsolution | solutions to the questions |
+| extypes | specification of the types of questions used in the exam |
+| extol | tolerances used for numeric questions |
+| exshuffle | logical or numeric value, if/how answer options for schoice/mchoice questions should be shuffled |
+| exversion | version of the exam |
 
 : Meta-information
 
@@ -262,11 +265,12 @@ Can be a logical or an integer and determines if or how the answer options are s
 
 Specifies the version of the exam, useful for distinction when altering the .Rmd-file and creating a new set of exercises.
 
-::: callout-tip 
-#### Example 
-This is the meta-information of a very simple exam, containing one numeric question, one single choice and one multiple choice question with three answer options, without any automation using the lists and `paste()`. 
+::: callout-tip
+#### Example
 
- ```markdown 
+This is the meta-information of a very simple exam, containing one numeric question, one single choice and one multiple choice question with three answer options, without any automation using the lists and `paste()`.
+
+``` markdown
 exname: homework_1
 extitle: Homework 1: Topic A  
 extype: cloze
@@ -275,12 +279,13 @@ exclozetype: num|schoice|mchoice
 extol: 0.5|0|0
 exshuffle: TRUE
 exversion: v1
- ```
-::: 
+```
+:::
 
 ### Exemplary structure of the Meta-information
 
 Below is an example of how the "meta-information" section could look with some of the `R/exams` tags explained above, as well as automatic conversion of the `solutions`, `types` and `tolerances` list to the correct format using `paste()`.
+
 
 ``` markdown
 Meta-information

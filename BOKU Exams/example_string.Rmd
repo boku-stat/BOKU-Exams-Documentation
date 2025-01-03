@@ -1,0 +1,50 @@
+```{r answers/solutions, echo = FALSE, results = "hide"}
+library(exams)
+# Initialize lists for the questions, answers, solutions, types, explanations (tolerances are not needed if there are no numeric questions)
+answers <- list()
+solutions <- list()
+types <- list()
+explanations <- list()
+
+# Define Question 1: first element in periodic table?
+answers[[1]] <- ""  # No predefined answer for string
+solutions[[1]] <- "Hydrogen"
+types[[1]] <- "string"
+explanations[[1]] <- "The first element in the periodic table is Hydrogen because it has an atomic number of 1."
+
+# Define Question 2: element with the abbreviation O?
+answers[[2]] <- ""  # No predefined answer for string
+solutions[[2]] <- "Oxygen"
+types[[2]] <- "string"
+explanations[[2]] <- "The element with the abbreviation O is Oxygen, a crucial element for respiration and water."
+```
+
+Question
+========
+*Questions 1*
+
+What is the name of the first element in the periodic table? ##ANSWER1##
+
+*Question 2*
+
+What is the element with the abbreviation O? ##ANSWER2##
+
+```{r questionlist, echo = FALSE, results = "asis"}
+answerlist(unlist(answers), markup = "markdown")
+```
+
+Solution
+========
+```{r solutionlist, echo = FALSE, results = "asis"}
+answerlist(unlist(explanations), markup = "markdown")
+```
+
+Meta-information
+================
+exname: example_string
+extitle: elements
+extype: cloze
+exsolution: `r paste(solutions, collapse = "|")`
+exclozetype: `r paste(types, collapse = "|")`
+exshuffle: TRUE
+exversion: v1

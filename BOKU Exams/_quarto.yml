@@ -17,7 +17,7 @@ website:
       - href: index.qmd
         text: Home
       - href: ideas.qmd
-        text: Ideas
+        text: Notes
       - href: first-steps.qmd
         text: First Steps 
       - href: r-exams.qmd
@@ -45,8 +45,12 @@ website:
       - href: faq.qmd 
         text: FAQ
         
-      - href: download.qmd
-        text: Download Template
+      - section: Examples 
+        contents: 
+        - href: example1.qmd
+          text: Example 1
+        - href: example2.qmd
+          text: Example 2 
 
 
         
@@ -70,5 +74,5 @@ format:
     toc: true
     
 
-editor: visual
+editor: source
 
