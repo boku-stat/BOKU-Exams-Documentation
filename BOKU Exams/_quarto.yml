@@ -48,9 +48,13 @@ website:
       - section: Examples 
         contents: 
         - href: example1.qmd
-          text: Example 1
+          text: Numeric Example
         - href: example2.qmd
-          text: Example 2 
+          text: String Example 
+        - href: example3.qmd 
+          text: Single Choice Example 
+        - href: example4.qmd 
+          text: Multiple Choice Example
 
 
         

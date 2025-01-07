@@ -1,7 +1,121 @@
 ---
 title: "Add-ons of .Rmd-files"
+filters:
+   - include-code-files
 ---
 
 This will describe how to include additional things, e.g: tables, pictures, graphs, csv-files, etc.
 
-## Including inline code
+## Inline R Code
+Inline code can be used to display R objects, which change dynamically, in static text. Instead of manually writing each instance of a resulting number in the text, inline code allows automatic pasting of the number and changes automatically when the corresponding result changes. For example, when providing a result that is calculated using randomly drawn numbers, the displayed number adjusts accordingly based on which numbers are drawn. 
+
+Inline R code is always fenced by backticks (\`) and before the object or function there is always an "r" to mark the language that should be used.
+When put together inline R code looks like this for example: 
+
+```{.markdown include="examples/ex_add.Rmd" start-line=6 end-line=7}
+```
+
+```{r, echo = FALSE}
+#this code chunk is not displayed, needed for definition of mean_data
+mean_data <- mean(c(3, 4, 5, 5, 6, 7, 7)) |> round(digits = 2) 
+```
+
+When the markdown is rendered, this pastes the R variable `mean_data` at the end of the sentence. When `mean_data` is `r mean_data`, it looks like this: 
+
+``` markdown 
+The mean of the data is `r mean_data`. 
+```
+
+::: callout-important 
+All objects called in inline code need to be defined in a code chunk beforehand. In order for the above example to work in an .Rmd file, there needs to be the following chunk before any inline code containing `mean_data`.  
+
+```{.markdown include="examples/ex_add.Rmd" start-line=1 end-line=4}
+```
+::: 
+
+## Tables 
+
+### Manual Creation
+
+The `|` do not need to be vertically aligned, it just makes it more readable when creating the table. 
+
+Inline code can also be included in the table. 
+
+``` markdown 
+| Header 1 | Header 2 | Header 3 | 
+|----------|----------|----------| 
+| x1       | y1       | z1       |
+| x2       | y2       | z2       |
+| x3       | y3       | z3       |
+```
+When rendered, the table looks like this: 
+
+| Header 1 | Header 2 | Header 3 | 
+|----------|----------|----------| 
+| x1       | y1       | z1       |
+| x2       | y2       | z2       |
+| x3       | y3       | z3       |
+
+Columns can also have different alignments marked by `:`. 
+
+```markdown
+| right | left | default | center |
+|------:|:-----|---------|:------:|
+|x1     |y1    |z1       |a1      |
+```
+When rendered it appears like this: 
+
+| right | left | default | center |
+|------:|:-----|---------|:------:|
+|x1|y1|z1|a1|
+
+### Automatic Creation of tables
+
+Using the function `kable()`from the `knitr`package, objects like dataframes or matrices can be converted automatically to a table for display. For example, this code chunk converts the data frame `data` into a markdown table automatically including the column names as headers in this case. 
+
+```{.markdown include="examples/ex_add.Rmd" start-line=15 end-line=17}
+```
+
+The table then looks like this: 
+
+```{r, echo = FALSE}
+height <- sample(seq(157, 196, by = 0.1), size = 5)
+weight <- sample(seq(56, 85, by = 0.1), size = 5) 
+age <- sample(20:50, size = 5)
+data <- data.frame(height, weight, age)
+knitr::kable(data)
+```
+
+
+There are many more (styling) options for markdown tables, see here the help page for kable, `?kable`, and here for more ???? 
+
+## Pictures 
+
+Pictures can be included as well, by using the following syntax: 
+
+``` markdown
+![alt text](path_or_link/to/file)
+```
+
+Using the link to the BOKU logo, this then looks like this (for a specified width): 
+
+![](https://boku.ac.at/fileadmin/data/themen/Marketing/Downloads/BOKU_Hauptlogo_RGB.png){width="40%"}
+
+Additonal parameters, like (relative) height, width, etc. can be specified as well as follows: 
+
+``` markdown
+![alt text](path_or_link/to/file){width="40%"}
+```
+
+See here for more info ?????? 
+
+## Graphs 
+
+## Links 
+
+## .csv-Files 
+
+
+## Markdown options 
+bold, italic, etc 
+

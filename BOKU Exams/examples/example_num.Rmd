@@ -65,4 +65,11 @@ $M_{H_{2}O} = 2 \cdot M_H + M_O = 2 \cdot `r m_h` + `r m_o` = `r m_h2o`$ (g/mol)
 
 Meta-information
 ================
-exname: example_num extitle: molmass of water extype: cloze exsolution: `r paste(solutions, collapse = "|")` exclozetype: `r paste(types, collapse = "|")` extol: `r paste(tolerances, collapse = "|")` exshuffle: TRUE exversion: v1
+exname: example_num 
+extitle: molmass of water 
+extype: cloze 
+exsolution: `r paste(solutions, collapse = "|")` 
+exclozetype: `r paste(types, collapse = "|")` 
+extol: `r paste(tolerances, collapse = "|")` 
+exshuffle: TRUE 
+exversion: v1

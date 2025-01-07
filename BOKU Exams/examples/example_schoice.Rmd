@@ -1,0 +1,72 @@
+```{r answers/solutions, echo = FALSE, results = "hide"} 
+library(exams)
+# Initialize lists for the questions, answers, solutions, types, explanations (tolerances are not needed if there are no numeric questions)
+answers <- list()
+solutions <- list()
+types <- list()
+explanations <- list()
+
+# Define Question 1: What does the term "molar mass" refer to?
+answers[[1]] <- c(
+  "The number of molecules in one mole of a substance",
+  "The mass of one mole of a substance",
+  "The number of atoms in one mole of a substance",
+  "The charge of a mole of ions"
+)
+solutions[[1]] <- explanations[[1]] <- c(FALSE, TRUE, FALSE, FALSE) # The second option is correct
+types[[1]] <- "schoice"
+
+# Define Question 2: Which of the following is the lightest element?
+answers[[2]] <- c("Oxygen", "Hydrogen", "Carbon", "Helium")
+solutions[[2]] <- explanations[[2]] <- c(FALSE, TRUE, FALSE, FALSE) # The second option (Hydrogen) is correct
+types[[2]] <- "schoice"
+```
+
+Question
+========
+*Question 1*
+
+What does the term "molar mass" refer to?
+
+##ANSWER1##
+
+*Question 2*
+
+Which of the following is the lightest element?
+
+##ANSWER2##
+
+```{r questionlist, echo = FALSE, results = "asis"}
+answerlist(unlist(answers), markup = "markdown")
+```
+
+Solution
+========
+*Solution 1*
+
+The molar mass is the mass of one mole of a substance, expressed in grams per mole (g/mol).
+
+*Solution 2*
+
+Hydrogen is the lightest element, with an atomic mass of approximately 1 g/mol.
+
+
+```{r solutionlist, echo = FALSE, results = "asis"}
+# Convert solutions to "True" or "False"
+explanations <- lapply(solutions, function(x) ifelse(x, "True", "False"))
+solutions <- lapply(solutions, mchoice2string)
+
+# Display explanations
+answerlist(unlist(explanations), markup = "markdown")
+```
+
+
+Meta-information
+================
+exname: example_schoice
+extitle: molmass and lightest element
+extype: cloze
+exsolution: `r paste(solutions, collapse = "|")`
+exclozetype: `r paste(types, collapse = "|")`
+exshuffle: TRUE
+exversion: v1

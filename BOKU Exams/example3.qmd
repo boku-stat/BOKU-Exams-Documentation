@@ -1,0 +1,88 @@
+---
+title: "Single Choice Example"
+filters:
+   - include-code-files
+   - downloadthis
+---
+
+TODO: Leerzeilen aus Rmd files löschen und zeilen anpassen 
+
+This is an exercise containing two single choice questions about molar massses. 
+
+The whole example as an .Rmd-file can be downloaded here: 
+
+{{< downloadthis examples/example_schoice.Rmd dname="string_example" >}}
+
+After conversion with `R/exams` the exercise looks like this for different output types. 
+
+## Creating the List Structure  
+
+This section creates and fills the lists which contain the questions, answers, etc.. The `answer` list is empty, because no answer options are needed for text questions, as they are answered with a string. 
+
+The solution to the question, the type of question, as well as a more elaborate explanation are specified for each question. 
+
+::: callout-warning 
+The following code has to be placed within a code chunk in the .Rmd-file. See here ????? 
+:::
+
+```{r answers/solutions, echo = FALSE, results = "hide"} 
+library(exams)
+# Initialize lists for the questions, answers, solutions, types, explanations (tolerances are not needed if there are no numeric questions)
+answers <- list()
+solutions <- list()
+types <- list()
+explanations <- list()
+
+# Define Question 1: What does the term "molar mass" refer to?
+answers[[1]] <- c("The number of molecules in one mole of a substance",
+                                       "The mass of one mole of a substance",
+                                       "The number of atoms in one mole of a substance",
+                                       "The charge of a mole of ions")
+solutions[[1]] <- explanations[[1]] <- c(FALSE, TRUE, FALSE, FALSE)  # The second option is correct
+types[[1]] <- "schoice"
+
+# Define Question 2: Which of the following is the lightest element?
+answers[[2]] <- c("Oxygen", "Hydrogen", "Carbon", "Helium")
+solutions[[2]] <- explanations[[2]] <- c(FALSE, TRUE, FALSE, FALSE)  # The second option (Hydrogen) is correct
+types[[2]] <- "schoice"
+
+```
+
+## Question Section 
+
+The next section contains the question text, including the marked spaces `##ANSWERi##` for the answer fields and a necessary code section, which does some formating which is required for the later conversion. This is markdown text, which will appear bold/italic/etc. after conversion. 
+
+It also includes a code chunk, which converts the `answers` list to the necessary format. 
+
+```{.markdown include="examples/example_schoice.Rmd" start-line=25 end-line=42}
+```
+
+## Solution Section 
+
+In this section, additional information and/or the exact solutions can be given. In this case, there is a more elaborate explanation as a solution for each question. Additionally, the code chunk included below converts the `TRUE` and `FALSE` objects into a more readable format of "True" and "False", however this could be in any other format as well. 
+
+```{.markdown include="examples/example_schoice.Rmd" start-line=43 end-line=62}
+```
+
+## Meta-Information 
+
+This contains the meta information needed for conversion. See here ????? 
+
+The "source code" is written in markdown and contains inline R code.
+
+```{.markdown include="examples/example_schoice.Rmd" start-line=64 end-line=72}
+```
+
+If the "code" above is evaluated, the section looks like this: 
+
+```markdown 
+Meta-information
+================
+exname: example_schoice
+extitle: molmass and lightest element
+extype: cloze
+exsolution: `r paste(solutions, collapse = "|")`
+exclozetype: `r paste(types, collapse = "|")`
+exshuffle: TRUE
+exversion: v1
+```

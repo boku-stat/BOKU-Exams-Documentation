@@ -1,0 +1,17 @@
+```{r}
+#mean is calulcated and rounded to two digits
+mean_data <- mean(c(3, 4, 5, 5, 6, 7, 7)) |> round(digits = 2) 
+```
+
+The mean of the data is `r mean_data`. 
+
+```{r}
+height <- sample(seq(157, 196, by = 0.1), size = 5)
+weight <- sample(seq(56, 85, by = 0.1), size = 5) 
+age <- sample(20:50, size = 5)
+data <- data.frame(height, weight, age)
+```
+
+```{r}
+knitr::kable(data)
+```

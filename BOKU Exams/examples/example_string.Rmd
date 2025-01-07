@@ -21,7 +21,7 @@ explanations[[2]] <- "The element with the abbreviation O is Oxygen, a crucial e
 
 Question
 ========
-*Questions 1*
+*Question 1*
 
 What is the name of the first element in the periodic table? ##ANSWER1##
 
