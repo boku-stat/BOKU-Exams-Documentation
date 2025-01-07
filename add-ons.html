@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -226,13 +260,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./example1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Example 1</span></a>
+ <span class="menu-text">Numeric Example</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./example2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Example 2</span></a>
+ <span class="menu-text">String Example</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Single Choice Example</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multiple Choice Example</span></a>
   </div>
 </li>
       </ul>
@@ -247,7 +293,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#including-inline-code" id="toc-including-inline-code" class="nav-link active" data-scroll-target="#including-inline-code">Including inline code</a></li>
+  <li><a href="#inline-r-code" id="toc-inline-r-code" class="nav-link active" data-scroll-target="#inline-r-code">Inline R Code</a></li>
+  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables">Tables</a>
+  <ul class="collapse">
+  <li><a href="#manual-creation" id="toc-manual-creation" class="nav-link" data-scroll-target="#manual-creation">Manual Creation</a></li>
+  <li><a href="#automatic-creation-of-tables" id="toc-automatic-creation-of-tables" class="nav-link" data-scroll-target="#automatic-creation-of-tables">Automatic Creation of tables</a></li>
+  </ul></li>
+  <li><a href="#pictures" id="toc-pictures" class="nav-link" data-scroll-target="#pictures">Pictures</a></li>
+  <li><a href="#graphs" id="toc-graphs" class="nav-link" data-scroll-target="#graphs">Graphs</a></li>
+  <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Links</a></li>
+  <li><a href="#csv-files" id="toc-csv-files" class="nav-link" data-scroll-target="#csv-files">.csv-Files</a></li>
+  <li><a href="#markdown-options" id="toc-markdown-options" class="nav-link" data-scroll-target="#markdown-options">Markdown options</a></li>
   </ul>
 </nav>
     </div>
@@ -274,8 +330,166 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>This will describe how to include additional things, e.g: tables, pictures, graphs, csv-files, etc.</p>
-<section id="including-inline-code" class="level2">
-<h2 class="anchored" data-anchor-id="including-inline-code">Including inline code</h2>
+<section id="inline-r-code" class="level2">
+<h2 class="anchored" data-anchor-id="inline-r-code">Inline R Code</h2>
+<p>Inline code can be used to display R objects, which change dynamically, in static text. Instead of manually writing each instance of a resulting number in the text, inline code allows automatic pasting of the number and changes automatically when the corresponding result changes. For example, when providing a result that is calculated using randomly drawn numbers, the displayed number adjusts accordingly based on which numbers are drawn.</p>
+<p>Inline R code is always fenced by backticks (`) and before the object or function there is always an “r” to mark the language that should be used. When put together inline R code looks like this for example:</p>
+<div class="sourceCode" id="cb1" data-startfrom="6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown" style="counter-reset: source-line 5;"><span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>The mean of the data is <span class="in">`r mean_data`</span>. </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>When the markdown is rendered, this pastes the R variable <code>mean_data</code> at the end of the sentence. When <code>mean_data</code> is 5.29, it looks like this:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>The mean of the data is 5.29. </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>All objects called in inline code need to be defined in a code chunk beforehand. In order for the above example to work in an .Rmd file, there needs to be the following chunk before any inline code containing <code>mean_data</code>.</p>
+<div class="sourceCode" id="cb3" data-startfrom="1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="in">#mean is calulcated and rounded to two digits</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="in">mean_data &lt;- mean(c(3, 4, 5, 5, 6, 7, 7)) |&gt; round(digits = 2) </span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="tables" class="level2">
+<h2 class="anchored" data-anchor-id="tables">Tables</h2>
+<section id="manual-creation" class="level3">
+<h3 class="anchored" data-anchor-id="manual-creation">Manual Creation</h3>
+<p>The <code>|</code> do not need to be vertically aligned, it just makes it more readable when creating the table.</p>
+<p>Inline code can also be included in the table.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>| Header 1 | Header 2 | Header 3 | </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>|----------|----------|----------| </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>| x1       | y1       | z1       |</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>| x2       | y2       | z2       |</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>| x3       | y3       | z3       |</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>When rendered, the table looks like this:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Header 1</th>
+<th>Header 2</th>
+<th>Header 3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>x1</td>
+<td>y1</td>
+<td>z1</td>
+</tr>
+<tr class="even">
+<td>x2</td>
+<td>y2</td>
+<td>z2</td>
+</tr>
+<tr class="odd">
+<td>x3</td>
+<td>y3</td>
+<td>z3</td>
+</tr>
+</tbody>
+</table>
+<p>Columns can also have different alignments marked by <code>:</code>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>| right | left | default | center |</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>|------:|:-----|---------|:------:|</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>|x1     |y1    |z1       |a1      |</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>When rendered it appears like this:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: right;">right</th>
+<th style="text-align: left;">left</th>
+<th>default</th>
+<th style="text-align: center;">center</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">x1</td>
+<td style="text-align: left;">y1</td>
+<td>z1</td>
+<td style="text-align: center;">a1</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="automatic-creation-of-tables" class="level3">
+<h3 class="anchored" data-anchor-id="automatic-creation-of-tables">Automatic Creation of tables</h3>
+<p>Using the function <code>kable()</code>from the <code>knitr</code>package, objects like dataframes or matrices can be converted automatically to a table for display. For example, this code chunk converts the data frame <code>data</code> into a markdown table automatically including the column names as headers in this case.</p>
+<div class="sourceCode" id="cb6" data-startfrom="15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown" style="counter-reset: source-line 14;"><span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::kable(data)</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The table then looks like this:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">height</th>
+<th style="text-align: right;">weight</th>
+<th style="text-align: right;">age</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">176.9</td>
+<td style="text-align: right;">60.9</td>
+<td style="text-align: right;">24</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">176.4</td>
+<td style="text-align: right;">59.5</td>
+<td style="text-align: right;">46</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">195.3</td>
+<td style="text-align: right;">84.9</td>
+<td style="text-align: right;">45</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">169.2</td>
+<td style="text-align: right;">62.6</td>
+<td style="text-align: right;">43</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">157.2</td>
+<td style="text-align: right;">67.7</td>
+<td style="text-align: right;">28</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>There are many more (styling) options for markdown tables, see here the help page for kable, <code>?kable</code>, and here for more ????</p>
+</section>
+</section>
+<section id="pictures" class="level2">
+<h2 class="anchored" data-anchor-id="pictures">Pictures</h2>
+<p>Pictures can be included as well, by using the following syntax:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="al">![alt text](path_or_link/to/file)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Using the link to the BOKU logo, this then looks like this (for a specified width):</p>
+<p><img src="https://boku.ac.at/fileadmin/data/themen/Marketing/Downloads/BOKU_Hauptlogo_RGB.png" class="img-fluid" style="width:40.0%"></p>
+<p>Additonal parameters, like (relative) height, width, etc. can be specified as well as follows:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="al">![alt text](path_or_link/to/file)</span>{width="40%"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>See here for more info ??????</p>
+</section>
+<section id="graphs" class="level2">
+<h2 class="anchored" data-anchor-id="graphs">Graphs</h2>
+</section>
+<section id="links" class="level2">
+<h2 class="anchored" data-anchor-id="links">Links</h2>
+</section>
+<section id="csv-files" class="level2">
+<h2 class="anchored" data-anchor-id="csv-files">.csv-Files</h2>
+</section>
+<section id="markdown-options" class="level2">
+<h2 class="anchored" data-anchor-id="markdown-options">Markdown options</h2>
+<p>bold, italic, etc</p>
 
 
 </section>
