@@ -1,3 +1,14 @@
 ---
 title: "Structure of an R-file"
 ---
+
+# Basic Form 
+most basic form: 
+script with call to exams2html/exams2moodle etc 
+
+# Advanced 
+
+Options 
+Parameters 
+Preview
+output 

@@ -4,6 +4,9 @@ filters:
    - include-code-files
 ---
 
+TODO: graphs, csv files 
+
+
 This will describe how to include additional things, e.g: tables, pictures, graphs, csv-files, etc.
 
 ## Inline R Code
@@ -111,11 +114,52 @@ See here for more info ??????
 
 ## Graphs 
 
+
 ## Links 
+
+Links to webpages can be included with the following snytax: 
+
+``` markdown
+[alt text](link/to/page)
+```
+
+Taking the example of the CRAN page of the `exams` package, it looks like this in markdown and implemented: 
+
+``` markdown
+Find the exams package [here](https://cran.r-project.org/package=exams). 
+```
+Find the exams package [here](https://cran.r-project.org/package=exams). 
 
 ## .csv-Files 
 
 
-## Markdown options 
-bold, italic, etc 
 
+
+## Markdown options 
+
+For markdown, there are many styling options for text etc. 
+
+A few examples: 
+
+```markdown 
+# Heading 1 
+## Heading 2 
+### Heading 3 
+...
+
+*italic text* 
+**bold text** 
+```
+When rendered, it looks like this: 
+
+# Heading 1 
+## Heading 2 
+### Heading 3 
+...
+
+*italic text* 
+
+**bold text** 
+
+
+More markdown options can be found here ????? 

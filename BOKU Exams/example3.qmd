@@ -11,7 +11,7 @@ This is an exercise containing two single choice questions about molar massses.
 
 The whole example as an .Rmd-file can be downloaded here: 
 
-{{< downloadthis examples/example_schoice.Rmd dname="string_example" >}}
+{{< downloadthis examples/example_schoice.Rmd dname="single_choice_example" >}}
 
 After conversion with `R/exams` the exercise looks like this for different output types. 
 

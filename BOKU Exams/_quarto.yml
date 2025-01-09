@@ -45,7 +45,7 @@ website:
       - href: faq.qmd 
         text: FAQ
         
-      - section: Examples 
+      - section:  Basic Examples 
         contents: 
         - href: example1.qmd
           text: Numeric Example

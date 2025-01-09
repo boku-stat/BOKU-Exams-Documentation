@@ -5,4 +5,19 @@ filters:
    - downloadthis
 ---
 
+The whole example as an .Rmd-file can be downloaded here: 
 
+{{< downloadthis examples/example_mchoice.Rmd dname="multiple_ choice_example" >}}
+
+After conversion with `R/exams` the exercise looks like this for different output types.
+
+tabset panel 
+
+
+# Creating the List Structure 
+
+# Question Section
+
+# Solution Section
+
+# Meta-information Section 

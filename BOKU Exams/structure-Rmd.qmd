@@ -16,8 +16,8 @@ The .Rmd is the main file, where all the information about the exercise is conta
 
 The first section Data Generation, is marked by a code chunk, which is different from the other three sections.
 
-````         
-``` {{r}}
+````markdown      
+```{{r}}
 # code is placed here 
 ```
 ````
