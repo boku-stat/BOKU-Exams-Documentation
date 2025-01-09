@@ -74,7 +74,7 @@
     "href": "add-ons.html",
     "title": "Add-ons of .Rmd-files",
     "section": "",
-    "text": "This will describe how to include additional things, e.g: tables, pictures, graphs, csv-files, etc.",
+    "text": "TODO: graphs, csv files\nThis will describe how to include additional things, e.g: tables, pictures, graphs, csv-files, etc.",
     "crumbs": [
       "Add-ons",
       "Add-ons to .Rmd-files"
@@ -96,7 +96,7 @@
     "href": "add-ons.html#tables",
     "title": "Add-ons of .Rmd-files",
     "section": "Tables",
-    "text": "Tables\n\nManual Creation\nThe | do not need to be vertically aligned, it just makes it more readable when creating the table.\nInline code can also be included in the table.\n| Header 1 | Header 2 | Header 3 | \n|----------|----------|----------| \n| x1       | y1       | z1       |\n| x2       | y2       | z2       |\n| x3       | y3       | z3       |\nWhen rendered, the table looks like this:\n\n\n\nHeader 1\nHeader 2\nHeader 3\n\n\n\n\nx1\ny1\nz1\n\n\nx2\ny2\nz2\n\n\nx3\ny3\nz3\n\n\n\nColumns can also have different alignments marked by :.\n| right | left | default | center |\n|------:|:-----|---------|:------:|\n|x1     |y1    |z1       |a1      |\nWhen rendered it appears like this:\n\n\n\nright\nleft\ndefault\ncenter\n\n\n\n\nx1\ny1\nz1\na1\n\n\n\n\n\nAutomatic Creation of tables\nUsing the function kable()from the knitrpackage, objects like dataframes or matrices can be converted automatically to a table for display. For example, this code chunk converts the data frame data into a markdown table automatically including the column names as headers in this case.\n```{r}\nknitr::kable(data)\n```\nThe table then looks like this:\n\n\n\n\n\nheight\nweight\nage\n\n\n\n\n176.9\n60.9\n24\n\n\n176.4\n59.5\n46\n\n\n195.3\n84.9\n45\n\n\n169.2\n62.6\n43\n\n\n157.2\n67.7\n28\n\n\n\n\n\nThere are many more (styling) options for markdown tables, see here the help page for kable, ?kable, and here for more ????",
+    "text": "Tables\n\nManual Creation\nThe | do not need to be vertically aligned, it just makes it more readable when creating the table.\nInline code can also be included in the table.\n| Header 1 | Header 2 | Header 3 | \n|----------|----------|----------| \n| x1       | y1       | z1       |\n| x2       | y2       | z2       |\n| x3       | y3       | z3       |\nWhen rendered, the table looks like this:\n\n\n\nHeader 1\nHeader 2\nHeader 3\n\n\n\n\nx1\ny1\nz1\n\n\nx2\ny2\nz2\n\n\nx3\ny3\nz3\n\n\n\nColumns can also have different alignments marked by :.\n| right | left | default | center |\n|------:|:-----|---------|:------:|\n|x1     |y1    |z1       |a1      |\nWhen rendered it appears like this:\n\n\n\nright\nleft\ndefault\ncenter\n\n\n\n\nx1\ny1\nz1\na1\n\n\n\n\n\nAutomatic Creation of tables\nUsing the function kable()from the knitrpackage, objects like dataframes or matrices can be converted automatically to a table for display. For example, this code chunk converts the data frame data into a markdown table automatically including the column names as headers in this case.\n```{r}\nknitr::kable(data)\n```\nThe table then looks like this:\n\n\n\n\n\nheight\nweight\nage\n\n\n\n\n175.0\n57.3\n47\n\n\n173.8\n62.5\n43\n\n\n191.5\n60.9\n34\n\n\n169.5\n68.3\n38\n\n\n163.1\n62.6\n33\n\n\n\n\n\nThere are many more (styling) options for markdown tables, see here the help page for kable, ?kable, and here for more ????",
     "crumbs": [
       "Add-ons",
       "Add-ons to .Rmd-files"
@@ -129,7 +129,7 @@
     "href": "add-ons.html#links",
     "title": "Add-ons of .Rmd-files",
     "section": "Links",
-    "text": "Links",
+    "text": "Links\nLinks to webpages can be included with the following snytax:\n[alt text](link/to/page)\nTaking the example of the CRAN page of the exams package, it looks like this in markdown and implemented:\nFind the exams package [here](https://cran.r-project.org/package=exams). \nFind the exams package here.",
     "crumbs": [
       "Add-ons",
       "Add-ons to .Rmd-files"
@@ -151,7 +151,18 @@
     "href": "add-ons.html#markdown-options",
     "title": "Add-ons of .Rmd-files",
     "section": "Markdown options",
-    "text": "Markdown options\nbold, italic, etc",
+    "text": "Markdown options\nFor markdown, there are many styling options for text etc.\nA few examples:\n# Heading 1 \n## Heading 2 \n### Heading 3 \n...\n\n*italic text* \n**bold text** \nWhen rendered, it looks like this:",
+    "crumbs": [
+      "Add-ons",
+      "Add-ons to .Rmd-files"
+    ]
+  },
+  {
+    "objectID": "add-ons.html#heading-2",
+    "href": "add-ons.html#heading-2",
+    "title": "Add-ons of .Rmd-files",
+    "section": "Heading 2",
+    "text": "Heading 2\n\nHeading 3\n…\nitalic text\nbold text\nMore markdown options can be found here ?????",
     "crumbs": [
       "Add-ons",
       "Add-ons to .Rmd-files"
@@ -291,7 +302,7 @@
     "section": "",
     "text": "TODO: Leerzeilen aus Rmd files löschen und zeilen anpassen\nThis is an exercise containing two single choice questions about molar massses.\nThe whole example as an .Rmd-file can be downloaded here:\nDownload\nAfter conversion with R/exams the exercise looks like this for different output types.",
     "crumbs": [
-      "Examples",
+      "Basic Examples",
       "Single Choice Example"
     ]
   },
@@ -302,7 +313,7 @@
     "section": "Creating the List Structure",
     "text": "Creating the List Structure\nThis section creates and fills the lists which contain the questions, answers, etc.. The answer list is empty, because no answer options are needed for text questions, as they are answered with a string.\nThe solution to the question, the type of question, as well as a more elaborate explanation are specified for each question.\n\n\n\n\n\n\nWarning\n\n\n\nThe following code has to be placed within a code chunk in the .Rmd-file. See here ?????",
     "crumbs": [
-      "Examples",
+      "Basic Examples",
       "Single Choice Example"
     ]
   },
@@ -313,7 +324,7 @@
     "section": "Question Section",
     "text": "Question Section\nThe next section contains the question text, including the marked spaces ##ANSWERi## for the answer fields and a necessary code section, which does some formating which is required for the later conversion. This is markdown text, which will appear bold/italic/etc. after conversion.\nIt also includes a code chunk, which converts the answers list to the necessary format.\nQuestion\n========\n*Question 1*\n\nWhat does the term \"molar mass\" refer to?\n\n##ANSWER1##\n\n*Question 2*\n\nWhich of the following is the lightest element?\n\n##ANSWER2##\n\n```{r questionlist, echo = FALSE, results = \"asis\"}\nanswerlist(unlist(answers), markup = \"markdown\")\n```",
     "crumbs": [
-      "Examples",
+      "Basic Examples",
       "Single Choice Example"
     ]
   },
@@ -324,7 +335,7 @@
     "section": "Solution Section",
     "text": "Solution Section\nIn this section, additional information and/or the exact solutions can be given. In this case, there is a more elaborate explanation as a solution for each question. Additionally, the code chunk included below converts the TRUE and FALSE objects into a more readable format of “True” and “False”, however this could be in any other format as well.\nSolution\n========\n*Solution 1*\n\nThe molar mass is the mass of one mole of a substance, expressed in grams per mole (g/mol).\n\n*Solution 2*\n\nHydrogen is the lightest element, with an atomic mass of approximately 1 g/mol.\n\n\n```{r solutionlist, echo = FALSE, results = \"asis\"}\n# Convert solutions to \"True\" or \"False\"\nexplanations &lt;- lapply(solutions, function(x) ifelse(x, \"True\", \"False\"))\nsolutions &lt;- lapply(solutions, mchoice2string)\n\n# Display explanations\nanswerlist(unlist(explanations), markup = \"markdown\")\n```",
     "crumbs": [
-      "Examples",
+      "Basic Examples",
       "Single Choice Example"
     ]
   },
@@ -335,8 +346,19 @@
     "section": "Meta-Information",
     "text": "Meta-Information\nThis contains the meta information needed for conversion. See here ?????\nThe “source code” is written in markdown and contains inline R code.\nMeta-information\n================\nexname: example_schoice\nextitle: molmass and lightest element\nextype: cloze\nexsolution: `r paste(solutions, collapse = \"|\")`\nexclozetype: `r paste(types, collapse = \"|\")`\nexshuffle: TRUE\nexversion: v1\nIf the “code” above is evaluated, the section looks like this:\nMeta-information\n================\nexname: example_schoice\nextitle: molmass and lightest element\nextype: cloze\nexsolution: c(FALSE, TRUE, FALSE, FALSE)|c(FALSE, TRUE, FALSE, FALSE)\nexclozetype: schoice|schoice\nexshuffle: TRUE\nexversion: v1",
     "crumbs": [
-      "Examples",
+      "Basic Examples",
       "Single Choice Example"
+    ]
+  },
+  {
+    "objectID": "example4.html",
+    "href": "example4.html",
+    "title": "Multiple Choice Example",
+    "section": "",
+    "text": "The whole example as an .Rmd-file can be downloaded here:\nAfter conversion with R/exams the exercise looks like this for different output types.\ntabset panel\n\nCreating the List Structure\n\n\nQuestion Section\n\n\nSolution Section\n\n\nMeta-information Section",
+    "crumbs": [
+      "Basic Examples",
+      "Multiple Choice Example"
     ]
   },
   {
@@ -346,7 +368,7 @@
     "section": "",
     "text": "This is an exercise containing two text questions about the periodic table.\nThe whole example as an .Rmd-file can be downloaded here:\nDownload\nAfter conversion with R/exams the exercise looks like this for different output types.",
     "crumbs": [
-      "Examples",
+      "Basic Examples",
       "String Example"
     ]
   },
@@ -357,7 +379,7 @@
     "section": "Creating the List Structure",
     "text": "Creating the List Structure\nThis section creates and fills the lists which contain the questions, answers, etc.. The answer list is empty, because no answer options are needed for text questions, as they are answered with a string.\nThe solution to the question, the type of question, as well as a more elaborate explanation are specified for each question.\n\n\n\n\n\n\nWarning\n\n\n\nThe following code has to be placed within a code chunk in the .Rmd-file. See here ?????\n\n\n\nlibrary(exams)\n# Initialize lists for the questions, answers, solutions, types, explanations (tolerances are not needed if there are no numeric questions)\nanswers &lt;- list()\nsolutions &lt;- list()\ntypes &lt;- list()\nexplanations &lt;- list()\n\n# Define Question 1: first element in periodic table?\nanswers[[1]] &lt;- \"\"  # No predefined answer for string\nsolutions[[1]] &lt;- \"Hydrogen\"\ntypes[[1]] &lt;- \"string\"\nexplanations[[1]] &lt;- \"The first element in the periodic table is Hydrogen because it has an atomic number of 1.\"\n\n# Define Question 2: element with the abbreviation O?\nanswers[[2]] &lt;- \"\"  # No predefined answer for string\nsolutions[[2]] &lt;- \"Oxygen\"\ntypes[[2]] &lt;- \"string\"\nexplanations[[2]] &lt;- \"The element with the abbreviation O is Oxygen, a crucial element for respiration and water.\"",
     "crumbs": [
-      "Examples",
+      "Basic Examples",
       "String Example"
     ]
   },
@@ -368,7 +390,7 @@
     "section": "Question Section",
     "text": "Question Section\nThe next section contains the question text, including the marked spaces ##ANSWERi## for the answer fields and a necessary code section, which does some formating which is required for the later conversion. This is markdown text, which will appear bold/italic/etc. after conversion.\nIt also includes a code chunk, which converts the answers list to the necessary format.\nQuestion\n========\n*Question 1*\n\nWhat is the name of the first element in the periodic table? ##ANSWER1##\n\n*Question 2*\n\nWhat is the element with the abbreviation O? ##ANSWER2##\n\n```{r questionlist, echo = FALSE, results = \"asis\"}\nanswerlist(unlist(answers), markup = \"markdown\")\n```",
     "crumbs": [
-      "Examples",
+      "Basic Examples",
       "String Example"
     ]
   },
@@ -379,7 +401,7 @@
     "section": "Solution Section",
     "text": "Solution Section\nIn this section, additional information and/or the exact solutions can be given. In this case, the information which is stored in the explanations list is pasted here through this code chunk and displayed.\nSolution\n========\n```{r solutionlist, echo = FALSE, results = \"asis\"}\nanswerlist(unlist(explanations), markup = \"markdown\")\n```",
     "crumbs": [
-      "Examples",
+      "Basic Examples",
       "String Example"
     ]
   },
@@ -390,7 +412,7 @@
     "section": "Meta Information Section",
     "text": "Meta Information Section\nThis contains the meta information needed for conversion. See here ?????\nThe “source code” is written in markdown and contains inline R code.\nMeta-information\n================\nexname: example_string\nextitle: elements\nextype: cloze\nexsolution: `r paste(solutions, collapse = \"|\")`\nexclozetype: `r paste(types, collapse = \"|\")`\nexshuffle: TRUE\nexversion: v1\nIf the “code” above is evaluated, the section looks like this:\nMeta-information\n================\nexname: example_string\nextitle: elements\nextype: cloze\nexsolution: Hydrogen|Oxygen\nexclozetype: string|string\nexshuffle: TRUE\nexversion: v1",
     "crumbs": [
-      "Examples",
+      "Basic Examples",
       "String Example"
     ]
   },
@@ -401,7 +423,7 @@
     "section": "",
     "text": "TODO: description of knitr tags\nThis is an example about molar masses of hydrogen, oxygen and H20, which contains two numeric questions.\nThe whole example as an .Rmd-file can be downloaded here:\n Download \nAfter conversion with R/exams the exercise looks like this for different output types.\n\nHTMLPDFMoodle\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Generation\nFirst is the so-called data generating process. In this case no real data is being generated within in this code chunk, it just includes some preparatory work of defining variables and creating the objects needed later.\nFor a simple example, giving this process its own section might seem a bit like going overboard, however, once examples become more complex, it is easier to handle this as the first part in a separate section.\n\n\n\n\n\n\nWarning\n\n\n\nThe following code has to be placed within a code chunk in the .Rmd-file. See here ?????\n\n\n\nlibrary(exams) #exams package needs to be loaded for all functions to be available \n\n#atomic number of H\nn_H &lt;- 1\n# Define the molar masses of hydrogen (H) and oxygen (O)\nm_h &lt;- 1.008 # molar mass of hydrogen in g/mol\nm_o &lt;- 16.00 # molar mass of oxygen in g/mol\n\n# Calculate the molar mass of the water molecule (H2O)\nm_h2o &lt;- 2 * m_h + m_o\n\n\n\nCreating the List Structure\nThe next step is to create and fill the lists needed for creating the exam. This is done within a code chunk. (see here and here for a detailed explanation of these processes, here for an explanation of the structure ???? )\nFirst the empty lists are created and then they are filled question by question. Each question can have answer options, however for numeric questions, these are not needed. (see here for single/multiple choice example ?????). A solution is provided for each question using the predefined variables from the data generation section. Using named variables instead of the number itself, gives a better overview and allows for easier adjustment, as only the number in the data generating section has to be adjusted. The type also has to be specified for each question, in this case “num” for numeric. In addition, explanations are also added, these are optional but provide extra information as feedback. The tolerances are set in a separate list as well.\n\n\n\n\n\n\nWarning\n\n\n\nThe following code has to be placed within a code chunk in the .Rmd-file. See here ?????\n\n\n\n# Create lists for necessary information\nanswers &lt;- list()\nsolutions &lt;- list()\ntypes &lt;- list()\nexplanations &lt;- list()\ntolerances &lt;- list()\n\n# Define Question 1: atomic number of hydrogen\nanswers[[1]] &lt;- \"\"  # No answer options needed for numeric questions\nsolutions[[1]] &lt;- n_H\ntypes[[1]] &lt;- \"num\" #numeric\nexplanations[[1]] &lt;- \"The atomic number of hydrogen is $1$ because it has one proton in its nucleus.\"\ntolerances[[1]] &lt;- 0  # No tolerance\n\n# Define Question 2: molar mass of water\nanswers[[2]] &lt;- \"\" # no answer options needed for numeric questions. \nsolutions[[2]] &lt;- m_h2o\ntypes[[2]] &lt;- \"num\" \nexplanations[[2]] &lt;- \"The molar mass of H2O is calculated by adding the molar masses of two hydrogen atoms and one oxygen atom.\"\ntolerances[[2]] &lt;- 0.5 # Allow for small rounding errors\n\n\n\nQuestion Section\nThe next section contains the question text, including the marked spaces ##ANSWERi## for the answer fields and a necessary code section, which does some formating which is required for the later conversion.\nQuestion\n========\n\n*Question 1*\n\nWhat is the atomic number of hydrogen in the periodic table? ##ANSWER1##\n\n*Question 2*\n\nCalculate the molar mass of water ($H_2O$). Use the following molar masses:\n\n-   Hydrogen ($H$): `r m_h` $g/mol$\n\n-   Oxygen ($O$): `r m_o` $g/mol$\n\nProvide your answer in grams per mole ($g/mol$). ##ANSWER2##\n\n```{r questionlist, echo = FALSE, results = \"asis\"}\nanswerlist(unlist(answers), markup = \"markdown\")\n```\n\n\nSolution Section\nIn this section, additional information and/or the exact solutions can be given. In this case, the explanations from the explanations list are pasted here and an additionl formula is provided.\nSolution\n========\n\n```{r solutionlist, echo = FALSE, results = \"asis\"}\nanswerlist(unlist(explanations), markup = \"markdown\")\n```\n\n$M_{H_{2}O} = 2 \\cdot M_H + M_O = 2 \\cdot `r m_h` + `r m_o` = `r m_h2o`$ (g/mol)\n\n\nMeta Information Section\nThis contains the meta information needed for conversion. See here ?????\nThe “source code” is written in markdown and contains inline R code.\nMeta-information\n================\nexname: example_num \nextitle: molmass of water \nextype: cloze \nexsolution: `r paste(solutions, collapse = \"|\")` \nexclozetype: `r paste(types, collapse = \"|\")` \nextol: `r paste(tolerances, collapse = \"|\")` \nexshuffle: TRUE \nexversion: v1\nIf the “code” above is evaluated, the section looks like this:\nMeta-information\n================\nexname: example_num\nextitle: molmass of water \nextype: cloze\nexsolution: 1|18.016\nexclozetype: num|num\nextol: 0|0.5\nexshuffle: TRUE\nexversion: v1",
     "crumbs": [
-      "Examples",
+      "Basic Examples",
       "Numeric Example"
     ]
   },
@@ -454,7 +476,7 @@
     "href": "index.html",
     "title": "BOKU Exams",
     "section": "",
-    "text": "Documentation for R/exams at BOKU.\n\nLast updated: 2025-01-07",
+    "text": "Documentation for R/exams at BOKU.\n\nLast updated: 2025-01-09",
     "crumbs": [
       "Home"
     ]
@@ -488,7 +510,18 @@
     "href": "examples/ex_add.html",
     "title": "BOKU Exams",
     "section": "",
-    "text": "#mean is calulcated and rounded to two digits\nmean_data &lt;- mean(c(3, 4, 5, 5, 6, 7, 7)) |&gt; round(digits = 2) \n\nThe mean of the data is 5.29.\n\nheight &lt;- sample(seq(157, 196, by = 0.1), size = 5)\nweight &lt;- sample(seq(56, 85, by = 0.1), size = 5) \nage &lt;- sample(20:50, size = 5)\ndata &lt;- data.frame(height, weight, age)\n\n\nknitr::kable(data)\n\n\n\n\nheight\nweight\nage\n\n\n\n\n184.9\n58.1\n33\n\n\n178.2\n71.8\n22\n\n\n165.7\n64.7\n49\n\n\n158.8\n80.4\n23\n\n\n180.4\n77.4\n31"
+    "text": "#mean is calulcated and rounded to two digits\nmean_data &lt;- mean(c(3, 4, 5, 5, 6, 7, 7)) |&gt; round(digits = 2) \n\nThe mean of the data is 5.29.\n\nheight &lt;- sample(seq(157, 196, by = 0.1), size = 5)\nweight &lt;- sample(seq(56, 85, by = 0.1), size = 5) \nage &lt;- sample(20:50, size = 5)\ndata &lt;- data.frame(height, weight, age)\n\n\nknitr::kable(data)\n\n\n\n\nheight\nweight\nage\n\n\n\n\n170.2\n59.3\n30\n\n\n185.8\n70.8\n26\n\n\n169.5\n78.4\n36\n\n\n190.1\n72.1\n49\n\n\n179.0\n83.2\n45"
+  },
+  {
+    "objectID": "structure-R.html",
+    "href": "structure-R.html",
+    "title": "Structure of an R-file",
+    "section": "",
+    "text": "Basic Form\nmost basic form: script with call to exams2html/exams2moodle etc\n\n\nAdvanced\nOptions Parameters Preview output",
+    "crumbs": [
+      "R-file",
+      "Structure of the .R-file"
+    ]
   },
   {
     "objectID": "creation-Rmd.html",

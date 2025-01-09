@@ -251,7 +251,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Examples</span></a>
+ <span class="menu-text">Basic Examples</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -304,6 +304,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Links</a></li>
   <li><a href="#csv-files" id="toc-csv-files" class="nav-link" data-scroll-target="#csv-files">.csv-Files</a></li>
   <li><a href="#markdown-options" id="toc-markdown-options" class="nav-link" data-scroll-target="#markdown-options">Markdown options</a></li>
+  <li><a href="#heading-1" id="toc-heading-1" class="nav-link" data-scroll-target="#heading-1">Heading 1</a>
+  <ul class="collapse">
+  <li><a href="#heading-2" id="toc-heading-2" class="nav-link" data-scroll-target="#heading-2">Heading 2</a>
+  <ul class="collapse">
+  <li><a href="#heading-3" id="toc-heading-3" class="nav-link" data-scroll-target="#heading-3">Heading 3</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -329,6 +336,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p>TODO: graphs, csv files</p>
 <p>This will describe how to include additional things, e.g: tables, pictures, graphs, csv-files, etc.</p>
 <section id="inline-r-code" class="level2">
 <h2 class="anchored" data-anchor-id="inline-r-code">Inline R Code</h2>
@@ -437,29 +445,29 @@ Important
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">176.9</td>
-<td style="text-align: right;">60.9</td>
-<td style="text-align: right;">24</td>
+<td style="text-align: right;">175.0</td>
+<td style="text-align: right;">57.3</td>
+<td style="text-align: right;">47</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">176.4</td>
-<td style="text-align: right;">59.5</td>
-<td style="text-align: right;">46</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">195.3</td>
-<td style="text-align: right;">84.9</td>
-<td style="text-align: right;">45</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">169.2</td>
-<td style="text-align: right;">62.6</td>
+<td style="text-align: right;">173.8</td>
+<td style="text-align: right;">62.5</td>
 <td style="text-align: right;">43</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">157.2</td>
-<td style="text-align: right;">67.7</td>
-<td style="text-align: right;">28</td>
+<td style="text-align: right;">191.5</td>
+<td style="text-align: right;">60.9</td>
+<td style="text-align: right;">34</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">169.5</td>
+<td style="text-align: right;">68.3</td>
+<td style="text-align: right;">38</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">163.1</td>
+<td style="text-align: right;">62.6</td>
+<td style="text-align: right;">33</td>
 </tr>
 </tbody>
 </table>
@@ -483,15 +491,42 @@ Important
 </section>
 <section id="links" class="level2">
 <h2 class="anchored" data-anchor-id="links">Links</h2>
+<p>Links to webpages can be included with the following snytax:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">alt text</span><span class="co">](link/to/page)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Taking the example of the CRAN page of the <code>exams</code> package, it looks like this in markdown and implemented:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>Find the exams package <span class="co">[</span><span class="ot">here</span><span class="co">](https://cran.r-project.org/package=exams)</span>. </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Find the exams package <a href="https://cran.r-project.org/package=exams">here</a>.</p>
 </section>
 <section id="csv-files" class="level2">
 <h2 class="anchored" data-anchor-id="csv-files">.csv-Files</h2>
 </section>
 <section id="markdown-options" class="level2">
 <h2 class="anchored" data-anchor-id="markdown-options">Markdown options</h2>
-<p>bold, italic, etc</p>
+<p>For markdown, there are many styling options for text etc.</p>
+<p>A few examples:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Heading 1 </span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## Heading 2 </span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">### Heading 3 </span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>*italic text* </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>**bold text** </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>When rendered, it looks like this:</p>
+</section>
+<section id="heading-1" class="level1">
+<h1>Heading 1</h1>
+<section id="heading-2" class="level2">
+<h2 class="anchored" data-anchor-id="heading-2">Heading 2</h2>
+<section id="heading-3" class="level3">
+<h3 class="anchored" data-anchor-id="heading-3">Heading 3</h3>
+<p>…</p>
+<p><em>italic text</em></p>
+<p><strong>bold text</strong></p>
+<p>More markdown options can be found here ?????</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
