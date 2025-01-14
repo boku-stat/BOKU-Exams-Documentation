@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -66,6 +100,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -254,8 +317,26 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#subsetting" id="toc-subsetting" class="nav-link active" data-scroll-target="#subsetting">Subsetting</a>
+  <ul class="collapse">
+  <li><a href="#accessing-elements" id="toc-accessing-elements" class="nav-link" data-scroll-target="#accessing-elements">Accessing Elements</a></li>
+  <li><a href="#assigning-and-altering-elements" id="toc-assigning-and-altering-elements" class="nav-link" data-scroll-target="#assigning-and-altering-elements">Assigning and Altering Elements</a></li>
+  </ul></li>
+  <li><a href="#content-of-the-lists" id="toc-content-of-the-lists" class="nav-link" data-scroll-target="#content-of-the-lists">Content of the Lists</a>
+  <ul class="collapse">
+  <li><a href="#questions-list" id="toc-questions-list" class="nav-link" data-scroll-target="#questions-list">Questions list</a></li>
+  <li><a href="#solutions-list" id="toc-solutions-list" class="nav-link" data-scroll-target="#solutions-list">Solutions list</a></li>
+  <li><a href="#types" id="toc-types" class="nav-link" data-scroll-target="#types">Types</a></li>
+  <li><a href="#explanations" id="toc-explanations" class="nav-link" data-scroll-target="#explanations">Explanations</a></li>
+  <li><a href="#tolerances" id="toc-tolerances" class="nav-link" data-scroll-target="#tolerances">Tolerances</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -285,8 +366,96 @@ ul.task-list li input[type="checkbox"] {
 <li><p>what type of content needs to be in the lists</p></li>
 <li><p>limitations</p></li>
 </ul>
+<section id="subsetting" class="level1">
+<h1>Subsetting</h1>
+<p>The lists used in the .Rmd to contain the answer options, solutions, etc. can be altered via subsetting.</p>
+<p>The lists can be initialized as empty lists using <code>list()</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>questions <span class="ot">&lt;-</span> <span class="fu">list</span>() </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>solutions <span class="ot">&lt;-</span> <span class="fu">list</span>() </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>types <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>explanations <span class="ot">&lt;-</span> <span class="fu">list</span>() </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>tolerances <span class="ot">&lt;-</span> <span class="fu">list</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="accessing-elements" class="level2">
+<h2 class="anchored" data-anchor-id="accessing-elements">Accessing Elements</h2>
+<p>The different elements of a list can be accessed using two square brackets <code>[[]]</code>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There are other ways of accessing elements in a list, such as <code>[]</code>and <code>$</code>, however for simplicity reasons, this documentation focuses on <code>[[]]</code>. The other two have their own applications, which are not necessary for using <code>R/exams</code> in the way it is described here.</p>
+</div>
+</div>
+<p>For example, this accesses the first element of the <code>questions</code> list.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>questions[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Accessing multiple elements:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>questions[[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)]] <span class="co">#1st, 3rd, 5th element </span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>questions[[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]] <span class="co">#1st to 5th element </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="assigning-and-altering-elements" class="level2">
+<h2 class="anchored" data-anchor-id="assigning-and-altering-elements">Assigning and Altering Elements</h2>
+<p>When elements are accessed, they can also be altered.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>solutions[[<span class="dv">1</span>]] <span class="ot">&lt;-</span> <span class="dv">5</span> <span class="co">#first element of the answer list is 5 </span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>solutions[[<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>)]] <span class="ot">&lt;-</span> <span class="st">"A"</span> <span class="co">#2nd and 4th answer is "A"</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>tolerances[[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]] <span class="ot">&lt;-</span> <span class="dv">0</span> <span class="co">#Tolerances for all questions are 0. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Please note that the examples in this section should only show the necessary syntax and are not taken from a real example.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="content-of-the-lists" class="level1">
+<h1>Content of the Lists</h1>
+<p>Using the example of an exercise containing one numeric and one multiple choice question, this section will explain what type of content is put into the lists.</p>
+<section id="questions-list" class="level2">
+<h2 class="anchored" data-anchor-id="questions-list">Questions list</h2>
+<p>Although this list is named questions, actually the answer options for single/multiple choice questions are contained here.</p>
+<p>The exemplary questions are: - What is the correct symbol for gold in the periodic table? - Please calculate the standard deviation <span class="math inline">\(\sigma\)</span>, when the variance is <span class="math inline">\(\sigma^2 = 2,59\)</span>.</p>
+<p>These questions will be pasted in the <strong>question text section</strong> directly in the .Rmd-file.</p>
+<p>So the three answer options for the single choice question would be for example: “Ti”, “Au” and “Ag”, which are stored in the <code>questions</code> list.</p>
+<p>For the numeric question, no answer options are needed, therefore an empty string <code>""</code> is placed there instead. (When creating larger exams with many numeric questions, this can be done automatically for all questions at once, see here ???? )</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>questions[[<span class="dv">1</span>]] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Ti"</span>, <span class="st">"Au"</span>, <span class="st">"Ag"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>questions[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="st">""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="solutions-list" class="level2">
+<h2 class="anchored" data-anchor-id="solutions-list">Solutions list</h2>
+<p>The <code>solutions</code> list contains the solutions to the questions.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>solutions[[<span class="dv">1</span>]] <span class="ot">&lt;-</span> <span class="st">"Au"</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>soltuions[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fl">2.59</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="types" class="level2">
+<h2 class="anchored" data-anchor-id="types">Types</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>types[[<span class="dv">1</span>]] <span class="ot">&lt;-</span> <span class="st">"schoice"</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>types[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="st">"num"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="explanations" class="level2">
+<h2 class="anchored" data-anchor-id="explanations">Explanations</h2>
+</section>
+<section id="tolerances" class="level2">
+<h2 class="anchored" data-anchor-id="tolerances">Tolerances</h2>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

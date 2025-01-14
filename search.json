@@ -96,7 +96,7 @@
     "href": "add-ons.html#tables",
     "title": "Add-ons of .Rmd-files",
     "section": "Tables",
-    "text": "Tables\n\nManual Creation\nThe | do not need to be vertically aligned, it just makes it more readable when creating the table.\nInline code can also be included in the table.\n| Header 1 | Header 2 | Header 3 | \n|----------|----------|----------| \n| x1       | y1       | z1       |\n| x2       | y2       | z2       |\n| x3       | y3       | z3       |\nWhen rendered, the table looks like this:\n\n\n\nHeader 1\nHeader 2\nHeader 3\n\n\n\n\nx1\ny1\nz1\n\n\nx2\ny2\nz2\n\n\nx3\ny3\nz3\n\n\n\nColumns can also have different alignments marked by :.\n| right | left | default | center |\n|------:|:-----|---------|:------:|\n|x1     |y1    |z1       |a1      |\nWhen rendered it appears like this:\n\n\n\nright\nleft\ndefault\ncenter\n\n\n\n\nx1\ny1\nz1\na1\n\n\n\n\n\nAutomatic Creation of tables\nUsing the function kable()from the knitrpackage, objects like dataframes or matrices can be converted automatically to a table for display. For example, this code chunk converts the data frame data into a markdown table automatically including the column names as headers in this case.\n```{r}\nknitr::kable(data)\n```\nThe table then looks like this:\n\n\n\n\n\nheight\nweight\nage\n\n\n\n\n175.0\n57.3\n47\n\n\n173.8\n62.5\n43\n\n\n191.5\n60.9\n34\n\n\n169.5\n68.3\n38\n\n\n163.1\n62.6\n33\n\n\n\n\n\nThere are many more (styling) options for markdown tables, see here the help page for kable, ?kable, and here for more ????",
+    "text": "Tables\n\nManual Creation\nThe | do not need to be vertically aligned, it just makes it more readable when creating the table.\nInline code can also be included in the table.\n| Header 1 | Header 2 | Header 3 | \n|----------|----------|----------| \n| x1       | y1       | z1       |\n| x2       | y2       | z2       |\n| x3       | y3       | z3       |\nWhen rendered, the table looks like this:\n\n\n\nHeader 1\nHeader 2\nHeader 3\n\n\n\n\nx1\ny1\nz1\n\n\nx2\ny2\nz2\n\n\nx3\ny3\nz3\n\n\n\nColumns can also have different alignments marked by :.\n| right | left | default | center |\n|------:|:-----|---------|:------:|\n|x1     |y1    |z1       |a1      |\nWhen rendered it appears like this:\n\n\n\nright\nleft\ndefault\ncenter\n\n\n\n\nx1\ny1\nz1\na1\n\n\n\n\n\nAutomatic Creation of tables\nUsing the function kable()from the knitrpackage, objects like dataframes or matrices can be converted automatically to a table for display. For example, this code chunk converts the data frame data into a markdown table automatically including the column names as headers in this case.\n```{r}\nknitr::kable(data)\n```\nThe table then looks like this:\n\n\n\n\n\nheight\nweight\nage\n\n\n\n\n179.1\n65.4\n37\n\n\n187.1\n74.6\n48\n\n\n162.4\n65.5\n23\n\n\n170.2\n77.9\n47\n\n\n184.4\n59.1\n33\n\n\n\n\n\nThere are many more (styling) options for markdown tables, see here the help page for kable, ?kable, and here for more ????",
     "crumbs": [
       "Add-ons",
       "Add-ons to .Rmd-files"
@@ -476,7 +476,7 @@
     "href": "index.html",
     "title": "BOKU Exams",
     "section": "",
-    "text": "Documentation for R/exams at BOKU.\n\nLast updated: 2025-01-09",
+    "text": "Documentation for R/exams at BOKU.\n\nLast updated: 2025-01-14",
     "crumbs": [
       "Home"
     ]
@@ -510,14 +510,14 @@
     "href": "examples/ex_add.html",
     "title": "BOKU Exams",
     "section": "",
-    "text": "#mean is calulcated and rounded to two digits\nmean_data &lt;- mean(c(3, 4, 5, 5, 6, 7, 7)) |&gt; round(digits = 2) \n\nThe mean of the data is 5.29.\n\nheight &lt;- sample(seq(157, 196, by = 0.1), size = 5)\nweight &lt;- sample(seq(56, 85, by = 0.1), size = 5) \nage &lt;- sample(20:50, size = 5)\ndata &lt;- data.frame(height, weight, age)\n\n\nknitr::kable(data)\n\n\n\n\nheight\nweight\nage\n\n\n\n\n170.2\n59.3\n30\n\n\n185.8\n70.8\n26\n\n\n169.5\n78.4\n36\n\n\n190.1\n72.1\n49\n\n\n179.0\n83.2\n45"
+    "text": "#mean is calulcated and rounded to two digits\nmean_data &lt;- mean(c(3, 4, 5, 5, 6, 7, 7)) |&gt; round(digits = 2) \n\nThe mean of the data is 5.29.\n\nheight &lt;- sample(seq(157, 196, by = 0.1), size = 5)\nweight &lt;- sample(seq(56, 85, by = 0.1), size = 5) \nage &lt;- sample(20:50, size = 5)\ndata &lt;- data.frame(height, weight, age)\n\n\nknitr::kable(data)\n\n\n\n\nheight\nweight\nage\n\n\n\n\n176.0\n69.4\n37\n\n\n189.7\n67.9\n22\n\n\n168.8\n60.1\n47\n\n\n170.5\n74.6\n27\n\n\n164.5\n59.5\n35"
   },
   {
     "objectID": "structure-R.html",
     "href": "structure-R.html",
     "title": "Structure of an R-file",
     "section": "",
-    "text": "Basic Form\nmost basic form: script with call to exams2html/exams2moodle etc\n\n\nAdvanced\nOptions Parameters Preview output",
+    "text": "Basic Form\nmost basic form: script with call to exams2html/exams2moodle etc\nset wd\n\n\nAdvanced Form\nOptions Parameters Preview output",
     "crumbs": [
       "R-file",
       "Structure of the .R-file"
@@ -528,7 +528,84 @@
     "href": "creation-Rmd.html",
     "title": "Creation of the .Rmd file",
     "section": "",
-    "text": "this section contains info on how to subset the lists in the rmd-file\n\nsubsetting\nwhat type of content needs to be in the lists\nlimitations",
+    "text": "this section contains info on how to subset the lists in the rmd-file",
+    "crumbs": [
+      "Rmd-file",
+      "Creation of the .Rmd-file"
+    ]
+  },
+  {
+    "objectID": "creation-Rmd.html#accessing-elements",
+    "href": "creation-Rmd.html#accessing-elements",
+    "title": "Creation of the .Rmd file",
+    "section": "Accessing Elements",
+    "text": "Accessing Elements\nThe different elements of a list can be accessed using two square brackets [[]].\n\n\n\n\n\n\nTip\n\n\n\nThere are other ways of accessing elements in a list, such as []and $, however for simplicity reasons, this documentation focuses on [[]]. The other two have their own applications, which are not necessary for using R/exams in the way it is described here.\n\n\nFor example, this accesses the first element of the questions list.\nquestions[[1]]\nAccessing multiple elements:\nquestions[[c(1, 3, 5)]] #1st, 3rd, 5th element \n\nquestions[[1:5]] #1st to 5th element",
+    "crumbs": [
+      "Rmd-file",
+      "Creation of the .Rmd-file"
+    ]
+  },
+  {
+    "objectID": "creation-Rmd.html#assigning-and-altering-elements",
+    "href": "creation-Rmd.html#assigning-and-altering-elements",
+    "title": "Creation of the .Rmd file",
+    "section": "Assigning and Altering Elements",
+    "text": "Assigning and Altering Elements\nWhen elements are accessed, they can also be altered.\nsolutions[[1]] &lt;- 5 #first element of the answer list is 5 \n\nsolutions[[c(2, 4)]] &lt;- \"A\" #2nd and 4th answer is \"A\"\n\ntolerances[[1:5]] &lt;- 0 #Tolerances for all questions are 0. \n\n\n\n\n\n\nNote\n\n\n\nPlease note that the examples in this section should only show the necessary syntax and are not taken from a real example.",
+    "crumbs": [
+      "Rmd-file",
+      "Creation of the .Rmd-file"
+    ]
+  },
+  {
+    "objectID": "creation-Rmd.html#questions-list",
+    "href": "creation-Rmd.html#questions-list",
+    "title": "Creation of the .Rmd file",
+    "section": "Questions list",
+    "text": "Questions list\nAlthough this list is named questions, actually the answer options for single/multiple choice questions are contained here.\nThe exemplary questions are: - What is the correct symbol for gold in the periodic table? - Please calculate the standard deviation \\(\\sigma\\), when the variance is \\(\\sigma^2 = 2,59\\).\nThese questions will be pasted in the question text section directly in the .Rmd-file.\nSo the three answer options for the single choice question would be for example: “Ti”, “Au” and “Ag”, which are stored in the questions list.\nFor the numeric question, no answer options are needed, therefore an empty string \"\" is placed there instead. (When creating larger exams with many numeric questions, this can be done automatically for all questions at once, see here ???? )\nquestions[[1]] &lt;- c(\"Ti\", \"Au\", \"Ag\")\nquestions[[2]] &lt;- \"\"",
+    "crumbs": [
+      "Rmd-file",
+      "Creation of the .Rmd-file"
+    ]
+  },
+  {
+    "objectID": "creation-Rmd.html#solutions-list",
+    "href": "creation-Rmd.html#solutions-list",
+    "title": "Creation of the .Rmd file",
+    "section": "Solutions list",
+    "text": "Solutions list\nThe solutions list contains the solutions to the questions.\nsolutions[[1]] &lt;- \"Au\"\nsoltuions[[2]] &lt;- sqrt(2.59)",
+    "crumbs": [
+      "Rmd-file",
+      "Creation of the .Rmd-file"
+    ]
+  },
+  {
+    "objectID": "creation-Rmd.html#types",
+    "href": "creation-Rmd.html#types",
+    "title": "Creation of the .Rmd file",
+    "section": "Types",
+    "text": "Types\ntypes[[1]] &lt;- \"schoice\" \ntypes[[2]] &lt;- \"num\"",
+    "crumbs": [
+      "Rmd-file",
+      "Creation of the .Rmd-file"
+    ]
+  },
+  {
+    "objectID": "creation-Rmd.html#explanations",
+    "href": "creation-Rmd.html#explanations",
+    "title": "Creation of the .Rmd file",
+    "section": "Explanations",
+    "text": "Explanations",
+    "crumbs": [
+      "Rmd-file",
+      "Creation of the .Rmd-file"
+    ]
+  },
+  {
+    "objectID": "creation-Rmd.html#tolerances",
+    "href": "creation-Rmd.html#tolerances",
+    "title": "Creation of the .Rmd file",
+    "section": "Tolerances",
+    "text": "Tolerances",
     "crumbs": [
       "Rmd-file",
       "Creation of the .Rmd-file"
