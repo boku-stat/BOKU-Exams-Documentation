@@ -9,3 +9,104 @@ this section contains info on how to subset the lists in the rmd-file
 -   what type of content needs to be in the lists
 
 -   limitations
+
+# Subsetting 
+
+The lists used in the .Rmd to contain the answer options, solutions, etc. can be altered via subsetting. 
+
+The lists can be initialized as empty lists using `list()`
+
+```{r}
+questions <- list() 
+solutions <- list() 
+types <- list()
+explanations <- list() 
+tolerances <- list()
+```
+
+## Accessing Elements 
+The different elements of a list can be accessed using two square brackets `[[]]`. 
+
+::: callout-tip 
+There are other ways of accessing elements in a list, such as `[]`and `$`, however for simplicity reasons, this documentation focuses on `[[]]`. The other two have their own applications, which are not necessary for using `R/exams` in the way it is described here. 
+::: 
+
+For example, this accesses the first element of the `questions` list. 
+
+```r
+questions[[1]]
+```
+Accessing multiple elements: 
+
+```r
+questions[[c(1, 3, 5)]] #1st, 3rd, 5th element 
+
+questions[[1:5]] #1st to 5th element 
+```
+
+## Assigning and Altering Elements 
+
+When elements are accessed, they can also be altered.
+
+```r
+solutions[[1]] <- 5 #first element of the answer list is 5 
+
+solutions[[c(2, 4)]] <- "A" #2nd and 4th answer is "A"
+
+tolerances[[1:5]] <- 0 #Tolerances for all questions are 0. 
+
+```
+
+::: callout-note 
+Please note that the examples in this section should only show the necessary syntax and are not taken from a real example. 
+:::
+
+
+
+# Content of the Lists 
+
+Using the example of an exercise containing one numeric and one multiple choice question, this section will explain what type of content is put into the lists. 
+
+## Questions list 
+
+Although this list is named questions, actually the answer options for single/multiple choice questions are contained here. 
+
+The exemplary questions are: 
+- What is the correct symbol for gold in the periodic table? 
+- Please calculate the standard deviation $\sigma$, when the variance is  $\sigma^2 = 2,59$. 
+
+These questions will be pasted in the **question text section** directly in the .Rmd-file. 
+
+So the three answer options for the single choice question would be for example: "Ti", "Au" and "Ag", which are stored in the `questions` list. 
+
+For the numeric question, no answer options are needed, therefore an empty string `""` is placed there instead. (When creating larger exams with many numeric questions, this can be done automatically for all questions at once, see here ???? )
+
+```r
+questions[[1]] <- c("Ti", "Au", "Ag")
+questions[[2]] <- ""
+```
+
+## Solutions list 
+
+The `solutions` list contains the solutions to the questions. 
+
+```r
+solutions[[1]] <- "Au"
+soltuions[[2]] <- sqrt(2.59)
+```
+
+
+## Types 
+
+```R 
+types[[1]] <- "schoice" 
+types[[2]] <- "num"
+```
+
+## Explanations 
+
+
+## Tolerances 
+
+
+

@@ -6,7 +6,9 @@ title: "Structure of an R-file"
 most basic form: 
 script with call to exams2html/exams2moodle etc 
 
-# Advanced 
+set wd 
+
+# Advanced Form 
 
 Options 
 Parameters 

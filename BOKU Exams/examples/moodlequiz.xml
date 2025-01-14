@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+
+<question type="category">
+<category>
+<text>$course$/moodlequiz/Exercise 1</text>
+</category>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> Q1 : molmass and lightest element </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p><em>Question 1</em></p>
+<p>What does the term “molar mass” refer to?</p>
+<p>{1:MULTICHOICE:%-33.33333%The number of atoms in one mole of a substance~%-33.33333%The charge of a mole of ions~=The mass of one mole of a substance~%-33.33333%The number of molecules in one mole of a substance}</p>
+<p><em>Question 2</em></p>
+<p>Which of the following is the lightest element?</p>
+<p>{1:MULTICHOICE:%-33.33333%Oxygen~%-33.33333%Helium~%-33.33333%Carbon~=Hydrogen}</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><em>Solution 1</em></p>
+<p>The molar mass is the mass of one mole of a substance, expressed in grams per mole (g/mol).</p>
+<p><em>Solution 2</em></p>
+<p>Hydrogen is the lightest element, with an atomic mass of approximately 1 g/mol.</p>
+<ul>
+<li> False / False / True / False </li>
+<li> False / False / False / True </li>
+</ul>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+</quiz>

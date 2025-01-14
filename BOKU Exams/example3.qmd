@@ -13,7 +13,21 @@ The whole example as an .Rmd-file can be downloaded here:
 
 {{< downloadthis examples/example_schoice.Rmd dname="single_choice_example" >}}
 
-After conversion with `R/exams` the exercise looks like this for different output types. 
+After conversion with `R/exams` the exercise looks like this for different output types.
+
+::: {.panel-tabset}
+#### HTML 
+![](images/schoice_html.png)
+
+#### PDF 
+![](images/schoice_pdf.png)
+
+#### Moodle 
+![](images/schoice_moodle1.png)
+
+
+![](images/schoice_moodle2.png)
+:::
 
 ## Creating the List Structure  
 
