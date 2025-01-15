@@ -10,6 +10,7 @@ TODO: graphs, csv files
 This will describe how to include additional things, e.g: tables, pictures, graphs, csv-files, etc.
 
 ## Inline R Code
+
 Inline code can be used to display R objects, which change dynamically, in static text. Instead of manually writing each instance of a resulting number in the text, inline code allows automatic pasting of the number and changes automatically when the corresponding result changes. For example, when providing a result that is calculated using randomly drawn numbers, the displayed number adjusts accordingly based on which numbers are drawn. 
 
 Inline R code is always fenced by backticks (\`) and before the object or function there is always an "r" to mark the language that should be used.
@@ -112,12 +113,54 @@ Additonal parameters, like (relative) height, width, etc. can be specified as we
 
 See here for more info ?????? 
 
+## Embedding files for download
+
+It is possible to embed files of any format in the exercises, so that users can download them by clicking on a link. The file will be embedded locally using [Base64 encoding](https://en.wikipedia.org/wiki/Base64). This way, it is possible to provide data, PDF files, or images. 
+
+For statically embedding files, simply add a markdown link to the local copy of the file:
+
+``` markdown
+[alt text](path_or_link/to/file)
+```
+
+For instance, embedding the quarto documentation PDF then looks like this: 
+
+[Link to embedded PDF](files/quarto.pdf)
+
+::: callout-note
+Files added to exercises this way will be embedded for each exercise individually in the generated XML file and have slightly larger file sizes than the original files. In case of adding large files like images, the size of the XML files can become very large which can cause problems and slow down the import into Moodle.
+:::
+
+### Dynamically embedded files 
+
+You might want to add e.g. a data file which is generated individually for each exercise. This can easily be done by first saving the file locally using R code in the Rmarkdown and then inserting a link to it like above. 
+
+To make an individually generated CSV data file available for download, you can use the following code. The arguments `row.names` and `col.names` control whether to show the respective labels. The `file` argument determines the file name under which it will be saved to disc. With the `sep` argument, the separator for the files can be set, e.g. use `","` for comma-separated values or `"\t"` for tab-separated values. Places this code in an R code chunk:
+
+``` r
+# Generate some random data
+data_frame = data.frame(x = rnorm(10), y = rnorm(10))
+
+# Save data as a CSV file
+write.table(data_frame, 
+            file = "data.csv", 
+            row.names = FALSE, 
+            col.names = FALSE, 
+            sep = ",")
+```
+
+To add a download link, use the following code in a markdown section: 
+
+``` markdown
+Download the data here: [link to data](data.csv)
+```
+
 ## Graphs 
 
 
 ## Links 
 
-Links to webpages can be included with the following snytax: 
+Links to webpages can be included with the following syntax: 
 
 ``` markdown
 [alt text](link/to/page)
@@ -129,11 +172,6 @@ Taking the example of the CRAN page of the `exams` package, it looks like this i
 Find the exams package [here](https://cran.r-project.org/package=exams). 
 ```
 Find the exams package [here](https://cran.r-project.org/package=exams). 
-
-## .csv-Files 
-
-
-
 
 ## Markdown options 
 
