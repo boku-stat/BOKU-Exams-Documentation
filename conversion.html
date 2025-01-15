@@ -129,6 +129,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./readme.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">README</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./ideas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Notes</span></a>
   </div>
@@ -208,12 +214,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./faq.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FAQ</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
@@ -249,6 +249,22 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Advanced Examples</span></span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ref.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Further References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FAQ</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -296,19 +312,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Caution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>For now, the script <code>10_kontingenztafel_conversion.R</code> is the only one that is up to date like it is described here. The other scripts need to be updated to the new structure.</p>
-</div>
-</div>
 <p>The directory of each exercise contains an R script called <code>exname_conversion.R</code>, where <code>exname</code> is the name of that exercise. This script can be run to generate HTML previews of the exercise or XML files which can be imported into Moodle. Parameters for converting the exercises (e.g., the seed, number of copies, and paths to the exercise and data files) are set in the config file of the exercise, <code>exname_config.R</code>, which can be found in the directory of each exercise.</p>
 <p>If no specific story is selected, the conversion script will cycle through all stories of the selected programs and generate an exercise for each story. The number of exercises generated is determined by the <code>copies</code> parameter.</p>
 <div class="callout callout-style-default callout-tip callout-titled">

@@ -129,6 +129,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./readme.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">README</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./ideas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Notes</span></a>
   </div>
@@ -208,12 +214,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./faq.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FAQ</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
@@ -249,6 +249,22 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Advanced Examples</span></span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ref.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Further References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FAQ</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -259,8 +275,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#purpose-of-rexams" id="toc-purpose-of-rexams" class="nav-link active" data-scroll-target="#purpose-of-rexams">Purpose of R/exams</a></li>
-  <li><a href="#using-rexams" id="toc-using-rexams" class="nav-link" data-scroll-target="#using-rexams">Using R/exams</a>
+  <li><a href="#purpose-of-rexams" id="toc-purpose-of-rexams" class="nav-link active" data-scroll-target="#purpose-of-rexams">Purpose of <code>R/exams</code></a></li>
+  <li><a href="#using-rexams" id="toc-using-rexams" class="nav-link" data-scroll-target="#using-rexams">Using <code>R/exams</code></a>
   <ul class="collapse">
   <li><a href="#what-program-and-what-files-are-used" id="toc-what-program-and-what-files-are-used" class="nav-link" data-scroll-target="#what-program-and-what-files-are-used">What program and what files are used?</a></li>
   <li><a href="#what-is-in-the-files" id="toc-what-is-in-the-files" class="nav-link" data-scroll-target="#what-is-in-the-files">What is in the files?</a></li>
@@ -295,13 +311,13 @@ ul.task-list li input[type="checkbox"] {
 
 
 <section id="purpose-of-rexams" class="level1">
-<h1>Purpose of R/exams</h1>
-<p>R/exams is used to automatically generate and evaluate exam questions. See here for more info about R and R/exams ?????</p>
-<p>At BOKU, it is used by the Institute for Statistics in several courses. Homework, review exercises and exams in the form of paper exams, as well as online quizes on BOKUlearn are all created with R/exams. Currently this is mostly used for (introductory) courses for statistics, however, the application is not limited to statistical applications at all.</p>
-<p>This documentation should serve as a basic first introduction and a how-to for anyone interested in using R/exams for teaching their courses at BOKU.</p>
+<h1>Purpose of <code>R/exams</code></h1>
+<p><code>R/exams</code> is used to automatically generate and evaluate exam questions. See here for more info about R and <code>R/exams</code> ?????</p>
+<p>At BOKU, it is used by the Institute for Statistics in several courses. Homework, review exercises and exams are all created with R/exams, both on paper as well as online quizzes, for example on BOKUlearn. Currently this is mostly used for courses in statistics, however the application is not limited to statistical applications at all.</p>
+<p>This documentation should serve as a basic first introduction and a how-to for anyone interested in using <code>R/exams</code> for teaching their courses at BOKU.</p>
 </section>
 <section id="using-rexams" class="level1">
-<h1>Using R/exams</h1>
+<h1>Using <code>R/exams</code></h1>
 <section id="what-program-and-what-files-are-used" class="level2">
 <h2 class="anchored" data-anchor-id="what-program-and-what-files-are-used">What program and what files are used?</h2>
 <p>The generation of the exams is happening within RStudio. See <a href="https://statistik.boku.ac.at/stat-lehre/doku.php?id=statistik_mit_r:rstudio:rstudio_installation:start">how to install R and RStudio</a>.</p>
@@ -312,14 +328,14 @@ ul.task-list li input[type="checkbox"] {
 <section id="what-is-in-the-files" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-in-the-files">What is in the files?</h2>
 <p>The .Rmd-file contains the questions, answers and other necessary parameters for creating the exam (see ????? for more details). These components are created by the person wanting to create an exam, however they need to be written according to a certain structure, see here ?????.</p>
-<p>The .R file contains the code, which converts the questions that are written in the .Rmd-file into the actual exam in a certain output format. Several formats are possible, such as .pdf, HTML and .xml for Moodle quizzes. (see ??? for more details) This code is based on the functionality of the R/exams package.</p>
-<p>An additonal separate .R-file can contain other R objects, which are then (dynamically) used in exam questions, however this is not a necessary component. For more information about add ons see ????.</p>
+<p>The .R file contains the code, which converts the questions that are written in the .Rmd-file into the actual exam in a certain output format. Several formats are possible, such as .pdf, HTML and .xml for Moodle quizzes. (see ??? for more details) This code is based on the functionality of the <code>R/exams</code> package.</p>
+<p>An additonal separate .R-file can contain other R objects, which are then (dynamically) used in exam questions, however this is not a necessary component. For more information about add ons see ???? and for advanced examples using this, see here ???</p>
 </section>
 <section id="what-does-the-exam-look-like" class="level2">
 <h2 class="anchored" data-anchor-id="what-does-the-exam-look-like">What does the exam look like?</h2>
-<p>An exam can contain many different types of questions. R/exams is suitable for creating not only calculation questions, but also multiple or single questions, open answer questions (single word or essay questions) or including upload points in Moodle exams. It is possible to use any combination in one exam, eg. two numeric and three multiple choice questions.</p>
-<p>insert example ????</p>
-<p>R/exams does not only have statistical applications, the look of the exam is entirely customizable. It is also possible to include data, graphs, pictures and other things, see ????.</p>
+<p>An exam can contain many different types of questions. <code>R/exams</code> is suitable for creating not only calculation questions, but also multiple or single choice questions, open answer questions (single word or essay questions) or including upload points in Moodle exams. It is possible to use any combination in one exam, eg. two numeric and three multiple choice questions.</p>
+<p>for examples see here ????</p>
+<p><code>R/exams</code> does not only have statistical applications, the look of the exam is entirely customizable. It is also possible to include data, graphs, pictures and other things, see ????.</p>
 </section>
 <section id="how-can-rexams-prohibit-cheating" class="level2">
 <h2 class="anchored" data-anchor-id="how-can-rexams-prohibit-cheating">How can R/exams prohibit cheating?</h2>

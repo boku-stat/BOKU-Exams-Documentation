@@ -163,6 +163,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./readme.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">README</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./ideas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Notes</span></a>
   </div>
@@ -242,12 +248,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./faq.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FAQ</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
@@ -283,6 +283,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Advanced Examples</span></span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ref.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Further References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FAQ</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -300,9 +316,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#automatic-creation-of-tables" id="toc-automatic-creation-of-tables" class="nav-link" data-scroll-target="#automatic-creation-of-tables">Automatic Creation of tables</a></li>
   </ul></li>
   <li><a href="#pictures" id="toc-pictures" class="nav-link" data-scroll-target="#pictures">Pictures</a></li>
+  <li><a href="#embedding-files-for-download" id="toc-embedding-files-for-download" class="nav-link" data-scroll-target="#embedding-files-for-download">Embedding files for download</a>
+  <ul class="collapse">
+  <li><a href="#dynamically-embedded-files" id="toc-dynamically-embedded-files" class="nav-link" data-scroll-target="#dynamically-embedded-files">Dynamically embedded files</a></li>
+  </ul></li>
   <li><a href="#graphs" id="toc-graphs" class="nav-link" data-scroll-target="#graphs">Graphs</a></li>
   <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Links</a></li>
-  <li><a href="#csv-files" id="toc-csv-files" class="nav-link" data-scroll-target="#csv-files">.csv-Files</a></li>
   <li><a href="#markdown-options" id="toc-markdown-options" class="nav-link" data-scroll-target="#markdown-options">Markdown options</a></li>
   <li><a href="#heading-1" id="toc-heading-1" class="nav-link" data-scroll-target="#heading-1">Heading 1</a>
   <ul class="collapse">
@@ -445,29 +464,29 @@ Important
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">179.1</td>
-<td style="text-align: right;">65.4</td>
-<td style="text-align: right;">37</td>
+<td style="text-align: right;">189.1</td>
+<td style="text-align: right;">60.3</td>
+<td style="text-align: right;">45</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">187.1</td>
-<td style="text-align: right;">74.6</td>
-<td style="text-align: right;">48</td>
+<td style="text-align: right;">158.7</td>
+<td style="text-align: right;">78.2</td>
+<td style="text-align: right;">20</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">162.4</td>
-<td style="text-align: right;">65.5</td>
-<td style="text-align: right;">23</td>
+<td style="text-align: right;">176.8</td>
+<td style="text-align: right;">57.9</td>
+<td style="text-align: right;">41</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">170.2</td>
-<td style="text-align: right;">77.9</td>
-<td style="text-align: right;">47</td>
+<td style="text-align: right;">173.9</td>
+<td style="text-align: right;">62.4</td>
+<td style="text-align: right;">24</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">184.4</td>
-<td style="text-align: right;">59.1</td>
-<td style="text-align: right;">33</td>
+<td style="text-align: right;">174.4</td>
+<td style="text-align: right;">57.4</td>
+<td style="text-align: right;">35</td>
 </tr>
 </tbody>
 </table>
@@ -486,31 +505,65 @@ Important
 <div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="al">![alt text](path_or_link/to/file)</span>{width="40%"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>See here for more info ??????</p>
 </section>
+<section id="embedding-files-for-download" class="level2">
+<h2 class="anchored" data-anchor-id="embedding-files-for-download">Embedding files for download</h2>
+<p>It is possible to embed files of any format in the exercises, so that users can download them by clicking on a link. The file will be embedded locally using <a href="https://en.wikipedia.org/wiki/Base64">Base64 encoding</a>. This way, it is possible to provide data, PDF files, or images.</p>
+<p>For statically embedding files, simply add a markdown link to the local copy of the file:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">alt text</span><span class="co">](path_or_link/to/file)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For instance, embedding the quarto documentation PDF then looks like this:</p>
+<p><a href="files/quarto.pdf">Link to embedded PDF</a></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Files added to exercises this way will be embedded for each exercise individually in the generated XML file and have slightly larger file sizes than the original files. In case of adding large files like images, the size of the XML files can become very large which can cause problems and slow down the import into Moodle.</p>
+</div>
+</div>
+<section id="dynamically-embedded-files" class="level3">
+<h3 class="anchored" data-anchor-id="dynamically-embedded-files">Dynamically embedded files</h3>
+<p>You might want to add e.g.&nbsp;a data file which is generated individually for each exercise. This can easily be done by first saving the file locally using R code in the Rmarkdown and then inserting a link to it like above.</p>
+<p>To make an individually generated CSV data file available for download, you can use the following code. The arguments <code>row.names</code> and <code>col.names</code> control whether to show the respective labels. The <code>file</code> argument determines the file name under which it will be saved to disc. With the <code>sep</code> argument, the separator for the files can be set, e.g.&nbsp;use <code>","</code> for comma-separated values or <code>"\t"</code> for tab-separated values. Places this code in an R code chunk:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate some random data</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>data_frame <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>), <span class="at">y =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>))</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Save data as a CSV file</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(data_frame, </span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">file =</span> <span class="st">"data.csv"</span>, </span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">row.names =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">col.names =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">sep =</span> <span class="st">","</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To add a download link, use the following code in a markdown section:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="an">Download the data here:</span><span class="co"> [link to data](data.csv)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
 <section id="graphs" class="level2">
 <h2 class="anchored" data-anchor-id="graphs">Graphs</h2>
 </section>
 <section id="links" class="level2">
 <h2 class="anchored" data-anchor-id="links">Links</h2>
-<p>Links to webpages can be included with the following snytax:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">alt text</span><span class="co">](link/to/page)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Links to webpages can be included with the following syntax:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">alt text</span><span class="co">](link/to/page)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Taking the example of the CRAN page of the <code>exams</code> package, it looks like this in markdown and implemented:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>Find the exams package <span class="co">[</span><span class="ot">here</span><span class="co">](https://cran.r-project.org/package=exams)</span>. </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>Find the exams package <span class="co">[</span><span class="ot">here</span><span class="co">](https://cran.r-project.org/package=exams)</span>. </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Find the exams package <a href="https://cran.r-project.org/package=exams">here</a>.</p>
-</section>
-<section id="csv-files" class="level2">
-<h2 class="anchored" data-anchor-id="csv-files">.csv-Files</h2>
 </section>
 <section id="markdown-options" class="level2">
 <h2 class="anchored" data-anchor-id="markdown-options">Markdown options</h2>
 <p>For markdown, there are many styling options for text etc.</p>
 <p>A few examples:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Heading 1 </span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## Heading 2 </span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">### Heading 3 </span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>...</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>*italic text* </span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>**bold text** </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Heading 1 </span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## Heading 2 </span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">### Heading 3 </span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>*italic text* </span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>**bold text** </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>When rendered, it looks like this:</p>
 </section>
 <section id="heading-1" class="level1">

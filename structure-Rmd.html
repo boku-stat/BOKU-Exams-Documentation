@@ -72,6 +72,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-ab0cb694dc529bc22bc21ea6a39d7b95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/downloadthis-1.9.1/downloadthis.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -163,6 +164,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./readme.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">README</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./ideas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Notes</span></a>
   </div>
@@ -242,12 +249,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./faq.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FAQ</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
@@ -283,6 +284,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Advanced Examples</span></span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ref.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Further References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FAQ</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -341,6 +358,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>The .Rmd is the main file, where all the information about the exercise is contained. It follows a basic structure, with four sections, “Data Generation”, “Question”, “Solution” and “Meta-information”. Their purpose will be described in detail in the following sections.</p>
+<p>An empty template containing only the necessary structure can be downloaded here:</p>
+<p><a href="#dnldts56863" onclick="fetch('data:text/plain;base64,YGBge3IsIGRhdGEgZ2VuZXJhdGlvbiwgZWNobyA9IEZBTFNFfQpsaWJyYXJ5KGV4YW1zKQpxdWVzdGlvbnMgPC0gbGlzdCgpIApzb2x1dGlvbnMgPC0gbGlzdCgpIAp0eXBlcyA8LSBsaXN0KCkKZXhwbGFuYXRpb25zIDwtIGxpc3QoKSAKdG9sZXJhbmNlcyA8LSBsaXN0KCkKCmBgYAoKUXVlc3Rpb24KPT09PT09PT0KCmBgYHtyLCBxdWVzdGlvbnMsIGVjaG8gPSBGQUxTRX0KYW5zd2VybGlzdCh1bmxpc3QocXVlc3Rpb25zKSwgbWFya3VwID0gIm1hcmtkb3duIikKYGBgIAoKU29sdXRpb24KPT09PT09PT0KCmBgYHtyLCBzb2x1dGlvbnMsIGVjaG8gPSBGQUxTRX0KYW5zd2VybGlzdCh1bmxpc3QoZXhwbGFuYXRpb25zKSwgbWFya3VwID0gIm1hcmtkb3duIikKYGBgCgpNZXRhLWluZm9ybWF0aW9uIAo9PT09PT09PT09PT09PT09CmV4bmFtZToKZXh0aXRsZTogCmV4dHlwZTogY2xvemUKZXhzb2x1dGlvbjogYHIgcGFzdGUoc29sdXRpb25zLCBjb2xsYXBzZSA9ICJ8IilgCmV4Y2xvemV0eXBlOiBgciBwYXN0ZSh0eXBlcywgY29sbGFwc2UgPSAifCIpYApleHRvbDogYHIgcGFzdGUodG9sZXJhbmNlcywgY29sbGFwc2UgPSAifCIpYApleHNodWZmbGU6IFRSVUUKZXh2ZXJzaW9uOiB2MQ==').then(res => res.blob()).then(blob => {
+      const downloadURL = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      document.body.appendChild(a);
+      a.href = downloadURL;
+      a.download = 'Template.Rmd'; a.click();
+      window.URL.revokeObjectURL(downloadURL);
+      document.body.removeChild(a);
+        });"><button class="btn btn-default downloadthis  " id="dnldts56863"><i class="bi bi-download"></i> Download </button></a></p>
 <section id="basic-structure" class="level1">
 <h1>Basic Structure</h1>
 <ul>
@@ -373,7 +400,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The five necessary lists are <code>questions</code>, <code>solutions</code>, <code>types</code>, <code>explanations</code> and <code>tolerances</code>, which all have the same length, which is equal to the number of questions in the exercise. For example, in an exam with 5 multiple choice questions, the length of the lists is 5.</p>
 <p>Depending on the type and simplicity of the question, some of the lists might not be necessary. (see ??????)</p>
 <p>The list <code>questions</code> contains the answer options for single choice/multiple choice questions, not the questions itself. The actual questions are written down in the section “Question”. For numeric and string questions, this list contains placeholders ““, since no answer options are given. (more on the types of questions see ??????)</p>
-<p>The list <code>solutions</code> contains the solutions for all the questions. For numeric questions, that is a number, (e.g: <code>123</code>), for string questions a string like <code>"hello world"</code> is expected. The solution for single &amp; multiple choiche questions is a boolean vector containing <code>TRUE/FALSE</code>. For each answer option, one instance of <code>TRUE</code> or <code>FALSE</code> is needed. For example, a multiple choice question with 5 answer options, where one option (in this case the second answer option) is correct, would have a solution vector like this:</p>
+<p>The list <code>solutions</code> contains the solutions for all the questions. For numeric questions, that is a number, (e.g: <code>123</code>), for string questions a string like <code>"hello world"</code> is expected. The solution for single &amp; multiple choiche questions is a boolean vector containing <code>TRUE/FALSE</code>. For each answer option, one instance of <code>TRUE</code> or <code>FALSE</code> is needed. For example, a single choice question with 5 answer options, where one option (in this case the second answer option) is correct, would have a solution vector like this:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The list <code>types</code> specifies the type of question for each individual question. Possible values are</p>
 <ul>
@@ -394,7 +421,7 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Careful when random generating numbers and setting an (absolute) tolerance interval that is too narrow, then the true solution could lie outside of the tolerance interval.</p>
+<p>Proceed with caution when random generating numbers and setting an (absolute) tolerance interval, which is too narrow, then the true solution could lie outside of the tolerance interval.</p>
 </div>
 </div>
 </section>
