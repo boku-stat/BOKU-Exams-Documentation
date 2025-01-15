@@ -2,10 +2,6 @@
 title: "Conversion of an .Rmd-file"
 ---
 
-::: callout-caution
-For now, the script `10_kontingenztafel_conversion.R` is the only one that is up to date like it is described here. The other scripts need to be updated to the new structure.
-:::
-
 The directory of each exercise contains an R script called `exname_conversion.R`, where `exname` is the name of that exercise. This script can be run to generate HTML previews of the exercise or XML files which can be imported into Moodle. Parameters for converting the exercises (e.g., the seed, number of copies, and paths to the exercise and data files) are set in the config file of the exercise, `exname_config.R`, which can be found in the directory of each exercise.
 
 If no specific story is selected, the conversion script will cycle through all stories of the selected programs and generate an exercise for each story. The number of exercises generated is determined by the `copies` parameter.
