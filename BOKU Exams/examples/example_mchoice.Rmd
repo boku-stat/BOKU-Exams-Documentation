@@ -1,0 +1,71 @@
+```{r answers/solutions, echo = FALSE, results = "hide"}
+library(exams)
+# Initialize lists for the questions, answers, solutions, types, explanations (tolerances are not needed if there are no numeric questions)
+
+answers <- list()
+solutions <- list()
+types <- list()
+explanations <- list()
+
+# Define Question 1: Which of the following elements are metals?
+answers[[1]] <- c("Iron (Fe)", "Oxygen (O)", "Aluminium (Al)", "Nitrogen (N)")
+solutions[[1]] <- explanations[[1]] <- c(TRUE, FALSE, TRUE, FALSE)  # Correct answers: Fe and Al
+types[[1]] <- "mchoice"
+
+
+# Define Question 2: Which of the following elements are metalloids?
+answers[[2]] <- c("Silicon (Si)", "Boron (B)", "Helium (He)", "Arsenic (As)")
+solutions[[2]] <- explanations[[2]] <- c(TRUE, TRUE, FALSE, TRUE)  # Correct answers: Si, B, and As
+types[[2]] <- "mchoice"
+```
+
+Question
+========
+
+*Question 1*
+
+Which of the following elements are metals?
+
+##ANSWER1##
+
+*Question 2*
+
+Which of the following elements are metalloids?
+
+##ANSWER2##
+
+```{r questionlist, echo = FALSE, results = "asis"}
+answerlist(unlist(answers), markup = "markdown")
+
+```
+
+Solution
+========
+
+*Solution 1*
+
+Iron (Fe) and Aluminium (Al) are metals, while Oxygen (O) and Nitrogen (N) are gases.
+
+*Solution 2*
+
+Silicon (Si), Boron (B), and Arsenic (As) are metalloids. Helium (He) is a noble gas.
+
+```{r solutionlist, echo = FALSE, results = "asis"}
+# Convert solutions to "True" or "False"
+explanations <- lapply(solutions, function(x) ifelse(x, "True", "False"))
+solutions <- lapply(solutions, mchoice2string)
+
+# Display explanations
+answerlist(unlist(explanations), markup = "markdown")
+
+```
+
+Meta-information
+================
+exname: example_mchoice
+extitle: metalls and metalloids
+extype: cloze
+exsolution: `r paste(solutions, collapse = "|")`
+exclozetype: `r paste(types, collapse = "|")`
+exshuffle: TRUE
+exversion: v1

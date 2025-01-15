@@ -5,19 +5,90 @@ filters:
    - downloadthis
 ---
 
+This is an exercise containing two multiple choice questions about the elements of the periodic table. 
+
 The whole example as an .Rmd-file can be downloaded here: 
 
 {{< downloadthis examples/example_mchoice.Rmd dname="multiple_ choice_example" >}}
 
 After conversion with `R/exams` the exercise looks like this for different output types.
 
-tabset panel 
+::: {.panel-tabset}
+#### HTML 
+![](images/mchoice_html.png)
+
+#### PDF 
+![](images/mchoice_pdf.png)
+
+#### Moodle 
+![](images/mchoice_moodle.png)
+:::
 
 
 # Creating the List Structure 
 
+This section creates and fills the lists which contain the questions, answers, etc.. The `answers` list contains the answer options for the questions. The solution to the question, the type of question, as well as a more elaborate explanation are specified for each question. 
+
+::: callout-warning 
+The following code has to be placed within a code chunk in the .Rmd-file. See here ????? 
+:::
+
+```{r answers/solutions, echo = FALSE, results = "hide"}
+library(exams)
+
+# Initialize lists for the questions, answers, solutions, types, explanations (tolerances are not needed if there are no numeric questions)
+answers <- list()
+solutions <- list()
+types <- list()
+explanations <- list()
+
+# Define Question 1: Which of the following elements are metals?
+answers[[1]] <- c("Iron (Fe)", "Oxygen (O)", "Aluminium (Al)", "Nitrogen (N)")
+solutions[[1]] <- explanations[[1]] <- c(TRUE, FALSE, TRUE, FALSE)  # Correct answers: Fe and Al
+types[[1]] <- "mchoice"
+
+
+# Define Question 2: Which of the following elements are metalloids?
+answers[[2]] <- c("Silicon (Si)", "Boron (B)", "Helium (He)", "Arsenic (As)")
+solutions[[2]] <- explanations[[2]] <- c(TRUE, TRUE, FALSE, TRUE)  # Correct answers: Si, B, and As
+types[[2]] <- "mchoice"
+```
+
 # Question Section
+
+The next section contains the question text, including the marked spaces `##ANSWERi##` for the answer fields and a necessary code section, which does some formating which is required for the later conversion. This is markdown text, which will appear bold/italic/etc. after conversion. 
+
+It also includes a code chunk, which converts the `answers` list to the necessary format. 
+
+```{.markdown include="examples/example_mchoice.Rmd" start-line=22 end-line=40}
+```
 
 # Solution Section
 
+In this section, additional information and/or the exact solutions can be given. In this case, there is a more elaborate explanation as a solution for each question. Additionally, the code chunk included below converts the `TRUE` and `FALSE` objects into a more readable format of "True" and "False", however this could be in any other format as well. 
+
+```{.markdown include="examples/example_mchoice.Rmd" start-line=42 end-line=61}
+```
+
 # Meta-information Section 
+
+This contains the meta information needed for conversion. See here ????? 
+
+The "source code" is written in markdown and contains inline R code.
+
+```{.markdown include="examples/example_schoice.Rmd" start-line=63 end-line=71}
+```
+
+If the "code" above is evaluated, the section looks like this: 
+
+``` markdown
+Meta-information
+================
+exname: example_mchoice
+extitle: metalls and metalloids
+extype: cloze
+exsolution: `r paste(solutions, collapse = "|")`
+exclozetype: `r paste(types, collapse = "|")`
+exshuffle: TRUE
+exversion: v1
+```

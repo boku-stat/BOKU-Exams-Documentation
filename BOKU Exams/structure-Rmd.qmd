@@ -1,8 +1,14 @@
 ---
 title: "Structure of an .Rmd-file"
+filters:
+   - downloadthis
 ---
 
-The .Rmd is the main file, where all the information about the exercise is contained. It follows a basic structure, with four sections, "Data Generation", "Question", "Solution" and "Meta-information". Their purpose will be described in detail in the following sections.
+The .Rmd is the main file, where all the information about the exercise is contained. It follows a basic structure, with four sections, "Data Generation", "Question", "Solution" and "Meta-information". Their purpose will be described in detail in the following sections. 
+
+An empty template containing only the necessary structure can be downloaded here: 
+
+{{< downloadthis templates/template_empty.Rmd dname="Template" >}}
 
 # Basic Structure
 
@@ -50,7 +56,7 @@ Depending on the type and simplicity of the question, some of the lists might no
 
 The list `questions` contains the answer options for single choice/multiple choice questions, not the questions itself. The actual questions are written down in the section "Question". For numeric and string questions, this list contains placeholders "", since no answer options are given. (more on the types of questions see ??????)
 
-The list `solutions` contains the solutions for all the questions. For numeric questions, that is a number, (e.g: `123`), for string questions a string like `"hello world"` is expected. The solution for single & multiple choiche questions is a boolean vector containing `TRUE/FALSE`. For each answer option, one instance of `TRUE` or `FALSE` is needed. For example, a multiple choice question with 5 answer options, where one option (in this case the second answer option) is correct, would have a solution vector like this:
+The list `solutions` contains the solutions for all the questions. For numeric questions, that is a number, (e.g: `123`), for string questions a string like `"hello world"` is expected. The solution for single & multiple choiche questions is a boolean vector containing `TRUE/FALSE`. For each answer option, one instance of `TRUE` or `FALSE` is needed. For example, a single choice question with 5 answer options, where one option (in this case the second answer option) is correct, would have a solution vector like this:
 
 ``` r
 c(FALSE, TRUE, FALSE, FALSE, FALSE)
@@ -71,7 +77,7 @@ The optional list `explanations` contains the feedback that is shown. This can b
 The list `tolerances` is only necessary for numeric questions, where it is desired to have an interval, in which the solution is accepted as correct, even though the numbers are not perfectly equal. This is important for accommodating rounding differences.
 
 ::: callout-warning
-Careful when random generating numbers and setting an (absolute) tolerance interval that is too narrow, then the true solution could lie outside of the tolerance interval.
+Proceed with caution when random generating numbers and setting an (absolute) tolerance interval, which is too narrow, then the true solution could lie outside of the tolerance interval.
 :::
 
 ### Creating the lists

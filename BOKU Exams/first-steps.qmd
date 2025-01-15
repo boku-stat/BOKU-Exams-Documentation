@@ -2,15 +2,15 @@
 title: "First Steps"
 ---
 
-# Purpose of R/exams
+# Purpose of `R/exams`
 
-R/exams is used to automatically generate and evaluate exam questions. See here for more info about R and R/exams ?????
+`R/exams` is used to automatically generate and evaluate exam questions. See here for more info about R and `R/exams` ?????
 
-At BOKU, it is used by the Institute for Statistics in several courses. Homework, review exercises and exams in the form of paper exams, as well as online quizes on BOKUlearn are all created with R/exams. Currently this is mostly used for (introductory) courses for statistics, however, the application is not limited to statistical applications at all.
+At BOKU, it is used by the Institute for Statistics in several courses. Homework, review exercises and exams are all created with R/exams, both on paper as well as online quizzes, for example on BOKUlearn. Currently this is mostly used for courses in statistics, however the application is not limited to statistical applications at all.
 
-This documentation should serve as a basic first introduction and a how-to for anyone interested in using R/exams for teaching their courses at BOKU.
+This documentation should serve as a basic first introduction and a how-to for anyone interested in using `R/exams` for teaching their courses at BOKU.
 
-# Using R/exams
+# Using `R/exams`
 
 ## What program and what files are used?
 
@@ -26,17 +26,17 @@ Generally, a structure of folders and files (see template here ????) are used, w
 
 The .Rmd-file contains the questions, answers and other necessary parameters for creating the exam (see ????? for more details). These components are created by the person wanting to create an exam, however they need to be written according to a certain structure, see here ?????.
 
-The .R file contains the code, which converts the questions that are written in the .Rmd-file into the actual exam in a certain output format. Several formats are possible, such as .pdf, HTML and .xml for Moodle quizzes. (see ??? for more details) This code is based on the functionality of the R/exams package.
+The .R file contains the code, which converts the questions that are written in the .Rmd-file into the actual exam in a certain output format. Several formats are possible, such as .pdf, HTML and .xml for Moodle quizzes. (see ??? for more details) This code is based on the functionality of the `R/exams` package.
 
-An additonal separate .R-file can contain other R objects, which are then (dynamically) used in exam questions, however this is not a necessary component. For more information about add ons see ????.
+An additonal separate .R-file can contain other R objects, which are then (dynamically) used in exam questions, however this is not a necessary component. For more information about add ons see ???? and for advanced examples using this, see here ??? 
 
 ## What does the exam look like?
 
-An exam can contain many different types of questions. R/exams is suitable for creating not only calculation questions, but also multiple or single questions, open answer questions (single word or essay questions) or including upload points in Moodle exams. It is possible to use any combination in one exam, eg. two numeric and three multiple choice questions.
+An exam can contain many different types of questions. `R/exams` is suitable for creating not only calculation questions, but also multiple or single choice questions, open answer questions (single word or essay questions) or including upload points in Moodle exams. It is possible to use any combination in one exam, eg. two numeric and three multiple choice questions.
 
-insert example ????
+for examples see here ???? 
 
-R/exams does not only have statistical applications, the look of the exam is entirely customizable. It is also possible to include data, graphs, pictures and other things, see ????.
+`R/exams` does not only have statistical applications, the look of the exam is entirely customizable. It is also possible to include data, graphs, pictures and other things, see ????.
 
 ## How can R/exams prohibit cheating?
 

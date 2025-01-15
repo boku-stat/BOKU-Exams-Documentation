@@ -16,6 +16,8 @@ website:
     contents:
       - href: index.qmd
         text: Home
+      - href: readme.qmd
+        text: README
       - href: ideas.qmd
         text: Notes
       - href: first-steps.qmd
@@ -42,8 +44,6 @@ website:
         - href: add-ons.qmd
           text: Add-ons to .Rmd-files
             
-      - href: faq.qmd 
-        text: FAQ
         
       - section:  Basic Examples 
         contents: 
@@ -55,7 +55,14 @@ website:
           text: Single Choice Example 
         - href: example4.qmd 
           text: Multiple Choice Example
-
+          
+      - section: Advanced Examples 
+          
+      - href: ref.qmd 
+        text: Further References
+        
+      - href: faq.qmd 
+        text: FAQ
 
         
         

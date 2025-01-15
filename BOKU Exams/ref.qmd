@@ -1,0 +1,12 @@
+---
+title: "Further References"
+---
+
+This page will link to existing documentation for `R/exams`. 
+
+- official documentation (CRAN, vignette etc.)
+- Homepage R/exams 
+- stackoverflow Achim Zeileis 
+
+Markdown references: 
+

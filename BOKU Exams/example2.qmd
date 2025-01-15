@@ -4,6 +4,7 @@ filters:
    - include-code-files
    - downloadthis
 ---
+TODO: code chunks darstellung vereinheitlichen für alle examples, warning section hinzufügen/löschen 
 
 This is an exercise containing two text questions about the periodic table. 
 
