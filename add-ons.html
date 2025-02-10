@@ -355,7 +355,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>TODO: graphs, csv files</p>
 <p>This will describe how to include additional things, e.g: tables, pictures, graphs, csv-files, etc.</p>
 <section id="inline-r-code" class="level2">
 <h2 class="anchored" data-anchor-id="inline-r-code">Inline R Code</h2>
@@ -464,29 +463,29 @@ Important
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">189.1</td>
-<td style="text-align: right;">60.3</td>
-<td style="text-align: right;">45</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">158.7</td>
-<td style="text-align: right;">78.2</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">176.8</td>
+<td style="text-align: right;">158.1</td>
 <td style="text-align: right;">57.9</td>
 <td style="text-align: right;">41</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">173.9</td>
-<td style="text-align: right;">62.4</td>
-<td style="text-align: right;">24</td>
+<td style="text-align: right;">157.4</td>
+<td style="text-align: right;">84.5</td>
+<td style="text-align: right;">47</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">174.4</td>
-<td style="text-align: right;">57.4</td>
-<td style="text-align: right;">35</td>
+<td style="text-align: right;">187.3</td>
+<td style="text-align: right;">58.5</td>
+<td style="text-align: right;">40</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">171.8</td>
+<td style="text-align: right;">60.8</td>
+<td style="text-align: right;">49</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">187.9</td>
+<td style="text-align: right;">62.0</td>
+<td style="text-align: right;">31</td>
 </tr>
 </tbody>
 </table>
@@ -528,7 +527,20 @@ Note
 <section id="dynamically-embedded-files" class="level3">
 <h3 class="anchored" data-anchor-id="dynamically-embedded-files">Dynamically embedded files</h3>
 <p>You might want to add e.g.&nbsp;a data file which is generated individually for each exercise. This can easily be done by first saving the file locally using R code in the Rmarkdown and then inserting a link to it like above.</p>
-<p>To make an individually generated CSV data file available for download, you can use the following code. The arguments <code>row.names</code> and <code>col.names</code> control whether to show the respective labels. The <code>file</code> argument determines the file name under which it will be saved to disc. With the <code>sep</code> argument, the separator for the files can be set, e.g.&nbsp;use <code>","</code> for comma-separated values or <code>"\t"</code> for tab-separated values. Places this code in an R code chunk:</p>
+<p>To make an individually generated CSV data file available for download, you can use the following code. The arguments <code>row.names</code> and <code>col.names</code> control whether to show the respective labels. The <code>file</code> argument determines the file name under which it will be saved to disc. With the <code>sep</code> argument, the separator for the files can be set, e.g.&nbsp;use <code>","</code> for comma-separated values or <code>"\t"</code> for tab-separated values.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Place this following code in an R code chunk!</p>
+</div>
+</div>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate some random data</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>data_frame <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>), <span class="at">y =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>))</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -544,26 +556,45 @@ Note
 </section>
 <section id="graphs" class="level2">
 <h2 class="anchored" data-anchor-id="graphs">Graphs</h2>
+<p>It is also possible to include a graph that has just been created using R code. Below is a markdown code chunk, which randomly samples data and creates a simple scatterplot with a <code>y = x</code> line.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="in">set.seed(123)</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="in">x &lt;- rnorm(n = 50)</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="in">y &lt;- x + runif(50, min = -1, max = 1)</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="in">plot(x, y, main = "Scatterplot") </span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="in">abline(a = 0, b = 1, col = "red")</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>knitr</code> tags, like fig.width, included in the first line inside the curly brackets <code>{r}</code> can be used for changing the appearance of the code, plots etc. See <a href="https://yihui.org/knitr/options/">here</a> for more information on <code>knitr</code> options.</p>
+<p>The code above produces the following plot.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="add-ons_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="links" class="level2">
 <h2 class="anchored" data-anchor-id="links">Links</h2>
 <p>Links to webpages can be included with the following syntax:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">alt text</span><span class="co">](link/to/page)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">alt text</span><span class="co">](link/to/page)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Taking the example of the CRAN page of the <code>exams</code> package, it looks like this in markdown and implemented:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>Find the exams package <span class="co">[</span><span class="ot">here</span><span class="co">](https://cran.r-project.org/package=exams)</span>. </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>Find the exams package <span class="co">[</span><span class="ot">here</span><span class="co">](https://cran.r-project.org/package=exams)</span>. </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Find the exams package <a href="https://cran.r-project.org/package=exams">here</a>.</p>
 </section>
 <section id="markdown-options" class="level2">
 <h2 class="anchored" data-anchor-id="markdown-options">Markdown options</h2>
 <p>For markdown, there are many styling options for text etc.</p>
 <p>A few examples:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Heading 1 </span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## Heading 2 </span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">### Heading 3 </span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>...</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>*italic text* </span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>**bold text** </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Heading 1 </span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## Heading 2 </span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">### Heading 3 </span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>*italic text* </span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>**bold text** </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>When rendered, it looks like this:</p>
 </section>
 <section id="heading-1" class="level1">
@@ -1007,7 +1038,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p><b>This documentation is currently in development and not complete. </b></p>
+<p><b>This documentation is currently in development and not complete. Please provide feedback on Github Discussions by clicking on the Github icon on the top left. </b></p>
 </div>
     <div class="nav-footer-right">
       &nbsp;
