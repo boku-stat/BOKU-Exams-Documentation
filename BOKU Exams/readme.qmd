@@ -2,3 +2,36 @@
 title: "README"
 ---
 
+This website aims to give an overview of how to use `R/exams` for the creation of exercises. 
+
+### What is R/exams? 
+
+`R/exams` is a freely available package for the software R. 
+
+### What is it used for? 
+
+It can be used to automatically create several different types of exercises, with a large number of possibilites for customization to various output types. 
+
+### Table of contents 
+
+| Page | Content | 
+|------|---------| 
+| First Steps | Brief overview of `R/exams` and its general usage. | 
+| R and `R/exams` info | Links to software and installation. | 
+| .Rmd-file: Structure | Gives the structure and "skeleton" for the main .Rmd-file | 
+| .Rmd-file: Creation | How to utilize the basic strucutre and incorporate the desired content | 
+| .R-file | Conversion script| 
+| Add-ons | Brief how-to for including pictures, links, etc. in .Rmd-files | 
+| Basic Examples | Short examples to illustrate simple use cases | 
+| Advanced Examples | More complex Examples | 
+| Further References | Links to existing documentation, examples, etc. | 
+| FAQ | Frequently Asked Questions and their answers |
+
+### How to give feedback or ask questions? 
+
+This project is ongoing and we would be happy to receive feedback. 
+Click [here](https://github.com/boku-stat/BOKU-Exams-Documentation/discussions) and simply write a post to our discussion forum on github. 
+
+If you have questions, do not hesitate to ask, simply leave a comment on the Github discussion forum. 
+
+

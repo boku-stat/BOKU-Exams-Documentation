@@ -4,7 +4,7 @@ project:
 website:
   title: "BOKU Exams"
   page-footer:
-    center: "<b>This documentation is currently in development and not complete. </b>"
+    center: "<b>This documentation is currently in development and not complete. Please provide feedback on Github Discussions by clicking on the Github icon on the top left. </b>"
     background: info
     
 

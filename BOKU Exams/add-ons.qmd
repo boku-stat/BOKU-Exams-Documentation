@@ -4,9 +4,6 @@ filters:
    - include-code-files
 ---
 
-TODO: graphs, csv files 
-
-
 This will describe how to include additional things, e.g: tables, pictures, graphs, csv-files, etc.
 
 ## Inline R Code
@@ -135,7 +132,11 @@ Files added to exercises this way will be embedded for each exercise individuall
 
 You might want to add e.g. a data file which is generated individually for each exercise. This can easily be done by first saving the file locally using R code in the Rmarkdown and then inserting a link to it like above. 
 
-To make an individually generated CSV data file available for download, you can use the following code. The arguments `row.names` and `col.names` control whether to show the respective labels. The `file` argument determines the file name under which it will be saved to disc. With the `sep` argument, the separator for the files can be set, e.g. use `","` for comma-separated values or `"\t"` for tab-separated values. Places this code in an R code chunk:
+To make an individually generated CSV data file available for download, you can use the following code. The arguments `row.names` and `col.names` control whether to show the respective labels. The `file` argument determines the file name under which it will be saved to disc. With the `sep` argument, the separator for the files can be set, e.g. use `","` for comma-separated values or `"\t"` for tab-separated values. 
+
+::: callout-important 
+Place this following code in an R code chunk! 
+:::
 
 ``` r
 # Generate some random data
@@ -156,8 +157,22 @@ Download the data here: [link to data](data.csv)
 ```
 
 ## Graphs 
+It is also possible to include a graph that has just been created using R code. Below is a markdown code chunk, which randomly samples data and creates a simple scatterplot with a `y = x` line. 
 
+```{.markdown include="examples/example_graph.Rmd"}
+```
 
+`knitr` tags, like fig.width, included in the first line inside the curly brackets `{r}` can be used for changing the appearance of the code, plots etc. See [here](https://yihui.org/knitr/options/) for more information on `knitr` options. 
+
+The code above produces the following plot. 
+
+```{r, echo = FALSE}
+set.seed(123)
+x <- rnorm(n = 50)
+y <- x + runif(50, min = -1, max = 1)
+plot(x, y, main = "Scatterplot") 
+abline(a = 0, b = 1, col = "red")
+```
 ## Links 
 
 Links to webpages can be included with the following syntax: 

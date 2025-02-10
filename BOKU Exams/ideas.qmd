@@ -1,11 +1,10 @@
 ---
-title: Ideas
+title: "Ideas"
 ---
 
-This is the page for future ideas and important notes for documentation.
+This is the page for future ideas and important notes for documentation, for internal use. 
 
-
-Notes, Stand 15.01 
+Notes, Stand 10.02 
 
 Allgemein: 
 
@@ -29,10 +28,10 @@ Shiny App:
 
 Home: 
 
-- Autoren 
+- ~~Autoren~~ 
 - Link zu Moodle Kurs 
 - Lizenz? 
-- Read-me ? 
+- ~~Read-me ?~~ 
 
 First Steps: 
 
@@ -67,7 +66,7 @@ Conversion:
 
 Add ons: 
 
-- Abschnitt über graphs hinzufügen und schreiben 
+- ~~Abschnitt über graphs hinzufügen und schreiben~~ 
 
 FAQ: 
 
