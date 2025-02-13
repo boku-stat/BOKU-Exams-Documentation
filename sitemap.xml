@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/first-steps.html</loc>
-    <lastmod>2025-01-15T12:05:53.233Z</lastmod>
+    <lastmod>2025-02-13T15:41:56.196Z</lastmod>
   </url>
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/add-ons.html</loc>
@@ -10,11 +10,11 @@
   </url>
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/ref.html</loc>
-    <lastmod>2025-01-15T11:48:12.881Z</lastmod>
+    <lastmod>2025-02-13T15:26:07.945Z</lastmod>
   </url>
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/readme.html</loc>
-    <lastmod>2025-02-10T13:14:59.030Z</lastmod>
+    <lastmod>2025-02-13T11:42:09.433Z</lastmod>
   </url>
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/examples/example_mchoice.html</loc>
@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/conversion.html</loc>
-    <lastmod>2025-01-15T11:10:33.633Z</lastmod>
+    <lastmod>2025-02-13T15:49:26.649Z</lastmod>
   </url>
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/example1.html</loc>
@@ -58,7 +58,7 @@
   </url>
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/ideas.html</loc>
-    <lastmod>2025-02-10T13:18:24.093Z</lastmod>
+    <lastmod>2025-02-13T15:52:52.984Z</lastmod>
   </url>
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/structure-Rmd.html</loc>
@@ -86,7 +86,7 @@
   </url>
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/structure-R.html</loc>
-    <lastmod>2025-01-09T15:52:42.648Z</lastmod>
+    <lastmod>2025-02-13T15:48:49.810Z</lastmod>
   </url>
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/templates/template_empty.html</loc>
@@ -94,6 +94,6 @@
   </url>
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/creation-Rmd.html</loc>
-    <lastmod>2025-01-14T16:58:37.449Z</lastmod>
+    <lastmod>2025-02-13T14:53:37.769Z</lastmod>
   </url>
 </urlset>

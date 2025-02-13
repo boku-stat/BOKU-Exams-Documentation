@@ -376,12 +376,7 @@ window.Quarto = {
 </header>
 
 
-<p>this section contains info on how to subset the lists in the rmd-file</p>
-<ul>
-<li><p>subsetting</p></li>
-<li><p>what type of content needs to be in the lists</p></li>
-<li><p>limitations</p></li>
-</ul>
+<p>This page explains the process of subsetting the lists in the .Rmd-file and what type of content is required.</p>
 <section id="subsetting" class="level1">
 <h1>Subsetting</h1>
 <p>The lists used in the .Rmd to contain the answer options, solutions, etc. can be altered via subsetting.</p>
@@ -445,7 +440,11 @@ Note
 <section id="questions-list" class="level2">
 <h2 class="anchored" data-anchor-id="questions-list">Questions list</h2>
 <p>Although this list is named questions, actually the answer options for single/multiple choice questions are contained here.</p>
-<p>The exemplary questions are: - What is the correct symbol for gold in the periodic table? - Please calculate the standard deviation <span class="math inline">\(\sigma\)</span>, when the variance is <span class="math inline">\(\sigma^2 = 2,59\)</span>.</p>
+<p>The exemplary questions are:</p>
+<ul>
+<li><p>What is the correct symbol for gold in the periodic table?</p></li>
+<li><p>Please calculate the standard deviation <span class="math inline">\(\sigma\)</span>, when the variance is <span class="math inline">\(\sigma^2 = 2,59\)</span>.</p></li>
+</ul>
 <p>These questions will be pasted in the <strong>question text section</strong> directly in the .Rmd-file.</p>
 <p>So the three answer options for the single choice question would be for example: “Ti”, “Au” and “Ag”, which are stored in the <code>questions</code> list.</p>
 <p>For the numeric question, no answer options are needed, therefore an empty string <code>""</code> is placed there instead. (When creating larger exams with many numeric questions, this can be done automatically for all questions at once, see here ???? )</p>
@@ -454,20 +453,52 @@ Note
 </section>
 <section id="solutions-list" class="level2">
 <h2 class="anchored" data-anchor-id="solutions-list">Solutions list</h2>
-<p>The <code>solutions</code> list contains the solutions to the questions.</p>
+<p>The <code>solutions</code> list contains the correct solutions to the questions.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>solutions[[<span class="dv">1</span>]] <span class="ot">&lt;-</span> <span class="st">"Au"</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>soltuions[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fl">2.59</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="types" class="level2">
 <h2 class="anchored" data-anchor-id="types">Types</h2>
+<p>For each question its type needs to be specified, see here for all possibile options ????. For this example, we have a single choice and a numeric question.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>types[[<span class="dv">1</span>]] <span class="ot">&lt;-</span> <span class="st">"schoice"</span> </span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>types[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="st">"num"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="explanations" class="level2">
 <h2 class="anchored" data-anchor-id="explanations">Explanations</h2>
+<p>Explanations are not necessary, however they can be provided to students for putting the answer into context.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>explanations[[<span class="dv">1</span>]] <span class="ot">&lt;-</span> <span class="st">"The symbol for gold in the periodic table is </span><span class="sc">\"</span><span class="st">Au</span><span class="sc">\"</span><span class="st">, because it comes from the Latin word </span><span class="sc">\"</span><span class="st">aurum</span><span class="sc">\"</span><span class="st">."</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>explanations[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">"The correct answer is "</span>, <span class="fu">sqrt</span>(<span class="fl">2.59</span>), <span class="st">", beacuse the standard deviation is the square root of the variance."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Inside a string “…”, it is necessary to escape certain characters, by placing <code>\</code> before them, for example quotes.</p>
+</div>
+</div>
 </section>
 <section id="tolerances" class="level2">
 <h2 class="anchored" data-anchor-id="tolerances">Tolerances</h2>
+<p>Tolerances are only needed for numeric questions, for all other types, the element in the list is simply left empty.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tolerances[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="fl">0.001</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Tolerances are generally used to account for rounding differences when the resulting number has many decimal places, or the number is very large. However, it is also possible to set the numeric tolerance to 0, for example when asking for the number of continents, which has clearly only one true answer with no sensible tolerance, despite being a numeric question.</p>
+</div>
+</div>
 
 
 </section>

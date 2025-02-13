@@ -4,7 +4,7 @@
     "href": "first-steps.html",
     "title": "First Steps",
     "section": "",
-    "text": "R/exams is used to automatically generate and evaluate exam questions. See here for more info about R and R/exams ?????\nAt BOKU, it is used by the Institute for Statistics in several courses. Homework, review exercises and exams are all created with R/exams, both on paper as well as online quizzes, for example on BOKUlearn. Currently this is mostly used for courses in statistics, however the application is not limited to statistical applications at all.\nThis documentation should serve as a basic first introduction and a how-to for anyone interested in using R/exams for teaching their courses at BOKU.",
+    "text": "R/exams is used to automatically generate and evaluate exam questions. See here for more info about R and R/exams.\nAt BOKU, it is used by the Institute for Statistics in several courses. Homework, review exercises and exams are all created with R/exams, both on paper as well as online quizzes, for example on BOKUlearn. Currently this is mostly used for courses in statistics, however the application is not limited to statistical applications at all.\nThis documentation should serve as a basic first introduction and a how-to for anyone interested in using R/exams for teaching their courses at BOKU.",
     "crumbs": [
       "First Steps"
     ]
@@ -14,7 +14,7 @@
     "href": "first-steps.html#what-program-and-what-files-are-used",
     "title": "First Steps",
     "section": "What program and what files are used?",
-    "text": "What program and what files are used?\nThe generation of the exams is happening within RStudio. See how to install R and RStudio.\nGenerally, a structure of folders and files (see template here ????) are used, which all have a specific purpose. For a basic implementation, two types of files are necessary, namely .R-files and .Rmd-files.\n.R-files are scripts written in R, where R code is written and evaluated.\n.Rmd-files are files written in markdown, a markup language, where it is possible to process normal text, (R) code and other components and generate reports in various formats (pdf, Word etc.) as well as web applications such as HTML pages.",
+    "text": "What program and what files are used?\nThe generation of the exams is happening within RStudio. See how to install R and RStudio.\nGenerally, a structure of folders and files are used, which all have a specific purpose. For a basic implementation, two types of files are necessary, namely .R-files and .Rmd-files. See a description for each and a template here: .Rmd-file and .R-file\n.R-files are scripts written in R, where R code is written and evaluated.\n.Rmd-files are files written in markdown, a markup language, where it is possible to process normal text, (R) code and other components and generate reports in various formats (pdf, Word etc.) as well as web applications such as HTML pages.",
     "crumbs": [
       "First Steps"
     ]
@@ -24,7 +24,7 @@
     "href": "first-steps.html#what-is-in-the-files",
     "title": "First Steps",
     "section": "What is in the files?",
-    "text": "What is in the files?\nThe .Rmd-file contains the questions, answers and other necessary parameters for creating the exam (see ????? for more details). These components are created by the person wanting to create an exam, however they need to be written according to a certain structure, see here ?????.\nThe .R file contains the code, which converts the questions that are written in the .Rmd-file into the actual exam in a certain output format. Several formats are possible, such as .pdf, HTML and .xml for Moodle quizzes. (see ??? for more details) This code is based on the functionality of the R/exams package.\nAn additonal separate .R-file can contain other R objects, which are then (dynamically) used in exam questions, however this is not a necessary component. For more information about add ons see ???? and for advanced examples using this, see here ???",
+    "text": "What is in the files?\nThe .Rmd-file contains the questions, answers and other necessary parameters for creating the exam (see ????? for more details). These components are created by the person wanting to create an exam, however they need to be written according to a certain structure, see here.\nThe .R file contains the code, which converts the questions that are written in the .Rmd-file into the actual exam in a certain output format. Several formats are possible, such as .pdf, HTML and .xml for Moodle quizzes. See here for more info. This code is based on the functionality of the R/exams package.\nAn additonal separate .R-file can contain other R objects, which are then (dynamically) used in exam questions, however this is not a necessary component. For more information about add-ons see this page and for advanced examples using this, see here ????",
     "crumbs": [
       "First Steps"
     ]
@@ -34,7 +34,7 @@
     "href": "first-steps.html#what-does-the-exam-look-like",
     "title": "First Steps",
     "section": "What does the exam look like?",
-    "text": "What does the exam look like?\nAn exam can contain many different types of questions. R/exams is suitable for creating not only calculation questions, but also multiple or single choice questions, open answer questions (single word or essay questions) or including upload points in Moodle exams. It is possible to use any combination in one exam, eg. two numeric and three multiple choice questions.\nfor examples see here ????\nR/exams does not only have statistical applications, the look of the exam is entirely customizable. It is also possible to include data, graphs, pictures and other things, see ????.",
+    "text": "What does the exam look like?\nAn exam can contain many different types of questions. R/exams is suitable for creating not only calculation questions, but also multiple or single choice questions, open answer questions (single word or essay questions) or including upload points in Moodle exams. It is possible to use any combination in one exam, eg. two numeric and three multiple choice questions.\nFor basic examples see these pages:\n\nNumeric example\nString example\nSingle choice example\nMultiple choice example\n\nR/exams does not only have statistical applications, the look of the exam is entirely customizable. It is also possible to include data, graphs, pictures and other things, see the page about add-ons.",
     "crumbs": [
       "First Steps"
     ]
@@ -96,7 +96,7 @@
     "href": "add-ons.html#tables",
     "title": "Add-ons of .Rmd-files",
     "section": "Tables",
-    "text": "Tables\n\nManual Creation\nThe | do not need to be vertically aligned, it just makes it more readable when creating the table.\nInline code can also be included in the table.\n| Header 1 | Header 2 | Header 3 | \n|----------|----------|----------| \n| x1       | y1       | z1       |\n| x2       | y2       | z2       |\n| x3       | y3       | z3       |\nWhen rendered, the table looks like this:\n\n\n\nHeader 1\nHeader 2\nHeader 3\n\n\n\n\nx1\ny1\nz1\n\n\nx2\ny2\nz2\n\n\nx3\ny3\nz3\n\n\n\nColumns can also have different alignments marked by :.\n| right | left | default | center |\n|------:|:-----|---------|:------:|\n|x1     |y1    |z1       |a1      |\nWhen rendered it appears like this:\n\n\n\nright\nleft\ndefault\ncenter\n\n\n\n\nx1\ny1\nz1\na1\n\n\n\n\n\nAutomatic Creation of tables\nUsing the function kable()from the knitrpackage, objects like dataframes or matrices can be converted automatically to a table for display. For example, this code chunk converts the data frame data into a markdown table automatically including the column names as headers in this case.\n```{r}\nknitr::kable(data)\n```\nThe table then looks like this:\n\n\n\n\n\nheight\nweight\nage\n\n\n\n\n158.1\n57.9\n41\n\n\n157.4\n84.5\n47\n\n\n187.3\n58.5\n40\n\n\n171.8\n60.8\n49\n\n\n187.9\n62.0\n31\n\n\n\n\n\nThere are many more (styling) options for markdown tables, see here the help page for kable, ?kable, and here for more ????",
+    "text": "Tables\n\nManual Creation\nThe | do not need to be vertically aligned, it just makes it more readable when creating the table.\nInline code can also be included in the table.\n| Header 1 | Header 2 | Header 3 | \n|----------|----------|----------| \n| x1       | y1       | z1       |\n| x2       | y2       | z2       |\n| x3       | y3       | z3       |\nWhen rendered, the table looks like this:\n\n\n\nHeader 1\nHeader 2\nHeader 3\n\n\n\n\nx1\ny1\nz1\n\n\nx2\ny2\nz2\n\n\nx3\ny3\nz3\n\n\n\nColumns can also have different alignments marked by :.\n| right | left | default | center |\n|------:|:-----|---------|:------:|\n|x1     |y1    |z1       |a1      |\nWhen rendered it appears like this:\n\n\n\nright\nleft\ndefault\ncenter\n\n\n\n\nx1\ny1\nz1\na1\n\n\n\n\n\nAutomatic Creation of tables\nUsing the function kable()from the knitrpackage, objects like dataframes or matrices can be converted automatically to a table for display. For example, this code chunk converts the data frame data into a markdown table automatically including the column names as headers in this case.\n```{r}\nknitr::kable(data)\n```\nThe table then looks like this:\n\n\n\n\n\nheight\nweight\nage\n\n\n\n\n185.3\n65.7\n40\n\n\n166.1\n70.3\n38\n\n\n161.0\n56.0\n33\n\n\n186.1\n64.9\n22\n\n\n178.2\n75.9\n25\n\n\n\n\n\nThere are many more (styling) options for markdown tables, see here the help page for kable, ?kable, and here for more ????",
     "crumbs": [
       "Add-ons",
       "Add-ons to .Rmd-files"
@@ -173,7 +173,7 @@
     "href": "ref.html",
     "title": "Further References",
     "section": "",
-    "text": "This page will link to existing documentation for R/exams.\n\nofficial documentation (CRAN, vignette etc.)\nHomepage R/exams\nstackoverflow Achim Zeileis\n\nMarkdown references:",
+    "text": "This page links to existing documentation for R/exams, since this website only gives a very basic introduction and describes the features of R/exams most often used at BOKU at the moment.\n\nOfficial Documentation R/exams\nLink to CRAN : exams on CRAN\nThe manual can be downloaded here: Manual for R/exams\nVersion 2 of the vignette can be downloaded here: Vignette for R/exams\nOfficial website of R/exams: \nThis page offers many examples, templates, tutorials, etc., which contain the newest changes and also displays many more features of R/exams.\n\n\nAdditional resources\nAchim Zeileis is very active on stackoverflow, and many of his answers offer specific guidance on how to solve problems or how to implememt a certain feature. See his profile here: Achim Zeileis on stackoverflow.com\n\n\nR markdown resources\nLink to rmarkdown on CRAN: rmarkdown on CRAN\nLink to the rmarkdown homepage: rmarkdown\nAnother very detailed resource for rmarkdown here: rmarkdown",
     "crumbs": [
       "Further References"
     ]
@@ -183,7 +183,7 @@
     "href": "readme.html",
     "title": "README",
     "section": "",
-    "text": "This website aims to give an overview of how to use R/exams for the creation of exercises.\n\nWhat is R/exams?\nR/exams is a freely available package for the software R.\n\n\nWhat is it used for?\nIt can be used to automatically create several different types of exercises, with a large number of possibilites for customization to various output types.\n\n\nTable of contents\n\n\n\n\n\n\n\nPage\nContent\n\n\n\n\nFirst Steps\nBrief overview of R/exams and its general usage.\n\n\nR and R/exams info\nLinks to software and installation.\n\n\n.Rmd-file: Structure\nGives the structure and “skeleton” for the main .Rmd-file\n\n\n.Rmd-file: Creation\nHow to utilize the basic strucutre and incorporate the desired content\n\n\n.R-file\nConversion script\n\n\nAdd-ons\nBrief how-to for including pictures, links, etc. in .Rmd-files\n\n\nBasic Examples\nShort examples to illustrate simple use cases\n\n\nAdvanced Examples\nMore complex Examples\n\n\nFurther References\nLinks to existing documentation, examples, etc.\n\n\nFAQ\nFrequently Asked Questions and their answers\n\n\n\n\n\nHow to give feedback or ask questions?\nThis project is ongoing and we would be happy to receive feedback. Click here and simply write a post to our discussion forum on github.\nIf you have questions, do not hesitate to ask, simply leave a comment on the Github discussion forum.",
+    "text": "This website aims to give an overview of how to use R/exams for the creation of exercises.\nDisclaimer: Internal cross-references, marked by ????, are (for the most part) not implemented yet.\n\nWhat is R/exams?\nR/exams is a freely available package for the software R.\n\n\nWhat is it used for?\nIt can be used to automatically create several different types of exercises, with a large number of possibilites for customization to various output types.\n\n\nTable of contents\n\n\n\n\n\n\n\nPage\nContent\n\n\n\n\nFirst Steps\nBrief overview of R/exams and its general usage.\n\n\nR and R/exams info\nLinks to software and installation.\n\n\n.Rmd-file: Structure\nGives the structure and “skeleton” for the main .Rmd-file\n\n\n.Rmd-file: Creation\nHow to utilize the basic strucutre and incorporate the desired content\n\n\n.R-file\nConversion script\n\n\nAdd-ons\nBrief how-to for including pictures, links, etc. in .Rmd-files\n\n\nBasic Examples\nShort examples to illustrate simple use cases\n\n\nAdvanced Examples\nMore complex Examples\n\n\nFurther References\nLinks to existing documentation, examples, etc.\n\n\nFAQ\nFrequently Asked Questions and their answers\n\n\n\n\n\nHow to give feedback or ask questions?\nThis project is ongoing and we would be happy to receive feedback. Click here and simply write a post to our discussion forum on github.\nIf you have questions, do not hesitate to ask, simply leave a comment on the Github discussion forum.",
     "crumbs": [
       "README"
     ]
@@ -252,7 +252,7 @@
     "href": "index.html",
     "title": "BOKU Exams",
     "section": "",
-    "text": "Documentation for R/exams at BOKU. Please read the README for a brief overview here.\n\nAuthors:\nKonstanze Lauseker Github\nLukas Schönmann Github\nDorian Stefenelli Github\nFor feedback and questions please look here\nLast updated: 2025-02-10",
+    "text": "Documentation for R/exams at BOKU. Please read the README for a brief overview here.\n\nAuthors:\nKonstanze Lauseker Github\nLukas Schönmann Github\nDorian Stefenelli Github\nFor feedback and questions please look here\nLast updated: 2025-02-13",
     "crumbs": [
       "Home"
     ]
@@ -262,40 +262,7 @@
     "href": "conversion.html",
     "title": "Conversion of an .Rmd-file",
     "section": "",
-    "text": "The directory of each exercise contains an R script called exname_conversion.R, where exname is the name of that exercise. This script can be run to generate HTML previews of the exercise or XML files which can be imported into Moodle. Parameters for converting the exercises (e.g., the seed, number of copies, and paths to the exercise and data files) are set in the config file of the exercise, exname_config.R, which can be found in the directory of each exercise.\nIf no specific story is selected, the conversion script will cycle through all stories of the selected programs and generate an exercise for each story. The number of exercises generated is determined by the copies parameter.\nBy default, HTML previews of the exercises are opened in the default browser. The XML files are stored in the exercise’s root directory.",
-    "crumbs": [
-      "R-file",
-      "Conversion of .Rmd-file"
-    ]
-  },
-  {
-    "objectID": "conversion.html#setting-the-parameters",
-    "href": "conversion.html#setting-the-parameters",
-    "title": "Conversion of an .Rmd-file",
-    "section": "Setting the parameters",
-    "text": "Setting the parameters\nIn the exercise config file exname_config.R, the parameters for generating the exercises are set. The following parameters are available:\n\nseed: A seed for the random number generator. This ensures that the same set of exercises is generated each time the code is run.\ncopies: The number of times the exercise should be generated when using the XML format. If parts of the exercise are randomized (e.g., drawing from a distribution or a random subset), each copy will be randomly generated. However, the seed ensures that always the same set of randomized exercises is generated.\nprogram: Select one or more programs from which the stories will be drawn. See the file containing the stories for the available programs. NULL will use all programs.\nstory: Select a specific story to be used. NULL will randomly select a story from the selected programs.\nexercise_seed: A seed for the random number generator within the exercise. This ensures that the same specific exercise is generated each time the code is run. If NULL, the seed will be randomly generated using the seed parameter.\nconverter: The converter to be used by the exams package to convert the exercise Rmarkdown files.\nexercise_dir: The path to the directory containing the exercise Rmarkdown file.\nexercise_file: The name of the exercise Rmarkdown file.\ndata_dir: The path to the directory containing the data files.\ntemp_dir: The name of the directory storing temporary files. If not present, the directory will be created. Warning: All files in the temporary directory will be deleted when the code is run!\nout_basename: The base name of the output files.\nout_type: The type of the output files. Can be either html for a preview in the browser or xml for import into Moodle.\n\n\n\n\n\n\n\nTip\n\n\n\nWhen generating exercises for a course, it is recommended to set the seed to a fixed value and note it down. At the start of each semester, a new seed should be set to ensure that the exercises are different from the previous semester.",
-    "crumbs": [
-      "R-file",
-      "Conversion of .Rmd-file"
-    ]
-  },
-  {
-    "objectID": "conversion.html#html-preview",
-    "href": "conversion.html#html-preview",
-    "title": "Conversion of an .Rmd-file",
-    "section": "HTML preview",
-    "text": "HTML preview\n\n\n\n\n\n\nNote\n\n\n\nThe HTML preview of the exercise is not interactive and uses a different styling. The preview looks different from the exercises in Moodle, but can be used to check the content of the exercise.\n\n\nIf the out_type parameter is set to html, an HTML preview will be generated which will open in the default browser. Intermediary files are stored in the temporary directory, which are deleted after the preview is generated.",
-    "crumbs": [
-      "R-file",
-      "Conversion of .Rmd-file"
-    ]
-  },
-  {
-    "objectID": "conversion.html#xml-generation",
-    "href": "conversion.html#xml-generation",
-    "title": "Conversion of an .Rmd-file",
-    "section": "XML generation",
-    "text": "XML generation\nIf the out_type parameter is set to xml, an XML file will be generated which can be imported into Moodle. The XML files are stored in the exercise’s root directory with the out_basename. Intermediary files are stored in the temporary directory, which are deleted after the preview is generated.\n\nPassing external parameters\nThe number of exercise copies specified by the copies parameter will be generated in a loop, using the exams function expar() to pass external parameters to the exercise. For example, the incrementing number of the loop can be passed to the exercise where it is used as index to draw a subset of data. The advantage of this approach is that the subsets are drawn deterministically instead of randomly (which could lead to duplicates or missing subsets).\nThe function takes the exercise file and the external variables as arguments. It then saves an temporary Rmarkdown file of the exercise with the external parameters set. The list of these temporary files is then passed to the exams2moodle() function to generate the XML files.\nIf the copies parameter is a multiple of the number of stories, each story will be drawn an equal number of times.",
+    "text": "Previous content belongs to internal documentation, has been moved to exams_playground/Dokumentation/coaches_docu.qmd\nThis page will briefly explain the conversion process.\n\nBasic Method\nWhen a both the .Rmd files and the .R file are set up correctly, one simple run-through of the script creates the exercises. s",
     "crumbs": [
       "R-file",
       "Conversion of .Rmd-file"
@@ -438,7 +405,7 @@
     "href": "ideas.html",
     "title": "Ideas",
     "section": "",
-    "text": "This is the page for future ideas and important notes for documentation, for internal use.\nNotes, Stand 10.02\nAllgemein:\nShiny App:\nHome:\nFirst Steps:\nR-info:\nStructure Rmd:\nCreation Rmd:\nStructure R:\nConversion:\nAdd ons:\nFAQ:\nReferences:\nFurther Notes:\nWriting style (internal)",
+    "text": "This is the page for future ideas and important notes for documentation, for internal use.\nNotes, Stand 13.02\nAllgemein:\nShiny App:\nUpload Moodle\nHome:\nFirst Steps:\nR-info:\nStructure Rmd:\nCreation Rmd:\nStructure R:\nConversion:\nAdd ons:\nBasic Examples:\nAdvanced Examples:\nFAQ:\nReferences:\nFurther Notes:\nWriting style (internal)",
     "crumbs": [
       "Notes"
     ]
@@ -537,7 +504,7 @@
     "href": "examples/ex_add.html",
     "title": "BOKU Exams",
     "section": "",
-    "text": "#mean is calulcated and rounded to two digits\nmean_data &lt;- mean(c(3, 4, 5, 5, 6, 7, 7)) |&gt; round(digits = 2) \n\nThe mean of the data is 5.29.\n\nheight &lt;- sample(seq(157, 196, by = 0.1), size = 5)\nweight &lt;- sample(seq(56, 85, by = 0.1), size = 5) \nage &lt;- sample(20:50, size = 5)\ndata &lt;- data.frame(height, weight, age)\n\n\nknitr::kable(data)\n\n\n\n\nheight\nweight\nage\n\n\n\n\n169.3\n68.1\n36\n\n\n177.3\n69.2\n50\n\n\n170.1\n57.5\n43\n\n\n164.1\n72.0\n47\n\n\n192.8\n62.7\n32"
+    "text": "#mean is calulcated and rounded to two digits\nmean_data &lt;- mean(c(3, 4, 5, 5, 6, 7, 7)) |&gt; round(digits = 2) \n\nThe mean of the data is 5.29.\n\nheight &lt;- sample(seq(157, 196, by = 0.1), size = 5)\nweight &lt;- sample(seq(56, 85, by = 0.1), size = 5) \nage &lt;- sample(20:50, size = 5)\ndata &lt;- data.frame(height, weight, age)\n\n\nknitr::kable(data)\n\n\n\n\nheight\nweight\nage\n\n\n\n\n159.0\n59.9\n39\n\n\n170.5\n80.3\n50\n\n\n190.8\n72.4\n48\n\n\n167.7\n58.4\n27\n\n\n165.5\n84.5\n33"
   },
   {
     "objectID": "examples/example_schoice.html",
@@ -565,7 +532,7 @@
     "href": "structure-R.html",
     "title": "Structure of an R-file",
     "section": "",
-    "text": "Basic Form\nmost basic form: script with call to exams2html/exams2moodle etc\nset wd\n\n\nAdvanced Form\nOptions Parameters Preview output",
+    "text": "The .R file contains the code that is used to convert the created .Rmd-files, which contain the questions, into the desire output format, for example pdf, html or xml (for moodle).\nFor each output format there is a different function in the R/exams package, each function has many parameters, which allow for customization. Below is an explanation for a very simple and straightforward converison file, but also a more advanced, which has implemented certain options, which enhance the basic functionatlity.\n\nBasic Form\nIn its most basic form, the script only contains three calls. First library(exams), which loads the functions available in the R/exams package. Secondly one to change the working directly to the folder where the .Rmd-files are stored and lastly the call to an exams2 function.\nA script could look like this:\nlibrary(exams) #load content \nsetwd(\"path/to/Rmd/files\") #change working directory \nexams2pdf(\"name_of_file.Rmd\") #output: pdf\nexams2html(\"name_of_file.Rmd\") #output: html \nexams2moodle(\"name_of_file.Rmd\") #ouput: xml for moodle import \nA simple template script can be downloaded here:\n Download \n\n\n\n\n\n\nTip\n\n\n\nWhen creating exercises in the .xml format, they can only be viewed sensibly in Moodle for the most part. In order to avoid unnecessary uploading of (unfinished) files, that are still work in progress, it is advisable to use the html format as a “preview”. The hmtl page will look slightly different compared to the moodle exercises, however it can be useful to check the overall look of the exercise while still creating and altering them.\n\n\n\n\nAdvanced Form\nOptions Parameters Preview output",
     "crumbs": [
       "R-file",
       "Structure of the .R-file"
@@ -583,7 +550,7 @@
     "href": "creation-Rmd.html",
     "title": "Creation of the .Rmd file",
     "section": "",
-    "text": "this section contains info on how to subset the lists in the rmd-file",
+    "text": "This page explains the process of subsetting the lists in the .Rmd-file and what type of content is required.",
     "crumbs": [
       "Rmd-file",
       "Creation of the .Rmd-file"
@@ -616,7 +583,7 @@
     "href": "creation-Rmd.html#questions-list",
     "title": "Creation of the .Rmd file",
     "section": "Questions list",
-    "text": "Questions list\nAlthough this list is named questions, actually the answer options for single/multiple choice questions are contained here.\nThe exemplary questions are: - What is the correct symbol for gold in the periodic table? - Please calculate the standard deviation \\(\\sigma\\), when the variance is \\(\\sigma^2 = 2,59\\).\nThese questions will be pasted in the question text section directly in the .Rmd-file.\nSo the three answer options for the single choice question would be for example: “Ti”, “Au” and “Ag”, which are stored in the questions list.\nFor the numeric question, no answer options are needed, therefore an empty string \"\" is placed there instead. (When creating larger exams with many numeric questions, this can be done automatically for all questions at once, see here ???? )\nquestions[[1]] &lt;- c(\"Ti\", \"Au\", \"Ag\")\nquestions[[2]] &lt;- \"\"",
+    "text": "Questions list\nAlthough this list is named questions, actually the answer options for single/multiple choice questions are contained here.\nThe exemplary questions are:\n\nWhat is the correct symbol for gold in the periodic table?\nPlease calculate the standard deviation \\(\\sigma\\), when the variance is \\(\\sigma^2 = 2,59\\).\n\nThese questions will be pasted in the question text section directly in the .Rmd-file.\nSo the three answer options for the single choice question would be for example: “Ti”, “Au” and “Ag”, which are stored in the questions list.\nFor the numeric question, no answer options are needed, therefore an empty string \"\" is placed there instead. (When creating larger exams with many numeric questions, this can be done automatically for all questions at once, see here ???? )\nquestions[[1]] &lt;- c(\"Ti\", \"Au\", \"Ag\")\nquestions[[2]] &lt;- \"\"",
     "crumbs": [
       "Rmd-file",
       "Creation of the .Rmd-file"
@@ -627,7 +594,7 @@
     "href": "creation-Rmd.html#solutions-list",
     "title": "Creation of the .Rmd file",
     "section": "Solutions list",
-    "text": "Solutions list\nThe solutions list contains the solutions to the questions.\nsolutions[[1]] &lt;- \"Au\"\nsoltuions[[2]] &lt;- sqrt(2.59)",
+    "text": "Solutions list\nThe solutions list contains the correct solutions to the questions.\nsolutions[[1]] &lt;- \"Au\"\nsoltuions[[2]] &lt;- sqrt(2.59)",
     "crumbs": [
       "Rmd-file",
       "Creation of the .Rmd-file"
@@ -638,7 +605,7 @@
     "href": "creation-Rmd.html#types",
     "title": "Creation of the .Rmd file",
     "section": "Types",
-    "text": "Types\ntypes[[1]] &lt;- \"schoice\" \ntypes[[2]] &lt;- \"num\"",
+    "text": "Types\nFor each question its type needs to be specified, see here for all possibile options ????. For this example, we have a single choice and a numeric question.\ntypes[[1]] &lt;- \"schoice\" \ntypes[[2]] &lt;- \"num\"",
     "crumbs": [
       "Rmd-file",
       "Creation of the .Rmd-file"
@@ -649,7 +616,7 @@
     "href": "creation-Rmd.html#explanations",
     "title": "Creation of the .Rmd file",
     "section": "Explanations",
-    "text": "Explanations",
+    "text": "Explanations\nExplanations are not necessary, however they can be provided to students for putting the answer into context.\nexplanations[[1]] &lt;- \"The symbol for gold in the periodic table is \\\"Au\\\", because it comes from the Latin word \\\"aurum\\\".\"\nexplanations[[2]] &lt;- paste(\"The correct answer is \", sqrt(2.59), \", beacuse the standard deviation is the square root of the variance.\")\n\n\n\n\n\n\nImportant\n\n\n\nInside a string “…”, it is necessary to escape certain characters, by placing \\ before them, for example quotes.",
     "crumbs": [
       "Rmd-file",
       "Creation of the .Rmd-file"
@@ -660,7 +627,7 @@
     "href": "creation-Rmd.html#tolerances",
     "title": "Creation of the .Rmd file",
     "section": "Tolerances",
-    "text": "Tolerances",
+    "text": "Tolerances\nTolerances are only needed for numeric questions, for all other types, the element in the list is simply left empty.\ntolerances[[2]] &lt;- 0.001\n\n\n\n\n\n\nTip\n\n\n\nTolerances are generally used to account for rounding differences when the resulting number has many decimal places, or the number is very large. However, it is also possible to set the numeric tolerance to 0, for example when asking for the number of continents, which has clearly only one true answer with no sensible tolerance, despite being a numeric question.",
     "crumbs": [
       "Rmd-file",
       "Creation of the .Rmd-file"
