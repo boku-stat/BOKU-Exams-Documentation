@@ -4,13 +4,13 @@ title: "Ideas"
 
 This is the page for future ideas and important notes for documentation, for internal use. 
 
-Notes, Stand 10.02 
+Notes, Stand 13.02 
 
 Allgemein: 
 
 - Internal Links 
 - check use of backticks 
-- Links to external doku 
+- Links to external doku formatierung ??? links oder beschreibung in den []() 
 - Reihenfolge der Seiten? 
 - Begriff: questions oder answers? -> questions 
 - R code: formatiert mit Farben oder including knitr tags, zb auf structure .Rmd page (also direkt auf der Seite oder mit filter include)
@@ -25,6 +25,11 @@ Shiny App:
 - nicht hosten? -> wie bekommt man zugriff dazu? 
 - welche features? 
 - gehört neu strukturiert und aufgesetzt mit (fast) allen features in mind 
+
+Upload Moodle 
+
+- seite erstellen 
+- anleitung schreiben 
 
 Home: 
 
@@ -48,25 +53,35 @@ Structure Rmd:
 Creation Rmd:
 
 - umbenennen? 
-- fertig schreiben 
+- ~~fertig schreiben~~ 
 
 Structure R: 
 
-- basic structure schreiben
-- advanced structure schreibe 
+- ~~basic structure schreiben~~
+- advanced structure schreiben 
 - templates erstellen und einfügen 
 
 Conversion: 
 
-- gehört in der form eigentlich in die interne doku 
+- ~~gehört in der form eigentlich in die interne doku~~ 
 - basic method (basic umwandlung ohne "schnickschnack")
 - advanced method (Lukas' script verallgemeinert)
-- vielleicht zusammenlegen mit Strucutre R-file ? 
+- vielleicht zusammenlegen mit Strucutre R-file ? -> eher nein 
 
 
 Add ons: 
 
 - ~~Abschnitt über graphs hinzufügen und schreiben~~ 
+
+Basic Examples: 
+
+- final check, cross references 
+
+Advanced Examples: 
+
+- Seite erstellen 
+- Examples ausdenken 
+- Einfach nur zur homepage verlinken?? 
 
 FAQ: 
 
@@ -75,8 +90,9 @@ FAQ:
 
 References: 
 
-- Quellen und Resourcen zusammentragen 
+- ~~Erste Quellen und Resourcen zusammentragen~~ 
 - weitere Abschnitte/Themenbereiche überlegen 
+- zu diesen weitere Quellen suchen 
 
 
 
@@ -90,7 +106,7 @@ Further Notes:
 
 -   include r chunks with visible settings
 
--   README? recommended order of reading documentation
+-   ~~README? recommended order of reading documentation~~
 
 -   If a document contains no R code chunks, the default inline syntax using curly braces, e. g. `` `{r}` ``, will not work. Instead, the engine must be set to knitr in the YAML header like this: `engine: knitr`, and no curly braces must be used in the inline code: `` `r` ``.[^1]
 

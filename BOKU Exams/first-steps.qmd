@@ -4,7 +4,7 @@ title: "First Steps"
 
 # Purpose of `R/exams`
 
-`R/exams` is used to automatically generate and evaluate exam questions. See here for more info about R and `R/exams` ?????
+`R/exams` is used to automatically generate and evaluate exam questions. See [here](r-exams.qmd) for more info about R and `R/exams`. 
 
 At BOKU, it is used by the Institute for Statistics in several courses. Homework, review exercises and exams are all created with R/exams, both on paper as well as online quizzes, for example on BOKUlearn. Currently this is mostly used for courses in statistics, however the application is not limited to statistical applications at all.
 
@@ -16,7 +16,7 @@ This documentation should serve as a basic first introduction and a how-to for a
 
 The generation of the exams is happening within RStudio. See [how to install R and RStudio](https://statistik.boku.ac.at/stat-lehre/doku.php?id=statistik_mit_r:rstudio:rstudio_installation:start).
 
-Generally, a structure of folders and files (see template here ????) are used, which all have a specific purpose. For a basic implementation, two types of files are necessary, namely .R-files and .Rmd-files.
+Generally, a structure of folders and files are used, which all have a specific purpose. For a basic implementation, two types of files are necessary, namely .R-files and .Rmd-files. See a description for each and a template here: [.Rmd-file](structure-Rmd.qmd) and [.R-file](structure-R.qmd)
 
 .R-files are scripts written in R, where R code is written and evaluated.
 
@@ -24,19 +24,27 @@ Generally, a structure of folders and files (see template here ????) are used, w
 
 ## What is in the files?
 
-The .Rmd-file contains the questions, answers and other necessary parameters for creating the exam (see ????? for more details). These components are created by the person wanting to create an exam, however they need to be written according to a certain structure, see here ?????.
+The .Rmd-file contains the questions, answers and other necessary parameters for creating the exam (see ????? for more details). These components are created by the person wanting to create an exam, however they need to be written according to a certain structure, see [here](structure-Rmd.qmd).
 
-The .R file contains the code, which converts the questions that are written in the .Rmd-file into the actual exam in a certain output format. Several formats are possible, such as .pdf, HTML and .xml for Moodle quizzes. (see ??? for more details) This code is based on the functionality of the `R/exams` package.
+The .R file contains the code, which converts the questions that are written in the .Rmd-file into the actual exam in a certain output format. Several formats are possible, such as .pdf, HTML and .xml for Moodle quizzes. See [here](structure-R.qmd) for more info. This code is based on the functionality of the `R/exams` package.
 
-An additonal separate .R-file can contain other R objects, which are then (dynamically) used in exam questions, however this is not a necessary component. For more information about add ons see ???? and for advanced examples using this, see here ??? 
+An additonal separate .R-file can contain other R objects, which are then (dynamically) used in exam questions, however this is not a necessary component. For more information about add-ons see [this page](add-ons.qmd) and for advanced examples using this, see here ???? 
 
 ## What does the exam look like?
 
 An exam can contain many different types of questions. `R/exams` is suitable for creating not only calculation questions, but also multiple or single choice questions, open answer questions (single word or essay questions) or including upload points in Moodle exams. It is possible to use any combination in one exam, eg. two numeric and three multiple choice questions.
 
-for examples see here ???? 
+For basic examples see these pages: 
 
-`R/exams` does not only have statistical applications, the look of the exam is entirely customizable. It is also possible to include data, graphs, pictures and other things, see ????.
+- [Numeric example](example1.qmd)
+
+- [String example](example2.qmd)
+
+- [Single choice example](example3.qmd)
+
+- [Multiple choice example](example4.qmd)
+
+`R/exams` does not only have statistical applications, the look of the exam is entirely customizable. It is also possible to include data, graphs, pictures and other things, see the page about [add-ons](add-ons.qmd). 
 
 ## How can R/exams prohibit cheating?
 
@@ -48,7 +56,8 @@ There are multiple ways of individualizing an exam, for example dynamically chan
 
 Numbers or data can also be randomly sampled, meaning each student will get individual results.
 
-It is also possible to create a pool of True/False statements which are then randomly drawn when creating an exam. In addition, the answer options for multiple choice questions can be individualized in a similar way.\
+It is also possible to create a pool of True/False statements which are then randomly drawn when creating an exam. In addition, the answer options for multiple choice questions can be individualized in a similar way. 
+
 For implementations and tutorials see ????
 
 ## How can the exams be corrected?
@@ -58,3 +67,5 @@ For each output format, there is a different method for correcting the exams.
 For Moodle quizzes, the correct solutions are imported automatically as well, meaning they are graded automatically. The allocation of points can also be adjusted using R/exams. See ????
 
 For pdf exams, an answer sheet is provided, but it is also possible to automatically grade scans of the students' multiple choice exams using R/exams. See ????
+
+

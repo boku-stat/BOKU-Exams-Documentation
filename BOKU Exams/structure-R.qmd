@@ -1,12 +1,31 @@
 ---
 title: "Structure of an R-file"
+filters:
+   - downloadthis
 ---
+The .R file contains the code that is used to convert the created .Rmd-files, which contain the questions, into the desire output format, for example pdf, html or xml (for moodle). 
+
+For each output format there is a different function in the `R/exams` package, each function has many parameters, which allow for customization. Below is an explanation for a very simple and straightforward converison file, but also a more advanced, which has implemented certain options, which enhance the basic functionatlity. 
 
 # Basic Form 
-most basic form: 
-script with call to exams2html/exams2moodle etc 
+In its most basic form, the script only contains three calls. First `library(exams)`, which loads the functions available in the `R/exams` package. Secondly one to change the working directly to the folder where the .Rmd-files are stored and lastly the call to an `exams2` function. 
 
-set wd 
+A script could look like this: 
+
+```R 
+library(exams) #load content 
+setwd("path/to/Rmd/files") #change working directory 
+exams2pdf("name_of_file.Rmd") #output: pdf
+exams2html("name_of_file.Rmd") #output: html 
+exams2moodle("name_of_file.Rmd") #ouput: xml for moodle import 
+```
+A simple template script can be downloaded here: 
+
+{{< downloadthis templates/template_script_conversion.R dname="template_script" >}}
+
+::: callout-tip 
+When creating exercises in the .xml format, they can only be viewed sensibly in Moodle for the most part. In order to avoid unnecessary uploading of (unfinished) files, that are still work in progress, it is advisable to use the html format as a "preview". The hmtl page will look slightly different compared to the moodle exercises, however it can be useful to check the overall look of the exercise while still creating and altering them. 
+::: 
 
 # Advanced Form 
 

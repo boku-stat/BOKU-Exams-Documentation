@@ -2,11 +2,32 @@
 title: "Further References"
 ---
 
-This page will link to existing documentation for `R/exams`. 
+This page links to existing documentation for `R/exams`, since this website only gives a very basic introduction and describes the features of `R/exams` most often used at BOKU at the moment.  
 
-- official documentation (CRAN, vignette etc.)
-- Homepage R/exams 
-- stackoverflow Achim Zeileis 
 
-Markdown references: 
+# Official Documentation `R/exams` 
+
+Link to CRAN : [exams on CRAN](https://cran.r-project.org/package=exams)
+
+The manual can be downloaded here: [Manual for `R/exams`](files/manual_exams.pdf)
+
+Version 2 of the vignette can be downloaded here: [Vignette for `R/exams`](files/vignette_exams.pdf)
+
+Official website of `R/exams`: [](https://www.r-exams.org)
+
+This page offers many examples, templates, tutorials, etc., which contain the newest changes and also displays many more features of `R/exams`. 
+
+# Additional resources 
+
+Achim Zeileis is very active on [stackoverflow](https://stackoverflow.com/questions), and many of his answers offer specific guidance on how to solve problems or how to implememt a certain feature. See his profile here: [Achim Zeileis on stackoverflow.com](https://stackoverflow.com/users/4233642/achim-zeileis)
+
+
+# R markdown resources 
+
+Link to `rmarkdown` on CRAN: [rmarkdown on CRAN](https://cran.r-project.org/package=rmarkdown)
+
+Link to the rmarkdown homepage: [rmarkdown](https://rmarkdown.rstudio.com)
+
+Another very detailed resource for `rmarkdown` here: [rmarkdown ](https://bookdown.org/yihui/rmarkdown/)
+
 

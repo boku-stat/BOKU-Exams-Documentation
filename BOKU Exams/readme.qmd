@@ -4,6 +4,8 @@ title: "README"
 
 This website aims to give an overview of how to use `R/exams` for the creation of exercises. 
 
+Disclaimer: Internal cross-references, marked by ????, are (for the most part) not implemented yet. 
+
 ### What is R/exams? 
 
 `R/exams` is a freely available package for the software R. 
