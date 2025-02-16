@@ -34,6 +34,21 @@ All objects called in inline code need to be defined in a code chunk beforehand.
 ```
 ::: 
 
+## Dynamic Context ("stories")
+
+It is possible to change the context of the exercise dynamically. For example, when creating exercises, each student will receive 20 randomly sampled data points, however for group A, this sampled data is put into the context of food production, for example the height of apple trees, while for group B this represents the height of a group of people. 
+
+Putting these numbers into different contexts is possible through sampling through "stories". (Note, this is not an offical term from `R/exams`, instead it was coined by the Statistics Institute at BOKU.) These stories are stored in an extra .R-file as a list object, which is then sourced into the .Rmd-file, where the different elements are used. 
+
+Different types of elements of a story can include: 
+
+- An introductory text, which provides the context 
+- Parameters for the data generation 
+- text building blocks to be able to adjust parts of the questions dynamically 
+- units 
+- etc. 
+
+
 ## Tables 
 
 ### Manual Creation

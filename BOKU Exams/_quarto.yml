@@ -57,6 +57,9 @@ website:
           text: Multiple Choice Example
           
       - section: Advanced Examples 
+        contents: 
+        - href: advanced1.qmd
+          text: Example 1
           
       - href: ref.qmd 
         text: Further References

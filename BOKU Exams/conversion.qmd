@@ -8,4 +8,4 @@ This page will briefly explain the conversion process.
 
 # Basic Method 
 
-When a both the .Rmd files and the .R file are set up correctly, one simple run-through of the script creates the exercises. s
+When a both the .Rmd files and the .R file are set up correctly, one simple run-through of the script creates the exercises. 

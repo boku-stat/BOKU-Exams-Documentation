@@ -29,6 +29,6 @@ Download Rstudio [here](https://posit.co/download/rstudio-desktop/).
 
 # R/exams
 
-The R/exams package is used for automatically generating and evaluating exams. It was developed by Achim Zeileis.
+The R/exams package is used for automatically generating and evaluating exams. It was developed by Bettina Grün and Achim Zeileis. Other contributors are: Friedrich Leisch, Nikolaus Umlauf, Mirko Birbaumer, Dominik Ernst, Patrik Keller, Niels Smits, Reto Stauffer, Kenji Sato and Florian Wickelmaier. 
 
 It can be found at CRAN [here](https://cran.r-project.org/package=exams).

@@ -1,0 +1,74 @@
+```{r, data generation}
+library(knitr)
+
+set.seed(123) # seed for replicability -> removed when generating multiple differnt exercises 
+
+x_mu <- 1000 #set true mean 
+alpha = 0.01 #confidence level 
+difference <- FALSE # should the means be different? 
+n <- 25 #number of observations 
+
+
+if(difference){
+  y_mu <- x_mu + 10 
+} else {
+  y_mu <- x_mu 
+} 
+
+# sample data 
+x <- rnorm(n = n, mean = x_mu, sd = 10)
+y <- rnorm(n = n, mean = y_mu, sd = 10)
+
+
+mean_x <- mean(x)
+mean_y <- mean(y)
+p_value <- t.test(x, y)$p.value
+
+
+data <- data.frame("Manufacturer_A" = x, "Manufacturer_B" = y)
+
+write.csv2(data, file = "bread_data.csv")
+
+```
+Question
+======== 
+The following data was collected from two bread manufacturers, for each manufacturer, `r n` loaves of bread were weighed. The results is the following data table: 
+
+```{r, data table}
+kable(data)
+
+````
+
+The data can be downlaoded as a .csv-file here: 
+
+[](bread_data.csv)
+
+
+Answer the following questions: 
+
+What is the mean weight of the bread made by manufacturer A? ##ANSWER1##
+
+What is the mean weight of the bread made by manufacturer B? ##ANSWER2## 
+
+Using the function t.test() in R, we can check if the mean weight of the bread differs between the two manufacturerss. Use a signficance level of $\alpha = `r alpha`$
+
+The null hypotheses (H0) is that ##ANSWER3## 
+
+The p-value of the t-test is smaller than $\alpha = `r alpha`$. ##ANSWER4## 
+
+Based on these results, we can ##ANSWER5## 
+
+
+
+
+
+Solution 
+========
+
+
+
+Meta-Information
+================
+
+
+

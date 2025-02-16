@@ -18,16 +18,17 @@ It can be used to automatically create several different types of exercises, wit
 
 | Page | Content | 
 |------|---------| 
-| First Steps | Brief overview of `R/exams` and its general usage. | 
-| R and `R/exams` info | Links to software and installation. | 
-| .Rmd-file: Structure | Gives the structure and "skeleton" for the main .Rmd-file | 
-| .Rmd-file: Creation | How to utilize the basic strucutre and incorporate the desired content | 
-| .R-file | Conversion script| 
-| Add-ons | Brief how-to for including pictures, links, etc. in .Rmd-files | 
-| Basic Examples | Short examples to illustrate simple use cases | 
+| [First Steps](first-steps.qmd) | Brief overview of `R/exams` and its general usage. | 
+| [R and `R/exams` info](r-exams.qmd) | Links to software and installation. | 
+| [.Rmd-file: Structure](structure-Rmd.qmd) | Gives the structure and "skeleton" for the main .Rmd-file | 
+| [.Rmd-file: Creation](creation-Rmd.qmd) | How to utilize the basic strucutre and incorporate the desired content | 
+| [.R-file: Strucutre](structure-R.qmd) | Structure for the conversion script | 
+| [.R-file: Conversion](conversion.qmd) | Process of conversion | 
+| [Add-ons](add-ons.qmd) | Brief how-to for including pictures, links, etc. in .Rmd-files | 
+| [Basic Examples](example1.qmd) | Short examples to illustrate simple use cases | 
 | Advanced Examples | More complex Examples | 
-| Further References | Links to existing documentation, examples, etc. | 
-| FAQ | Frequently Asked Questions and their answers |
+| [Further References](ref.qmd) | Links to existing documentation, examples, etc. | 
+| [FAQ](faq.qmd) | Frequently Asked Questions and their answers |
 
 ### How to give feedback or ask questions? 
 
