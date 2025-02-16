@@ -285,8 +285,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Advanced Examples</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Advanced Examples</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./advanced1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example 1</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -359,7 +372,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>The .Rmd is the main file, where all the information about the exercise is contained. It follows a basic structure, with four sections, “Data Generation”, “Question”, “Solution” and “Meta-information”. Their purpose will be described in detail in the following sections.</p>
 <p>An empty template containing only the necessary structure can be downloaded here:</p>
-<p><a href="#dnldts21032" onclick="fetch('data:text/plain;base64,YGBge3IsIGRhdGEgZ2VuZXJhdGlvbiwgZWNobyA9IEZBTFNFfQpsaWJyYXJ5KGV4YW1zKQpxdWVzdGlvbnMgPC0gbGlzdCgpIApzb2x1dGlvbnMgPC0gbGlzdCgpIAp0eXBlcyA8LSBsaXN0KCkKZXhwbGFuYXRpb25zIDwtIGxpc3QoKSAKdG9sZXJhbmNlcyA8LSBsaXN0KCkKCmBgYAoKUXVlc3Rpb24KPT09PT09PT0KCmBgYHtyLCBxdWVzdGlvbnMsIGVjaG8gPSBGQUxTRX0KYW5zd2VybGlzdCh1bmxpc3QocXVlc3Rpb25zKSwgbWFya3VwID0gIm1hcmtkb3duIikKYGBgIAoKU29sdXRpb24KPT09PT09PT0KCmBgYHtyLCBzb2x1dGlvbnMsIGVjaG8gPSBGQUxTRX0KYW5zd2VybGlzdCh1bmxpc3QoZXhwbGFuYXRpb25zKSwgbWFya3VwID0gIm1hcmtkb3duIikKYGBgCgpNZXRhLWluZm9ybWF0aW9uIAo9PT09PT09PT09PT09PT09CmV4bmFtZToKZXh0aXRsZTogCmV4dHlwZTogY2xvemUKZXhzb2x1dGlvbjogYHIgcGFzdGUoc29sdXRpb25zLCBjb2xsYXBzZSA9ICJ8IilgCmV4Y2xvemV0eXBlOiBgciBwYXN0ZSh0eXBlcywgY29sbGFwc2UgPSAifCIpYApleHRvbDogYHIgcGFzdGUodG9sZXJhbmNlcywgY29sbGFwc2UgPSAifCIpYApleHNodWZmbGU6IFRSVUUKZXh2ZXJzaW9uOiB2MQ==').then(res => res.blob()).then(blob => {
+<p><a href="#dnldts51553" onclick="fetch('data:text/plain;base64,YGBge3IsIGRhdGEgZ2VuZXJhdGlvbiwgZWNobyA9IEZBTFNFfQpsaWJyYXJ5KGV4YW1zKQpxdWVzdGlvbnMgPC0gbGlzdCgpIApzb2x1dGlvbnMgPC0gbGlzdCgpIAp0eXBlcyA8LSBsaXN0KCkKZXhwbGFuYXRpb25zIDwtIGxpc3QoKSAKdG9sZXJhbmNlcyA8LSBsaXN0KCkKCmBgYAoKUXVlc3Rpb24KPT09PT09PT0KCmBgYHtyLCBxdWVzdGlvbnMsIGVjaG8gPSBGQUxTRX0KYW5zd2VybGlzdCh1bmxpc3QocXVlc3Rpb25zKSwgbWFya3VwID0gIm1hcmtkb3duIikKYGBgIAoKU29sdXRpb24KPT09PT09PT0KCmBgYHtyLCBzb2x1dGlvbnMsIGVjaG8gPSBGQUxTRX0KYW5zd2VybGlzdCh1bmxpc3QoZXhwbGFuYXRpb25zKSwgbWFya3VwID0gIm1hcmtkb3duIikKYGBgCgpNZXRhLWluZm9ybWF0aW9uIAo9PT09PT09PT09PT09PT09CmV4bmFtZToKZXh0aXRsZTogCmV4dHlwZTogY2xvemUKZXhzb2x1dGlvbjogYHIgcGFzdGUoc29sdXRpb25zLCBjb2xsYXBzZSA9ICJ8IilgCmV4Y2xvemV0eXBlOiBgciBwYXN0ZSh0eXBlcywgY29sbGFwc2UgPSAifCIpYApleHRvbDogYHIgcGFzdGUodG9sZXJhbmNlcywgY29sbGFwc2UgPSAifCIpYApleHNodWZmbGU6IFRSVUUKZXh2ZXJzaW9uOiB2MQ==').then(res => res.blob()).then(blob => {
       const downloadURL = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       document.body.appendChild(a);
@@ -367,7 +380,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       a.download = 'Template.Rmd'; a.click();
       window.URL.revokeObjectURL(downloadURL);
       document.body.removeChild(a);
-        });"><button class="btn btn-default downloadthis  " id="dnldts21032"><i class="bi bi-download"></i> Download </button></a></p>
+        });"><button class="btn btn-default downloadthis  " id="dnldts51553"><i class="bi bi-download"></i> Download </button></a></p>
 <section id="basic-structure" class="level1">
 <h1>Basic Structure</h1>
 <ul>
@@ -394,7 +407,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>even more text here. </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="data-generation" class="level2">
 <h2 class="anchored" data-anchor-id="data-generation">Data Generation</h2>
-<p>In this section of the .Rmd-file, the questions (including answer options for single/multiple choice questions), solutions, the types of questions, explanations and tolerances for solutions are created and stored in list objects for later. In addition there are many additional possibilities, like sampling data, creating graphs, importing pictures etc. which will be discussed later (See section ???????)</p>
+<p>In this section of the .Rmd-file, the questions (including answer options for single/multiple choice questions), solutions, the types of questions, explanations and tolerances for solutions are created and stored in list objects for later. In addition there are many additional possibilities, like sampling data, creating graphs, importing pictures etc. which are described on the following page: <a href="./add-ons.html">Add-ons</a></p>
 <section id="description-of-the-lists" class="level3">
 <h3 class="anchored" data-anchor-id="description-of-the-lists">Description of the lists</h3>
 <p>The five necessary lists are <code>questions</code>, <code>solutions</code>, <code>types</code>, <code>explanations</code> and <code>tolerances</code>, which all have the same length, which is equal to the number of questions in the exercise. For example, in an exam with 5 multiple choice questions, the length of the lists is 5.</p>
@@ -437,7 +450,7 @@ Warning
 </section>
 <section id="question" class="level2">
 <h2 class="anchored" data-anchor-id="question">Question</h2>
-<p>In this section, all the questions, that should be included in the exam, are written down. This is done in natural language, however bits of code (including R objects), graphs, data, etc. can be included (see ??????)</p>
+<p>In this section, all the questions, that should be included in the exam, are written down. This is done in natural language, however bits of code (including R objects), graphs, data, etc. can be included. See more <a href="./add-ons.html">here</a></p>
 <p>Additonal text, like instructions, hints, context, etc. is also written down in this section.</p>
 <section id="questions-with-answer-fields" class="level3">
 <h3 class="anchored" data-anchor-id="questions-with-answer-fields">Questions with answer fields</h3>
@@ -486,14 +499,14 @@ mchoice example
 <p>Possible answer options are “greater than”, “smaller than”, “equal to”, which would be displayed instead of the answer field. In moodle all answer options are shown as tickable boxes.</p>
 </div>
 </div>
-<p>possible add-ons: pictures, graphs, data, csv.files tables, R-code, etc. see description later</p>
+<p>For more examples, see the section “Basic Examples” <a href="./example1.html">here</a>.</p>
 <p>The function <code>answerlist()</code> from <code>R/exams</code> package converts the answer options, which are stored in the list object <code>questions</code> into the necessary format.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">answerlist</span>(<span class="fu">unlist</span>(questions), <span class="at">markup =</span> <span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="solution" class="level2">
 <h2 class="anchored" data-anchor-id="solution">Solution</h2>
-<p>The section “Solution” can be used to provide solutions in the form of explanations. It does not create the solutions to the questions (see ?????) and nor is it responsible for assessing/grading questions. Instead it can be used as a reference to review questions or provide feedback. This type of information is created in this section.</p>
+<p>The section “Solution” can be used to provide solutions in the form of explanations. It does not create the solutions to the questions and nor is it responsible for assessing/grading questions. Instead it can be used as a reference to review questions or provide feedback. This type of information is created in this section.</p>
 <p>The <code>solutions</code> <strong>list</strong> contains the actual solutions to the questions, which are used for deeming an answer correct/incorrect, however these are <strong>not directly displayed in this section</strong>.</p>
 <p>The <code>explanations</code> list <strong>holds any information that can be possibly given as feedback</strong>. This can, but does not have to, include the actual solutions, depending on the type of exam one is aiming for. This list is optional, general feedback can be normally written as text in this section. See ???? two sections below</p>
 <section id="actual-solutions-as-explanations" class="level3">
@@ -547,12 +560,12 @@ mchoice example
 </div>
 </div>
 <p>In some cases it can be useful to document the seed used, for example when randomly generating numbers or doing any kind of sampling. Providing this information in the “Solution” section to either students or even oneself, when for example reviewing questions, can ensure reproducibility.</p>
-<p>See ???? for more information on how to dynamically display R objects (like seeds) in the exam.</p>
+<p>See the page about <a href="./add-ons.html">add-ons</a> for more information on how to dynamically display R objects (like seeds) in the exam.</p>
 </section>
 </section>
 <section id="meta-information" class="level2">
 <h2 class="anchored" data-anchor-id="meta-information">Meta-information</h2>
-<p>This section contains all the information necessary for the conversion from an .Rmd-file to the desired output (HTML, Moodle (xml), pdf, …) see ???</p>
+<p>This section contains all the information necessary for the conversion from an .Rmd-file to the desired output (HTML, Moodle (xml), pdf, …). The conversion process is decribed <a href="./conversion.html">here</a></p>
 <table class="caption-top table">
 <caption>Meta-information</caption>
 <colgroup>
@@ -609,11 +622,11 @@ mchoice example
 </section>
 <section id="extitle" class="level4">
 <h4 class="anchored" data-anchor-id="extitle">extitle</h4>
-<p>Sets the title of the exercise. Titles can be dynamically generated by embedding R objects in the text to adapt the title based on the exam context. see ?????</p>
+<p>Sets the title of the exercise. Titles can be dynamically generated by embedding R objects in the text to adapt the title based on the exam context. For a detailed explanation of inline code, see <a href="./add-ons.html">this page</a></p>
 </section>
 <section id="extype" class="level4">
 <h4 class="anchored" data-anchor-id="extype">extype</h4>
-<p>Specifies the type of exam. This is different to the list object <code>types</code> from the “Data generation” section. A very common type is “cloze”, which is a type of exam which contains different types of questions, for example a combination of numeric and schoice questions in one exam. If the exam just contains one type of question, for example only multiple choice questions, then this can be specified as well. see ???? for more information on non-cloze exams.</p>
+<p>Specifies the type of exam. This is different to the list object <code>types</code> from the “Data generation” section. A very common type is “cloze”, which is a type of exam which contains different types of questions, for example a combination of numeric and schoice questions in one exam. If the exam just contains one type of question, for example only multiple choice questions, then this can be specified as well.</p>
 </section>
 <section id="exsolution" class="level4">
 <h4 class="anchored" data-anchor-id="exsolution">exsolution</h4>
