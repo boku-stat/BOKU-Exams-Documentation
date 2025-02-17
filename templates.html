@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Multiple Choice Example – BOKU Exams</title>
+<title>Templates – BOKU Exams</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -114,7 +80,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./example1.html">Basic Examples</a></li><li class="breadcrumb-item"><a href="./example4.html">Multiple Choice Example</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./templates.html">Downloads and Custom Template Creation</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -278,7 +244,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./example4.html" class="sidebar-item-text sidebar-link active">
+  <a href="./example4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Multiple Choice Example</span></a>
   </div>
 </li>
@@ -315,7 +281,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./templates.html" class="sidebar-item-text sidebar-link">
+  <a href="./templates.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Downloads and Custom Template Creation</span></a>
   </div>
 </li>
@@ -324,24 +290,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#creating-the-list-structure" id="toc-creating-the-list-structure" class="nav-link active" data-scroll-target="#creating-the-list-structure">Creating the List Structure</a></li>
-  <li><a href="#question-section" id="toc-question-section" class="nav-link" data-scroll-target="#question-section">Question Section</a></li>
-  <li><a href="#solution-section" id="toc-solution-section" class="nav-link" data-scroll-target="#solution-section">Solution Section</a></li>
-  <li><a href="#meta-information-section" id="toc-meta-information-section" class="nav-link" data-scroll-target="#meta-information-section">Meta-information Section</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./example1.html">Basic Examples</a></li><li class="breadcrumb-item"><a href="./example4.html">Multiple Choice Example</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Multiple Choice Example</h1>
+<h1 class="title">Templates</h1>
 </div>
 
 
@@ -358,123 +315,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>This is an exercise containing two multiple choice questions about the elements of the periodic table.</p>
-<p>The whole example as an .Rmd-file can be downloaded here:</p>
-<p><a href="#dnldts27383" onclick="fetch('data:text/plain;base64,YGBge3IgYW5zd2Vycy9zb2x1dGlvbnMsIGVjaG8gPSBGQUxTRSwgcmVzdWx0cyA9ICJoaWRlIn0KbGlicmFyeShleGFtcykKIyBJbml0aWFsaXplIGxpc3RzIGZvciB0aGUgcXVlc3Rpb25zLCBhbnN3ZXJzLCBzb2x1dGlvbnMsIHR5cGVzLCBleHBsYW5hdGlvbnMgKHRvbGVyYW5jZXMgYXJlIG5vdCBuZWVkZWQgaWYgdGhlcmUgYXJlIG5vIG51bWVyaWMgcXVlc3Rpb25zKQoKYW5zd2VycyA8LSBsaXN0KCkKc29sdXRpb25zIDwtIGxpc3QoKQp0eXBlcyA8LSBsaXN0KCkKZXhwbGFuYXRpb25zIDwtIGxpc3QoKQoKIyBEZWZpbmUgUXVlc3Rpb24gMTogV2hpY2ggb2YgdGhlIGZvbGxvd2luZyBlbGVtZW50cyBhcmUgbWV0YWxzPwphbnN3ZXJzW1sxXV0gPC0gYygiSXJvbiAoRmUpIiwgIk94eWdlbiAoTykiLCAiQWx1bWluaXVtIChBbCkiLCAiTml0cm9nZW4gKE4pIikKc29sdXRpb25zW1sxXV0gPC0gZXhwbGFuYXRpb25zW1sxXV0gPC0gYyhUUlVFLCBGQUxTRSwgVFJVRSwgRkFMU0UpICAjIENvcnJlY3QgYW5zd2VyczogRmUgYW5kIEFsCnR5cGVzW1sxXV0gPC0gIm1jaG9pY2UiCgoKIyBEZWZpbmUgUXVlc3Rpb24gMjogV2hpY2ggb2YgdGhlIGZvbGxvd2luZyBlbGVtZW50cyBhcmUgbWV0YWxsb2lkcz8KYW5zd2Vyc1tbMl1dIDwtIGMoIlNpbGljb24gKFNpKSIsICJCb3JvbiAoQikiLCAiSGVsaXVtIChIZSkiLCAiQXJzZW5pYyAoQXMpIikKc29sdXRpb25zW1syXV0gPC0gZXhwbGFuYXRpb25zW1syXV0gPC0gYyhUUlVFLCBUUlVFLCBGQUxTRSwgVFJVRSkgICMgQ29ycmVjdCBhbnN3ZXJzOiBTaSwgQiwgYW5kIEFzCnR5cGVzW1syXV0gPC0gIm1jaG9pY2UiCmBgYAoKUXVlc3Rpb24KPT09PT09PT0KCipRdWVzdGlvbiAxKgoKV2hpY2ggb2YgdGhlIGZvbGxvd2luZyBlbGVtZW50cyBhcmUgbWV0YWxzPwoKIyNBTlNXRVIxIyMKCipRdWVzdGlvbiAyKgoKV2hpY2ggb2YgdGhlIGZvbGxvd2luZyBlbGVtZW50cyBhcmUgbWV0YWxsb2lkcz8KCiMjQU5TV0VSMiMjCgpgYGB7ciBxdWVzdGlvbmxpc3QsIGVjaG8gPSBGQUxTRSwgcmVzdWx0cyA9ICJhc2lzIn0KYW5zd2VybGlzdCh1bmxpc3QoYW5zd2VycyksIG1hcmt1cCA9ICJtYXJrZG93biIpCgpgYGAKClNvbHV0aW9uCj09PT09PT09CgoqU29sdXRpb24gMSoKCklyb24gKEZlKSBhbmQgQWx1bWluaXVtIChBbCkgYXJlIG1ldGFscywgd2hpbGUgT3h5Z2VuIChPKSBhbmQgTml0cm9nZW4gKE4pIGFyZSBnYXNlcy4KCipTb2x1dGlvbiAyKgoKU2lsaWNvbiAoU2kpLCBCb3JvbiAoQiksIGFuZCBBcnNlbmljIChBcykgYXJlIG1ldGFsbG9pZHMuIEhlbGl1bSAoSGUpIGlzIGEgbm9ibGUgZ2FzLgoKYGBge3Igc29sdXRpb25saXN0LCBlY2hvID0gRkFMU0UsIHJlc3VsdHMgPSAiYXNpcyJ9CiMgQ29udmVydCBzb2x1dGlvbnMgdG8gIlRydWUiIG9yICJGYWxzZSIKZXhwbGFuYXRpb25zIDwtIGxhcHBseShzb2x1dGlvbnMsIGZ1bmN0aW9uKHgpIGlmZWxzZSh4LCAiVHJ1ZSIsICJGYWxzZSIpKQpzb2x1dGlvbnMgPC0gbGFwcGx5KHNvbHV0aW9ucywgbWNob2ljZTJzdHJpbmcpCgojIERpc3BsYXkgZXhwbGFuYXRpb25zCmFuc3dlcmxpc3QodW5saXN0KGV4cGxhbmF0aW9ucyksIG1hcmt1cCA9ICJtYXJrZG93biIpCgpgYGAKCk1ldGEtaW5mb3JtYXRpb24KPT09PT09PT09PT09PT09PQpleG5hbWU6IGV4YW1wbGVfbWNob2ljZQpleHRpdGxlOiBtZXRhbGxzIGFuZCBtZXRhbGxvaWRzCmV4dHlwZTogY2xvemUKZXhzb2x1dGlvbjogYHIgcGFzdGUoc29sdXRpb25zLCBjb2xsYXBzZSA9ICJ8IilgCmV4Y2xvemV0eXBlOiBgciBwYXN0ZSh0eXBlcywgY29sbGFwc2UgPSAifCIpYApleHNodWZmbGU6IFRSVUUKZXh2ZXJzaW9uOiB2MQ==').then(res => res.blob()).then(blob => {
+<p>This page will serve as a download centre and provide a script to create custom .Rmd-templates through an interface.</p>
+<p>This downloads an .R-file, which contains the code to a shiny app. When run, the shiny app allows the creation of custom templates. (more features to come)</p>
+<p><a href="#dnldts17496" onclick="fetch('data:text/plain;base64,IyBzaGlueSB1aQpsaWJyYXJ5KHNoaW55KQpsaWJyYXJ5KGJzbGliKQoKCiMjIyMjIyMgZGVmaW5lIGZ1bmN0aW9uICAjIyMjIyMgCiMgYmFzaWMgdGVtcGxhdGUgIGdlbmVyYXRpb24KYmFzaWNfdGVtcGxhdGUgPC0gZnVuY3Rpb24obiwgbWV0YV9uYW1lLCBtZXRhX3RpdGxlLCBtZXRhX3ZlcnNpb24sIHR5cGVzID0gTlVMTCwgZXhfdHlwZSwgaW1hZ2UpewogIGhlYWRlciA8LSAiXGBcYFxge3IgZGF0YSBnZW5lcmF0aW9uLCBlY2hvID0gRkFMU0UsIHJlc3VsdHMgPSBcImhpZGVcIn1cbiIKICBsaXN0cyA8LSAiYW5zd2VycyA8LSBsaXN0KClcbnNvbHV0aW9ucyA8LSBsaXN0KClcbnR5cGVzIDwtIGxpc3QoKVxuZXhwbGFuYXRpb25zIDwtIGxpc3QoKSBcbnRvbGVyYW5jZXMgPC0gbGlzdCgpXG5cbiIKICBsaXN0c19hc3NpZ25tZW50IDwtIE5VTEwKICBpZighaXMubnVsbChuKSl7IAogICAgZm9yKGkgaW4gMTpuKXsKICAgICAgbGlzdHNfYXNzaWdubWVudCA8LSBwYXN0ZTAobGlzdHNfYXNzaWdubWVudCwgImFuc3dlcnNbWyIsIGksICJdXSA8LSBcbnNvbHV0aW9uc1tbIiwgaSwgIl1dIDwtIFxudHlwZXNbWyIsIGksIl1dIDwtIFwiIiwgdHlwZXNbaV0sICJcIiIsICJcbmV4cGxhbmF0aW9uc1tbIiwgaSwgIl1dIDwtIFxudG9sZXJhbmNlc1tbIiwgaSwgIl1dIDwtIFxuXG4iKQogICAgICBlbmQgPC0gIlxuXG5cYFxgXGBcblxuIgogICAgfQogIH1lbHNlewogICAgZW5kIDwtICJcbiMjIyBmaWxsIGluIGxpc3RzIGhlcmVcblxuXGBcYFxgXG5cbiIKICB9CiAgCiAgY29udGVudCA8LSBwYXN0ZTAoaGVhZGVyLCBsaXN0cywgbGlzdHNfYXNzaWdubWVudCwgZW5kKQogIAogIHF1ZXN0aW9uIDwtICJRdWVzdGlvblxuPT09PT09PT1cblxuKldyaXRlIHRoZSBxdWVzdGlvbiB0ZXh0IGhlcmUqXG5cbiIKICBwaWN0dXJlIDwtIHBhc3RlMCgiIVtdKCIsIGltYWdlLCAiKVxuXG4iKQogIHF1ZXN0aW9ubGlzdF9jb2RlXzEgPC0gImBcYFxge3IgcXVlc3Rpb25saXN0LCBlY2hvID0gRkFMU0UsIHJlc3VsdHMgPSBcImFzaXNcIn1cbmZvciAoeCBpbiAxOmxlbmd0aCh0eXBlcykpIHtcblx0aWYgKHR5cGVzW3hdICVpbiUgYyhcIm51bVwiLCBcInN0cmluZ1wiKSkge1xuIgogIHF1ZXN0aW9ubGlzdF9jb2RlXzIgPC0gIlx0XHRhbnN3ZXJzW3hdIDwtIFwiXCJcblx0fVxufVxuYW5zd2VybGlzdCh1bmxpc3QoYW5zd2VycyksIG1hcmt1cCA9IFwibWFya2Rvd25cIilcblxgXGBcYFxuXG4iCiAgCiAgY29udGVudCA8LSBwYXN0ZTAoY29udGVudCwgcXVlc3Rpb24sIHBpY3R1cmUsIHF1ZXN0aW9ubGlzdF9jb2RlXzEsIHF1ZXN0aW9ubGlzdF9jb2RlXzIpCiAgCiAgc29sdXRpb24gPC0gIlNvbHV0aW9uXG49PT09PT09PVxuXG4qV3JpdGUgdGhlIGZlZWRiYWNrIGhlcmUqXG5cbiIKICBzb2x1dGlvbl9saXN0IDwtICJcYFxgXGB7ciBzb2x1dGlvbmxpc3QsIGVjaG8gPSBGQUxTRSwgcmVzdWx0cyA9IFwiYXNpc1wifSAgXG5mb3IgKHggaW4gMTpsZW5ndGgoc29sdXRpb25zKSkgeyAgXG4gIGlmICh0eXBlc1t4XSA9PSBcInNjaG9pY2VcIikge1xuICAgIGV4cGxhbmF0aW9uc1t4XSA8LSBzb2x1dGlvbnNbeF0gfD4gbGFwcGx5KGZ1bmN0aW9uKHgpIGlmZWxzZSh4LCBcIlRydWVcIiwgXCJGYWxzZVwiKSkgIFxuICB9IGVsc2UgeyAgXG4gICAgZXhwbGFuYXRpb25zW3hdIDwtIHNvbHV0aW9uc1t4XSAgXG4gIH0gIFxufSAgXG5hbnN3ZXJsaXN0KHVubGlzdChleHBsYW5hdGlvbnMpLCBtYXJrdXAgPSBcIm1hcmtkb3duXCIpICBcblxgXGBcYFxuXG4iCiAgbWV0YV9saXN0IDwtICJcYFxgXGB7ciBtZXRhLCBlY2hvID0gRkFMU0UsIHJlc3VsdHMgPSAnaGlkZSd9XG5mb3IgKHggaW4gMTpsZW5ndGgoc29sdXRpb25zKSkge1xuICBpZiAodHlwZXNbeF0gPT0gXCJzY2hvaWNlXCIpIHtcbiAgICBzb2x1dGlvbnNbeF0gPC0gc29sdXRpb25zW3hdIHw+XG4gICAgICB1bmxpc3QoKSB8PlxuICAgICAgbWNob2ljZTJzdHJpbmcoKVxuICB9XG59XG5cYFxgXGBcblxuIgogIAogIGNvbnRlbnQgPC0gcGFzdGUwKGNvbnRlbnQsIHNvbHV0aW9uLCBzb2x1dGlvbl9saXN0LCBtZXRhX2xpc3QpCiAgCiAgbWV0YWluZm8gPC0gcGFzdGUwKCJNZXRhLWluZm9ybWF0aW9uXG49PT09PT09PVxuXG5leG5hbWU6ICIsIG1ldGFfbmFtZSwgIiBcbmV4dGl0bGU6ICIsIG1ldGFfdGl0bGUsICIgXG5leHR5cGU6ICIsIGV4X3R5cGUsICJcbmV4c29sdXRpb246IFxgciBwYXN0ZShzb2x1dGlvbnMsIGNvbGxhcHNlID0gXCJ8XCIpXGAgXG5leGNsb3pldHlwZTogXGByIHBhc3RlKHR5cGVzLCBjb2xsYXBzZSA9IFwifFwiKVxgIFxuZXh0b2w6IFxgciBwYXN0ZSh0b2xlcmFuY2VzLCBjb2xsYXBzZSA9IFwifFwiKVxgIFxuZXhzaHVmZmxlOiBUUlVFIFxuZXh2ZXJzaW9uOiAiLCBtZXRhX3ZlcnNpb24pIAogIAogIGNvbnRlbnQgPC0gcGFzdGUwKGNvbnRlbnQsIG1ldGFpbmZvKSAKICByZXR1cm4oY29udGVudCkKfQoKIyMjIyMjIGRlZmluZSBwYW5lbCB0YWJzICMjIyMjIyAKCnR5cGVfdGFicyA8LSB0YWJzZXRQYW5lbCgKICBpZCA9ICJ0eXBlcyIsCiAgdHlwZSA9ICJoaWRkZW4iLAogIHRhYlBhbmVsKCIiKSwKICB0YWJQYW5lbCgieWVzIiwgcmFkaW9CdXR0b25zKCJ0eXBlX2Zvcl9hbGxfcXVlc3Rpb25zIiwgIlBsZWFzZSBzZWxlY3QgdGhlIHR5cGUgb2YgcXVlc3Rpb24uIiwgY2hvaWNlcyA9IGMoIm51bWVyaWMiLCAidGV4dCIsICJzaW5nbGUgY2hvaWNlIiwgIm11bHRpcGxlIGNob2ljZSIpKSksCiAgdGFiUGFuZWwoIm5vIiwgdWlPdXRwdXQoImlucHV0X3VpIikpCikKCnF1ZXN0aW9uX3RhYnMgPC0gdGFic2V0UGFuZWwoCiAgaWQgPSAicXVlc3Rpb25zIiwKICB0eXBlID0gImhpZGRlbiIsCiAgdGFiUGFuZWwoIm5vIiksCiAgdGFiUGFuZWwoCiAgICAieWVzIiwKICAgIG51bWVyaWNJbnB1dCgibiIsICJOdW1iZXIgb2YgUXVlc3Rpb25zIiwgdmFsdWUgPSAxLCBtaW4gPSAxKSwKICAgIHNlbGVjdElucHV0KCJzYW1lX3R5cGUiLCAiU2hvdWxkIGFsbCBxdWVzdGlvbnMgaGF2ZSB0aGUgc2FtZSB0eXBlPyIsIGNob2ljZXMgPSBjKCIiLCAieWVzIiwgIm5vIiksIHNlbGVjdGVkID0gIiIpLAogICAgdHlwZV90YWJzCiAgKQopCgojIyMjIyBkZWZpbmUgdWkgYW5kIHNlcnZlciAjIyMjIyMgCgp1aSA8LSBmbHVpZFBhZ2UoCiAgdGhlbWUgPSBic190aGVtZShwcmltYXJ5ID0gIiMwMDdCRkYiLCBzZWNvbmRhcnkgPSAiIzZDNzU3RCIsIGZvbnRfc2NhbGUgPSAxLjEpLAogIHRleHRPdXRwdXQoInByZXZpZXciKSwKICBzaWRlYmFyTGF5b3V0KAogICAgc2lkZWJhclBhbmVsKAogICAgICB0ZXh0SW5wdXQoImZpbGVuYW1lIiwgIlBsZWFzZSBwcm92aWRlIGEgZmlsZW5hbWUuIiwgdmFsdWUgPSBTeXMuRGF0ZSgpKSwKICAgICAgdGV4dElucHV0KCJtZXRhX25hbWUiLCAiTmFtZSBvZiB0aGUgZXhlcmNpc2U6IiwgdmFsdWUgPSAiKndyaXRlIGEgbmFtZSBoZXJlKiIpLAogICAgICB0ZXh0SW5wdXQoIm1ldGFfdGl0bGUiLCAiVGl0bGUgb2YgdGhlIGV4ZXJjaXNlOiIsIHZhbHVlID0gIip3cml0ZSBhIHRpdGxlIGhlcmUqIiksCiAgICAgIHRleHRJbnB1dCgibWV0YV92ZXJzaW9uIiwgIlZlcnNpb24gb2YgdGhlIGV4ZXJjaXNlOiIsIHZhbHVlID0gInYxIiksCiAgICAgIHNlbGVjdElucHV0KCJxdWVzdGlvbl9jaG9pY2UiLCAiU2hvdWxkIHRoZSB0ZW1wbGF0ZSBpbmNsdWRlIHRoZSBzdHJ1Y3R1cmUgZm9yIHF1ZXN0aW9ucz8iLCBjaG9pY2VzID0gYygiIiwgIm5vIiwgInllcyIpKSwKICAgICAgcXVlc3Rpb25fdGFicywKICAgICAgZmlsZUlucHV0KCJmaWxlMSIsICJDaG9vc2UgYW4gSW1hZ2UgdG8gaW5jbHVkZSwgd2hlbiBvcGVuaW5nIHRoZSBkb3dubG9hZGVkIHRlbXBsYXRlLCBpdCBtdXN0IGJlIHN0b3JlZCBpbiB0aGUgc2FtZSBmb2xkZXIhIChpbiBwcm9ncmVzcykiKSwKICAgICAgZG93bmxvYWRCdXR0b24oImRvd25sb2FkIiwgIkRvd25sb2FkIFRlbXBsYXRlIiksCiAgICApLAogICAgbWFpblBhbmVsKCJEb3dubG9hZCBhIGN1c3RvbWl6YWJsZSB0ZW1wbGF0ZS4gRGlzY2xhaW1lcjogYXBwIGlzIHN0aWxsIGluIHByb2dyZXNzLiIpCiAgKQopCgpzZXJ2ZXIgPC0gZnVuY3Rpb24oaW5wdXQsIG91dHB1dCwgc2Vzc2lvbikgewogICMgY3JlYXRlIGR5bmFtaWMgdWkgZWxlbWVudHMKICBvdXRwdXQkaW5wdXRfdWkgPC0gcmVuZGVyVUkoeyAjIGh0dHBzOi8vZ2lzdC5naXRodWIuY29tL2NocmlzdG9waGVybG92ZWxsL2I3ZWNkZjhiMGFhODJjMjBmYTQ2CiAgICBpZiAoIWlzLm5hKGlucHV0JG4pKSB7CiAgICAgIG4gPC0gaW5wdXQkbgogICAgICBsYXBwbHkoMTpuLCBmdW5jdGlvbihpKSB7CiAgICAgICAgcmFkaW9CdXR0b25zKGlucHV0SWQgPSBwYXN0ZTAoInR5cGVfcXVlc3Rpb24iLCBpKSwgbGFiZWwgPSBwYXN0ZSgiUXVlc3Rpb24iLCBpKSwgY2hvaWNlcyA9IGMoIm51bWVyaWMiLCAidGV4dCIsICJzaW5nbGUgY2hvaWNlIiwgIm11bHRpcGxlIGNob2ljZSIpKQogICAgICAgICMgaHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS9xdWVzdGlvbnMvMTkxMzA0NTUvY3JlYXRlLWR5bmFtaWMtbnVtYmVyLW9mLWlucHV0LWVsZW1lbnRzLXdpdGgtci1zaGlueQogICAgICB9KQogICAgfQogIH0pCgoKICAjIGR5bm1haWMgaW5wdXRzCiAgb2JzZXJ2ZUV2ZW50KGlucHV0JHF1ZXN0aW9uX2Nob2ljZSwgewogICAgdXBkYXRlVGFic2V0UGFuZWwoaW5wdXRJZCA9ICJxdWVzdGlvbnMiLCBzZWxlY3RlZCA9IGlucHV0JHF1ZXN0aW9uX2Nob2ljZSkKICB9KQogIG9ic2VydmVFdmVudChpbnB1dCRzYW1lX3R5cGUsIHsKICAgIHVwZGF0ZVRhYnNldFBhbmVsKGlucHV0SWQgPSAidHlwZXMiLCBzZWxlY3RlZCA9IGlucHV0JHNhbWVfdHlwZSkKICB9KQoKCiAgIyBjcmVhdGUgdGVtcGxhdGUgZm9yIGRvd25sb2FkCiAgb3V0cHV0JGRvd25sb2FkIDwtIGRvd25sb2FkSGFuZGxlcigKICAgIGZpbGVuYW1lID0gZnVuY3Rpb24oKSB7CiAgICAgIHBhc3RlMChpbnB1dCRmaWxlbmFtZSwgIi5SbWQiKQogICAgfSwKICAgIGNvbnRlbnQgPSBmdW5jdGlvbihmaWxlKSB7CiAgICAgIGlmIChpbnB1dCRzYW1lX3R5cGUgPT0gInllcyIpIHsKICAgICAgICB0eXBlIDwtIHN3aXRjaChpbnB1dCR0eXBlX2Zvcl9hbGxfcXVlc3Rpb25zLAogICAgICAgICAgIm51bWVyaWMiID0gIm51bSIsCiAgICAgICAgICAidGV4dCIgPSAic3RyaW5nIiwKICAgICAgICAgICJzaW5nbGUgY2hvaWNlIiA9ICJzY2hvaWNlIiwKICAgICAgICAgICJtdWx0aXBsZSBjaG9pY2UiID0gIm1jaG9pY2UiCiAgICAgICAgKQogICAgICAgIHR5cGVzIDwtIHJlcCh0eXBlLCBpbnB1dCRuKQogICAgICAgIGV4X3R5cGUgPC0gdHlwZQogICAgICB9IGVsc2UgewogICAgICAgIHR5cGVzIDwtIE5VTEwKICAgICAgICBmb3IgKGkgaW4gMTppbnB1dCRuKSB7CiAgICAgICAgICB0eXBlc1tpXSA8LSBzd2l0Y2goaW5wdXRbW3Bhc3RlMCgidHlwZV9xdWVzdGlvbiIsIGkpXV0sCiAgICAgICAgICAgICJudW1lcmljIiA9ICJudW0iLAogICAgICAgICAgICAidGV4dCIgPSAic3RyaW5nIiwKICAgICAgICAgICAgInNpbmdsZSBjaG9pY2UiID0gInNjaG9pY2UiLAogICAgICAgICAgICAibXVsdGlwbGUgY2hvaWNlIiA9ICJtY2hvaWNlIgogICAgICAgICAgKQogICAgICAgIH0KICAgICAgICBleF90eXBlIDwtICJjbG96ZSIKICAgICAgfQogICAgICBpbWFnZSA8LSBpbnB1dCRmaWxlMSAKICAgICAgaW1hZ2VfcGF0aCA8LSBpbWFnZSRuYW1lCiAgICAgIAogICAgICB0ZW1wbGF0ZSA8LSBiYXNpY190ZW1wbGF0ZShuID0gaW5wdXQkbiwgbWV0YV9uYW1lID0gaW5wdXQkbWV0YV9uYW1lLCAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbWV0YV90aXRsZSA9IGlucHV0JG1ldGFfdGl0bGUsIG1ldGFfdmVyc2lvbiA9IGlucHV0JG1ldGFfdmVyc2lvbiwgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHR5cGVzID0gdHlwZXMsIGV4X3R5cGUgPSBleF90eXBlLCBpbWFnZSA9IGltYWdlX3BhdGgpCiAgICAgIHdyaXRlKHRlbXBsYXRlLCBmaWxlID0gZmlsZSkKICAgIH0KICApCgogIAoKICBzZXNzaW9uJG9uU2Vzc2lvbkVuZGVkKGZ1bmN0aW9uKCkgewogICAgc3RvcEFwcCgpCiAgfSkKfQoKCiMjIyMjIyBydW4gYXBwICMjIyMjIyAKc2hpbnlBcHAodWksIHNlcnZlcikK').then(res => res.blob()).then(blob => {
       const downloadURL = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       document.body.appendChild(a);
       a.href = downloadURL;
-      a.download = 'multiple_ choice_example.Rmd'; a.click();
+      a.download = 'Template Creation Interface.R'; a.click();
       window.URL.revokeObjectURL(downloadURL);
       document.body.removeChild(a);
-        });"><button class="btn btn-default downloadthis  " id="dnldts27383"><i class="bi bi-download"></i> Download </button></a></p>
-<p>After conversion with <code>R/exams</code> the exercise looks like this for different output types.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">HTML</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">PDF</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Moodle</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p><img src="images/mchoice_html.png" class="img-fluid"></p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p><img src="images/mchoice_pdf.png" class="img-fluid"></p>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p><img src="images/mchoice_moodle.png" class="img-fluid"></p>
-</div>
-</div>
-</div>
-<section id="creating-the-list-structure" class="level1">
-<h1>Creating the List Structure</h1>
-<p>This section creates and fills the lists which contain the questions, answers, etc.. The <code>answers</code> list contains the answer options for the questions. The solution to the question, the type of question, as well as a more elaborate explanation are specified for each question.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The following code has to be placed within a code chunk in the .Rmd-file. See here ?????</p>
-</div>
-</div>
-</section>
-<section id="question-section" class="level1">
-<h1>Question Section</h1>
-<p>The next section contains the question text, including the marked spaces <code>##ANSWERi##</code> for the answer fields and a necessary code section, which does some formating which is required for the later conversion. This is markdown text, which will appear bold/italic/etc. after conversion.</p>
-<p>It also includes a code chunk, which converts the <code>answers</code> list to the necessary format.</p>
-<div class="sourceCode" id="cb1" data-startfrom="22"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown" style="counter-reset: source-line 21;"><span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>Question</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">========</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>*Question 1*</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>Which of the following elements are metals?</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>##ANSWER1##</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>*Question 2*</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>Which of the following elements are metalloids?</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>##ANSWER2##</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="in">```{r questionlist, echo = FALSE, results = "asis"}</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="in">answerlist(unlist(answers), markup = "markdown")</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="solution-section" class="level1">
-<h1>Solution Section</h1>
-<p>In this section, additional information and/or the exact solutions can be given. In this case, there is a more elaborate explanation as a solution for each question. Additionally, the code chunk included below converts the <code>TRUE</code> and <code>FALSE</code> objects into a more readable format of “True” and “False”, however this could be in any other format as well.</p>
-<div class="sourceCode" id="cb2" data-startfrom="42"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown" style="counter-reset: source-line 41;"><span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>Solution</span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="fu">========</span></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>*Solution 1*</span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>Iron (Fe) and Aluminium (Al) are metals, while Oxygen (O) and Nitrogen (N) are gases.</span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>*Solution 2*</span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>Silicon (Si), Boron (B), and Arsenic (As) are metalloids. Helium (He) is a noble gas.</span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="in">```{r solutionlist, echo = FALSE, results = "asis"}</span></span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="in"># Convert solutions to "True" or "False"</span></span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="in">explanations &lt;- lapply(solutions, function(x) ifelse(x, "True", "False"))</span></span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="in">solutions &lt;- lapply(solutions, mchoice2string)</span></span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="in"># Display explanations</span></span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="in">answerlist(unlist(explanations), markup = "markdown")</span></span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="meta-information-section" class="level1">
-<h1>Meta-information Section</h1>
-<p>This contains the meta information needed for conversion. See here ?????</p>
-<p>The “source code” is written in markdown and contains inline R code.</p>
-<div class="sourceCode" id="cb3" data-startfrom="63"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown" style="counter-reset: source-line 62;"><span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>Meta-information</span>
-<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a><span class="fu">================</span></span>
-<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>exname: example_schoice</span>
-<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>extitle: molmass and lightest element</span>
-<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>extype: cloze</span>
-<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>exsolution: <span class="in">`r paste(solutions, collapse = "|")`</span></span>
-<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>exclozetype: <span class="in">`r paste(types, collapse = "|")`</span></span>
-<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>exshuffle: TRUE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If the “code” above is evaluated, the section looks like this:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Meta-information</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">================</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>exname: example_mchoice</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>extitle: metalls and metalloids</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>extype: cloze</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>exsolution: c(TRUE, FALSE, TRUE, FALSE)|c(TRUE, TRUE, FALSE, TRUE)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>exclozetype: mchoice|mchoice</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>exshuffle: TRUE</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>exversion: v1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+        });"><button class="btn btn-default downloadthis  " id="dnldts17496"><i class="bi bi-download"></i> Download </button></a></p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

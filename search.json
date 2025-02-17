@@ -70,6 +70,16 @@
     ]
   },
   {
+    "objectID": "first-steps.html#how-do-i-get-started",
+    "href": "first-steps.html#how-do-i-get-started",
+    "title": "First Steps",
+    "section": "How do I get started?",
+    "text": "How do I get started?\nsee other pages Descriptions, examples\nstep by step tut?\nproject set up\ndownload templates",
+    "crumbs": [
+      "First Steps"
+    ]
+  },
+  {
     "objectID": "add-ons.html",
     "href": "add-ons.html",
     "title": "Add-ons of .Rmd-files",
@@ -107,7 +117,7 @@
     "href": "add-ons.html#tables",
     "title": "Add-ons of .Rmd-files",
     "section": "Tables",
-    "text": "Tables\n\nManual Creation\nThe | do not need to be vertically aligned, it just makes it more readable when creating the table.\nInline code can also be included in the table.\n| Header 1 | Header 2 | Header 3 | \n|----------|----------|----------| \n| x1       | y1       | z1       |\n| x2       | y2       | z2       |\n| x3       | y3       | z3       |\nWhen rendered, the table looks like this:\n\n\n\nHeader 1\nHeader 2\nHeader 3\n\n\n\n\nx1\ny1\nz1\n\n\nx2\ny2\nz2\n\n\nx3\ny3\nz3\n\n\n\nColumns can also have different alignments marked by :.\n| right | left | default | center |\n|------:|:-----|---------|:------:|\n|x1     |y1    |z1       |a1      |\nWhen rendered it appears like this:\n\n\n\nright\nleft\ndefault\ncenter\n\n\n\n\nx1\ny1\nz1\na1\n\n\n\n\n\nAutomatic Creation of tables\nUsing the function kable()from the knitrpackage, objects like dataframes or matrices can be converted automatically to a table for display. For example, this code chunk converts the data frame data into a markdown table automatically including the column names as headers in this case.\n```{r}\nknitr::kable(data)\n```\nThe table then looks like this:\n\n\n\n\n\nheight\nweight\nage\n\n\n\n\n173.2\n83.0\n38\n\n\n180.8\n75.1\n25\n\n\n187.5\n66.8\n45\n\n\n163.9\n75.9\n48\n\n\n182.6\n74.2\n21\n\n\n\n\n\nThere are many more (styling) options for markdown tables, see here the help page for kable, ?kable, and here for more ????",
+    "text": "Tables\n\nManual Creation\nThe | do not need to be vertically aligned, it just makes it more readable when creating the table.\nInline code can also be included in the table.\n| Header 1 | Header 2 | Header 3 | \n|----------|----------|----------| \n| x1       | y1       | z1       |\n| x2       | y2       | z2       |\n| x3       | y3       | z3       |\nWhen rendered, the table looks like this:\n\n\n\nHeader 1\nHeader 2\nHeader 3\n\n\n\n\nx1\ny1\nz1\n\n\nx2\ny2\nz2\n\n\nx3\ny3\nz3\n\n\n\nColumns can also have different alignments marked by :.\n| right | left | default | center |\n|------:|:-----|---------|:------:|\n|x1     |y1    |z1       |a1      |\nWhen rendered it appears like this:\n\n\n\nright\nleft\ndefault\ncenter\n\n\n\n\nx1\ny1\nz1\na1\n\n\n\n\n\nAutomatic Creation of tables\nUsing the function kable()from the knitrpackage, objects like dataframes or matrices can be converted automatically to a table for display. For example, this code chunk converts the data frame data into a markdown table automatically including the column names as headers in this case.\n```{r}\nknitr::kable(data)\n```\nThe table then looks like this:\n\n\n\n\n\nheight\nweight\nage\n\n\n\n\n162.9\n77.4\n48\n\n\n194.0\n82.4\n43\n\n\n191.4\n81.1\n29\n\n\n191.1\n58.2\n36\n\n\n164.6\n80.5\n50\n\n\n\n\n\nThere are many more (styling) options for markdown tables, see here the help page for kable, ?kable, and here for more ????",
     "crumbs": [
       "Add-ons",
       "Add-ons to .Rmd-files"
@@ -194,7 +204,7 @@
     "href": "readme.html",
     "title": "README",
     "section": "",
-    "text": "This website aims to give an overview of how to use R/exams for the creation of exercises.\nDisclaimer: Internal cross-references, marked by ????, are (for the most part) not implemented yet.\n\nWhat is R/exams?\nR/exams is a freely available package for the software R.\n\n\nWhat is it used for?\nIt can be used to automatically create several different types of exercises, with a large number of possibilites for customization to various output types.\n\n\nTable of contents\n\n\n\nPage\nContent\n\n\n\n\nFirst Steps\nBrief overview of R/exams and its general usage.\n\n\nR and R/exams info\nLinks to software and installation.\n\n\n.Rmd-file: Structure\nGives the structure and “skeleton” for the main .Rmd-file\n\n\n.Rmd-file: Creation\nHow to utilize the basic strucutre and incorporate the desired content\n\n\n.R-file: Strucutre\nStructure for the conversion script\n\n\n.R-file: Conversion\nProcess of conversion\n\n\nAdd-ons\nBrief how-to for including pictures, links, etc. in .Rmd-files\n\n\nBasic Examples\nShort examples to illustrate simple use cases\n\n\nAdvanced Examples\nMore complex Examples\n\n\nFurther References\nLinks to existing documentation, examples, etc.\n\n\nFAQ\nFrequently Asked Questions and their answers\n\n\n\n\n\nHow to give feedback or ask questions?\nThis project is ongoing and we would be happy to receive feedback. Click here and simply write a post to our discussion forum on github.\nIf you have questions, do not hesitate to ask, simply leave a comment on the Github discussion forum.",
+    "text": "This website aims to give an overview of how to use R/exams for the creation of exercises.\nDisclaimer: Internal cross-references, marked by ????, are (for the most part) not implemented yet.\n\nWhat is R/exams?\nR/exams is a freely available package for the software R.\n\n\nWhat is it used for?\nIt can be used to automatically create several different types of exercises, with a large number of possibilites for customization to various output types.\n\n\nBasic functionality\nFor each exercise/exam, there is one .Rmd-file which contains all the questions and their solutions. This file is then converted to the desired output type through a script written in an .R-file.\n\n\nTable of contents\n\n\n\nPage\nContent\n\n\n\n\nFirst Steps\nHow to get started.\n\n\nR and R/exams info\nLinks to software and installation.\n\n\n.Rmd-file: Structure\nGives the structure and “skeleton” for the main .Rmd-file\n\n\n.Rmd-file: Creation\nHow to utilize the basic strucutre and incorporate the desired content\n\n\n.R-file: Strucutre\nStructure for the conversion script\n\n\n.R-file: Conversion\nProcess of conversion\n\n\nAdd-ons\nBrief how-to for including pictures, links, etc. in .Rmd-files\n\n\nBasic Examples\nShort examples to illustrate simple use cases\n\n\nAdvanced Examples\nMore complex Examples\n\n\nFurther References\nLinks to existing documentation, examples, etc.\n\n\nFAQ\nFrequently Asked Questions and their answers\n\n\n\n\n\nHow to give feedback or ask questions?\nThis project is ongoing and we would be happy to receive feedback. Click here and simply write a post to our discussion forum on github.\nIf you have questions, do not hesitate to ask, simply leave a comment on the Github discussion forum.",
     "crumbs": [
       "README"
     ]
@@ -259,155 +269,35 @@
     "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
-    "objectID": "structure-Rmd.html",
-    "href": "structure-Rmd.html",
-    "title": "Structure of an .Rmd-file",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BOKU Exams",
     "section": "",
-    "text": "The .Rmd is the main file, where all the information about the exercise is contained. It follows a basic structure, with four sections, “Data Generation”, “Question”, “Solution” and “Meta-information”. Their purpose will be described in detail in the following sections.\nAn empty template containing only the necessary structure can be downloaded here:\nDownload",
+    "text": "Documentation for R/exams at BOKU.\nPlease read the README for a brief overview here.\nCheck out the FAQ here.\nTo get started please read First Steps.\n\nAuthors:\nKonstanze Lauseker Github\nLukas Schönmann Github\nDorian Stefenelli Github\nFor feedback and questions please look here\nLast updated: 2025-02-17",
     "crumbs": [
-      "Rmd-file",
-      "Structure"
+      "Home"
     ]
   },
   {
-    "objectID": "structure-Rmd.html#data-generation",
-    "href": "structure-Rmd.html#data-generation",
-    "title": "Structure of an .Rmd-file",
-    "section": "Data Generation",
-    "text": "Data Generation\nIn this section of the .Rmd-file, the questions (including answer options for single/multiple choice questions), solutions, the types of questions, explanations and tolerances for solutions are created and stored in list objects for later. In addition there are many additional possibilities, like sampling data, creating graphs, importing pictures etc. which are described on the following page: Add-ons\n\nDescription of the lists\nThe five necessary lists are questions, solutions, types, explanations and tolerances, which all have the same length, which is equal to the number of questions in the exercise. For example, in an exam with 5 multiple choice questions, the length of the lists is 5.\nDepending on the type and simplicity of the question, some of the lists might not be necessary. (see ??????)\nThe list questions contains the answer options for single choice/multiple choice questions, not the questions itself. The actual questions are written down in the section “Question”. For numeric and string questions, this list contains placeholders ““, since no answer options are given. (more on the types of questions see ??????)\nThe list solutions contains the solutions for all the questions. For numeric questions, that is a number, (e.g: 123), for string questions a string like \"hello world\" is expected. The solution for single & multiple choiche questions is a boolean vector containing TRUE/FALSE. For each answer option, one instance of TRUE or FALSE is needed. For example, a single choice question with 5 answer options, where one option (in this case the second answer option) is correct, would have a solution vector like this:\nc(FALSE, TRUE, FALSE, FALSE, FALSE)\nThe list types specifies the type of question for each individual question. Possible values are\n\nnumeric (“num”)\nstring (“string”)\nsingle choice (“schoice”)\nmultiple choice (“mchoice”)\n\nThe optional list explanations contains the feedback that is shown. This can be the complete solutions (it should be then formatted as a list) or additional information like the seed, that was used to create this exercise, session info, etc., which can be written in the “Solution” section. (see ??????)\nThe list tolerances is only necessary for numeric questions, where it is desired to have an interval, in which the solution is accepted as correct, even though the numbers are not perfectly equal. This is important for accommodating rounding differences.\n\n\n\n\n\n\nWarning\n\n\n\nProceed with caution when random generating numbers and setting an (absolute) tolerance interval, which is too narrow, then the true solution could lie outside of the tolerance interval.\n\n\n\n\nCreating the lists\nThey are initialized as empty lists, which are later filled with the desired information via sub-setting. see ?????\nquestions &lt;- list() \nsolutions &lt;- list() \ntypes &lt;- list()\nexplanations &lt;- list() \ntolerances &lt;- list()",
-    "crumbs": [
-      "Rmd-file",
-      "Structure"
-    ]
-  },
-  {
-    "objectID": "structure-Rmd.html#question",
-    "href": "structure-Rmd.html#question",
-    "title": "Structure of an .Rmd-file",
-    "section": "Question",
-    "text": "Question\nIn this section, all the questions, that should be included in the exam, are written down. This is done in natural language, however bits of code (including R objects), graphs, data, etc. can be included. See more here\nAdditonal text, like instructions, hints, context, etc. is also written down in this section.\n\nQuestions with answer fields\nThe answer fields mark the place were the answer input should be placed, for example in a moodle quiz, the place where the empty answer box is placed.\nAnswer fields are marked by ##ANSWERi##where i is the number of the question, starting with 1.\n\n\n\n\n\n\nnumeric example\n\n\n\nNumeric question: How many continents are there? ##ANSWER1##\nIn this case, the answer field is a place-holder, nothing will be displayed, which equals an empty answer field in moodle.\n\n\nFor single/multiple choice questions, ##ANSWERi## represents the answer options.\n\n\n\n\n\n\nschoice example\n\n\n\nSingle choice question: Is Vienna the capital of Austria? ##ANSWER2##\nWith the correct set-up, this will display yes/no instead of the answer field. In moodle this is a drop-down menu with the two answer options.\n\n\n\n\n\n\n\n\nmchoice example\n\n\n\nMultiple choice question with text components as answer options: The number 3 is ##ANSWER3## 1.\nPossible answer options are “greater than”, “smaller than”, “equal to”, which would be displayed instead of the answer field. In moodle all answer options are shown as tickable boxes.\n\n\nFor more examples, see the section “Basic Examples” here.\nThe function answerlist() from R/exams package converts the answer options, which are stored in the list object questions into the necessary format.\nanswerlist(unlist(questions), markup = \"markdown\")",
-    "crumbs": [
-      "Rmd-file",
-      "Structure"
-    ]
-  },
-  {
-    "objectID": "structure-Rmd.html#solution",
-    "href": "structure-Rmd.html#solution",
-    "title": "Structure of an .Rmd-file",
-    "section": "Solution",
-    "text": "Solution\nThe section “Solution” can be used to provide solutions in the form of explanations. It does not create the solutions to the questions and nor is it responsible for assessing/grading questions. Instead it can be used as a reference to review questions or provide feedback. This type of information is created in this section.\nThe solutions list contains the actual solutions to the questions, which are used for deeming an answer correct/incorrect, however these are not directly displayed in this section.\nThe explanations list holds any information that can be possibly given as feedback. This can, but does not have to, include the actual solutions, depending on the type of exam one is aiming for. This list is optional, general feedback can be normally written as text in this section. See ???? two sections below\n\nActual Solutions as explanations\nThe correct solutions to the questions can be displayed in the appropriate format in the generated output.\nSome solutions need to be converted to a more understandable format before being displayed. The solutions to schoice/mchoice questions are stored as TRUE/FALSE vectors and in the following code chunk they are converted to “True” and “False” strings, which are then displayed as explanations to the schoice and mchoice questions.\nfor (x in 1:length(solutions)) {\n\n  if (types[x] %in% c(\"schoice\", \"mchoice\") { \n    explanations[x] &lt;- solutions[x] |&gt; lapply(function(x) ifelse(x, \"True\", \"False\"))\n  } \n  \n  else {\n    explanations[x] &lt;- solutions[x]\n  }\n}\nThen the function answerlist() from R/exams processes the explanations list to adjust it to the format needed for conversion of the .Rmd-file to the desired output.\nanswerlist(unlist(explanations), markup = \"markdown\")\n\n\nOther types of explanations\nWhen the desired feedback is any type of text, like in-depth explanations or providing more context, or more technical details like calculation steps, the explanations list is not needed. It can simple written as normal text in the .Rmd file under the “Solution” section.\nExamples of feedback:\n\n\n\n\n\n\nnumeric example\n\n\n\nThe correct answer is 7, because there are seven recognized continents on Earth: \nAfrica, Antarctica, Asia, Europe, North America, Oceania (or Australia), and South America.\n\n\n\n\n\n\n\n\nmchoice example\n\n\n\nThe correct answers are \"A\" and \"C.\" \nOption A is correct because..., and Option C is correct because... \nOption B, however, is incorrect because .....\n\n\nIn some cases it can be useful to document the seed used, for example when randomly generating numbers or doing any kind of sampling. Providing this information in the “Solution” section to either students or even oneself, when for example reviewing questions, can ensure reproducibility.\nSee the page about add-ons for more information on how to dynamically display R objects (like seeds) in the exam.",
-    "crumbs": [
-      "Rmd-file",
-      "Structure"
-    ]
-  },
-  {
-    "objectID": "structure-Rmd.html#meta-information",
-    "href": "structure-Rmd.html#meta-information",
-    "title": "Structure of an .Rmd-file",
-    "section": "Meta-information",
-    "text": "Meta-information\nThis section contains all the information necessary for the conversion from an .Rmd-file to the desired output (HTML, Moodle (xml), pdf, …). The conversion process is decribed here\n\nMeta-information\n\n\n\n\n\n\nTag\nDescription\n\n\n\n\nexname\nname for the exam, should be short and informative\n\n\nextitle\nlonger name for the exam, displayed in Moodle\n\n\nextype\nspecification of the type of exam, e.g: “cloze”\n\n\nexsolution\nsolutions to the questions\n\n\nextypes\nspecification of the types of questions used in the exam\n\n\nextol\ntolerances used for numeric questions\n\n\nexshuffle\nlogical or numeric value, if/how answer options for schoice/mchoice questions should be shuffled\n\n\nexversion\nversion of the exam\n\n\n\nAlso see vignette R/exams for additional tags and more information.\n\nTypes of Meta-information tags\n\nexname\nExercise name, typically a unique identifier for each exercise, helping to manage and retrieve exercises easily from an exercise pool.\n\n\nextitle\nSets the title of the exercise. Titles can be dynamically generated by embedding R objects in the text to adapt the title based on the exam context. For a detailed explanation of inline code, see this page\n\n\nextype\nSpecifies the type of exam. This is different to the list object types from the “Data generation” section. A very common type is “cloze”, which is a type of exam which contains different types of questions, for example a combination of numeric and schoice questions in one exam. If the exam just contains one type of question, for example only multiple choice questions, then this can be specified as well.\n\n\nexsolution\ncontains the correct solutions for the exam in the necessary format for the conversion of the .Rmd-file. When more than one question (and therefore more than one solution) is created, all solutions need to be in the order of the questions and separated by “|”. This can either be achieved by manually writing down all solutions or with the following code chunk:\npaste(solutions, collapse = \"|\")\nThe resulting R object needs to be dynmically included in the .Rmd-file (see ?????? for details).\n\n\nexclozetypes\nWhen creating an exam of the type “cloze” (the exam contains different types of questions), the type of each question has to be specified. This information is stored in the list typesfrom above. When more than one question (and therefore more than one type) is created, all types need to be in the order of the questions and separated by “|”. This can either be achieved by manually writing down all solutions or with the following code chunk:\npaste(types, collapse = \"|\")\nThe resulting R object needs to be dynmically included in the .Rmd-file (see ?????? for details).\n\n\nextol\ncontains the tolerances used for the answers to numeric questions. When creating an exam of type “cloze”, the tolerances are stored in the list tolerances. They need to be in the order of the questions with empty interations for questions where tolerances are not applicable, e.g. string questions. For details see ??????? (subsetting the lists). All tolerances need to be seperated by “|”. This can either be achieved by manually writing down all solutions or with the following code chunk:\npaste(tolerances, collapse = \"|\")\nThe resulting R object needs to be dynamically included in the .Rmd-file (see ?????? for details).\n\n\nexshuffle\nCan be a logical or an integer and determines if or how the answer options are shuffled. When it is set to TRUE the answer options are not always displayed in the same order, for example when creating multiple versions of the same exam. When set to an integer, this determines the number of multiple choice answer options shown. For example, when 6 answer options are available through the list object questions and exshuffle is set to 4, then 4 out of 6 questions (always including the true option(s)) are displayed.\n\n\nexversion\nSpecifies the version of the exam, useful for distinction when altering the .Rmd-file and creating a new set of exercises.\n\n\n\n\n\n\nExample\n\n\n\nThis is the meta-information of a very simple exam, containing one numeric question, one single choice and one multiple choice question with three answer options, without any automation using the lists and paste().\nexname: homework_1\nextitle: Homework 1: Topic A  \nextype: cloze\nexsolution: 42.1|TRUE|c(FALSE,TRUE, FALSE)\nexclozetype: num|schoice|mchoice\nextol: 0.5|0|0\nexshuffle: TRUE\nexversion: v1\n\n\n\n\n\nExemplary structure of the Meta-information\nBelow is an example of how the “meta-information” section could look with some of the R/exams tags explained above, as well as automatic conversion of the solutions, types and tolerances list to the correct format using paste().\nMeta-information\n================\nexname: Abcde\nextitle: Abcde: topic xyz \nextype: cloze\nexsolution: `r paste(solutions, collapse = \"|\")`\nexclozetype: `r paste(types, collapse = \"|\")`\nextol: `r paste(tolerances, collapse = \"|\")`\nexshuffle: TRUE\nexversion: v1",
-    "crumbs": [
-      "Rmd-file",
-      "Structure"
-    ]
-  },
-  {
-    "objectID": "ideas.html",
-    "href": "ideas.html",
-    "title": "Ideas",
+    "objectID": "conversion.html",
+    "href": "conversion.html",
+    "title": "Conversion of an .Rmd-file",
     "section": "",
-    "text": "This is the page for future ideas and important notes for documentation, for internal use.\nNotes, Stand 16.02\nAllgemein:\nShiny App:\nUpload Moodle\nHome:\nFirst Steps:\nR-info:\nStructure Rmd:\nCreation Rmd:\nStructure R:\nConversion:\nAdd ons:\nBasic Examples:\nAdvanced Examples:\nFAQ:\nReferences:\nDownload center?\nFurther Notes:\nWriting style (internal)",
+    "text": "Previous content belongs to internal documentation, has been moved to exams_playground/Dokumentation/coaches_docu.qmd\nThis page will briefly explain the conversion process.\n\nBasic Method\nWhen a both the .Rmd files and the .R file are set up correctly, one simple run-through of the script creates the exercises.",
     "crumbs": [
-      "Notes"
+      "R-file",
+      "Conversion of .Rmd-file"
     ]
   },
   {
-    "objectID": "ideas.html#footnotes",
-    "href": "ideas.html#footnotes",
-    "title": "Ideas",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nhttps://stackoverflow.com/questions/78569518/why-is-r-inline-code-not-executed-in-quarto-in-some-situations↩︎",
-    "crumbs": [
-      "Notes"
-    ]
-  },
-  {
-    "objectID": "example1.html",
-    "href": "example1.html",
-    "title": "Numeric Example",
+    "objectID": "advanced1.html",
+    "href": "advanced1.html",
+    "title": "Example 1",
     "section": "",
-    "text": "TODO: description of knitr tags\nThis is an example about molar masses of hydrogen, oxygen and H20, which contains two numeric questions.\nThe whole example as an .Rmd-file can be downloaded here:\n Download \nAfter conversion with R/exams the exercise looks like this for different output types.\n\nHTMLPDFMoodle\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Generation\nFirst is the so-called data generating process. In this case no real data is being generated within in this code chunk, it just includes some preparatory work of defining variables and creating the objects needed later.\nFor a simple example, giving this process its own section might seem a bit like going overboard, however, once examples become more complex, it is easier to handle this as the first part in a separate section.\n\n\n\n\n\n\nWarning\n\n\n\nThe following code has to be placed within a code chunk in the .Rmd-file. See here ?????\n\n\n\nlibrary(exams) #exams package needs to be loaded for all functions to be available \n\n#atomic number of H\nn_H &lt;- 1\n# Define the molar masses of hydrogen (H) and oxygen (O)\nm_h &lt;- 1.008 # molar mass of hydrogen in g/mol\nm_o &lt;- 16.00 # molar mass of oxygen in g/mol\n\n# Calculate the molar mass of the water molecule (H2O)\nm_h2o &lt;- 2 * m_h + m_o\n\n\n\nCreating the List Structure\nThe next step is to create and fill the lists needed for creating the exam. This is done within a code chunk. (see here and here for a detailed explanation of these processes, here for an explanation of the structure ???? )\nFirst the empty lists are created and then they are filled question by question. Each question can have answer options, however for numeric questions, these are not needed. (see here for single/multiple choice example ?????). A solution is provided for each question using the predefined variables from the data generation section. Using named variables instead of the number itself, gives a better overview and allows for easier adjustment, as only the number in the data generating section has to be adjusted. The type also has to be specified for each question, in this case “num” for numeric. In addition, explanations are also added, these are optional but provide extra information as feedback. The tolerances are set in a separate list as well.\n\n\n\n\n\n\nWarning\n\n\n\nThe following code has to be placed within a code chunk in the .Rmd-file. See here ?????\n\n\n\n# Create lists for necessary information\nanswers &lt;- list()\nsolutions &lt;- list()\ntypes &lt;- list()\nexplanations &lt;- list()\ntolerances &lt;- list()\n\n# Define Question 1: atomic number of hydrogen\nanswers[[1]] &lt;- \"\"  # No answer options needed for numeric questions\nsolutions[[1]] &lt;- n_H\ntypes[[1]] &lt;- \"num\" #numeric\nexplanations[[1]] &lt;- \"The atomic number of hydrogen is $1$ because it has one proton in its nucleus.\"\ntolerances[[1]] &lt;- 0  # No tolerance\n\n# Define Question 2: molar mass of water\nanswers[[2]] &lt;- \"\" # no answer options needed for numeric questions. \nsolutions[[2]] &lt;- m_h2o\ntypes[[2]] &lt;- \"num\" \nexplanations[[2]] &lt;- \"The molar mass of H2O is calculated by adding the molar masses of two hydrogen atoms and one oxygen atom.\"\ntolerances[[2]] &lt;- 0.5 # Allow for small rounding errors\n\n\n\nQuestion Section\nThe next section contains the question text, including the marked spaces ##ANSWERi## for the answer fields and a necessary code section, which does some formating which is required for the later conversion.\nQuestion\n========\n\n*Question 1*\n\nWhat is the atomic number of hydrogen in the periodic table? ##ANSWER1##\n\n*Question 2*\n\nCalculate the molar mass of water ($H_2O$). Use the following molar masses:\n\n-   Hydrogen ($H$): `r m_h` $g/mol$\n\n-   Oxygen ($O$): `r m_o` $g/mol$\n\nProvide your answer in grams per mole ($g/mol$). ##ANSWER2##\n\n```{r questionlist, echo = FALSE, results = \"asis\"}\nanswerlist(unlist(answers), markup = \"markdown\")\n```\n\n\nSolution Section\nIn this section, additional information and/or the exact solutions can be given. In this case, the explanations from the explanations list are pasted here and an additionl formula is provided.\nSolution\n========\n\n```{r solutionlist, echo = FALSE, results = \"asis\"}\nanswerlist(unlist(explanations), markup = \"markdown\")\n```\n\n$M_{H_{2}O} = 2 \\cdot M_H + M_O = 2 \\cdot `r m_h` + `r m_o` = `r m_h2o`$ (g/mol)\n\n\nMeta Information Section\nThis contains the meta information needed for conversion. See here ?????\nThe “source code” is written in markdown and contains inline R code.\nMeta-information\n================\nexname: example_num \nextitle: molmass of water \nextype: cloze \nexsolution: `r paste(solutions, collapse = \"|\")` \nexclozetype: `r paste(types, collapse = \"|\")` \nextol: `r paste(tolerances, collapse = \"|\")` \nexshuffle: TRUE \nexversion: v1\nIf the “code” above is evaluated, the section looks like this:\nMeta-information\n================\nexname: example_num\nextitle: molmass of water \nextype: cloze\nexsolution: 1|18.016\nexclozetype: num|num\nextol: 0|0.5\nexshuffle: TRUE\nexversion: v1",
+    "text": "This is an example about the mean weight of bread. It contains two numeric, two single choice and one multiple choice question.\nIt uses several add-ons described here, such as:\n\nincluding a picture\ncreating and providing a .csv-file containing the data for direct download within the exercise\ndata sampling and inline code\n\nThe whole example as an .Rmd-file can be downloaded here:\n Download",
     "crumbs": [
-      "Basic Examples",
-      "Numeric Example"
-    ]
-  },
-  {
-    "objectID": "example2.html",
-    "href": "example2.html",
-    "title": "String Example",
-    "section": "",
-    "text": "TODO: code chunks darstellung vereinheitlichen für alle examples, warning section hinzufügen/löschen\nThis is an exercise containing two text questions about the periodic table.\nThe whole example as an .Rmd-file can be downloaded here:\nDownload\nAfter conversion with R/exams the exercise looks like this for different output types.",
-    "crumbs": [
-      "Basic Examples",
-      "String Example"
-    ]
-  },
-  {
-    "objectID": "example2.html#creating-the-list-structure",
-    "href": "example2.html#creating-the-list-structure",
-    "title": "String Example",
-    "section": "Creating the List Structure",
-    "text": "Creating the List Structure\nThis section creates and fills the lists which contain the questions, answers, etc.. The answer list is empty, because no answer options are needed for text questions, as they are answered with a string.\nThe solution to the question, the type of question, as well as a more elaborate explanation are specified for each question.\n\n\n\n\n\n\nWarning\n\n\n\nThe following code has to be placed within a code chunk in the .Rmd-file. See here ?????\n\n\n\nlibrary(exams)\n# Initialize lists for the questions, answers, solutions, types, explanations (tolerances are not needed if there are no numeric questions)\nanswers &lt;- list()\nsolutions &lt;- list()\ntypes &lt;- list()\nexplanations &lt;- list()\n\n# Define Question 1: first element in periodic table?\nanswers[[1]] &lt;- \"\"  # No predefined answer for string\nsolutions[[1]] &lt;- \"Hydrogen\"\ntypes[[1]] &lt;- \"string\"\nexplanations[[1]] &lt;- \"The first element in the periodic table is Hydrogen because it has an atomic number of 1.\"\n\n# Define Question 2: element with the abbreviation O?\nanswers[[2]] &lt;- \"\"  # No predefined answer for string\nsolutions[[2]] &lt;- \"Oxygen\"\ntypes[[2]] &lt;- \"string\"\nexplanations[[2]] &lt;- \"The element with the abbreviation O is Oxygen, a crucial element for respiration and water.\"",
-    "crumbs": [
-      "Basic Examples",
-      "String Example"
-    ]
-  },
-  {
-    "objectID": "example2.html#question-section",
-    "href": "example2.html#question-section",
-    "title": "String Example",
-    "section": "Question Section",
-    "text": "Question Section\nThe next section contains the question text, including the marked spaces ##ANSWERi## for the answer fields and a necessary code section, which does some formating which is required for the later conversion. This is markdown text, which will appear bold/italic/etc. after conversion.\nIt also includes a code chunk, which converts the answers list to the necessary format.\nQuestion\n========\n*Question 1*\n\nWhat is the name of the first element in the periodic table? ##ANSWER1##\n\n*Question 2*\n\nWhat is the element with the abbreviation O? ##ANSWER2##\n\n```{r questionlist, echo = FALSE, results = \"asis\"}\nanswerlist(unlist(answers), markup = \"markdown\")\n```",
-    "crumbs": [
-      "Basic Examples",
-      "String Example"
-    ]
-  },
-  {
-    "objectID": "example2.html#solution-section",
-    "href": "example2.html#solution-section",
-    "title": "String Example",
-    "section": "Solution Section",
-    "text": "Solution Section\nIn this section, additional information and/or the exact solutions can be given. In this case, the information which is stored in the explanations list is pasted here through this code chunk and displayed.\nSolution\n========\n```{r solutionlist, echo = FALSE, results = \"asis\"}\nanswerlist(unlist(explanations), markup = \"markdown\")\n```",
-    "crumbs": [
-      "Basic Examples",
-      "String Example"
-    ]
-  },
-  {
-    "objectID": "example2.html#meta-information-section",
-    "href": "example2.html#meta-information-section",
-    "title": "String Example",
-    "section": "Meta Information Section",
-    "text": "Meta Information Section\nThis contains the meta information needed for conversion. See here ?????\nThe “source code” is written in markdown and contains inline R code.\nMeta-information\n================\nexname: example_string\nextitle: elements\nextype: cloze\nexsolution: `r paste(solutions, collapse = \"|\")`\nexclozetype: `r paste(types, collapse = \"|\")`\nexshuffle: TRUE\nexversion: v1\nIf the “code” above is evaluated, the section looks like this:\nMeta-information\n================\nexname: example_string\nextitle: elements\nextype: cloze\nexsolution: Hydrogen|Oxygen\nexclozetype: string|string\nexshuffle: TRUE\nexversion: v1",
-    "crumbs": [
-      "Basic Examples",
-      "String Example"
-    ]
-  },
-  {
-    "objectID": "example4.html",
-    "href": "example4.html",
-    "title": "Multiple Choice Example",
-    "section": "",
-    "text": "This is an exercise containing two multiple choice questions about the elements of the periodic table.\nThe whole example as an .Rmd-file can be downloaded here:\n Download \nAfter conversion with R/exams the exercise looks like this for different output types.\n\nHTMLPDFMoodle\n\n\n\n\n\n\n\n\n\n\n\n\n\nCreating the List Structure\nThis section creates and fills the lists which contain the questions, answers, etc.. The answers list contains the answer options for the questions. The solution to the question, the type of question, as well as a more elaborate explanation are specified for each question.\n\n\n\n\n\n\nWarning\n\n\n\nThe following code has to be placed within a code chunk in the .Rmd-file. See here ?????\n\n\n\n\nQuestion Section\nThe next section contains the question text, including the marked spaces ##ANSWERi## for the answer fields and a necessary code section, which does some formating which is required for the later conversion. This is markdown text, which will appear bold/italic/etc. after conversion.\nIt also includes a code chunk, which converts the answers list to the necessary format.\nQuestion\n========\n\n*Question 1*\n\nWhich of the following elements are metals?\n\n##ANSWER1##\n\n*Question 2*\n\nWhich of the following elements are metalloids?\n\n##ANSWER2##\n\n```{r questionlist, echo = FALSE, results = \"asis\"}\nanswerlist(unlist(answers), markup = \"markdown\")\n\n```\n\n\nSolution Section\nIn this section, additional information and/or the exact solutions can be given. In this case, there is a more elaborate explanation as a solution for each question. Additionally, the code chunk included below converts the TRUE and FALSE objects into a more readable format of “True” and “False”, however this could be in any other format as well.\nSolution\n========\n\n*Solution 1*\n\nIron (Fe) and Aluminium (Al) are metals, while Oxygen (O) and Nitrogen (N) are gases.\n\n*Solution 2*\n\nSilicon (Si), Boron (B), and Arsenic (As) are metalloids. Helium (He) is a noble gas.\n\n```{r solutionlist, echo = FALSE, results = \"asis\"}\n# Convert solutions to \"True\" or \"False\"\nexplanations &lt;- lapply(solutions, function(x) ifelse(x, \"True\", \"False\"))\nsolutions &lt;- lapply(solutions, mchoice2string)\n\n# Display explanations\nanswerlist(unlist(explanations), markup = \"markdown\")\n\n```\n\n\nMeta-information Section\nThis contains the meta information needed for conversion. See here ?????\nThe “source code” is written in markdown and contains inline R code.\n\nMeta-information\n================\nexname: example_schoice\nextitle: molmass and lightest element\nextype: cloze\nexsolution: `r paste(solutions, collapse = \"|\")`\nexclozetype: `r paste(types, collapse = \"|\")`\nexshuffle: TRUE\nIf the “code” above is evaluated, the section looks like this:\nMeta-information\n================\nexname: example_mchoice\nextitle: metalls and metalloids\nextype: cloze\nexsolution: c(TRUE, FALSE, TRUE, FALSE)|c(TRUE, TRUE, FALSE, TRUE)\nexclozetype: mchoice|mchoice\nexshuffle: TRUE\nexversion: v1",
-    "crumbs": [
-      "Basic Examples",
-      "Multiple Choice Example"
+      "Advanced Examples",
+      "Example 1"
     ]
   },
   {
@@ -466,24 +356,165 @@
     ]
   },
   {
-    "objectID": "conversion.html",
-    "href": "conversion.html",
-    "title": "Conversion of an .Rmd-file",
+    "objectID": "example4.html",
+    "href": "example4.html",
+    "title": "Multiple Choice Example",
     "section": "",
-    "text": "Previous content belongs to internal documentation, has been moved to exams_playground/Dokumentation/coaches_docu.qmd\nThis page will briefly explain the conversion process.\n\nBasic Method\nWhen a both the .Rmd files and the .R file are set up correctly, one simple run-through of the script creates the exercises.",
+    "text": "This is an exercise containing two multiple choice questions about the elements of the periodic table.\nThe whole example as an .Rmd-file can be downloaded here:\n Download \nAfter conversion with R/exams the exercise looks like this for different output types.\n\nHTMLPDFMoodle\n\n\n\n\n\n\n\n\n\n\n\n\n\nCreating the List Structure\nThis section creates and fills the lists which contain the questions, answers, etc.. The answers list contains the answer options for the questions. The solution to the question, the type of question, as well as a more elaborate explanation are specified for each question.\n\n\n\n\n\n\nWarning\n\n\n\nThe following code has to be placed within a code chunk in the .Rmd-file. See here ?????\n\n\n\n\nQuestion Section\nThe next section contains the question text, including the marked spaces ##ANSWERi## for the answer fields and a necessary code section, which does some formating which is required for the later conversion. This is markdown text, which will appear bold/italic/etc. after conversion.\nIt also includes a code chunk, which converts the answers list to the necessary format.\nQuestion\n========\n\n*Question 1*\n\nWhich of the following elements are metals?\n\n##ANSWER1##\n\n*Question 2*\n\nWhich of the following elements are metalloids?\n\n##ANSWER2##\n\n```{r questionlist, echo = FALSE, results = \"asis\"}\nanswerlist(unlist(answers), markup = \"markdown\")\n\n```\n\n\nSolution Section\nIn this section, additional information and/or the exact solutions can be given. In this case, there is a more elaborate explanation as a solution for each question. Additionally, the code chunk included below converts the TRUE and FALSE objects into a more readable format of “True” and “False”, however this could be in any other format as well.\nSolution\n========\n\n*Solution 1*\n\nIron (Fe) and Aluminium (Al) are metals, while Oxygen (O) and Nitrogen (N) are gases.\n\n*Solution 2*\n\nSilicon (Si), Boron (B), and Arsenic (As) are metalloids. Helium (He) is a noble gas.\n\n```{r solutionlist, echo = FALSE, results = \"asis\"}\n# Convert solutions to \"True\" or \"False\"\nexplanations &lt;- lapply(solutions, function(x) ifelse(x, \"True\", \"False\"))\nsolutions &lt;- lapply(solutions, mchoice2string)\n\n# Display explanations\nanswerlist(unlist(explanations), markup = \"markdown\")\n\n```\n\n\nMeta-information Section\nThis contains the meta information needed for conversion. See here ?????\nThe “source code” is written in markdown and contains inline R code.\n\nMeta-information\n================\nexname: example_schoice\nextitle: molmass and lightest element\nextype: cloze\nexsolution: `r paste(solutions, collapse = \"|\")`\nexclozetype: `r paste(types, collapse = \"|\")`\nexshuffle: TRUE\nIf the “code” above is evaluated, the section looks like this:\nMeta-information\n================\nexname: example_mchoice\nextitle: metalls and metalloids\nextype: cloze\nexsolution: c(TRUE, FALSE, TRUE, FALSE)|c(TRUE, TRUE, FALSE, TRUE)\nexclozetype: mchoice|mchoice\nexshuffle: TRUE\nexversion: v1",
     "crumbs": [
-      "R-file",
-      "Conversion of .Rmd-file"
+      "Basic Examples",
+      "Multiple Choice Example"
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "BOKU Exams",
+    "objectID": "example2.html",
+    "href": "example2.html",
+    "title": "String Example",
     "section": "",
-    "text": "Documentation for R/exams at BOKU. Please read the README for a brief overview here.\n\nAuthors:\nKonstanze Lauseker Github\nLukas Schönmann Github\nDorian Stefenelli Github\nFor feedback and questions please look here\nLast updated: 2025-02-16",
+    "text": "TODO: code chunks darstellung vereinheitlichen für alle examples, warning section hinzufügen/löschen\nThis is an exercise containing two text questions about the periodic table.\nThe whole example as an .Rmd-file can be downloaded here:\nDownload\nAfter conversion with R/exams the exercise looks like this for different output types.",
     "crumbs": [
-      "Home"
+      "Basic Examples",
+      "String Example"
+    ]
+  },
+  {
+    "objectID": "example2.html#creating-the-list-structure",
+    "href": "example2.html#creating-the-list-structure",
+    "title": "String Example",
+    "section": "Creating the List Structure",
+    "text": "Creating the List Structure\nThis section creates and fills the lists which contain the questions, answers, etc.. The answer list is empty, because no answer options are needed for text questions, as they are answered with a string.\nThe solution to the question, the type of question, as well as a more elaborate explanation are specified for each question.\n\n\n\n\n\n\nWarning\n\n\n\nThe following code has to be placed within a code chunk in the .Rmd-file. See here ?????\n\n\n\nlibrary(exams)\n# Initialize lists for the questions, answers, solutions, types, explanations (tolerances are not needed if there are no numeric questions)\nanswers &lt;- list()\nsolutions &lt;- list()\ntypes &lt;- list()\nexplanations &lt;- list()\n\n# Define Question 1: first element in periodic table?\nanswers[[1]] &lt;- \"\"  # No predefined answer for string\nsolutions[[1]] &lt;- \"Hydrogen\"\ntypes[[1]] &lt;- \"string\"\nexplanations[[1]] &lt;- \"The first element in the periodic table is Hydrogen because it has an atomic number of 1.\"\n\n# Define Question 2: element with the abbreviation O?\nanswers[[2]] &lt;- \"\"  # No predefined answer for string\nsolutions[[2]] &lt;- \"Oxygen\"\ntypes[[2]] &lt;- \"string\"\nexplanations[[2]] &lt;- \"The element with the abbreviation O is Oxygen, a crucial element for respiration and water.\"",
+    "crumbs": [
+      "Basic Examples",
+      "String Example"
+    ]
+  },
+  {
+    "objectID": "example2.html#question-section",
+    "href": "example2.html#question-section",
+    "title": "String Example",
+    "section": "Question Section",
+    "text": "Question Section\nThe next section contains the question text, including the marked spaces ##ANSWERi## for the answer fields and a necessary code section, which does some formating which is required for the later conversion. This is markdown text, which will appear bold/italic/etc. after conversion.\nIt also includes a code chunk, which converts the answers list to the necessary format.\nQuestion\n========\n*Question 1*\n\nWhat is the name of the first element in the periodic table? ##ANSWER1##\n\n*Question 2*\n\nWhat is the element with the abbreviation O? ##ANSWER2##\n\n```{r questionlist, echo = FALSE, results = \"asis\"}\nanswerlist(unlist(answers), markup = \"markdown\")\n```",
+    "crumbs": [
+      "Basic Examples",
+      "String Example"
+    ]
+  },
+  {
+    "objectID": "example2.html#solution-section",
+    "href": "example2.html#solution-section",
+    "title": "String Example",
+    "section": "Solution Section",
+    "text": "Solution Section\nIn this section, additional information and/or the exact solutions can be given. In this case, the information which is stored in the explanations list is pasted here through this code chunk and displayed.\nSolution\n========\n```{r solutionlist, echo = FALSE, results = \"asis\"}\nanswerlist(unlist(explanations), markup = \"markdown\")\n```",
+    "crumbs": [
+      "Basic Examples",
+      "String Example"
+    ]
+  },
+  {
+    "objectID": "example2.html#meta-information-section",
+    "href": "example2.html#meta-information-section",
+    "title": "String Example",
+    "section": "Meta Information Section",
+    "text": "Meta Information Section\nThis contains the meta information needed for conversion. See here ?????\nThe “source code” is written in markdown and contains inline R code.\nMeta-information\n================\nexname: example_string\nextitle: elements\nextype: cloze\nexsolution: `r paste(solutions, collapse = \"|\")`\nexclozetype: `r paste(types, collapse = \"|\")`\nexshuffle: TRUE\nexversion: v1\nIf the “code” above is evaluated, the section looks like this:\nMeta-information\n================\nexname: example_string\nextitle: elements\nextype: cloze\nexsolution: Hydrogen|Oxygen\nexclozetype: string|string\nexshuffle: TRUE\nexversion: v1",
+    "crumbs": [
+      "Basic Examples",
+      "String Example"
+    ]
+  },
+  {
+    "objectID": "example1.html",
+    "href": "example1.html",
+    "title": "Numeric Example",
+    "section": "",
+    "text": "TODO: description of knitr tags\nThis is an example about molar masses of hydrogen, oxygen and H20, which contains two numeric questions.\nThe whole example as an .Rmd-file can be downloaded here:\n Download \nAfter conversion with R/exams the exercise looks like this for different output types.\n\nHTMLPDFMoodle\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Generation\nFirst is the so-called data generating process. In this case no real data is being generated within in this code chunk, it just includes some preparatory work of defining variables and creating the objects needed later.\nFor a simple example, giving this process its own section might seem a bit like going overboard, however, once examples become more complex, it is easier to handle this as the first part in a separate section.\n\n\n\n\n\n\nWarning\n\n\n\nThe following code has to be placed within a code chunk in the .Rmd-file. See here ?????\n\n\n\nlibrary(exams) #exams package needs to be loaded for all functions to be available \n\n#atomic number of H\nn_H &lt;- 1\n# Define the molar masses of hydrogen (H) and oxygen (O)\nm_h &lt;- 1.008 # molar mass of hydrogen in g/mol\nm_o &lt;- 16.00 # molar mass of oxygen in g/mol\n\n# Calculate the molar mass of the water molecule (H2O)\nm_h2o &lt;- 2 * m_h + m_o\n\n\n\nCreating the List Structure\nThe next step is to create and fill the lists needed for creating the exam. This is done within a code chunk. (see here and here for a detailed explanation of these processes, here for an explanation of the structure ???? )\nFirst the empty lists are created and then they are filled question by question. Each question can have answer options, however for numeric questions, these are not needed. (see here for single/multiple choice example ?????). A solution is provided for each question using the predefined variables from the data generation section. Using named variables instead of the number itself, gives a better overview and allows for easier adjustment, as only the number in the data generating section has to be adjusted. The type also has to be specified for each question, in this case “num” for numeric. In addition, explanations are also added, these are optional but provide extra information as feedback. The tolerances are set in a separate list as well.\n\n\n\n\n\n\nWarning\n\n\n\nThe following code has to be placed within a code chunk in the .Rmd-file. See here ?????\n\n\n\n# Create lists for necessary information\nanswers &lt;- list()\nsolutions &lt;- list()\ntypes &lt;- list()\nexplanations &lt;- list()\ntolerances &lt;- list()\n\n# Define Question 1: atomic number of hydrogen\nanswers[[1]] &lt;- \"\"  # No answer options needed for numeric questions\nsolutions[[1]] &lt;- n_H\ntypes[[1]] &lt;- \"num\" #numeric\nexplanations[[1]] &lt;- \"The atomic number of hydrogen is $1$ because it has one proton in its nucleus.\"\ntolerances[[1]] &lt;- 0  # No tolerance\n\n# Define Question 2: molar mass of water\nanswers[[2]] &lt;- \"\" # no answer options needed for numeric questions. \nsolutions[[2]] &lt;- m_h2o\ntypes[[2]] &lt;- \"num\" \nexplanations[[2]] &lt;- \"The molar mass of H2O is calculated by adding the molar masses of two hydrogen atoms and one oxygen atom.\"\ntolerances[[2]] &lt;- 0.5 # Allow for small rounding errors\n\n\n\nQuestion Section\nThe next section contains the question text, including the marked spaces ##ANSWERi## for the answer fields and a necessary code section, which does some formating which is required for the later conversion.\nQuestion\n========\n\n*Question 1*\n\nWhat is the atomic number of hydrogen in the periodic table? ##ANSWER1##\n\n*Question 2*\n\nCalculate the molar mass of water ($H_2O$). Use the following molar masses:\n\n-   Hydrogen ($H$): `r m_h` $g/mol$\n\n-   Oxygen ($O$): `r m_o` $g/mol$\n\nProvide your answer in grams per mole ($g/mol$). ##ANSWER2##\n\n```{r questionlist, echo = FALSE, results = \"asis\"}\nanswerlist(unlist(answers), markup = \"markdown\")\n```\n\n\nSolution Section\nIn this section, additional information and/or the exact solutions can be given. In this case, the explanations from the explanations list are pasted here and an additionl formula is provided.\nSolution\n========\n\n```{r solutionlist, echo = FALSE, results = \"asis\"}\nanswerlist(unlist(explanations), markup = \"markdown\")\n```\n\n$M_{H_{2}O} = 2 \\cdot M_H + M_O = 2 \\cdot `r m_h` + `r m_o` = `r m_h2o`$ (g/mol)\n\n\nMeta Information Section\nThis contains the meta information needed for conversion. See here ?????\nThe “source code” is written in markdown and contains inline R code.\nMeta-information\n================\nexname: example_num \nextitle: molmass of water \nextype: cloze \nexsolution: `r paste(solutions, collapse = \"|\")` \nexclozetype: `r paste(types, collapse = \"|\")` \nextol: `r paste(tolerances, collapse = \"|\")` \nexshuffle: TRUE \nexversion: v1\nIf the “code” above is evaluated, the section looks like this:\nMeta-information\n================\nexname: example_num\nextitle: molmass of water \nextype: cloze\nexsolution: 1|18.016\nexclozetype: num|num\nextol: 0|0.5\nexshuffle: TRUE\nexversion: v1",
+    "crumbs": [
+      "Basic Examples",
+      "Numeric Example"
+    ]
+  },
+  {
+    "objectID": "ideas.html",
+    "href": "ideas.html",
+    "title": "Ideas",
+    "section": "",
+    "text": "This is the page for future ideas and important notes for documentation, for internal use.\nNotes, Stand 17.02\nAllgemein:\nShiny App:\nUpload Moodle\nHome:\nFirst Steps:\nR-info:\nStructure Rmd:\nCreation Rmd:\nStructure R:\nConversion:\nAdd ons:\nBasic Examples:\nAdvanced Examples:\nFAQ:\nReferences:\nDownload center?\nFurther Notes:\nWriting style (internal)",
+    "crumbs": [
+      "Notes"
+    ]
+  },
+  {
+    "objectID": "ideas.html#footnotes",
+    "href": "ideas.html#footnotes",
+    "title": "Ideas",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nhttps://stackoverflow.com/questions/78569518/why-is-r-inline-code-not-executed-in-quarto-in-some-situations↩︎",
+    "crumbs": [
+      "Notes"
+    ]
+  },
+  {
+    "objectID": "structure-Rmd.html",
+    "href": "structure-Rmd.html",
+    "title": "Structure of an .Rmd-file",
+    "section": "",
+    "text": "The .Rmd is the main file, where all the information about the exercise is contained. It follows a basic structure, with four sections, “Data Generation”, “Question”, “Solution” and “Meta-information”. Their purpose will be described in detail in the following sections.\nAn empty template containing only the necessary structure can be downloaded here:\nDownload",
+    "crumbs": [
+      "Rmd-file",
+      "Structure"
+    ]
+  },
+  {
+    "objectID": "structure-Rmd.html#data-generation",
+    "href": "structure-Rmd.html#data-generation",
+    "title": "Structure of an .Rmd-file",
+    "section": "Data Generation",
+    "text": "Data Generation\nIn this section of the .Rmd-file, the answer options for single/multiple choice questions, solutions, the types of questions, explanations and tolerances for solutions are created and stored in list objects for later. In addition there are many additional possibilities, like sampling data, creating graphs, importing pictures etc. which are described on the following page: Add-ons\n\nDescription of the lists\nThe five necessary lists are answers, solutions, types, explanations and tolerances, which all have the same length, which is equal to the number of questions in the exercise. For example, in an exam with 5 multiple choice questions, the length of the lists is 5.\nDepending on the type and simplicity of the question, some of the lists might not be necessary. (see ??????)\nThe list answers contains the answer options for single choice/multiple choice questions, not the questions itself. The actual questions are written down in the section “Question”. For numeric and string questions, this list contains placeholders ““, since no answer options are given. (more on the types of questions see ??????)\nThe list solutions contains the solutions for all the questions. For numeric questions, that is a number, (e.g: 123), for string questions a string like \"hello world\" is expected. The solution for single & multiple choiche questions is a boolean vector containing TRUE/FALSE. For each answer option, one instance of TRUE or FALSE is needed. For example, a single choice question with 5 answer options, where one option (in this case the second answer option) is correct, would have a solution vector like this:\nc(FALSE, TRUE, FALSE, FALSE, FALSE)\nThe list types specifies the type of question for each individual question. Possible values are\n\nnumeric (“num”)\nstring (“string”)\nsingle choice (“schoice”)\nmultiple choice (“mchoice”)\n\nThe optional list explanations contains the feedback that is shown. This can be the complete solutions (it should be then formatted as a list) or additional information like the seed, that was used to create this exercise, session info, etc., which can be written in the “Solution” section. (see ??????)\nThe list tolerances is only necessary for numeric questions, where it is desired to have an interval, in which the solution is accepted as correct, even though the numbers are not perfectly equal. This is important for accommodating rounding differences.\n\n\n\n\n\n\nWarning\n\n\n\nProceed with caution when random generating numbers and setting an (absolute) tolerance interval, which is too narrow, then the true solution could lie outside of the tolerance interval.\n\n\n\n\nCreating the lists\nThey are initialized as empty lists, which are later filled with the desired information via sub-setting. see ?????\nanswers &lt;- list() \nsolutions &lt;- list() \ntypes &lt;- list()\nexplanations &lt;- list() \ntolerances &lt;- list()",
+    "crumbs": [
+      "Rmd-file",
+      "Structure"
+    ]
+  },
+  {
+    "objectID": "structure-Rmd.html#question",
+    "href": "structure-Rmd.html#question",
+    "title": "Structure of an .Rmd-file",
+    "section": "Question",
+    "text": "Question\nIn this section, all the questions, that should be included in the exam, are written down. This is done in natural language, however bits of code (including R objects), graphs, data, etc. can be included. See more here\nAdditonal text, like instructions, hints, context, etc. is also written down in this section.\n\nQuestions with answer fields\nThe answer fields mark the place were the answer input should be placed, for example in a moodle quiz, the place where the empty answer box is placed.\nAnswer fields are marked by ##ANSWERi##where i is the number of the question, starting with 1.\n\n\n\n\n\n\nnumeric example\n\n\n\nNumeric question: How many continents are there? ##ANSWER1##\nIn this case, the answer field is a place-holder, nothing will be displayed, which equals an empty answer field in moodle.\n\n\nFor single/multiple choice questions, ##ANSWERi## represents the answer options.\n\n\n\n\n\n\nschoice example\n\n\n\nSingle choice question: Is Vienna the capital of Austria? ##ANSWER2##\nWith the correct set-up, this will display yes/no instead of the answer field. In moodle this is a drop-down menu with the two answer options.\n\n\n\n\n\n\n\n\nmchoice example\n\n\n\nMultiple choice question with text components as answer options: The number 3 is ##ANSWER3## 1.\nPossible answer options are “greater than”, “smaller than”, “equal to”, which would be displayed instead of the answer field. In moodle all answer options are shown as tickable boxes.\n\n\nFor more examples, see the section “Basic Examples” here.\nThe function answerlist() from R/exams package converts the answer options, which are stored in the list object answers into the necessary format.\nanswerlist(unlist(answers), markup = \"markdown\")",
+    "crumbs": [
+      "Rmd-file",
+      "Structure"
+    ]
+  },
+  {
+    "objectID": "structure-Rmd.html#solution",
+    "href": "structure-Rmd.html#solution",
+    "title": "Structure of an .Rmd-file",
+    "section": "Solution",
+    "text": "Solution\nThe section “Solution” can be used to provide solutions in the form of explanations. It does not create the solutions to the questions and nor is it responsible for assessing/grading questions. Instead it can be used as a reference to review questions or provide feedback. This type of information is created in this section.\nThe solutions list contains the actual solutions to the questions, which are used for deeming an answer correct/incorrect, however these are not directly displayed in this section.\nThe explanations list holds any information that can be possibly given as feedback. This can, but does not have to, include the actual solutions, depending on the type of exam one is aiming for. This list is optional, general feedback can be normally written as text in this section. See ???? two sections below\n\nActual Solutions as explanations\nThe correct solutions to the questions can be displayed in the appropriate format in the generated output.\nSome solutions need to be converted to a more understandable format before being displayed. The solutions to schoice/mchoice questions are stored as TRUE/FALSE vectors and in the following code chunk they are converted to “True” and “False” strings, which are then displayed as explanations to the schoice and mchoice questions.\nfor (x in 1:length(solutions)) {\n\n  if (types[x] %in% c(\"schoice\", \"mchoice\") { \n    explanations[x] &lt;- solutions[x] |&gt; lapply(function(x) ifelse(x, \"True\", \"False\"))\n  } \n  \n  else {\n    explanations[x] &lt;- solutions[x]\n  }\n}\nThen the function answerlist() from R/exams processes the explanations list to adjust it to the format needed for conversion of the .Rmd-file to the desired output.\nanswerlist(unlist(explanations), markup = \"markdown\")\n\n\nOther types of explanations\nWhen the desired feedback is any type of text, like in-depth explanations or providing more context, or more technical details like calculation steps, the explanations list is not needed. It can simple written as normal text in the .Rmd file under the “Solution” section.\nExamples of feedback:\n\n\n\n\n\n\nnumeric example\n\n\n\nThe correct answer is 7, because there are seven recognized continents on Earth: \nAfrica, Antarctica, Asia, Europe, North America, Oceania (or Australia), and South America.\n\n\n\n\n\n\n\n\nmchoice example\n\n\n\nThe correct answers are \"A\" and \"C.\" \nOption A is correct because..., and Option C is correct because... \nOption B, however, is incorrect because .....\n\n\nIn some cases it can be useful to document the seed used, for example when randomly generating numbers or doing any kind of sampling. Providing this information in the “Solution” section to either students or even oneself, when for example reviewing questions, can ensure reproducibility.\nSee the page about add-ons for more information on how to dynamically display R objects (like seeds) in the exam.",
+    "crumbs": [
+      "Rmd-file",
+      "Structure"
+    ]
+  },
+  {
+    "objectID": "structure-Rmd.html#meta-information",
+    "href": "structure-Rmd.html#meta-information",
+    "title": "Structure of an .Rmd-file",
+    "section": "Meta-information",
+    "text": "Meta-information\nThis section contains all the information necessary for the conversion from an .Rmd-file to the desired output (HTML, Moodle (xml), pdf, …). The conversion process is decribed here\n\nMeta-information\n\n\n\n\n\n\nTag\nDescription\n\n\n\n\nexname\nname for the exam, should be short and informative\n\n\nextitle\nlonger name for the exam, displayed in Moodle\n\n\nextype\nspecification of the type of exam, e.g: “cloze”\n\n\nexsolution\nsolutions to the questions\n\n\nextypes\nspecification of the types of questions used in the exam\n\n\nextol\ntolerances used for numeric questions\n\n\nexshuffle\nlogical or numeric value, if/how answer options for schoice/mchoice questions should be shuffled\n\n\nexversion\nversion of the exam\n\n\n\nAlso see vignette R/exams for additional tags and more information.\n\nTypes of Meta-information tags\n\nexname\nExercise name, typically a unique identifier for each exercise, helping to manage and retrieve exercises easily from an exercise pool.\n\n\nextitle\nSets the title of the exercise. Titles can be dynamically generated by embedding R objects in the text to adapt the title based on the exam context. For a detailed explanation of inline code, see this page\n\n\nextype\nSpecifies the type of exam. This is different to the list object types from the “Data generation” section. A very common type is “cloze”, which is a type of exam which contains different types of questions, for example a combination of numeric and schoice questions in one exam. If the exam just contains one type of question, for example only multiple choice questions, then this can be specified as well.\n\n\nexsolution\ncontains the correct solutions for the exam in the necessary format for the conversion of the .Rmd-file. When more than one question (and therefore more than one solution) is created, all solutions need to be in the order of the questions and separated by “|”. This can either be achieved by manually writing down all solutions or with the following code chunk:\npaste(solutions, collapse = \"|\")\nThe resulting R object needs to be dynmically included in the .Rmd-file (see ?????? for details).\n\n\nexclozetypes\nWhen creating an exam of the type “cloze” (the exam contains different types of questions), the type of each question has to be specified. This information is stored in the list typesfrom above. When more than one question (and therefore more than one type) is created, all types need to be in the order of the questions and separated by “|”. This can either be achieved by manually writing down all solutions or with the following code chunk:\npaste(types, collapse = \"|\")\nThe resulting R object needs to be dynmically included in the .Rmd-file (see ?????? for details).\n\n\nextol\ncontains the tolerances used for the answers to numeric questions. When creating an exam of type “cloze”, the tolerances are stored in the list tolerances. They need to be in the order of the questions with empty interations for questions where tolerances are not applicable, e.g. string questions. For details see ??????? (subsetting the lists). All tolerances need to be seperated by “|”. This can either be achieved by manually writing down all solutions or with the following code chunk:\npaste(tolerances, collapse = \"|\")\nThe resulting R object needs to be dynamically included in the .Rmd-file (see ?????? for details).\n\n\nexshuffle\nCan be a logical or an integer and determines if or how the answer options are shuffled. When it is set to TRUE the answer options are not always displayed in the same order, for example when creating multiple versions of the same exam. When set to an integer, this determines the number of multiple choice answer options shown. For example, when 6 answer options are available through the list object answers and exshuffle is set to 4, then 4 out of 6 questions (always including the true option(s)) are displayed.\n\n\nexversion\nSpecifies the version of the exam, useful for distinction when altering the .Rmd-file and creating a new set of exercises.\n\n\n\n\n\n\nExample\n\n\n\nThis is the meta-information of a very simple exam, containing one numeric question, one single choice and one multiple choice question with three answer options, without any automation using the lists and paste().\nexname: homework_1\nextitle: Homework 1: Topic A  \nextype: cloze\nexsolution: 42.1|TRUE|c(FALSE,TRUE, FALSE)\nexclozetype: num|schoice|mchoice\nextol: 0.5|0|0\nexshuffle: TRUE\nexversion: v1\n\n\n\n\n\nExemplary structure of the Meta-information\nBelow is an example of how the “meta-information” section could look with some of the R/exams tags explained above, as well as automatic conversion of the solutions, types and tolerances list to the correct format using paste().\nMeta-information\n================\nexname: Abcde\nextitle: Abcde: topic xyz \nextype: cloze\nexsolution: `r paste(solutions, collapse = \"|\")`\nexclozetype: `r paste(types, collapse = \"|\")`\nextol: `r paste(tolerances, collapse = \"|\")`\nexshuffle: TRUE\nexversion: v1",
+    "crumbs": [
+      "Rmd-file",
+      "Structure"
+    ]
+  },
+  {
+    "objectID": "templates.html",
+    "href": "templates.html",
+    "title": "Templates",
+    "section": "",
+    "text": "This page will serve as a download centre and provide a script to create custom .Rmd-templates through an interface.\nThis downloads an .R-file, which contains the code to a shiny app. When run, the shiny app allows the creation of custom templates. (more features to come)\n Download",
+    "crumbs": [
+      "Downloads and Custom Template Creation"
     ]
   },
   {
@@ -491,7 +522,7 @@
     "href": "faq.html",
     "title": "FAQ",
     "section": "",
-    "text": "This will describe frequently asked questions and common mistakes.",
+    "text": "This will describe frequently asked questions and common mistakes.\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n\n\n\n\nGeneral Questions\n\n\n\n\n\n\nWhat is R/exams\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWho is this documentation intended for?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDo you need prior experience with R?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDoes the course need to teach R and/or statistics?\n\n\n\n\n\n\n\n\n\n\n\nInstallation\n\n\n\n\n\n\nHow do I install R and RStudio?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow do I install R/exams\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDo I need other software?\n\n\n\n\n\n\n\n\n\n\n\nCreating Exercises\n\n\n\n\n\n\nWhat file-formats are used?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat question types are available?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow do I add mathematical formulas to my question/solution?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow do I include a picture in my exercise?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow do I embed a link in my exercise?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhere can I find a template?\n\n\n\n\n\n\n\n\n\n\n\nConversion and Output\n\n\n\n\n\n\nWhat are the available output formats?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow do I generate an exam?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow can I upload my .xml-file to Moodle\n\n\n\n\n\n\n\n\n\n\n\nCommon Problems\n\n\n\n\n\n\nThe conversion to pdf format fails.\n\n\n\n\n\nMake sure to have LaTeX installed, see for example the package R/tinytex\n\n\n\n\n\n\n\n\n\nImages do not appear correctly in my output.\n\n\n\n\n\n\nMake sure the image is stored in the correct folder.\nUse relative paths (./path_to_pic/picture.png).\n\n\n\n\n\n\nAdvanced Options\n\n\n\n\n\n\nWhat other options do I have for costumization?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat other parameters can I set for conversion?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow can I grade the exams?\n\n\n\n\n\n\n\n\n\n\n\nFurther Resources\n\n\n\n\n\n\nWhere can I ask questions about this documentation?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhere do I find other resources for R/exams?",
     "crumbs": [
       "FAQ"
     ]
@@ -511,18 +542,32 @@
     "text": "Answerlist\n\nThe first element in the periodic table is Hydrogen because it has an atomic number of 1.\nThe element with the abbreviation O is Oxygen, a crucial element for respiration and water."
   },
   {
-    "objectID": "examples/Advanced1.html",
-    "href": "examples/Advanced1.html",
+    "objectID": "examples/advanced1.html",
+    "href": "examples/advanced1.html",
     "title": "Question",
     "section": "",
-    "text": "library(knitr)\n\nset.seed(123) # seed for replicability -&gt; removed when generating multiple differnt exercises \n\nx_mu &lt;- 1000 #set true mean \nalpha = 0.01 #confidence level \ndifference &lt;- FALSE # should the means be different? \nn &lt;- 25 #number of observations \n\n\nif(difference){\n  y_mu &lt;- x_mu + 10 \n} else {\n  y_mu &lt;- x_mu \n} \n\n# sample data \nx &lt;- rnorm(n = n, mean = x_mu, sd = 10)\ny &lt;- rnorm(n = n, mean = y_mu, sd = 10)\n\n\nmean_x &lt;- mean(x)\nmean_y &lt;- mean(y)\np_value &lt;- t.test(x, y)$p.value\n\n\ndata &lt;- data.frame(\"Manufacturer_A\" = x, \"Manufacturer_B\" = y)\n\nwrite.csv2(data, file = \"bread_data.csv\")\n\n\nQuestion\nThe following data was collected from two bread manufacturers, for each manufacturer, 25 loaves of bread were weighed. The results is the following data table:\nkable(data)\n````\nThe data can be downlaoded as a .csv-file here:\n\nAnswer the following questions:\nWhat is the mean weight of the bread made by manufacturer A? ##ANSWER1##\nWhat is the mean weight of the bread made by manufacturer B? ##ANSWER2##\nUsing the function t.test() in R, we can check if the mean weight of the bread differs between the two manufacturerss. Use a signficance level of \\(\\alpha = 0.01\\)\nThe null hypotheses (H0) is that ##ANSWER3##\nThe p-value of the t-test is smaller than \\(\\alpha = 0.01\\). ##ANSWER4##\nBased on these results, we can ##ANSWER5##\n\n\nSolution\n\n\nMeta-Information"
+    "text": "library(knitr) #load necessary package \nlibrary(exams)\n\nset.seed(123) # seed for replicability -&gt; removed when generating multiple differnt exercises \n\nx_mu &lt;- 1000 #set true mean \nalpha = 0.01 #confidence level \ndifference &lt;- FALSE # should the means be different? \nn &lt;- 25 #number of observations \n\n\nif(difference){ #define y_mu for sampling, is different from x_mu when the group means should be different \n  y_mu &lt;- x_mu + 20 \n} else {\n  y_mu &lt;- x_mu \n} \n\n# sample data \nx &lt;- round(rnorm(n = n, mean = x_mu, sd = 10), digits = 2) #data sampled and rounded \ny &lt;- round(rnorm(n = n, mean = y_mu, sd = 10), digits = 2) \n\n#create \"pretty\" dataframe \ndata &lt;- data.frame(\"Manufacturer_A\" = x, \"Manufacturer_B\" = y)\n\n#write a csv file with the data, available for download \nwrite.csv2(data, file = \"bread_data.csv\")\n#define empty lists \nanswers &lt;- list() \nsolutions &lt;- list() \ntypes &lt;- list() \nexplanations &lt;- list() \ntolerances &lt;- list() \n\n# define certain objects (not necessary, but a cleaner workflow)\nmean_x &lt;- mean(x)\nmean_y &lt;- mean(y)\np_value &lt;- t.test(x, y)$p.value\n\n#mean manufacturer A \nanswers[[1]] &lt;- \"\" #no answer options for numeric questions\nsolutions[[1]] &lt;- mean_x\ntypes[[1]] &lt;- \"num\"\ntolerances[[1]] &lt;- 0.1 #tolerances only for numeric questions \n\n#mean manufacturer B \nanswers[[2]] &lt;- \"\"\nsolutions[[2]] &lt;- mean_y\ntypes[[2]] &lt;- \"num\"\ntolerances[[2]] &lt;- 0.1\n\n#null hypothesis \nanswers[[3]] &lt;- c(\"the mean weight of the bread is the same for manufacturer A and B.\", \"the mean weight of the bread is different for manufacturer A and B.\")  #answer options for single choice \nsolutions[[3]] &lt;- if(difference){ c(FALSE, TRUE)} else {c(TRUE, FALSE)} #answer dynamically adjusted depending on the parameters used \ntypes[[3]] &lt;- \"schoice\" # single choice \n\n#p-value \nanswers[[4]] &lt;- c(\"yes\", \"no\", \"not enough information in the output to answer\")\nsolutions[[4]] &lt;- if(p_value &lt; alpha){ c(TRUE, FALSE, FALSE)} else{ c(FALSE, TRUE, FALSE)} # answer dynamically adjusted \ntypes[[4]] &lt;- \"mchoice\" # multiple choice \n\n#reject/accept \nanswers[[5]] &lt;- c(\"can reject the null hypothesis.\", \"cannot reject the null hypothesis.\")\nsolutions[[5]] &lt;- if(p_value &lt; alpha){c(TRUE, FALSE)} else{c(FALSE, TRUE)}\ntypes[[5]] &lt;- \"schoice\""
+  },
+  {
+    "objectID": "examples/advanced1.html#answerlist",
+    "href": "examples/advanced1.html#answerlist",
+    "title": "Question",
+    "section": "Answerlist",
+    "text": "Answerlist\n\n\n\nthe mean weight of the bread is the same for manufacturer A and B.\nthe mean weight of the bread is different for manufacturer A and B.\nyes\nno\nnot enough information in the output to answer\ncan reject the null hypothesis.\ncannot reject the null hypothesis."
+  },
+  {
+    "objectID": "examples/advanced1.html#answerlist-1",
+    "href": "examples/advanced1.html#answerlist-1",
+    "title": "Question",
+    "section": "Answerlist",
+    "text": "Answerlist\n\n999.6668\n1001.0216\nTrue\nFalse\nFALSE\nTRUE\nFALSE\nFalse\nTrue"
   },
   {
     "objectID": "examples/ex_add.html",
     "href": "examples/ex_add.html",
     "title": "BOKU Exams",
     "section": "",
-    "text": "#mean is calulcated and rounded to two digits\nmean_data &lt;- mean(c(3, 4, 5, 5, 6, 7, 7)) |&gt; round(digits = 2) \n\nThe mean of the data is 5.29.\n\nheight &lt;- sample(seq(157, 196, by = 0.1), size = 5)\nweight &lt;- sample(seq(56, 85, by = 0.1), size = 5) \nage &lt;- sample(20:50, size = 5)\ndata &lt;- data.frame(height, weight, age)\n\n\nknitr::kable(data)\n\n\n\n\nheight\nweight\nage\n\n\n\n\n166.7\n79.2\n39\n\n\n169.5\n63.7\n41\n\n\n189.1\n66.0\n38\n\n\n165.0\n76.8\n44\n\n\n180.2\n64.3\n43"
+    "text": "#mean is calulcated and rounded to two digits\nmean_data &lt;- mean(c(3, 4, 5, 5, 6, 7, 7)) |&gt; round(digits = 2) \n\nThe mean of the data is 5.29.\n\nheight &lt;- sample(seq(157, 196, by = 0.1), size = 5)\nweight &lt;- sample(seq(56, 85, by = 0.1), size = 5) \nage &lt;- sample(20:50, size = 5)\ndata &lt;- data.frame(height, weight, age)\n\n\nknitr::kable(data)\n\n\n\n\nheight\nweight\nage\n\n\n\n\n168.4\n77.1\n36\n\n\n193.4\n60.3\n42\n\n\n187.0\n58.4\n30\n\n\n176.0\n63.8\n40\n\n\n160.3\n80.0\n46"
   },
   {
     "objectID": "examples/example_schoice.html",
@@ -579,7 +624,7 @@
     "href": "creation-Rmd.html#accessing-elements",
     "title": "Creation of the .Rmd file",
     "section": "Accessing Elements",
-    "text": "Accessing Elements\nThe different elements of a list can be accessed using two square brackets [[]].\n\n\n\n\n\n\nTip\n\n\n\nThere are other ways of accessing elements in a list, such as []and $, however for simplicity reasons, this documentation focuses on [[]]. The other two have their own applications, which are not necessary for using R/exams in the way it is described here.\n\n\nFor example, this accesses the first element of the questions list.\nquestions[[1]]\nAccessing multiple elements:\nquestions[[c(1, 3, 5)]] #1st, 3rd, 5th element \n\nquestions[[1:5]] #1st to 5th element",
+    "text": "Accessing Elements\nThe different elements of a list can be accessed using two square brackets [[]].\n\n\n\n\n\n\nTip\n\n\n\nThere are other ways of accessing elements in a list, such as []and $, however for simplicity reasons, this documentation focuses on [[]]. The other two have their own applications, which are not necessary for using R/exams in the way it is described here.\n\n\nFor example, this accesses the first element of the answers list.\nanswers[[1]]\nAccessing multiple elements:\nanswers[[c(1, 3, 5)]] #1st, 3rd, 5th element \n\nanswers[[1:5]] #1st to 5th element",
     "crumbs": [
       "Rmd-file",
       "Creation of the .Rmd-file"
@@ -597,11 +642,11 @@
     ]
   },
   {
-    "objectID": "creation-Rmd.html#questions-list",
-    "href": "creation-Rmd.html#questions-list",
+    "objectID": "creation-Rmd.html#answers-list",
+    "href": "creation-Rmd.html#answers-list",
     "title": "Creation of the .Rmd file",
-    "section": "Questions list",
-    "text": "Questions list\nAlthough this list is named questions, actually the answer options for single/multiple choice questions are contained here.\nThe exemplary questions are:\n\nWhat is the correct symbol for gold in the periodic table?\nPlease calculate the standard deviation \\(\\sigma\\), when the variance is \\(\\sigma^2 = 2,59\\).\n\nThese questions will be pasted in the question text section directly in the .Rmd-file.\nSo the three answer options for the single choice question would be for example: “Ti”, “Au” and “Ag”, which are stored in the questions list.\nFor the numeric question, no answer options are needed, therefore an empty string \"\" is placed there instead. (When creating larger exams with many numeric questions, this can be done automatically for all questions at once, see here ???? )\nquestions[[1]] &lt;- c(\"Ti\", \"Au\", \"Ag\")\nquestions[[2]] &lt;- \"\"",
+    "section": "Answers list",
+    "text": "Answers list\nThis list contains the answer options for single/multiple choice questions.\nThe exemplary questions are:\n\nWhat is the correct symbol for gold in the periodic table?\nPlease calculate the standard deviation \\(\\sigma\\), when the variance is \\(\\sigma^2 = 2,59\\).\n\nThese questions will be pasted in the question text section directly in the .Rmd-file.\nSo the three answer options for the single choice question would be for example: “Ti”, “Au” and “Ag”, which are stored in the answers list.\nFor the numeric question, no answer options are needed, therefore an empty string \"\" is placed there instead. (When creating larger exams with many numeric questions, this can be done automatically for all questions at once, see here ???? )\nanswers[[1]] &lt;- c(\"Ti\", \"Au\", \"Ag\")\nanswers[[2]] &lt;- \"\"",
     "crumbs": [
       "Rmd-file",
       "Creation of the .Rmd-file"

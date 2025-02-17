@@ -313,6 +313,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">FAQ</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./templates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Downloads and Custom Template Creation</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -372,7 +378,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>The .Rmd is the main file, where all the information about the exercise is contained. It follows a basic structure, with four sections, “Data Generation”, “Question”, “Solution” and “Meta-information”. Their purpose will be described in detail in the following sections.</p>
 <p>An empty template containing only the necessary structure can be downloaded here:</p>
-<p><a href="#dnldts51553" onclick="fetch('data:text/plain;base64,YGBge3IsIGRhdGEgZ2VuZXJhdGlvbiwgZWNobyA9IEZBTFNFfQpsaWJyYXJ5KGV4YW1zKQpxdWVzdGlvbnMgPC0gbGlzdCgpIApzb2x1dGlvbnMgPC0gbGlzdCgpIAp0eXBlcyA8LSBsaXN0KCkKZXhwbGFuYXRpb25zIDwtIGxpc3QoKSAKdG9sZXJhbmNlcyA8LSBsaXN0KCkKCmBgYAoKUXVlc3Rpb24KPT09PT09PT0KCmBgYHtyLCBxdWVzdGlvbnMsIGVjaG8gPSBGQUxTRX0KYW5zd2VybGlzdCh1bmxpc3QocXVlc3Rpb25zKSwgbWFya3VwID0gIm1hcmtkb3duIikKYGBgIAoKU29sdXRpb24KPT09PT09PT0KCmBgYHtyLCBzb2x1dGlvbnMsIGVjaG8gPSBGQUxTRX0KYW5zd2VybGlzdCh1bmxpc3QoZXhwbGFuYXRpb25zKSwgbWFya3VwID0gIm1hcmtkb3duIikKYGBgCgpNZXRhLWluZm9ybWF0aW9uIAo9PT09PT09PT09PT09PT09CmV4bmFtZToKZXh0aXRsZTogCmV4dHlwZTogY2xvemUKZXhzb2x1dGlvbjogYHIgcGFzdGUoc29sdXRpb25zLCBjb2xsYXBzZSA9ICJ8IilgCmV4Y2xvemV0eXBlOiBgciBwYXN0ZSh0eXBlcywgY29sbGFwc2UgPSAifCIpYApleHRvbDogYHIgcGFzdGUodG9sZXJhbmNlcywgY29sbGFwc2UgPSAifCIpYApleHNodWZmbGU6IFRSVUUKZXh2ZXJzaW9uOiB2MQ==').then(res => res.blob()).then(blob => {
+<p><a href="#dnldts49835" onclick="fetch('data:text/plain;base64,YGBge3IsIGRhdGEgZ2VuZXJhdGlvbiwgZWNobyA9IEZBTFNFfQpsaWJyYXJ5KGV4YW1zKQpxdWVzdGlvbnMgPC0gbGlzdCgpIApzb2x1dGlvbnMgPC0gbGlzdCgpIAp0eXBlcyA8LSBsaXN0KCkKZXhwbGFuYXRpb25zIDwtIGxpc3QoKSAKdG9sZXJhbmNlcyA8LSBsaXN0KCkKCmBgYAoKUXVlc3Rpb24KPT09PT09PT0KCmBgYHtyLCBxdWVzdGlvbnMsIGVjaG8gPSBGQUxTRX0KYW5zd2VybGlzdCh1bmxpc3QocXVlc3Rpb25zKSwgbWFya3VwID0gIm1hcmtkb3duIikKYGBgIAoKU29sdXRpb24KPT09PT09PT0KCmBgYHtyLCBzb2x1dGlvbnMsIGVjaG8gPSBGQUxTRX0KYW5zd2VybGlzdCh1bmxpc3QoZXhwbGFuYXRpb25zKSwgbWFya3VwID0gIm1hcmtkb3duIikKYGBgCgpNZXRhLWluZm9ybWF0aW9uIAo9PT09PT09PT09PT09PT09CmV4bmFtZToKZXh0aXRsZTogCmV4dHlwZTogY2xvemUKZXhzb2x1dGlvbjogYHIgcGFzdGUoc29sdXRpb25zLCBjb2xsYXBzZSA9ICJ8IilgCmV4Y2xvemV0eXBlOiBgciBwYXN0ZSh0eXBlcywgY29sbGFwc2UgPSAifCIpYApleHRvbDogYHIgcGFzdGUodG9sZXJhbmNlcywgY29sbGFwc2UgPSAifCIpYApleHNodWZmbGU6IFRSVUUKZXh2ZXJzaW9uOiB2MQ==').then(res => res.blob()).then(blob => {
       const downloadURL = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       document.body.appendChild(a);
@@ -380,7 +386,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       a.download = 'Template.Rmd'; a.click();
       window.URL.revokeObjectURL(downloadURL);
       document.body.removeChild(a);
-        });"><button class="btn btn-default downloadthis  " id="dnldts51553"><i class="bi bi-download"></i> Download </button></a></p>
+        });"><button class="btn btn-default downloadthis  " id="dnldts49835"><i class="bi bi-download"></i> Download </button></a></p>
 <section id="basic-structure" class="level1">
 <h1>Basic Structure</h1>
 <ul>
@@ -407,12 +413,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>even more text here. </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="data-generation" class="level2">
 <h2 class="anchored" data-anchor-id="data-generation">Data Generation</h2>
-<p>In this section of the .Rmd-file, the questions (including answer options for single/multiple choice questions), solutions, the types of questions, explanations and tolerances for solutions are created and stored in list objects for later. In addition there are many additional possibilities, like sampling data, creating graphs, importing pictures etc. which are described on the following page: <a href="./add-ons.html">Add-ons</a></p>
+<p>In this section of the .Rmd-file, the answer options for single/multiple choice questions, solutions, the types of questions, explanations and tolerances for solutions are created and stored in list objects for later. In addition there are many additional possibilities, like sampling data, creating graphs, importing pictures etc. which are described on the following page: <a href="./add-ons.html">Add-ons</a></p>
 <section id="description-of-the-lists" class="level3">
 <h3 class="anchored" data-anchor-id="description-of-the-lists">Description of the lists</h3>
-<p>The five necessary lists are <code>questions</code>, <code>solutions</code>, <code>types</code>, <code>explanations</code> and <code>tolerances</code>, which all have the same length, which is equal to the number of questions in the exercise. For example, in an exam with 5 multiple choice questions, the length of the lists is 5.</p>
+<p>The five necessary lists are <code>answers</code>, <code>solutions</code>, <code>types</code>, <code>explanations</code> and <code>tolerances</code>, which all have the same length, which is equal to the number of questions in the exercise. For example, in an exam with 5 multiple choice questions, the length of the lists is 5.</p>
 <p>Depending on the type and simplicity of the question, some of the lists might not be necessary. (see ??????)</p>
-<p>The list <code>questions</code> contains the answer options for single choice/multiple choice questions, not the questions itself. The actual questions are written down in the section “Question”. For numeric and string questions, this list contains placeholders ““, since no answer options are given. (more on the types of questions see ??????)</p>
+<p>The list <code>answers</code> contains the answer options for single choice/multiple choice questions, not the questions itself. The actual questions are written down in the section “Question”. For numeric and string questions, this list contains placeholders ““, since no answer options are given. (more on the types of questions see ??????)</p>
 <p>The list <code>solutions</code> contains the solutions for all the questions. For numeric questions, that is a number, (e.g: <code>123</code>), for string questions a string like <code>"hello world"</code> is expected. The solution for single &amp; multiple choiche questions is a boolean vector containing <code>TRUE/FALSE</code>. For each answer option, one instance of <code>TRUE</code> or <code>FALSE</code> is needed. For example, a single choice question with 5 answer options, where one option (in this case the second answer option) is correct, would have a solution vector like this:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The list <code>types</code> specifies the type of question for each individual question. Possible values are</p>
@@ -441,7 +447,7 @@ Warning
 <section id="creating-the-lists" class="level3">
 <h3 class="anchored" data-anchor-id="creating-the-lists">Creating the lists</h3>
 <p>They are initialized as empty lists, which are later filled with the desired information via sub-setting. see ?????</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>questions <span class="ot">&lt;-</span> <span class="fu">list</span>() </span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>answers <span class="ot">&lt;-</span> <span class="fu">list</span>() </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>solutions <span class="ot">&lt;-</span> <span class="fu">list</span>() </span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>types <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>explanations <span class="ot">&lt;-</span> <span class="fu">list</span>() </span>
@@ -500,8 +506,8 @@ mchoice example
 </div>
 </div>
 <p>For more examples, see the section “Basic Examples” <a href="./example1.html">here</a>.</p>
-<p>The function <code>answerlist()</code> from <code>R/exams</code> package converts the answer options, which are stored in the list object <code>questions</code> into the necessary format.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">answerlist</span>(<span class="fu">unlist</span>(questions), <span class="at">markup =</span> <span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The function <code>answerlist()</code> from <code>R/exams</code> package converts the answer options, which are stored in the list object <code>answers</code> into the necessary format.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">answerlist</span>(<span class="fu">unlist</span>(answers), <span class="at">markup =</span> <span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="solution" class="level2">
@@ -648,7 +654,7 @@ mchoice example
 </section>
 <section id="exshuffle" class="level4">
 <h4 class="anchored" data-anchor-id="exshuffle">exshuffle</h4>
-<p>Can be a logical or an integer and determines if or how the answer options are shuffled. When it is set to <code>TRUE</code> the answer options are not always displayed in the same order, for example when creating multiple versions of the same exam. When set to an integer, this determines the number of multiple choice answer options shown. For example, when 6 answer options are available through the list object <code>questions</code> and exshuffle is set to 4, then 4 out of 6 questions (always including the true option(s)) are displayed.</p>
+<p>Can be a logical or an integer and determines if or how the answer options are shuffled. When it is set to <code>TRUE</code> the answer options are not always displayed in the same order, for example when creating multiple versions of the same exam. When set to an integer, this determines the number of multiple choice answer options shown. For example, when 6 answer options are available through the list object <code>answers</code> and exshuffle is set to 4, then 4 out of 6 questions (always including the true option(s)) are displayed.</p>
 </section>
 <section id="exversion" class="level4">
 <h4 class="anchored" data-anchor-id="exversion">exversion</h4>
