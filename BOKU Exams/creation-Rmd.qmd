@@ -11,7 +11,7 @@ The lists used in the .Rmd to contain the answer options, solutions, etc. can be
 The lists can be initialized as empty lists using `list()`
 
 ```{r}
-questions <- list() 
+answers <- list() 
 solutions <- list() 
 types <- list()
 explanations <- list() 
@@ -25,17 +25,17 @@ The different elements of a list can be accessed using two square brackets `[[]]
 There are other ways of accessing elements in a list, such as `[]`and `$`, however for simplicity reasons, this documentation focuses on `[[]]`. The other two have their own applications, which are not necessary for using `R/exams` in the way it is described here. 
 ::: 
 
-For example, this accesses the first element of the `questions` list. 
+For example, this accesses the first element of the `answers` list. 
 
 ```r
-questions[[1]]
+answers[[1]]
 ```
 Accessing multiple elements: 
 
 ```r
-questions[[c(1, 3, 5)]] #1st, 3rd, 5th element 
+answers[[c(1, 3, 5)]] #1st, 3rd, 5th element 
 
-questions[[1:5]] #1st to 5th element 
+answers[[1:5]] #1st to 5th element 
 ```
 
 ## Assigning and Altering Elements 
@@ -61,9 +61,9 @@ Please note that the examples in this section should only show the necessary syn
 
 Using the example of an exercise containing one numeric and one multiple choice question, this section will explain what type of content is put into the lists. 
 
-## Questions list 
+## Answers list 
 
-Although this list is named questions, actually the answer options for single/multiple choice questions are contained here. 
+This list contains the answer options for single/multiple choice questions. 
 
 The exemplary questions are: 
 
@@ -73,13 +73,13 @@ The exemplary questions are:
 
 These questions will be pasted in the **question text section** directly in the .Rmd-file. 
 
-So the three answer options for the single choice question would be for example: "Ti", "Au" and "Ag", which are stored in the `questions` list. 
+So the three answer options for the single choice question would be for example: "Ti", "Au" and "Ag", which are stored in the `answers` list. 
 
 For the numeric question, no answer options are needed, therefore an empty string `""` is placed there instead. (When creating larger exams with many numeric questions, this can be done automatically for all questions at once, see here ???? )
 
 ```r
-questions[[1]] <- c("Ti", "Au", "Ag")
-questions[[2]] <- ""
+answers[[1]] <- c("Ti", "Au", "Ag")
+answers[[2]] <- ""
 ```
 
 ## Solutions list 

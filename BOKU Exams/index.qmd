@@ -3,7 +3,13 @@ title: "BOKU Exams"
 engine: knitr
 ---
 
-Documentation for R/exams at BOKU. Please read the README for a brief overview [here](readme.qmd). 
+Documentation for R/exams at BOKU. 
+
+Please read the README for a brief overview [here](readme.qmd). 
+
+Check out the FAQ [here](faq.qmd).
+
+To get started please read [First Steps](first-steps.qmd).
 
 ![](https://boku.ac.at/fileadmin/data/themen/Marketing/Downloads/BOKU_Hauptlogo_RGB.png){width="40%"}
 

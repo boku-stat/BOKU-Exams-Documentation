@@ -68,4 +68,16 @@ For Moodle quizzes, the correct solutions are imported automatically as well, me
 
 For pdf exams, an answer sheet is provided, but it is also possible to automatically grade scans of the students' multiple choice exams using R/exams. See ????
 
+## How do I get started? 
+
+see other pages 
+Descriptions, examples 
+
+step by step tut? 
+
+project set up 
+
+download templates 
+
+
 

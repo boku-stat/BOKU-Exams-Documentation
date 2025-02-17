@@ -1,3 +1,6 @@
+
+#### UPDATED VERSION OF THIS FUNCTION IN app.R 
+
 # create an automatic .Rmd template for R/exams -> later integration into website with adjustable parameters?
 
 # basic template  generation

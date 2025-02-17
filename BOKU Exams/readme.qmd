@@ -14,11 +14,15 @@ Disclaimer: Internal cross-references, marked by ????, are (for the most part) n
 
 It can be used to automatically create several different types of exercises, with a large number of possibilites for customization to various output types. 
 
+### Basic functionality 
+
+For each exercise/exam, there is one .Rmd-file which contains all the questions and their solutions. This file is then converted to the desired output type through a script written in an .R-file. 
+
 ### Table of contents 
 
 | Page | Content | 
 |------|---------| 
-| [First Steps](first-steps.qmd) | Brief overview of `R/exams` and its general usage. | 
+| [First Steps](first-steps.qmd) | How to get started. | 
 | [R and `R/exams` info](r-exams.qmd) | Links to software and installation. | 
 | [.Rmd-file: Structure](structure-Rmd.qmd) | Gives the structure and "skeleton" for the main .Rmd-file | 
 | [.Rmd-file: Creation](creation-Rmd.qmd) | How to utilize the basic strucutre and incorporate the desired content | 
@@ -26,7 +30,7 @@ It can be used to automatically create several different types of exercises, wit
 | [.R-file: Conversion](conversion.qmd) | Process of conversion | 
 | [Add-ons](add-ons.qmd) | Brief how-to for including pictures, links, etc. in .Rmd-files | 
 | [Basic Examples](example1.qmd) | Short examples to illustrate simple use cases | 
-| Advanced Examples | More complex Examples | 
+| [Advanced Examples](advanced1.qmd) | More complex Examples | 
 | [Further References](ref.qmd) | Links to existing documentation, examples, etc. | 
 | [FAQ](faq.qmd) | Frequently Asked Questions and their answers |
 

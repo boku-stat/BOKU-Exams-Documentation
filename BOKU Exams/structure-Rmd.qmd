@@ -46,15 +46,15 @@ even more text here.
 
 ## Data Generation
 
-In this section of the .Rmd-file, the questions (including answer options for single/multiple choice questions), solutions, the types of questions, explanations and tolerances for solutions are created and stored in list objects for later. In addition there are many additional possibilities, like sampling data, creating graphs, importing pictures etc. which are described on the following page: [Add-ons](add-ons.qmd)
+In this section of the .Rmd-file, the answer options for single/multiple choice questions, solutions, the types of questions, explanations and tolerances for solutions are created and stored in list objects for later. In addition there are many additional possibilities, like sampling data, creating graphs, importing pictures etc. which are described on the following page: [Add-ons](add-ons.qmd)
 
 ### Description of the lists
 
-The five necessary lists are `questions`, `solutions`, `types`, `explanations` and `tolerances`, which all have the same length, which is equal to the number of questions in the exercise. For example, in an exam with 5 multiple choice questions, the length of the lists is 5.
+The five necessary lists are `answers`, `solutions`, `types`, `explanations` and `tolerances`, which all have the same length, which is equal to the number of questions in the exercise. For example, in an exam with 5 multiple choice questions, the length of the lists is 5.
 
 Depending on the type and simplicity of the question, some of the lists might not be necessary. (see ??????)
 
-The list `questions` contains the answer options for single choice/multiple choice questions, not the questions itself. The actual questions are written down in the section "Question". For numeric and string questions, this list contains placeholders "", since no answer options are given. (more on the types of questions see ??????)
+The list `answers` contains the answer options for single choice/multiple choice questions, not the questions itself. The actual questions are written down in the section "Question". For numeric and string questions, this list contains placeholders "", since no answer options are given. (more on the types of questions see ??????)
 
 The list `solutions` contains the solutions for all the questions. For numeric questions, that is a number, (e.g: `123`), for string questions a string like `"hello world"` is expected. The solution for single & multiple choiche questions is a boolean vector containing `TRUE/FALSE`. For each answer option, one instance of `TRUE` or `FALSE` is needed. For example, a single choice question with 5 answer options, where one option (in this case the second answer option) is correct, would have a solution vector like this:
 
@@ -85,7 +85,7 @@ Proceed with caution when random generating numbers and setting an (absolute) to
 They are initialized as empty lists, which are later filled with the desired information via sub-setting. see ?????
 
 ``` r
-questions <- list() 
+answers <- list() 
 solutions <- list() 
 types <- list()
 explanations <- list() 
@@ -132,10 +132,10 @@ Possible answer options are "greater than", "smaller than", "equal to", which wo
 
 For more examples, see the section "Basic Examples" [here](example1.qmd).
 
-The function `answerlist()` from `R/exams` package converts the answer options, which are stored in the list object `questions` into the necessary format.
+The function `answerlist()` from `R/exams` package converts the answer options, which are stored in the list object `answers` into the necessary format.
 
 ``` r
-answerlist(unlist(questions), markup = "markdown")
+answerlist(unlist(answers), markup = "markdown")
 ```
 
 ## Solution
@@ -265,7 +265,7 @@ The resulting R object needs to be dynamically included in the .Rmd-file (see ??
 
 #### exshuffle
 
-Can be a logical or an integer and determines if or how the answer options are shuffled. When it is set to `TRUE` the answer options are not always displayed in the same order, for example when creating multiple versions of the same exam. When set to an integer, this determines the number of multiple choice answer options shown. For example, when 6 answer options are available through the list object `questions` and exshuffle is set to 4, then 4 out of 6 questions (always including the true option(s)) are displayed.
+Can be a logical or an integer and determines if or how the answer options are shuffled. When it is set to `TRUE` the answer options are not always displayed in the same order, for example when creating multiple versions of the same exam. When set to an integer, this determines the number of multiple choice answer options shown. For example, when 6 answer options are available through the list object `answers` and exshuffle is set to 4, then 4 out of 6 questions (always including the true option(s)) are displayed.
 
 #### exversion
 

@@ -1,6 +1,21 @@
 ---
 title: "Example 1"
+filters:
+   - downloadthis
 ---
+
+This is an example about the mean weight of bread. It contains two numeric, two single choice and one multiple choice question. 
+
+It uses several add-ons described [here](add-ons.qmd), such as: 
+
+- including a picture 
+- creating and providing a .csv-file containing the data for direct download within the exercise 
+- data sampling and inline code 
+
+The whole example as an .Rmd-file can be downloaded here: 
+
+{{< downloadthis examples/advanced1.Rmd dname="advanced_example_1" >}}
+
 
 
 

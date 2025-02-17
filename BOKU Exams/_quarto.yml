@@ -67,7 +67,8 @@ website:
       - href: faq.qmd 
         text: FAQ
 
-        
+      - href: templates.qmd 
+        text: Downloads and Custom Template Creation 
         
         
         

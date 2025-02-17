@@ -4,7 +4,7 @@ title: "Ideas"
 
 This is the page for future ideas and important notes for documentation, for internal use. 
 
-Notes, Stand 16.02 
+Notes, Stand 17.02 
 
 Allgemein: 
 
@@ -14,7 +14,7 @@ Allgemein:
 - check use of backticks 
 - Links to external doku formatierung ??? links oder beschreibung in den []() 
 - Reihenfolge der Seiten? 
-- Begriff: questions oder answers? -> questions 
+- Begriff: questions oder answers? -> answers 
 - R code: formatiert mit Farben oder including knitr tags, zb auf structure .Rmd page (also direkt auf der Seite oder mit filter include)
 - Advanced examples (mit cloze, csv files, data generation, stories etc. ??? )
 - Auf moodle: interne doku und bsp aus statistik zur verfügung als advanced examples? 
@@ -42,6 +42,8 @@ Home:
 
 First Steps: 
 
+- letzer abschnitt 
+
 R-info: 
 
 - Abschnitt über R/exams ausweiten, ~~alle Autoren nennen~~ 
@@ -51,6 +53,7 @@ Structure Rmd:
 - ~~template für download hinzufügen~~
 - Code chunks anpassen, sodass knitr tags dabei sind (filter include-code-files verwenden!)
 - Template verbessern: code chunks benennen, knitr tags 
+- fehlende meta information beschreiben (exsection und numwidth)
 
 Creation Rmd:
 

@@ -3,3 +3,124 @@ title: "FAQ"
 ---
 
 This will describe frequently asked questions and common mistakes.
+
+::: {.callout-note title="" collapse="true"}
+
+::: 
+
+# General Questions 
+
+::: {.callout-note title="What is `R/exams`" collapse="true"}
+
+::: 
+
+::: {.callout-note title="Who is this documentation intended for?" collapse="true"}
+
+::: 
+
+::: {.callout-note title="Do you need prior experience with R?" collapse="true"}
+
+::: 
+
+::: {.callout-note title="Does the course need to teach R and/or statistics?" collapse="true"}
+
+::: 
+
+
+
+# Installation  
+
+::: {.callout-note title="How do I install R and RStudio?" collapse="true"}
+
+::: 
+
+::: {.callout-note title="How do I install `R/exams`" collapse="true"}
+
+::: 
+
+::: {.callout-note title="Do I need other software?" collapse="true"}
+
+:::  
+
+# Creating Exercises 
+
+::: {.callout-note title="What file-formats are used?" collapse="true"}
+
+::: 
+
+::: {.callout-note title="What question types are available?" collapse="true"}
+
+::: 
+
+::: {.callout-note title="How do I add mathematical formulas to my question/solution?" collapse="true"}
+
+::: 
+
+::: {.callout-note title="How do I include a picture in my exercise?" collapse="true"}
+
+:::  
+
+::: {.callout-note title="How do I embed a link in my exercise?" collapse="true"}
+
+::: 
+
+::: {.callout-note title="Where can I find a template?" collapse="true"}
+
+::: 
+
+# Conversion and Output 
+
+::: {.callout-note title="What are the available output formats?" collapse="true"}
+
+::: 
+
+::: {.callout-note title="How do I generate an exam?" collapse="true"}
+
+::: 
+
+::: {.callout-note title="How can I upload my .xml-file to Moodle" collapse="true"}
+
+:::  
+
+# Common Problems 
+
+::: {.callout-note title="The conversion to pdf format fails." collapse="true"}
+Make sure to have LaTeX installed, see for example the package [`R/tinytex`](https://cran.r-project.org/package=tinytex)
+::: 
+
+::: {.callout-note title="Images do not appear correctly in my output." collapse="true"}
+
+- Make sure the image is stored in the correct folder. 
+- Use relative paths (./path_to_pic/picture.png). 
+::: 
+
+# Advanced Options 
+
+::: {.callout-note title="What other options do I have for costumization?" collapse="true"}
+
+::: 
+
+::: {.callout-note title="What other parameters can I set for conversion?" collapse="true"}
+
+::: 
+
+::: {.callout-note title="How can I grade the exams?" collapse="true"}
+
+::: 
+
+
+# Further Resources 
+
+::: {.callout-note title="Where can I ask questions about this documentation?" collapse="true"}
+
+::: 
+
+::: {.callout-note title="Where do I find other resources for `R/exams`?" collapse="true"}
+
+::: 
+
+
+
+
+
+
