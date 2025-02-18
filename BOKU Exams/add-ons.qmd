@@ -112,6 +112,13 @@ Pictures can be included as well, by using the following syntax:
 ``` markdown
 ![alt text](path_or_link/to/file)
 ```
+:::callout-important 
+It is necessary to include the following line in a code chunk somewhere above the picture in the .Rmd. Without this, the picture will not be found during the conversion with `R/exams`. 
+
+```R
+include_supplement(file = "file_name.jpg", dir = "path/to/folder")
+```
+:::
 
 Using the link to the BOKU logo, this then looks like this (for a specified width): 
 

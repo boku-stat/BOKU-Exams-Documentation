@@ -1,21 +1,126 @@
 ---
-title: "Example 1"
+title: "Advanced Example 1"
 filters:
    - downloadthis
+   - include-code-files
 ---
 
-This is an example about the mean weight of bread. It contains two numeric, two single choice and one multiple choice question. 
+This is an example about the mean weight of bread made by two manufacturers. It contains two numeric, two single choice and one multiple choice question. The exercise requires the calculation of two means and a t-test. 
 
 It uses several add-ons described [here](add-ons.qmd), such as: 
 
-- including a picture 
-- creating and providing a .csv-file containing the data for direct download within the exercise 
 - data sampling and inline code 
+- creating and providing a .csv-file containing the data for direct download within the exercise 
+- including a picture 
+
 
 The whole example as an .Rmd-file can be downloaded here: 
 
 {{< downloadthis examples/advanced1.Rmd dname="advanced_example_1" >}}
 
+# Data Generation 
+
+In this first code chunk the data for the example is generated from a normal distribution. Certain parameters are set by the user to create the desired exercise: 
+
+- `x_mu` is the mean used for sampling the first sample.
+- `alpha` is the confidence level for the t-test. 
+- `difference`, set to `TRUE` or `FALSE`, determines whether the means of the two groups are different or not. 
+- `n` is the number of observations for each sample. 
+
+Using these parameters, the mean of the second sample `y_mu`  is defined and two samples are drawn. The data is put into a dataframe, and a .csv-file containing the data is created. 
+
+::: callout-important
+Code needs to be placed within a code chunk within in an .Rmd-file to work correctly.
+:::
+
+```{r, data generation}
+library(knitr) #load necessary package 
+library(exams)
+#include_supplement(file = "bread.jpg", dir = "../images") #necessary for including images
+
+set.seed(123) # seed for replicability -> removed when generating multiple differnt exercises 
+
+# set parameters 
+x_mu <- 1000 #set true mean 
+alpha = 0.01 #confidence level 
+difference <- FALSE # should the means be different? 
+n <- 25 #number of observations 
 
 
+if(difference){ #define y_mu for sampling, is different from x_mu when the group means should be different 
+  y_mu <- x_mu + 20 
+} else {
+  y_mu <- x_mu 
+} 
+
+# sample data 
+x <- round(rnorm(n = n, mean = x_mu, sd = 10), digits = 2) #data sampled and rounded 
+y <- round(rnorm(n = n, mean = y_mu, sd = 10), digits = 2) 
+
+#create "pretty" dataframe 
+data <- data.frame("Manufacturer_A" = x, "Manufacturer_B" = y)
+
+#write a csv file with the data, available for download 
+write.csv2(data, file = "bread_data.csv")
+```
+
+
+# Question/solutionlist 
+
+In this code chunk, the necessary content (questions, solutions, tolerances etc.) is created. Lists are initalized and needed objects are defined. Question by question, the lists are filled out. 
+
+For question 3 to 5, the correct solution depends on the parameters that were chosen and the values that were calculated, so the solutions are adjusted dynamically. 
+
+::: callout-important
+Code needs to be placed within a code chunk within in an .Rmd-file to work correctly.
+:::
+
+```{r, question/solutionlist}
+#define empty lists 
+answers <- list() 
+solutions <- list() 
+types <- list() 
+explanations <- list() 
+tolerances <- list() 
+
+# define certain objects (not a necessary step, but a cleaner workflow for complex examples)
+mean_x <- mean(x)
+mean_y <- mean(y)
+p_value <- t.test(x, y)$p.value
+
+#mean manufacturer A 
+answers[[1]] <- "" #no answer options for numeric questions
+solutions[[1]] <- mean_x
+types[[1]] <- "num"
+tolerances[[1]] <- 0.1 #tolerances only for numeric questions 
+
+#mean manufacturer B 
+answers[[2]] <- ""
+solutions[[2]] <- mean_y
+types[[2]] <- "num"
+tolerances[[2]] <- 0.1
+
+#null hypothesis 
+answers[[3]] <- c("the mean weight of the bread is the same for manufacturer A and B.", "the mean weight of the bread is different for manufacturer A and B.")  #answer options for single choice 
+solutions[[3]] <- if(difference){ c(FALSE, TRUE)} else {c(TRUE, FALSE)} #answer dynamically adjusted depending on the parameters used 
+types[[3]] <- "schoice" # single choice 
+
+#p-value 
+answers[[4]] <- c("yes", "no", "not enough information in the output to answer")
+solutions[[4]] <- if(p_value < alpha){ c(TRUE, FALSE, FALSE)} else{ c(FALSE, TRUE, FALSE)} # answer dynamically adjusted 
+types[[4]] <- "mchoice" # multiple choice 
+
+#reject/accept 
+answers[[5]] <- c("can reject the null hypothesis.", "cannot reject the null hypothesis.")
+solutions[[5]] <- if(p_value < alpha){c(TRUE, FALSE)} else{c(FALSE, TRUE)}
+types[[5]] <- "schoice"
+```
+
+# Question 
+
+This section gives a bit of context and the questions themselves and it display the data, provides a .csv-file and formats the answerlist. 
+
+
+```{.markdown include="examples/advanced1.Rmd" start-line=74 end-line=107}
+```
 

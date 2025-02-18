@@ -6,6 +6,22 @@ filters:
 
 This page will serve as a download centre and provide a script to create custom .Rmd-templates through an interface.
 
-This downloads an .R-file, which contains the code to a shiny app. When run, the shiny app allows the creation of custom templates. (more features to come)
+# Custom .Rmd-Templates 
+
+The following button downloads an .R-file, which contains the code to a shiny app. When run, the shiny app allows the creation of custom templates. (more features to come)
+
+The templates provides the skeleton of the exercise and only the content needs to be added. 
 
 {{< downloadthis templates/app.R dname="Template Creation Interface" >}}
+
+::: callout-note 
+Note that the template itself without any added content cannot be converted to an exam.
+::: 
+
+# Template .Rmd-File 
+
+{{< downloadthis templates/template_empty.Rmd dname="Rmd Template" >}}
+
+# Template .R-File 
+
+{{< downloadthis templates/template_script_conversion.R dname="R Template" >}}

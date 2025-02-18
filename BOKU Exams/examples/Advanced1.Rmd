@@ -1,9 +1,12 @@
 ```{r, data generation}
 library(knitr) #load necessary package 
 library(exams)
+include_supplement(file = "bread.jpg", dir = "../images") #necessary for including a picture 
+
 
 set.seed(123) # seed for replicability -> removed when generating multiple differnt exercises 
 
+# set parameters
 x_mu <- 1000 #set true mean 
 alpha = 0.01 #confidence level 
 difference <- FALSE # should the means be different? 
@@ -73,15 +76,15 @@ Question
 
 The following data was collected from two bread manufacturers. For each manufacturer, `r n` loaves of bread were weighed. The result is the following data table: 
 
-```{r, data table}
+```{r, data table, echo = FALSE, results = "asis"}
 kable(data)
 ```
 
 The data can be downlaoded as a .csv-file here: 
 
-[](bread_data.csv)
+[bread_data.csv](bread_data.csv)
 
-![](../images/bread.jpg)
+![](bread.jpg)
 
 Answer the following questions: 
 
@@ -97,7 +100,7 @@ The p-value of the t-test is smaller than $\alpha = `r alpha`$. ##ANSWER4##
 
 Based on these results, we ##ANSWER5## 
 
-```{r questionlist, echo = FALSE, results = "asis"}
+```{r answerlist, echo = FALSE, results = "asis"}
 #necessary codeblock which creates an answerlist object from the answers list, which is needed for conversion 
 
 answerlist(unlist(answers), markup = "markdown") # answerlist for exams2html/exams2moodle created from answers list
@@ -111,7 +114,7 @@ To find the correct solutions, the function mean() and t.test() were used. The c
 ```{r solutionlist, echo = FALSE, results = "asis"}
 # feedback format changed from TRUE/FALSE in a vector to strings "True" and "False"
 for (i in 1:length(solutions)) {
-  if (types[i] == "schoice") { # only applicable for schoice/mchoice questions
+  if (types[i] %in% c("schoice", "mchoice")) { # only applicable for schoice/mchoice questions
     explanations[i] <- solutions[i] |> lapply(function(x) ifelse(x, "True", "False"))
   } else {
     explanations[i] <- solutions[i] #explanations are the same as solutions 
@@ -126,7 +129,7 @@ answerlist(unlist(explanations), markup = "markdown") # answerlist for exams2htm
 
 # change solution format from TRUE/FALSE vector to 1/0 string
 for (i in 1:length(solutions)) {
-  if (types[i] == "schoice") { # only applicable for schoice/mchoice questions
+  if (types[i] %in% c("schoice", "mchoice")) { # only applicable for schoice/mchoice questions
     solutions[i] <- solutions[i] |>
       unlist() |>
       mchoice2string()
