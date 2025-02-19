@@ -151,6 +151,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">R and R/exams Info</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project Setup</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -347,9 +353,9 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="what-is-in-the-files" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-in-the-files">What is in the files?</h2>
-<p>The .Rmd-file contains the questions, answers and other necessary parameters for creating the exam (see ????? for more details). These components are created by the person wanting to create an exam, however they need to be written according to a certain structure, see <a href="./structure-Rmd.html">here</a>.</p>
+<p>The .Rmd-file contains the questions, answers and other necessary parameters for creating the exam. These components are created by the person wanting to create an exam, however they need to be written according to a certain structure, see <a href="./structure-Rmd.html">Structure of an .Rmd-file</a> and <a href="creation.qmd">Creation of the .Rmd-file</a>.</p>
 <p>The .R file contains the code, which converts the questions that are written in the .Rmd-file into the actual exam in a certain output format. Several formats are possible, such as .pdf, HTML and .xml for Moodle quizzes. See <a href="./structure-R.html">here</a> for more info. This code is based on the functionality of the <code>R/exams</code> package.</p>
-<p>An additonal separate .R-file can contain other R objects, which are then (dynamically) used in exam questions, however this is not a necessary component. For more information about add-ons see <a href="./add-ons.html">this page</a> and for advanced examples using this, see here ????</p>
+<p>An additonal separate .R-file can contain other R objects, which are then (dynamically) used in exam questions, however this is not a necessary component. For more information about add-ons see <a href="./add-ons.html">this page</a> and for advanced examples using this, see here ????.</p>
 </section>
 <section id="what-does-the-exam-look-like" class="level2">
 <h2 class="anchored" data-anchor-id="what-does-the-exam-look-like">What does the exam look like?</h2>
@@ -365,7 +371,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="how-can-rexams-prohibit-cheating" class="level2">
 <h2 class="anchored" data-anchor-id="how-can-rexams-prohibit-cheating">How can R/exams prohibit cheating?</h2>
-<p>With R/exams it is possible to create a (very) large number of different versions of the same exam. (see ???? conversion) Slight automatic alterations lead to an individualized exam for each student. For example, this can be used to be able to use the same materials for different exercise groups or to prohibit cheating by having slightly different questions for each student.</p>
+<p>With R/exams it is possible to create a (very) large number of different versions of the same exam, see <a href="./conversion.html">this page</a> for the conversion process. Slight automatic alterations lead to an individualized exam for each student. For example, this can be used to be able to use the same materials for different exercise groups or to prohibit cheating by having slightly different questions for each student.</p>
 </section>
 <section id="in-what-ways-can-an-exam-be-individualized" class="level2">
 <h2 class="anchored" data-anchor-id="in-what-ways-can-an-exam-be-individualized">In what ways can an exam be individualized?</h2>
@@ -382,10 +388,14 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="how-do-i-get-started" class="level2">
 <h2 class="anchored" data-anchor-id="how-do-i-get-started">How do I get started?</h2>
-<p>see other pages Descriptions, examples</p>
+<p>See other pages for:</p>
+<ul>
+<li><p><a href="./example1.html">Examples</a></p></li>
+<li><p><a href="template.qmd">(Custom) Template Download</a></p></li>
+<li><p><a href="./ref.html">More documentation, useful links</a></p></li>
+</ul>
 <p>step by step tut?</p>
 <p>project set up</p>
-<p>download templates</p>
 
 
 </section>

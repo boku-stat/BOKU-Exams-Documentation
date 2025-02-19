@@ -186,6 +186,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">R and R/exams Info</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project Setup</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -378,7 +384,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>The .Rmd is the main file, where all the information about the exercise is contained. It follows a basic structure, with four sections, “Data Generation”, “Question”, “Solution” and “Meta-information”. Their purpose will be described in detail in the following sections.</p>
 <p>An empty template containing only the necessary structure can be downloaded here:</p>
-<p><a href="#dnldts13867" onclick="fetch('data:text/plain;base64,YGBge3IsIGRhdGEgZ2VuZXJhdGlvbiwgZWNobyA9IEZBTFNFfQpsaWJyYXJ5KGV4YW1zKQpxdWVzdGlvbnMgPC0gbGlzdCgpIApzb2x1dGlvbnMgPC0gbGlzdCgpIAp0eXBlcyA8LSBsaXN0KCkKZXhwbGFuYXRpb25zIDwtIGxpc3QoKSAKdG9sZXJhbmNlcyA8LSBsaXN0KCkKCmBgYAoKUXVlc3Rpb24KPT09PT09PT0KCmBgYHtyLCBxdWVzdGlvbnMsIGVjaG8gPSBGQUxTRX0KYW5zd2VybGlzdCh1bmxpc3QocXVlc3Rpb25zKSwgbWFya3VwID0gIm1hcmtkb3duIikKYGBgIAoKU29sdXRpb24KPT09PT09PT0KCmBgYHtyLCBzb2x1dGlvbnMsIGVjaG8gPSBGQUxTRX0KYW5zd2VybGlzdCh1bmxpc3QoZXhwbGFuYXRpb25zKSwgbWFya3VwID0gIm1hcmtkb3duIikKYGBgCgpNZXRhLWluZm9ybWF0aW9uIAo9PT09PT09PT09PT09PT09CmV4bmFtZToKZXh0aXRsZTogCmV4dHlwZTogY2xvemUKZXhzb2x1dGlvbjogYHIgcGFzdGUoc29sdXRpb25zLCBjb2xsYXBzZSA9ICJ8IilgCmV4Y2xvemV0eXBlOiBgciBwYXN0ZSh0eXBlcywgY29sbGFwc2UgPSAifCIpYApleHRvbDogYHIgcGFzdGUodG9sZXJhbmNlcywgY29sbGFwc2UgPSAifCIpYApleHNodWZmbGU6IFRSVUUKZXh2ZXJzaW9uOiB2MQ==').then(res => res.blob()).then(blob => {
+<p><a href="#dnldts33702" onclick="fetch('data:text/plain;base64,YGBge3IsIGRhdGEgZ2VuZXJhdGlvbiwgZWNobyA9IEZBTFNFfQpsaWJyYXJ5KGV4YW1zKQpxdWVzdGlvbnMgPC0gbGlzdCgpIApzb2x1dGlvbnMgPC0gbGlzdCgpIAp0eXBlcyA8LSBsaXN0KCkKZXhwbGFuYXRpb25zIDwtIGxpc3QoKSAKdG9sZXJhbmNlcyA8LSBsaXN0KCkKCmBgYAoKUXVlc3Rpb24KPT09PT09PT0KCmBgYHtyLCBxdWVzdGlvbnMsIGVjaG8gPSBGQUxTRX0KYW5zd2VybGlzdCh1bmxpc3QocXVlc3Rpb25zKSwgbWFya3VwID0gIm1hcmtkb3duIikKYGBgIAoKU29sdXRpb24KPT09PT09PT0KCmBgYHtyLCBzb2x1dGlvbnMsIGVjaG8gPSBGQUxTRX0KYW5zd2VybGlzdCh1bmxpc3QoZXhwbGFuYXRpb25zKSwgbWFya3VwID0gIm1hcmtkb3duIikKYGBgCgpNZXRhLWluZm9ybWF0aW9uIAo9PT09PT09PT09PT09PT09CmV4bmFtZToKZXh0aXRsZTogCmV4dHlwZTogY2xvemUKZXhzb2x1dGlvbjogYHIgcGFzdGUoc29sdXRpb25zLCBjb2xsYXBzZSA9ICJ8IilgCmV4Y2xvemV0eXBlOiBgciBwYXN0ZSh0eXBlcywgY29sbGFwc2UgPSAifCIpYApleHRvbDogYHIgcGFzdGUodG9sZXJhbmNlcywgY29sbGFwc2UgPSAifCIpYApleHNodWZmbGU6IFRSVUUKZXh2ZXJzaW9uOiB2MQ==').then(res => res.blob()).then(blob => {
       const downloadURL = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       document.body.appendChild(a);
@@ -386,7 +392,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       a.download = 'Template.Rmd'; a.click();
       window.URL.revokeObjectURL(downloadURL);
       document.body.removeChild(a);
-        });"><button class="btn btn-default downloadthis  " id="dnldts13867"><i class="bi bi-download"></i> Download </button></a></p>
+        });"><button class="btn btn-default downloadthis  " id="dnldts33702"><i class="bi bi-download"></i> Download </button></a></p>
 <section id="basic-structure" class="level1">
 <h1>Basic Structure</h1>
 <ul>
