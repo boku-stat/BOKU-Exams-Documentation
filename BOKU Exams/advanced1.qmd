@@ -38,7 +38,7 @@ library(knitr) #load necessary package
 library(exams)
 #include_supplement(file = "bread.jpg", dir = "../images") #necessary for including images
 
-set.seed(123) # seed for replicability -> removed when generating multiple differnt exercises 
+set.seed(123) # seed for replicability -> removed when generating multiple differnt exercises !!!
 
 # set parameters 
 x_mu <- 1000 #set true mean 
@@ -118,9 +118,21 @@ types[[5]] <- "schoice"
 
 # Question 
 
-This section gives a bit of context and the questions themselves and it display the data, provides a .csv-file and formats the answerlist. 
-
+This section gives a bit of context and the questions themselves and it display the data, provides a .csv-file and formats the answerlist of the answer options for conversion. 
 
 ```{.markdown include="examples/advanced1.Rmd" start-line=74 end-line=107}
 ```
 
+# Solution 
+
+The solution section provides the feedback, in this case the correct solutions (without additional context). Using the function `answerlist()`, the explanations are formatted correctly for conversion. Additionally, for single/multiple choice questions, the `TRUE/FALSE` values in the explanations are written as "True" and "False". The solutions these quesions need to be converted to a "1/0" format. 
+
+```{.markdown include="examples/advanced1.Rmd" start-line=109 end-line=138}
+``` 
+
+# Meta-Information 
+
+The meta-information contains all the necessary information for conversion. exsection is used for the import in Moodle and allows the exercises to be imported automatically in the specified category. The extra arguments regarding numwidth and stringwidth specify the length of the answer boxes that are shown in Moodle.
+
+```{.markdown include="examples/advanced1.Rmd" start-line=140 end-line=152}
+```

@@ -4,7 +4,7 @@ title: "Ideas"
 
 This is the page for future ideas and important notes for documentation, for internal use. 
 
-Notes, Stand 17.02 
+Notes, Stand 18.02 
 
 Allgemein: 
 
@@ -48,6 +48,10 @@ R-info:
 
 - Abschnitt über R/exams ausweiten, ~~alle Autoren nennen~~ 
 
+Project Setup: 
+
+- Anleitungen schreiben
+
 Structure Rmd: 
 
 - ~~template für download hinzufügen~~
@@ -85,15 +89,16 @@ Basic Examples:
 
 Advanced Examples: 
 
-- Seite erstellen 
+- ~~Seite erstellen~~ 
 - Examples ausdenken 
-- Einfach nur zur homepage verlinken?? 
+- Einfach nur zur homepage verlinken?? -> nein 
 - Ideen: random sample, stories, csv file, bilder 
 
 FAQ: 
 
-- Fragen sammeln/ausdenken  
-- Format für fragen überlegen (dropdown? callout chunks?)
+- ~~Fragen sammeln/ausdenken~~ 
+- ~~Format für fragen überlegen (dropdown? callout chunks?)~~
+- Antworten schreiben 
 
 References: 
 
@@ -103,8 +108,9 @@ References:
 
 Download center? 
 
-- Seite erstellen 
-- alle templates/examples einfügen 
+- ~~Seite erstellen~~ 
+- ~~alle templates einfügen~~
+- examples einfügen 
 
 Further Notes: 
 

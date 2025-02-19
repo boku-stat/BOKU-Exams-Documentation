@@ -1,0 +1,15 @@
+---
+title: "Project Setup"
+---
+This page will describe the process of setting up an R project, the different files and folder structures. 
+
+# Setting up an R Project 
+
+# Creating an .Rmd-file 
+
+# Creating an .R-file 
+
+# Important things to consider 
+relative paths, 
+folders of images 
+number of differnt exercises 

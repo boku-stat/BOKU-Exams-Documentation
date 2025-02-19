@@ -14,7 +14,7 @@ Disclaimer: Internal cross-references, marked by ????, are (for the most part) n
 
 It can be used to automatically create several different types of exercises, with a large number of possibilites for customization to various output types. 
 
-### Basic functionality 
+### How does it work? 
 
 For each exercise/exam, there is one .Rmd-file which contains all the questions and their solutions. This file is then converted to the desired output type through a script written in an .R-file. 
 

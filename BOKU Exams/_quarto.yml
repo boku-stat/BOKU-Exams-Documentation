@@ -24,6 +24,8 @@ website:
         text: First Steps 
       - href: r-exams.qmd
         text: R and R/exams Info
+      - href: setup.qmd
+        text: Project Setup
       
       - section: Rmd-file
         contents: 

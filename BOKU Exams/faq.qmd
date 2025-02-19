@@ -4,56 +4,72 @@ title: "FAQ"
 
 This will describe frequently asked questions and common mistakes.
 
-::: {.callout-note title="" collapse="true"}
-
-::: 
-
 # General Questions 
 
 ::: {.callout-note title="What is `R/exams`" collapse="true"}
-
+`R/exams` is an R package, which allows for dynamic exam creation. Exam questions can have many formats and can easily be individualized. For more information about `R/exams` see [here](r-exams.qmd) and for a brief introduction to the concept see [here](first-steps.qmd)
 ::: 
 
 ::: {.callout-note title="Who is this documentation intended for?" collapse="true"}
-
+Anyone who wants to create dynamic exercises for their own course, using a similar system as the one that is currently used for the Statistics courses. 
 ::: 
 
 ::: {.callout-note title="Do you need prior experience with R?" collapse="true"}
-
+It depends, but it can be done without. Without any prior experiencing with any programming language, the learning curve can be a bit steep. However, R and also `R/exams` is documented very well and there are many examples and templates available. Simpler examples are created very easily and since the structure always remains the same, building more complex examples can be done step-by-step. 
 ::: 
 
 ::: {.callout-note title="Does the course need to teach R and/or statistics?" collapse="true"}
-
+No, R is just the software to create the exams, however the content is completely adjustable. There are different formats available, see several [basic](example1.qmd) and [advanced](advanced1.qmd] examples. 
 ::: 
-
-
 
 # Installation  
 
 ::: {.callout-note title="How do I install R and RStudio?" collapse="true"}
+The software can be downloaded and simply installed following the instructions. More information can be found [here](r-exams.qmd). 
 
+Download R [here from CRAN](https://cran.r-project.org). 
+
+Download Rstudio [here](https://posit.co/download/rstudio-desktop/).
+
+An installation guide can be found [here](https://www.r-exams.org/tutorials/installation/)
+
+A step-by-step installation tutorial by the Statistics Institute at BOKU can be found [here](https://statistik.boku.ac.at/stat-lehre/doku.php?id=statistik_mit_r:rstudio:rstudio_installation:start)
 ::: 
 
 ::: {.callout-note title="How do I install `R/exams`" collapse="true"}
+Once R and RStudio are installed, `R/exams` can simply installed by running the following code lines in the console or in a script. `library()` is used to load the content of the exams package. 
 
+```R 
+install.packages("exams") # installs the package, note the quotes!!  
+library(exams) # loads the content of the package 
+```
 ::: 
 
 ::: {.callout-note title="Do I need other software?" collapse="true"}
-
+When converting exams to pdf format, a LaTeX installation is required. One can be installed using the package `tinytex`. 
+```R
+tinytex::install_tinytex() #function from tinytex 
+``` 
+Additionally, for markdown exercises, Pandoc is required, however this automatically comes with the installation of RStudio. 
 :::  
 
 # Creating Exercises 
 
 ::: {.callout-note title="What file-formats are used?" collapse="true"}
-
+The questions and solutions are stored in an .Rmd-file, which is an R markdown file. The script for conversion is stored in an .R-file. Both can be created and edited within RStudio. 
 ::: 
 
 ::: {.callout-note title="What question types are available?" collapse="true"}
-
+The most common types are "numeric", "string" (for word-based answers), "single choice" and "multiple choice". Others are also available, depending on the output format. A combination of any of these is of the type "cloze". 
 ::: 
 
 ::: {.callout-note title="How do I add mathematical formulas to my question/solution?" collapse="true"}
-
+Using `$...$`for inline mathematical notation and `$$...$$`for centered notation. 
+For example: The following line 
+```markdown 
+$\alpha = \frac{1}{100}$
+```
+produces this: $\alpha = \frac{1}{100}$
 ::: 
 
 ::: {.callout-note title="How do I include a picture in my exercise?" collapse="true"}
@@ -71,7 +87,7 @@ This will describe frequently asked questions and common mistakes.
 # Conversion and Output 
 
 ::: {.callout-note title="What are the available output formats?" collapse="true"}
-
+The most common ones are PDF, HTML and .xml for the import in Moodle. However there are many more available see [here](https://www.r-exams.org/intro/oneforall/)
 ::: 
 
 ::: {.callout-note title="How do I generate an exam?" collapse="true"}
@@ -112,11 +128,11 @@ Make sure to have LaTeX installed, see for example the package [`R/tinytex`](htt
 # Further Resources 
 
 ::: {.callout-note title="Where can I ask questions about this documentation?" collapse="true"}
-
+See our discussion forum on Github [here](https://github.com/boku-stat/BOKU-Exams-Documentation/discussions)
 ::: 
 
 ::: {.callout-note title="Where do I find other resources for `R/exams`?" collapse="true"}
-
+See [this page](ref.qmd) for a multitude of links for different topics regarding `R/exams`. 
 ::: 
 
 

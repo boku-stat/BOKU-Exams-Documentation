@@ -4,7 +4,7 @@ library(exams)
 include_supplement(file = "bread.jpg", dir = "../images") #necessary for including a picture 
 
 
-set.seed(123) # seed for replicability -> removed when generating multiple differnt exercises 
+set.seed(123) # seed for replicability -> removed when generating multiple differnt exercises !!!
 
 # set parameters
 x_mu <- 1000 #set true mean 

@@ -24,11 +24,11 @@ Generally, a structure of folders and files are used, which all have a specific 
 
 ## What is in the files?
 
-The .Rmd-file contains the questions, answers and other necessary parameters for creating the exam (see ????? for more details). These components are created by the person wanting to create an exam, however they need to be written according to a certain structure, see [here](structure-Rmd.qmd).
+The .Rmd-file contains the questions, answers and other necessary parameters for creating the exam. These components are created by the person wanting to create an exam, however they need to be written according to a certain structure, see [Structure of an .Rmd-file](structure-Rmd.qmd) and [Creation of the .Rmd-file](creation.qmd). 
 
 The .R file contains the code, which converts the questions that are written in the .Rmd-file into the actual exam in a certain output format. Several formats are possible, such as .pdf, HTML and .xml for Moodle quizzes. See [here](structure-R.qmd) for more info. This code is based on the functionality of the `R/exams` package.
 
-An additonal separate .R-file can contain other R objects, which are then (dynamically) used in exam questions, however this is not a necessary component. For more information about add-ons see [this page](add-ons.qmd) and for advanced examples using this, see here ???? 
+An additonal separate .R-file can contain other R objects, which are then (dynamically) used in exam questions, however this is not a necessary component. For more information about add-ons see [this page](add-ons.qmd) and for advanced examples using this, see here ????.  
 
 ## What does the exam look like?
 
@@ -48,7 +48,7 @@ For basic examples see these pages:
 
 ## How can R/exams prohibit cheating?
 
-With R/exams it is possible to create a (very) large number of different versions of the same exam. (see ???? conversion) Slight automatic alterations lead to an individualized exam for each student. For example, this can be used to be able to use the same materials for different exercise groups or to prohibit cheating by having slightly different questions for each student.
+With R/exams it is possible to create a (very) large number of different versions of the same exam, see [this page](conversion.qmd) for the conversion process. Slight automatic alterations lead to an individualized exam for each student. For example, this can be used to be able to use the same materials for different exercise groups or to prohibit cheating by having slightly different questions for each student.
 
 ## In what ways can an exam be individualized?
 
@@ -70,14 +70,16 @@ For pdf exams, an answer sheet is provided, but it is also possible to automatic
 
 ## How do I get started? 
 
-see other pages 
-Descriptions, examples 
+See other pages for: 
+
+- [Examples](example1.qmd)
+
+- [(Custom) Template Download](template.qmd)
+
+- [More documentation, useful links](ref.qmd)
 
 step by step tut? 
 
 project set up 
-
-download templates 
-
 
 
