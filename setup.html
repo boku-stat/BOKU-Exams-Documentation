@@ -332,16 +332,36 @@ ul.task-list li input[type="checkbox"] {
 <p>This page will describe the process of setting up an R project, the different files and folder structures.</p>
 <section id="setting-up-an-r-project" class="level1">
 <h1>Setting up an R Project</h1>
+<p>Working with an R project can be useful when working with multiple files over a longer period of time. When opening the project, the working directory is automatically set to the directory where the project (and the corresponding files) are stored in.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To set up a project, open RStudio and select <code>File</code> -&gt; <code>New Project</code>. Choose “New Directory”, then “New Project” and give your project a name and choose a directory to set it up in. Lastly click “Create Project” and you’re set!</p>
+</div>
+</div>
+<p>After following the steps above, a folder with the chosen name will appear in the chosen directory, containing an .Rproj-file. All files which are connected to this project will be stored in this folder, alongside the .Rproj-file, so when the project is openend, all previously opened files (from the last session) will be opened again. The working directory will be automatically be set to this folder as well.</p>
 </section>
 <section id="creating-an-.rmd-file" class="level1">
 <h1>Creating an .Rmd-file</h1>
+<p>To create a new .Rmd file from RStudio select <code>File</code> -&gt; <code>New File</code> -&gt; <code>R Markdown</code>.</p>
+<p>If this file should be part of an R project, do not forget to save it in the corresponding project folder.</p>
 </section>
 <section id="creating-an-.r-file" class="level1">
 <h1>Creating an .R-file</h1>
+<p>To create a new .R file from RStudio select <code>File</code> -&gt; <code>New File</code> -&gt; <code>R Script</code>.</p>
+<p>If this file should be part of an R project, do not forget to save it in the corresponding project folder again.</p>
 </section>
 <section id="important-things-to-consider" class="level1">
 <h1>Important things to consider</h1>
-<p>relative paths, folders of images number of differnt exercises</p>
+<p>When refering to any other files/pictures/etc., it is advisble to use relative paths. This is necessary so these paths are still valid when sharing the projcet or files with other people and when converting the exercise files to the desired output.</p>
+<p>folders of images number of differnt exercises</p>
 
 
 </section>
