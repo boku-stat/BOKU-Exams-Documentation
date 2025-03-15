@@ -24,6 +24,7 @@ For each exercise/exam, there is one .Rmd-file which contains all the questions 
 |------|---------| 
 | [First Steps](first-steps.qmd) | How to get started. | 
 | [R and `R/exams` info](r-exams.qmd) | Links to software and installation. | 
+| [R Project Setup](setup.qmd) | How to set up an R Project and create .Rmd and .R files |
 | [.Rmd-file: Structure](structure-Rmd.qmd) | Gives the structure and "skeleton" for the main .Rmd-file | 
 | [.Rmd-file: Creation](creation-Rmd.qmd) | How to utilize the basic strucutre and incorporate the desired content | 
 | [.R-file: Strucutre](structure-R.qmd) | Structure for the conversion script | 
@@ -33,6 +34,7 @@ For each exercise/exam, there is one .Rmd-file which contains all the questions 
 | [Advanced Examples](advanced1.qmd) | More complex Examples | 
 | [Further References](ref.qmd) | Links to existing documentation, examples, etc. | 
 | [FAQ](faq.qmd) | Frequently Asked Questions and their answers |
+| [Downloads and Custom Templates](templates.qmd) | Templates of different files available for download and creation of a custom template | 
 
 ### How to give feedback or ask questions? 
 
@@ -40,5 +42,19 @@ This project is ongoing and we would be happy to receive feedback.
 Click [here](https://github.com/boku-stat/BOKU-Exams-Documentation/discussions) and simply write a post to our discussion forum on github. 
 
 If you have questions, do not hesitate to ask, simply leave a comment on the Github discussion forum. 
+
+### Quick Guide 
+
+- Create a new R project (optional but advisable)
+
+- Create an .Rmd file or download a (custom) template [here](templates.qmd). 
+
+- Write the questions/solutions into the .Rmd-file in the necessary format (see more on the [structure](structure-Rmd.qmd) and [format](creation-Rmd.qmd)). 
+
+- Create an .R file and write the script for conversion or download the template [here](templates.qmd). 
+
+- Convert the .Rmd to the desire output. 
+
+
 
 

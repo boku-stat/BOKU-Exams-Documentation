@@ -5,11 +5,33 @@ This page will describe the process of setting up an R project, the different fi
 
 # Setting up an R Project 
 
+Working with an R project can be useful when working with multiple files over a longer period of time. When opening the project, the working directory is automatically set to the directory where the project (and the corresponding files) are stored in. 
+
+::: callout-note
+To set up a project, open RStudio and select `File` -> `New Project`. 
+Choose "New Directory", then "New Project" and give your project a name and choose a directory to set it up in. 
+Lastly click "Create Project" and you're set! 
+::: 
+
+After following the steps above, a folder with the chosen name will appear in the chosen directory, containing an .Rproj-file. All files which are connected to this project will be stored in this folder, alongside the .Rproj-file, so when the project is openend, all previously opened files (from the last session) will be opened again. The working directory will be automatically be set to this folder as well. 
+
 # Creating an .Rmd-file 
+ 
+To create a new .Rmd file from RStudio select `File` -> `New File` -> `R Markdown`. 
+
+If this file should be part of an R project, do not forget to save it in the corresponding project folder. 
 
 # Creating an .R-file 
 
+To create a new .R file from RStudio select `File` -> `New File` -> `R Script`. 
+
+If this file should be part of an R project, do not forget to save it in the corresponding project folder again. 
+
 # Important things to consider 
-relative paths, 
+
+When refering to any other files/pictures/etc., it is advisble to use relative paths.
+This is necessary so these paths are still valid when sharing the projcet or files with other people and when converting the exercise files to the desired output. 
+
 folders of images 
 number of differnt exercises 
+

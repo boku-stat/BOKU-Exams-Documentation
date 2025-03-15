@@ -82,6 +82,7 @@ Add ons:
 
 - ~~Abschnitt über graphs hinzufügen und schreiben~~ 
 - abschnitt für dynamic context ("stories")
+- include_supplement beschreiben (bei bildern)
 
 Basic Examples: 
 
@@ -93,6 +94,7 @@ Advanced Examples:
 - Examples ausdenken 
 - Einfach nur zur homepage verlinken?? -> nein 
 - Ideen: random sample, stories, csv file, bilder 
+- download: zip file mit bild 
 
 FAQ: 
 

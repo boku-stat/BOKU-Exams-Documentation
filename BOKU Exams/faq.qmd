@@ -53,6 +53,17 @@ tinytex::install_tinytex() #function from tinytex
 Additionally, for markdown exercises, Pandoc is required, however this automatically comes with the installation of RStudio. 
 :::  
 
+
+# Setup 
+
+::: {.callout-note title="How and why should I setup an R project?" collapse="true"}
+
+::: 
+
+
+::: {.callout-note title="How can I create an .R or .Rmd file?" collapse="true"}
+::: 
+
 # Creating Exercises 
 
 ::: {.callout-note title="What file-formats are used?" collapse="true"}

@@ -78,8 +78,11 @@ See other pages for:
 
 - [More documentation, useful links](ref.qmd)
 
-step by step tut? 
+- [How to set up the project](setup.qmd)
 
-project set up 
+
+
+
+
 
 

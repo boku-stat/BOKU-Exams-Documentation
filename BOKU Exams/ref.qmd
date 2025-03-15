@@ -23,6 +23,7 @@ Exercise templates [here](https://www.r-exams.org/templates/).
 
 Achim Zeileis is very active on [stackoverflow](https://stackoverflow.com/questions), and many of his answers offer specific guidance on how to solve problems or how to implememt a certain feature. See his profile here: [Achim Zeileis on stackoverflow.com](https://stackoverflow.com/users/4233642/achim-zeileis)
 
+A beginners' guide on how to set up an R project and create files can be found [here](https://bookdown.org/daniel_dauber_io/r4np_book/starting-your-r-projects.html). 
 
 # R markdown resources 
 
