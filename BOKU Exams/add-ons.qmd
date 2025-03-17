@@ -48,6 +48,8 @@ Different types of elements of a story can include:
 - units 
 - etc. 
 
+One way of implementing this is using another .R file, which contains the stories and which then can be sourced and sampled from. See here ????? for an example. 
+
 
 ## Tables 
 

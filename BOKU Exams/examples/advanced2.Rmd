@@ -1,0 +1,88 @@
+```{r, data generation}
+#TODO: import all story elements, sampling process, Q6, other sections 
+
+n <- sample(20:30, size = 1) # number of data points 
+alpha <- sample(c(0.001, 0.01, 0.05, 0.1), size = 1) 
+
+
+source("ad2_stories.R", local = TRUE)
+story <- stories[[1]]
+
+#data generation (random, no real data)
+mu <- story$mu
+sigma <- story$sigma
+var <- story$var
+x<- round(rnorm(n = n, mean = mu, sd = sigma), digits = 1)
+y <- round(5 + 7 * x + rnorm(n = n, mean = 0, sd = 5), digits = 1) #based on x but with variation 
+data <- data.frame(x, y)
+names(data) <- var
+
+#plot(x,y)
+model <- lm(y ~ x)
+p_value <- coef(summary(model))[2, 4]
+r2 <- model$r.squared
+
+
+```
+
+```{r}
+write.csv2(data, file = "ad2_data.csv")
+
+``` 
+
+```{r questions/solutions }
+answers <- solutions <- explanations <- types <- tolerances <- list() 
+
+#ind. var 
+answers[[1]] <- var
+solutions[[1]] <- c(TRUE, FALSE)
+types[[1]] <- "schoice"
+
+#mean var1
+answers[[2]] <- ""
+solutions[[2]] <- mean(x)
+types[[2]] <- "num"
+
+#mean var2 
+answers[[3]] <- ""
+solutions[[3]] <- mean(y)
+types[[3]] <- "num"
+
+# significant 
+answers[[4]] <- c("yes", "no")
+solutions[[4]] <- if(p_value < alpha) c(TRUE, FALSE) else c(FALSE, TRUE)
+types[[4]] <- "schoice"
+
+# R^2 
+answers[[5]] <- ""
+solutions[[5]] <- r2
+types[[5]] <- "num"
+
+```
+
+
+Questions
+=========
+
+`r text` The collected data can be seen in the table below. The `r var[1]` is given in `r unit[1]` and the `r var[2]` is given in `r unit[2]`. 
+
+
+[data.csv](ad2_data.csv)
+
+Answer the following questions. 
+
+Which was the independent variable in the experiment? ##ANSWER1## 
+
+What is the mean `r var[1]`? ##ANSWER2## 
+
+What is the mean `r var2[2]`? ##ANSWER3## 
+
+Use the function `lm()` to do a simple linear regression on the data. 
+
+Is the coefficient for the independent variable significant at the significance level $\alpha = `r alpha`$? #ANSWER4# 
+
+What is the $R^2$? ##ANSWER5## 
+
+The higher the R2, the more variation is explained 
+
+
