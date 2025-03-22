@@ -1,37 +1,47 @@
-```{r, data generation}
+```{r data generation, echo=FALSE, results ='hide'}
+include_supplement("ad2stories.R", dir  = "data")
 #TODO: import all story elements, sampling process, Q6, other sections 
 
+#sample parameters
 n <- sample(20:30, size = 1) # number of data points 
 alpha <- sample(c(0.001, 0.01, 0.05, 0.1), size = 1) 
 
+#import stories
+source("ad2stories.R", local = TRUE)
+story <- sample(stories, size = 1)[[1]] # sample a story 
 
-source("ad2_stories.R", local = TRUE)
-story <- stories[[1]]
-
-#data generation (random, no real data)
+#rename parameters for better readability 
+name <- story$name
+text <- story$text
+var <- story$var 
+unit <- story$unit
 mu <- story$mu
 sigma <- story$sigma
-var <- story$var
-x<- round(rnorm(n = n, mean = mu, sd = sigma), digits = 1)
-y <- round(5 + 7 * x + rnorm(n = n, mean = 0, sd = 5), digits = 1) #based on x but with variation 
+m <- story$m 
+c <- story$c
+digit <- story$digit
+
+#data generation (random, no real data)
+x <- round(rnorm(n = n, mean = mu, sd = sigma), digits = digit)
+y <- round(c + m * x + rnorm(n = n, mean = 0, sd = 5), digits = ifelse(name == "run_heart", digit - 1, digit)) #based on x but with variation 
 data <- data.frame(x, y)
 names(data) <- var
 
 #plot(x,y)
 model <- lm(y ~ x)
 p_value <- coef(summary(model))[2, 4]
-r2 <- model$r.squared
-
+r2 <- summary(model)$r.squared
 
 ```
 
 ```{r}
 write.csv2(data, file = "ad2_data.csv")
-
 ``` 
 
-```{r questions/solutions }
-answers <- solutions <- explanations <- types <- tolerances <- list() 
+```{r questions/solutions, echo=FALSE}
+answers <- solutions <- explanations <- types <- list()
+  
+tolerances <- list() 
 
 #ind. var 
 answers[[1]] <- var
@@ -42,11 +52,13 @@ types[[1]] <- "schoice"
 answers[[2]] <- ""
 solutions[[2]] <- mean(x)
 types[[2]] <- "num"
+tolerances[[2]] <- 0
 
 #mean var2 
 answers[[3]] <- ""
 solutions[[3]] <- mean(y)
 types[[3]] <- "num"
+tolerances[[3]] <- 0
 
 # significant 
 answers[[4]] <- c("yes", "no")
@@ -57,6 +69,18 @@ types[[4]] <- "schoice"
 answers[[5]] <- ""
 solutions[[5]] <- r2
 types[[5]] <- "num"
+tolerances[[5]] <- 3
+
+# more/less variation 
+answers[[6]] <- c("more", "less")
+solutions[[6]] <- c(TRUE, FALSE)
+types[[6]] <- "schoice"
+
+#perfect R^2
+answers[[7]] <- c(1, 0, "$Inf$", -1)
+solutions[[7]] <- c(TRUE, FALSE, FALSE, FALSE)
+types[[7]] <- "schoice"
+
 
 ```
 
@@ -65,6 +89,10 @@ Questions
 =========
 
 `r text` The collected data can be seen in the table below. The `r var[1]` is given in `r unit[1]` and the `r var[2]` is given in `r unit[2]`. 
+
+```{r, table, results="asis"}
+knitr::kable(data, format = "markdown")
+```
 
 
 [data.csv](ad2_data.csv)
@@ -75,14 +103,69 @@ Which was the independent variable in the experiment? ##ANSWER1##
 
 What is the mean `r var[1]`? ##ANSWER2## 
 
-What is the mean `r var2[2]`? ##ANSWER3## 
+What is the mean `r var[2]`? ##ANSWER3## 
 
 Use the function `lm()` to do a simple linear regression on the data. 
 
 Is the coefficient for the independent variable significant at the significance level $\alpha = `r alpha`$? #ANSWER4# 
 
-What is the $R^2$? ##ANSWER5## 
+What is the $R^2$ of the model? ##ANSWER5## 
 
-The higher the R2, the more variation is explained 
+The higher the $R^2$, the ##ANSWER6## variation is explained by the model.
+
+The maximum value of the $R^2$ (meaning a perfect correlation in the model) is ##ANSWER7##. 
+
+
+```{r questions, echo=FALSE}
+answerlist(unlist(answers), markup = "markdown")
+
+```
+
+Solutions 
+========= 
+
+```{r solutionlist, echo = FALSE, results = "asis"}
+# feedback format changed from TRUE/FALSE in a vector to strings "True" and "False"
+for (x in 1:length(solutions)) {
+  if (types[x] == "schoice") { # only applicable for schoice/mchoice questions
+    explanations[x] <- solutions[x] |> lapply(function(x) ifelse(x, "True", "False"))
+  } else {
+    explanations[x] <- solutions[x]
+  }
+}
+
+answerlist(unlist(explanations), markup = "markdown") # answerlist for exams2html/exams2moodle created from solutions/explanations list -> feedback
+```
+
+```{r meta, echo = FALSE, results = 'hide'}
+# change solution format from TRUE/FALSE vector to 1/0 string
+for (x in 1:length(solutions)) {
+  if (types[x] == "schoice") { # only applicable for schoice/mchoice questions
+    solutions[x] <- solutions[x] |>
+      unlist() |>
+      mchoice2string()
+  }
+}
+
+for (x in 1:length(solutions)) {
+  if (tolerances[x] |> unlist() |> is.null()) {
+    tolerances[x] <- 0
+  }}
+```
+
+
+Meta-information 
+================
+exname: Advanced 2
+extitle: Advanced 2 `r name`
+extype: cloze
+exsolution: `r paste(solutions, collapse = "|")`
+exclozetype: `r paste(types, collapse = "|")`
+extol: `r paste(tolerances, collapse = "|")`
+exshuffle: TRUE
+exversion: v1
+
+
+
 
 
