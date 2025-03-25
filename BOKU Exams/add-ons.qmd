@@ -34,6 +34,18 @@ All objects called in inline code need to be defined in a code chunk beforehand.
 ```
 ::: 
 
+## Overview of `knitr-tags` 
+
+These are some of the more commonly used `knitr-tags`: 
+
+|tag | options | use | 
+|----|--------|-----| 
+| eval | TRUE/FALSE, etc. | whether the code chunk should be executed or not |
+| echo | TRUE/FALSE, etc. | whether the source code should be echoed within the rendered document | 
+| results | "asis", "hide"/FALSE, etc. | "asis" renders text without any markup. "hide" or FALSE hides the text output. | 
+
+There are many others available, for example to adjust the display of warnings/messages and the rendering of plots. A comprehensive list can be found [here](https://yihui.org/knitr/options/). 
+
 ## Dynamic Context ("stories")
 
 It is possible to change the context of the exercise dynamically. For example, when creating exercises, each student will receive 20 randomly sampled data points, however for group A, this sampled data is put into the context of food production, for example the height of apple trees, while for group B this represents the height of a group of people. 
@@ -240,3 +252,5 @@ When rendered, it looks like this:
 
 
 More markdown options can be found here ????? 
+
+

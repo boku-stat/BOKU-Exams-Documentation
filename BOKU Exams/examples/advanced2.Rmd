@@ -1,4 +1,5 @@
 ```{r data generation, echo=FALSE, results ='hide'}
+library(exams)
 include_supplement("ad2stories.R", dir  = "data")
 #TODO: import all story elements, sampling process, Q6, other sections 
 

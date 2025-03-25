@@ -1,6 +1,6 @@
 ```{r, data generation, echo = FALSE}
 library(exams)
-questions <- list() 
+answers <- list() 
 solutions <- list() 
 types <- list()
 explanations <- list() 
@@ -11,15 +11,52 @@ tolerances <- list()
 Question
 ========
 
-```{r, questions, echo = FALSE}
-answerlist(unlist(questions), markup = "markdown")
-``` 
+
+```{r questionlist, echo = FALSE, results = "asis"}
+# Numerical and text exercises require an empty answerlist entry
+for (x in 1:length(types)) {
+  if (types[x] %in% c("num", "string")) {
+    answers[x] <- ""
+  }
+}
+
+answerlist(unlist(answers), markup = "markdown")
+```
 
 Solution
 ========
 
-```{r, solutions, echo = FALSE}
+```{r solutionlist, echo = FALSE, results = "asis"}
+# Change the feedback format from a vector of T/F to (more legiable) strings
+for (x in 1:length(solutions)) {
+  if (types[x] %in% c("schoice", "mchoice")) {
+    explanations[x] <- solutions[x] |> lapply(function(x) ifelse(x, "True", "False"))
+  } else {
+    explanations[x] <- solutions[x]
+  }
+}
+
+# Answers are displayed in the feedback 
 answerlist(unlist(explanations), markup = "markdown")
+```
+
+```{r meta, echo = FALSE, results = "hide"}
+# Convert the format of single/multiple choice from T/F to 1/0
+for (x in 1:length(solutions)) {
+  if (types[x] %in% c("schoice", "mchoice")) {
+    solutions[x] <- solutions[x] |>
+      unlist() |>
+      mchoice2string()
+  }
+}
+
+# Set all undefined tolerances to a default value
+for (x in 1:length(solutions)) {
+  if (tolerances[x] |> unlist() |> is.null()) {
+    tolerances[x] <- 0
+  }
+}
+
 ```
 
 Meta-information 

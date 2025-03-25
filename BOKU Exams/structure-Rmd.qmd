@@ -23,10 +23,13 @@ An empty template containing only the necessary structure can be downloaded here
 The first section Data Generation, is marked by a code chunk, which is different from the other three sections.
 
 ````markdown      
-```{{r}}
-# code is placed here 
+```{{r, eval=TRUE, echo=FALSE}}
+# code is placed here, evaluated, but not echoed in the final document
 ```
 ````
+::: callout-important 
+Inside the curly braces `{}`it needs to be specified that the following code is written in R. In addition, so called `knitr-tags` can be used to alter the appearance of the code and its output within the code chunk. For a detailed overview of `knitr-tags` see [this website here](https://yihui.org/knitr/options/). A brief overview can be found [here](add-ons.qmd) in the section about `knitr-tags`. 
+::: 
 
 The other three sections are marked as follows
 
@@ -52,9 +55,9 @@ In this section of the .Rmd-file, the answer options for single/multiple choice 
 
 The five necessary lists are `answers`, `solutions`, `types`, `explanations` and `tolerances`, which all have the same length, which is equal to the number of questions in the exercise. For example, in an exam with 5 multiple choice questions, the length of the lists is 5.
 
-Depending on the type and simplicity of the question, some of the lists might not be necessary. (see ??????)
+Depending on the type and simplicity of the question, some of the lists might not be of equal length, however 
 
-The list `answers` contains the answer options for single choice/multiple choice questions, not the questions itself. The actual questions are written down in the section "Question". For numeric and string questions, this list contains placeholders "", since no answer options are given. (more on the types of questions see ??????)
+The list `answers` contains the answer options for single choice/multiple choice questions, not the questions itself. The actual questions are written down in the section "Question". For numeric and string questions, this list contains placeholders "", since no answer options are given. More on the types of questions see below.
 
 The list `solutions` contains the solutions for all the questions. For numeric questions, that is a number, (e.g: `123`), for string questions a string like `"hello world"` is expected. The solution for single & multiple choiche questions is a boolean vector containing `TRUE/FALSE`. For each answer option, one instance of `TRUE` or `FALSE` is needed. For example, a single choice question with 5 answer options, where one option (in this case the second answer option) is correct, would have a solution vector like this:
 
@@ -132,9 +135,15 @@ Possible answer options are "greater than", "smaller than", "equal to", which wo
 
 For more examples, see the section "Basic Examples" [here](example1.qmd).
 
-The function `answerlist()` from `R/exams` package converts the answer options, which are stored in the list object `answers` into the necessary format.
+The function `answerlist()` from `R/exams` package converts the answer options, which are stored in the list object `answers` into the necessary format. Additionally, the placeholders needed for numeric/string questions in the `answers` list are automatically added into the list in this code chunk. 
 
 ``` r
+for (x in 1:length(types)) {
+  if (types[x] %in% c("num", "string")) {
+    answers[x] <- ""
+  }
+}
+
 answerlist(unlist(answers), markup = "markdown")
 ```
 
@@ -154,15 +163,14 @@ Some solutions need to be converted to a more understandable format before being
 
 ``` r
 for (x in 1:length(solutions)) {
-
-  if (types[x] %in% c("schoice", "mchoice") { 
+  if (types[x] %in% c("schoice", "mchoice")) {
     explanations[x] <- solutions[x] |> lapply(function(x) ifelse(x, "True", "False"))
-  } 
-  
-  else {
+  } else {
     explanations[x] <- solutions[x]
   }
 }
+
+answerlist(unlist(explanations), markup = "markdown")
 ```
 
 Then the function `answerlist()` from `R/exams` processes the `explanations` list to adjust it to the format needed for conversion of the .Rmd-file to the desired output.
@@ -199,6 +207,28 @@ Option B, however, is incorrect because .....
 In some cases it can be useful to document the seed used, for example when randomly generating numbers or doing any kind of sampling. Providing this information in the "Solution" section to either students or even oneself, when for example reviewing questions, can ensure reproducibility.
 
 See the page about [add-ons](add-ons.qmd) for more information on how to dynamically display R objects (like seeds) in the exam.
+
+### Some necessary adjustments for conversion 
+
+The following code chunk, which is labelled `meta` in the template, concerts the solutions of single/multiple choice questions 
+
+```r 
+# Convert the format of single/multiple choice from T/F to 1/0
+for (x in 1:length(solutions)) {
+  if (types[x] %in% c("schoice", "mchoice")) {
+    solutions[x] <- solutions[x] |>
+      unlist() |>
+      mchoice2string()
+  }
+}
+
+# Set all undefined tolerances to a default value
+for (x in 1:length(solutions)) {
+  if (tolerances[x] |> unlist() |> is.null()) {
+    tolerances[x] <- 0
+  }
+}
+```
 
 ## Meta-information
 

@@ -4,7 +4,7 @@ title: "Ideas"
 
 This is the page for future ideas and important notes for documentation, for internal use. 
 
-Notes, Stand 18.02 
+Notes, Stand 25.03 
 
 Allgemein: 
 
@@ -87,6 +87,7 @@ Add ons:
 Basic Examples: 
 
 - final check, cross references 
+- check answers/questions confusion 
 
 Advanced Examples: 
 
