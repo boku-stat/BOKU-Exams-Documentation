@@ -10,6 +10,10 @@ An empty template containing only the necessary structure can be downloaded here
 
 {{< downloadthis templates/template_empty.Rmd dname="Template" >}}
 
+::: callout-warning 
+After downloading the template, please remove every instance of "eval = FALSE" from the `knitr-tags`. This tag is necessary to provide such an empty template for download, but should not be used for creating the exercises! 
+:::
+
 # Basic Structure
 
 -   Data Generation (code chunk)
@@ -51,13 +55,13 @@ even more text here.
 
 In this section of the .Rmd-file, the answer options for single/multiple choice questions, solutions, the types of questions, explanations and tolerances for solutions are created and stored in list objects for later. In addition there are many additional possibilities, like sampling data, creating graphs, importing pictures etc. which are described on the following page: [Add-ons](add-ons.qmd)
 
-### Description of the lists
+### Description of the lists {#list-description}
 
 The five necessary lists are `answers`, `solutions`, `types`, `explanations` and `tolerances`, which all have the same length, which is equal to the number of questions in the exercise. For example, in an exam with 5 multiple choice questions, the length of the lists is 5.
 
 Depending on the type and simplicity of the question, some of the lists might not be of equal length, however 
 
-The list `answers` contains the answer options for single choice/multiple choice questions, not the questions itself. The actual questions are written down in the section "Question". For numeric and string questions, this list contains placeholders "", since no answer options are given. More on the types of questions see below.
+The list `answers` contains the answer options for single choice/multiple choice questions, not the questions itself. The actual questions are written down in the section "Question". For numeric and string questions, this list contains placeholders `""`, since no answer options are given. More on the types of questions see below.
 
 The list `solutions` contains the solutions for all the questions. For numeric questions, that is a number, (e.g: `123`), for string questions a string like `"hello world"` is expected. The solution for single & multiple choiche questions is a boolean vector containing `TRUE/FALSE`. For each answer option, one instance of `TRUE` or `FALSE` is needed. For example, a single choice question with 5 answer options, where one option (in this case the second answer option) is correct, would have a solution vector like this:
 
@@ -75,7 +79,9 @@ The list `types` specifies the type of question for each individual question. Po
 
 -   multiple choice ("mchoice")
 
-The optional list `explanations` contains the feedback that is shown. This can be the complete solutions (it should be then formatted as a list) or additional information like the seed, that was used to create this exercise, session info, etc., which can be written in the "Solution" section. (see ??????)
+There are other options avaible, also depending on the output type, see the official [`R/exams` documentation](https://www.r-exams.org) for more information. 
+
+The optional list `explanations` contains the feedback that is shown. This can be the complete solutions (it should be then formatted as a list) or additional information like the seed, that was used to create this exercise, session info, etc., which can be written in the "Solution" section. See the [Solution section](#solution) for more details. 
 
 The list `tolerances` is only necessary for numeric questions, where it is desired to have an interval, in which the solution is accepted as correct, even though the numbers are not perfectly equal. This is important for accommodating rounding differences.
 
@@ -95,7 +101,7 @@ explanations <- list()
 tolerances <- list()
 ```
 
-## Question
+## Question {#question}
 
 In this section, all the questions, that should be included in the exam, are written down. This is done in natural language, however bits of code (including R objects), graphs, data, etc. can be included. See more [here](add-ons.qmd)
 
@@ -147,15 +153,15 @@ for (x in 1:length(types)) {
 answerlist(unlist(answers), markup = "markdown")
 ```
 
-## Solution
+## Solution {#solution}
 
 The section "Solution" can be used to provide solutions in the form of explanations. It does not create the solutions to the questions and nor is it responsible for assessing/grading questions. Instead it can be used as a reference to review questions or provide feedback. This type of information is created in this section.
 
-The `solutions` **list** contains the actual solutions to the questions, which are used for deeming an answer correct/incorrect, however these are **not directly displayed in this section**.
+The `solutions` list contains the actual solutions to the questions, which are used for deeming an answer correct/incorrect, however these are **not directly displayed in this section**.
 
-The `explanations` list **holds any information that can be possibly given as feedback**. This can, but does not have to, include the actual solutions, depending on the type of exam one is aiming for. This list is optional, general feedback can be normally written as text in this section. See ???? two sections below
+The `explanations` list **holds any information that can be possibly given as feedback**. This can, but does not have to, include the actual solutions, depending on the type of exam one is aiming for. This list is optional, general feedback can be normally written as text in this section, see more details on [the actual solutions as feedback](#actual-solutions) and [other types of explanations](#other-types-of-explanations) below. 
 
-### Actual Solutions as explanations
+### Actual Solutions as explanations {#actual-solutions}
 
 The correct solutions to the questions can be displayed in the appropriate format in the generated output.
 
@@ -179,7 +185,7 @@ Then the function `answerlist()` from `R/exams` processes the `explanations` lis
 answerlist(unlist(explanations), markup = "markdown")
 ```
 
-### Other types of explanations
+### Other types of explanations {#other-types-of-explanations}
 
 When the desired feedback is any type of text, like in-depth explanations or providing more context, or more technical details like calculation steps, the `explanations` list is not needed. It can simple written as normal text in the .Rmd file under the "Solution" section.
 
@@ -204,13 +210,13 @@ Option B, however, is incorrect because .....
 ```
 :::
 
-In some cases it can be useful to document the seed used, for example when randomly generating numbers or doing any kind of sampling. Providing this information in the "Solution" section to either students or even oneself, when for example reviewing questions, can ensure reproducibility.
+In some cases it can be useful to document the seed used, for example when randomly generating numbers or doing any kind of sampling. Providing this information in the "Solution" section to either students or oneself, when for example reviewing questions, can ensure reproducibility.
 
 See the page about [add-ons](add-ons.qmd) for more information on how to dynamically display R objects (like seeds) in the exam.
 
 ### Some necessary adjustments for conversion 
 
-The following code chunk, which is labelled `meta` in the template, concerts the solutions of single/multiple choice questions 
+The following code chunk, which is labelled `meta` in the template, converts the solutions of single/multiple choice questions into the necessary `1|0` format. In addition, the second part changes `NULL` elements in the `tolerances` list to 0, in order to avoid an error during the conversion process. 
 
 ```r 
 # Convert the format of single/multiple choice from T/F to 1/0
@@ -271,7 +277,7 @@ contains the correct solutions for the exam in the necessary format for the conv
 paste(solutions, collapse = "|")
 ```
 
-The resulting R object needs to be dynmically included in the .Rmd-file (see ?????? for details).
+The resulting R object needs to be dynmically included in the .Rmd-file (see the section about [inline code](add-ons.qmd#inline-code) for details).
 
 #### exclozetypes
 
@@ -281,17 +287,17 @@ When creating an exam of the type "cloze" (the exam contains different types of 
 paste(types, collapse = "|")
 ```
 
-The resulting R object needs to be dynmically included in the .Rmd-file (see ?????? for details).
+The resulting R object needs to be dynmically included in the .Rmd-file (see the section about [inline code](add-ons.qmd#inline-code) for details).
 
 #### extol
 
-contains the tolerances used for the answers to numeric questions. When creating an exam of type "cloze", the tolerances are stored in the list `tolerances`. They need to be in the order of the questions with empty interations for questions where tolerances are not applicable, e.g. string questions. For details see ??????? (subsetting the lists). All tolerances need to be seperated by "\|". This can either be achieved by manually writing down all solutions or with the following code chunk:
+contains the tolerances used for the answers to numeric questions. When creating an exam of type "cloze", the tolerances are stored in the list `tolerances`. They need to be in the order of the questions with 0 for questions where tolerances are not applicable, e.g. string questions. For details see the section about [setting tolerances](creation-Rmd.qmd#creation-tolerances). All tolerances need to be seperated by "\|". This can either be achieved by manually writing down all solutions or with the following code chunk:
 
 ``` r
 paste(tolerances, collapse = "|")
 ```
 
-The resulting R object needs to be dynamically included in the .Rmd-file (see ?????? for details).
+The resulting R object needs to be dynamically included in the .Rmd-file (see the section about [inline code](add-ons.qmd#inline-code) for details).
 
 #### exshuffle
 

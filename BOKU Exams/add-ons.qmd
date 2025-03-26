@@ -6,7 +6,7 @@ filters:
 
 This will describe how to include additional things, e.g: tables, pictures, graphs, csv-files, etc.
 
-## Inline R Code
+## Inline R Code {#inline-code}
 
 Inline code can be used to display R objects, which change dynamically, in static text. Instead of manually writing each instance of a resulting number in the text, inline code allows automatic pasting of the number and changes automatically when the corresponding result changes. For example, when providing a result that is calculated using randomly drawn numbers, the displayed number adjusts accordingly based on which numbers are drawn. 
 

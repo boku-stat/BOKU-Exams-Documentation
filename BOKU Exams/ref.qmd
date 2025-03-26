@@ -19,6 +19,10 @@ This page offers many examples, templates, tutorials, etc., which contain the ne
 
 Exercise templates [here](https://www.r-exams.org/templates/). 
 
+Tutorials for `R/exams` can be found [here](https://www.r-exams.org/tutorials/)
+
+How-to for [exams on paper](https://www.r-exams.org/tutorials/exams2nops/)
+
 # Additional resources 
 
 Achim Zeileis is very active on [stackoverflow](https://stackoverflow.com/questions), and many of his answers offer specific guidance on how to solve problems or how to implememt a certain feature. See his profile here: [Achim Zeileis on stackoverflow.com](https://stackoverflow.com/users/4233642/achim-zeileis)

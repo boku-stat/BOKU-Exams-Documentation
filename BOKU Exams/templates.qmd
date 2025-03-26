@@ -20,7 +20,12 @@ Note that the template itself without any added content cannot be converted to a
 
 # Template .Rmd-File 
 
+::: callout-warning 
+After downloading the template, please remove every instance of "eval = FALSE" from the `knitr-tags`. This tag is necessary to provide such an empty template for download, but should not be used for creating the exercises! 
+:::
+
 {{< downloadthis templates/template_empty.Rmd dname="Rmd Template" >}}
+
 
 # Template .R-File 
 
