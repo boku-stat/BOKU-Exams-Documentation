@@ -334,7 +334,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#inline-r-code" id="toc-inline-r-code" class="nav-link active" data-scroll-target="#inline-r-code">Inline R Code</a></li>
+  <li><a href="#inline-code" id="toc-inline-code" class="nav-link active" data-scroll-target="#inline-code">Inline R Code</a></li>
+  <li><a href="#overview-of-knitr-tags" id="toc-overview-of-knitr-tags" class="nav-link" data-scroll-target="#overview-of-knitr-tags">Overview of <code>knitr-tags</code></a></li>
   <li><a href="#dynamic-context-stories" id="toc-dynamic-context-stories" class="nav-link" data-scroll-target="#dynamic-context-stories">Dynamic Context (“stories”)</a></li>
   <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables">Tables</a>
   <ul class="collapse">
@@ -382,8 +383,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>This will describe how to include additional things, e.g: tables, pictures, graphs, csv-files, etc.</p>
-<section id="inline-r-code" class="level2">
-<h2 class="anchored" data-anchor-id="inline-r-code">Inline R Code</h2>
+<section id="inline-code" class="level2">
+<h2 class="anchored" data-anchor-id="inline-code">Inline R Code</h2>
 <p>Inline code can be used to display R objects, which change dynamically, in static text. Instead of manually writing each instance of a resulting number in the text, inline code allows automatic pasting of the number and changes automatically when the corresponding result changes. For example, when providing a result that is calculated using randomly drawn numbers, the displayed number adjusts accordingly based on which numbers are drawn.</p>
 <p>Inline R code is always fenced by backticks (`) and before the object or function there is always an “r” to mark the language that should be used. When put together inline R code looks like this for example:</p>
 <div class="sourceCode" id="cb1" data-startfrom="6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown" style="counter-reset: source-line 5;"><span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>The mean of the data is <span class="in">`r mean_data`</span>. </span>
@@ -408,6 +409,42 @@ Important
 </div>
 </div>
 </section>
+<section id="overview-of-knitr-tags" class="level2">
+<h2 class="anchored" data-anchor-id="overview-of-knitr-tags">Overview of <code>knitr-tags</code></h2>
+<p>These are some of the more commonly used <code>knitr-tags</code>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 47%">
+<col style="width: 29%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>tag</th>
+<th>options</th>
+<th>use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>eval</td>
+<td>TRUE/FALSE, etc.</td>
+<td>whether the code chunk should be executed or not</td>
+</tr>
+<tr class="even">
+<td>echo</td>
+<td>TRUE/FALSE, etc.</td>
+<td>whether the source code should be echoed within the rendered document</td>
+</tr>
+<tr class="odd">
+<td>results</td>
+<td>“asis”, “hide”/FALSE, etc.</td>
+<td>“asis” renders text without any markup. “hide” or FALSE hides the text output.</td>
+</tr>
+</tbody>
+</table>
+<p>There are many others available, for example to adjust the display of warnings/messages and the rendering of plots. A comprehensive list can be found <a href="https://yihui.org/knitr/options/">here</a>.</p>
+</section>
 <section id="dynamic-context-stories" class="level2">
 <h2 class="anchored" data-anchor-id="dynamic-context-stories">Dynamic Context (“stories”)</h2>
 <p>It is possible to change the context of the exercise dynamically. For example, when creating exercises, each student will receive 20 randomly sampled data points, however for group A, this sampled data is put into the context of food production, for example the height of apple trees, while for group B this represents the height of a group of people.</p>
@@ -420,6 +457,7 @@ Important
 <li>units</li>
 <li>etc.</li>
 </ul>
+<p>One way of implementing this is using another .R file, which contains the stories and which then can be sourced and sampled from. See here ????? for an example.</p>
 </section>
 <section id="tables" class="level2">
 <h2 class="anchored" data-anchor-id="tables">Tables</h2>
@@ -502,29 +540,29 @@ Important
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">178.4</td>
-<td style="text-align: right;">69.2</td>
-<td style="text-align: right;">46</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">164.6</td>
-<td style="text-align: right;">84.7</td>
-<td style="text-align: right;">40</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">170.0</td>
-<td style="text-align: right;">69.7</td>
-<td style="text-align: right;">49</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">162.8</td>
-<td style="text-align: right;">76.5</td>
-<td style="text-align: right;">29</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">172.8</td>
-<td style="text-align: right;">66.7</td>
+<td style="text-align: right;">190.4</td>
+<td style="text-align: right;">67.1</td>
 <td style="text-align: right;">44</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">173.4</td>
+<td style="text-align: right;">58.7</td>
+<td style="text-align: right;">33</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">165.8</td>
+<td style="text-align: right;">65.9</td>
+<td style="text-align: right;">23</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">160.0</td>
+<td style="text-align: right;">81.3</td>
+<td style="text-align: right;">37</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">180.3</td>
+<td style="text-align: right;">81.0</td>
+<td style="text-align: right;">28</td>
 </tr>
 </tbody>
 </table>

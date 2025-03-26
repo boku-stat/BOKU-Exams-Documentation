@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Single Choice Example – BOKU Exams</title>
+<title>advanced2 – BOKU Exams</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,22 +57,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ab0cb694dc529bc22bc21ea6a39d7b95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/downloadthis-1.9.1/downloadthis.css" rel="stylesheet">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-ab0cb694dc529bc22bc21ea6a39d7b95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -101,8 +100,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar docked">
@@ -114,7 +142,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./example1.html">Basic Examples</a></li><li class="breadcrumb-item"><a href="./example3.html">Single Choice Example</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      BOKU Exams
+      </li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -129,7 +159,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">BOKU Exams</a> 
+      <a href="../">BOKU Exams</a> 
         <div class="sidebar-tools-main">
     <div class="dropdown">
       <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-github"></i></a>
@@ -158,37 +188,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./readme.html" class="sidebar-item-text sidebar-link">
+  <a href="../readme.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">README</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ideas.html" class="sidebar-item-text sidebar-link">
+  <a href="../ideas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Notes</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./first-steps.html" class="sidebar-item-text sidebar-link">
+  <a href="../first-steps.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">First Steps</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-exams.html" class="sidebar-item-text sidebar-link">
+  <a href="../r-exams.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R and R/exams Info</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./setup.html" class="sidebar-item-text sidebar-link">
+  <a href="../setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project Setup</span></a>
   </div>
 </li>
@@ -203,13 +233,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./structure-Rmd.html" class="sidebar-item-text sidebar-link">
+  <a href="../structure-Rmd.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Structure</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./creation-Rmd.html" class="sidebar-item-text sidebar-link">
+  <a href="../creation-Rmd.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Creation of the .Rmd-file</span></a>
   </div>
 </li>
@@ -226,13 +256,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./structure-R.html" class="sidebar-item-text sidebar-link">
+  <a href="../structure-R.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Structure of the .R-file</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./conversion.html" class="sidebar-item-text sidebar-link">
+  <a href="../conversion.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Conversion of .Rmd-file</span></a>
   </div>
 </li>
@@ -249,7 +279,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./add-ons.html" class="sidebar-item-text sidebar-link">
+  <a href="../add-ons.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Add-ons to .Rmd-files</span></a>
   </div>
 </li>
@@ -266,25 +296,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./example1.html" class="sidebar-item-text sidebar-link">
+  <a href="../example1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Numeric Example</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./example2.html" class="sidebar-item-text sidebar-link">
+  <a href="../example2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">String Example</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./example3.html" class="sidebar-item-text sidebar-link active">
+  <a href="../example3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Single Choice Example</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./example4.html" class="sidebar-item-text sidebar-link">
+  <a href="../example4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Multiple Choice Example</span></a>
   </div>
 </li>
@@ -301,7 +331,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./advanced1.html" class="sidebar-item-text sidebar-link">
+  <a href="../advanced1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Example 1</span></a>
   </div>
 </li>
@@ -309,19 +339,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ref.html" class="sidebar-item-text sidebar-link">
+  <a href="../ref.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Further References</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./faq.html" class="sidebar-item-text sidebar-link">
+  <a href="../faq.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">FAQ</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./templates.html" class="sidebar-item-text sidebar-link">
+  <a href="../templates.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Downloads and Custom Template Creation</span></a>
   </div>
 </li>
@@ -335,174 +365,212 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#creating-the-list-structure" id="toc-creating-the-list-structure" class="nav-link active" data-scroll-target="#creating-the-list-structure">Creating the List Structure</a></li>
-  <li><a href="#question-section" id="toc-question-section" class="nav-link" data-scroll-target="#question-section">Question Section</a></li>
-  <li><a href="#solution-section" id="toc-solution-section" class="nav-link" data-scroll-target="#solution-section">Solution Section</a></li>
-  <li><a href="#meta-information" id="toc-meta-information" class="nav-link" data-scroll-target="#meta-information">Meta-Information</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link active" data-scroll-target="#questions">Questions</a></li>
+  <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions">Solutions</a>
+  <ul class="collapse">
+  <li><a href="#answerlist" id="toc-answerlist" class="nav-link" data-scroll-target="#answerlist">Answerlist</a></li>
+  </ul></li>
+  <li><a href="#meta-information" id="toc-meta-information" class="nav-link" data-scroll-target="#meta-information">Meta-information</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./example1.html">Basic Examples</a></li><li class="breadcrumb-item"><a href="./example3.html">Single Choice Example</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Single Choice Example</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>TODO: Leerzeilen aus Rmd files löschen und zeilen anpassen</p>
-<p>This is an exercise containing two single choice questions about molar massses.</p>
-<p>The whole example as an .Rmd-file can be downloaded here:</p>
-<p><a href="#dnldts8019" onclick="fetch('data:text/plain;base64,YGBge3IgYW5zd2Vycy9zb2x1dGlvbnMsIGVjaG8gPSBGQUxTRSwgcmVzdWx0cyA9ICJoaWRlIn0gCmxpYnJhcnkoZXhhbXMpCiMgSW5pdGlhbGl6ZSBsaXN0cyBmb3IgdGhlIHF1ZXN0aW9ucywgYW5zd2Vycywgc29sdXRpb25zLCB0eXBlcywgZXhwbGFuYXRpb25zICh0b2xlcmFuY2VzIGFyZSBub3QgbmVlZGVkIGlmIHRoZXJlIGFyZSBubyBudW1lcmljIHF1ZXN0aW9ucykKYW5zd2VycyA8LSBsaXN0KCkKc29sdXRpb25zIDwtIGxpc3QoKQp0eXBlcyA8LSBsaXN0KCkKZXhwbGFuYXRpb25zIDwtIGxpc3QoKQoKIyBEZWZpbmUgUXVlc3Rpb24gMTogV2hhdCBkb2VzIHRoZSB0ZXJtICJtb2xhciBtYXNzIiByZWZlciB0bz8KYW5zd2Vyc1tbMV1dIDwtIGMoCiAgIlRoZSBudW1iZXIgb2YgbW9sZWN1bGVzIGluIG9uZSBtb2xlIG9mIGEgc3Vic3RhbmNlIiwKICAiVGhlIG1hc3Mgb2Ygb25lIG1vbGUgb2YgYSBzdWJzdGFuY2UiLAogICJUaGUgbnVtYmVyIG9mIGF0b21zIGluIG9uZSBtb2xlIG9mIGEgc3Vic3RhbmNlIiwKICAiVGhlIGNoYXJnZSBvZiBhIG1vbGUgb2YgaW9ucyIKKQpzb2x1dGlvbnNbWzFdXSA8LSBleHBsYW5hdGlvbnNbWzFdXSA8LSBjKEZBTFNFLCBUUlVFLCBGQUxTRSwgRkFMU0UpICMgVGhlIHNlY29uZCBvcHRpb24gaXMgY29ycmVjdAp0eXBlc1tbMV1dIDwtICJzY2hvaWNlIgoKIyBEZWZpbmUgUXVlc3Rpb24gMjogV2hpY2ggb2YgdGhlIGZvbGxvd2luZyBpcyB0aGUgbGlnaHRlc3QgZWxlbWVudD8KYW5zd2Vyc1tbMl1dIDwtIGMoIk94eWdlbiIsICJIeWRyb2dlbiIsICJDYXJib24iLCAiSGVsaXVtIikKc29sdXRpb25zW1syXV0gPC0gZXhwbGFuYXRpb25zW1syXV0gPC0gYyhGQUxTRSwgVFJVRSwgRkFMU0UsIEZBTFNFKSAjIFRoZSBzZWNvbmQgb3B0aW9uIChIeWRyb2dlbikgaXMgY29ycmVjdAp0eXBlc1tbMl1dIDwtICJzY2hvaWNlIgpgYGAKClF1ZXN0aW9uCj09PT09PT09CipRdWVzdGlvbiAxKgoKV2hhdCBkb2VzIHRoZSB0ZXJtICJtb2xhciBtYXNzIiByZWZlciB0bz8KCiMjQU5TV0VSMSMjCgoqUXVlc3Rpb24gMioKCldoaWNoIG9mIHRoZSBmb2xsb3dpbmcgaXMgdGhlIGxpZ2h0ZXN0IGVsZW1lbnQ/CgojI0FOU1dFUjIjIwoKYGBge3IgcXVlc3Rpb25saXN0LCBlY2hvID0gRkFMU0UsIHJlc3VsdHMgPSAiYXNpcyJ9CmFuc3dlcmxpc3QodW5saXN0KGFuc3dlcnMpLCBtYXJrdXAgPSAibWFya2Rvd24iKQpgYGAKClNvbHV0aW9uCj09PT09PT09CipTb2x1dGlvbiAxKgoKVGhlIG1vbGFyIG1hc3MgaXMgdGhlIG1hc3Mgb2Ygb25lIG1vbGUgb2YgYSBzdWJzdGFuY2UsIGV4cHJlc3NlZCBpbiBncmFtcyBwZXIgbW9sZSAoZy9tb2wpLgoKKlNvbHV0aW9uIDIqCgpIeWRyb2dlbiBpcyB0aGUgbGlnaHRlc3QgZWxlbWVudCwgd2l0aCBhbiBhdG9taWMgbWFzcyBvZiBhcHByb3hpbWF0ZWx5IDEgZy9tb2wuCgoKYGBge3Igc29sdXRpb25saXN0LCBlY2hvID0gRkFMU0UsIHJlc3VsdHMgPSAiYXNpcyJ9CiMgQ29udmVydCBzb2x1dGlvbnMgdG8gIlRydWUiIG9yICJGYWxzZSIKZXhwbGFuYXRpb25zIDwtIGxhcHBseShzb2x1dGlvbnMsIGZ1bmN0aW9uKHgpIGlmZWxzZSh4LCAiVHJ1ZSIsICJGYWxzZSIpKQpzb2x1dGlvbnMgPC0gbGFwcGx5KHNvbHV0aW9ucywgbWNob2ljZTJzdHJpbmcpCgojIERpc3BsYXkgZXhwbGFuYXRpb25zCmFuc3dlcmxpc3QodW5saXN0KGV4cGxhbmF0aW9ucyksIG1hcmt1cCA9ICJtYXJrZG93biIpCmBgYAoKCk1ldGEtaW5mb3JtYXRpb24KPT09PT09PT09PT09PT09PQpleG5hbWU6IGV4YW1wbGVfc2Nob2ljZQpleHRpdGxlOiBtb2xtYXNzIGFuZCBsaWdodGVzdCBlbGVtZW50CmV4dHlwZTogY2xvemUKZXhzb2x1dGlvbjogYHIgcGFzdGUoc29sdXRpb25zLCBjb2xsYXBzZSA9ICJ8IilgCmV4Y2xvemV0eXBlOiBgciBwYXN0ZSh0eXBlcywgY29sbGFwc2UgPSAifCIpYApleHNodWZmbGU6IFRSVUUKZXh2ZXJzaW9uOiB2MQo=').then(res => res.blob()).then(blob => {
-      const downloadURL = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      document.body.appendChild(a);
-      a.href = downloadURL;
-      a.download = 'single_choice_example.Rmd'; a.click();
-      window.URL.revokeObjectURL(downloadURL);
-      document.body.removeChild(a);
-        });"><button class="btn btn-default downloadthis  " id="dnldts8019"><i class="bi bi-download"></i> Download </button></a></p>
-<p>After conversion with <code>R/exams</code> the exercise looks like this for different output types.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">HTML</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">PDF</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Moodle</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p><img src="images/schoice_html.png" class="img-fluid"></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv2</span>(data, <span class="at">file =</span> <span class="st">"ad2_data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p><img src="images/schoice_pdf.png" class="img-fluid"></p>
+<section id="questions" class="level1">
+<h1>Questions</h1>
+<p>An experiment was conducted to study the effects sun exposure on the height of tomato plants. Each plant was exposed to the sunlight for a certain period of time a day. After 30 days, their height was recorded. The collected data can be seen in the table below. The sun exposure is given in h and the height of tomato plants is given in cm.</p>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(data, <span class="at">format =</span> <span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: right;">sun exposure</th>
+<th style="text-align: right;">height of tomato plants</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">5.3</td>
+<td style="text-align: right;">44.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">39.7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">45.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">19.8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.6</td>
+<td style="text-align: right;">51.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">34.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.3</td>
+<td style="text-align: right;">52.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.6</td>
+<td style="text-align: right;">44.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">38.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">43.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.9</td>
+<td style="text-align: right;">51.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.8</td>
+<td style="text-align: right;">42.7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.9</td>
+<td style="text-align: right;">54.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">36.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.7</td>
+<td style="text-align: right;">37.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">44.7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">38.9</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.3</td>
+<td style="text-align: right;">33.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.6</td>
+<td style="text-align: right;">38.9</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.8</td>
+<td style="text-align: right;">35.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.5</td>
+<td style="text-align: right;">50.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.1</td>
+<td style="text-align: right;">28.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.1</td>
+<td style="text-align: right;">34.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.2</td>
+<td style="text-align: right;">33.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">44.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.8</td>
+<td style="text-align: right;">28.6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.1</td>
+<td style="text-align: right;">36.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">39.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">33.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">33.1</td>
+</tr>
+</tbody>
+</table>
+<p><a href="ad2_data.csv">data.csv</a></p>
+<p>Answer the following questions.</p>
+<p>Which was the independent variable in the experiment? ##ANSWER1##</p>
+<p>What is the mean sun exposure? ##ANSWER2##</p>
+<p>What is the mean height of tomato plants? ##ANSWER3##</p>
+<p>Use the function <code>lm()</code> to do a simple linear regression on the data.</p>
+<p>Is the coefficient for the independent variable significant at the significance level <span class="math inline">\(\alpha = 0.05\)</span>? #ANSWER4#</p>
+<p>What is the <span class="math inline">\(R^2\)</span> of the model? ##ANSWER5##</p>
+<p>The higher the <span class="math inline">\(R^2\)</span>, the ##ANSWER6## variation is explained by the model.</p>
+<p>The maximum value of the <span class="math inline">\(R^2\)</span> (meaning a perfect correlation in the model) is ##ANSWER7##.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Answerlist
+----------
+* sun exposure
+* height of tomato plants
+* 
+* 
+* yes
+* no
+* 
+* more
+* less
+* 1
+* 0
+* $Inf$
+* -1</code></pre>
 </div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p><img src="images/schoice_moodle1.png" class="img-fluid"></p>
-<p><img src="images/schoice_moodle2.png" class="img-fluid"></p>
 </div>
-</div>
-</div>
-<section id="creating-the-list-structure" class="level2">
-<h2 class="anchored" data-anchor-id="creating-the-list-structure">Creating the List Structure</h2>
-<p>This section creates and fills the lists which contain the questions, answers, etc.. The <code>answers</code> list contains the answer options for the questions. The solution to the question, the type of question, as well as a more elaborate explanation are specified for each question.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The following code has to be placed within a code chunk in the .Rmd-file. See here ?????</p>
-</div>
-</div>
-<div class="sourceCode" id="cb1" data-startfrom="1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r answers/solutions, echo = FALSE, results = "hide"} </span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="in">library(exams)</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="in"># Initialize lists for the questions, answers, solutions, types, explanations (tolerances are not needed if there are no numeric questions)</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="in">answers &lt;- list()</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="in">solutions &lt;- list()</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="in">types &lt;- list()</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="in">explanations &lt;- list()</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="in"># Define Question 1: What does the term "molar mass" refer to?</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="in">answers[[1]] &lt;- c(</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="in">  "The number of molecules in one mole of a substance",</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="in">  "The mass of one mole of a substance",</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="in">  "The number of atoms in one mole of a substance",</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="in">  "The charge of a mole of ions"</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="in">)</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="in">solutions[[1]] &lt;- explanations[[1]] &lt;- c(FALSE, TRUE, FALSE, FALSE) # The second option is correct</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="in">types[[1]] &lt;- "schoice"</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="in"># Define Question 2: Which of the following is the lightest element?</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="in">answers[[2]] &lt;- c("Oxygen", "Hydrogen", "Carbon", "Helium")</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="in">solutions[[2]] &lt;- explanations[[2]] &lt;- c(FALSE, TRUE, FALSE, FALSE) # The second option (Hydrogen) is correct</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="in">types[[2]] &lt;- "schoice"</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="question-section" class="level2">
-<h2 class="anchored" data-anchor-id="question-section">Question Section</h2>
-<p>The next section contains the question text, including the marked spaces <code>##ANSWERi##</code> for the answer fields and a necessary code section, which does some formating which is required for the later conversion. This is markdown text, which will appear bold/italic/etc. after conversion.</p>
-<p>It also includes a code chunk, which converts the <code>answers</code> list to the necessary format.</p>
-<div class="sourceCode" id="cb2" data-startfrom="25"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown" style="counter-reset: source-line 24;"><span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>Question</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="fu">========</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>*Question 1*</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>What does the term "molar mass" refer to?</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>##ANSWER1##</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>*Question 2*</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>Which of the following is the lightest element?</span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>##ANSWER2##</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="in">```{r questionlist, echo = FALSE, results = "asis"}</span></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="in">answerlist(unlist(answers), markup = "markdown")</span></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="solutions" class="level1">
+<h1>Solutions</h1>
+<section id="answerlist" class="level2">
+<h2 class="anchored" data-anchor-id="answerlist">Answerlist</h2>
+<ul>
+<li>True</li>
+<li>False</li>
+<li>4.96333333333333</li>
+<li>39.6533333333333</li>
+<li>True</li>
+<li>False</li>
+<li>0.702850554633851</li>
+<li>True</li>
+<li>False</li>
+<li>True</li>
+<li>False</li>
+<li>False</li>
+<li>False</li>
+</ul>
 </section>
-<section id="solution-section" class="level2">
-<h2 class="anchored" data-anchor-id="solution-section">Solution Section</h2>
-<p>In this section, additional information and/or the exact solutions can be given. In this case, there is a more elaborate explanation as a solution for each question. Additionally, the code chunk included below converts the <code>TRUE</code> and <code>FALSE</code> objects into a more readable format of “True” and “False”, however this could be in any other format as well.</p>
-<div class="sourceCode" id="cb3" data-startfrom="43"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown" style="counter-reset: source-line 42;"><span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>Solution</span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="fu">========</span></span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>*Solution 1*</span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>The molar mass is the mass of one mole of a substance, expressed in grams per mole (g/mol).</span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>*Solution 2*</span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>Hydrogen is the lightest element, with an atomic mass of approximately 1 g/mol.</span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a><span class="in">```{r solutionlist, echo = FALSE, results = "asis"}</span></span>
-<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a><span class="in"># Convert solutions to "True" or "False"</span></span>
-<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a><span class="in">explanations &lt;- lapply(solutions, function(x) ifelse(x, "True", "False"))</span></span>
-<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a><span class="in">solutions &lt;- lapply(solutions, mchoice2string)</span></span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a><span class="in"># Display explanations</span></span>
-<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a><span class="in">answerlist(unlist(explanations), markup = "markdown")</span></span>
-<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="meta-information" class="level2">
-<h2 class="anchored" data-anchor-id="meta-information">Meta-Information</h2>
-<p>This contains the meta information needed for conversion. See here ?????</p>
-<p>The “source code” is written in markdown and contains inline R code.</p>
-<div class="sourceCode" id="cb4" data-startfrom="64"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown" style="counter-reset: source-line 63;"><span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a>Meta-information</span>
-<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="fu">================</span></span>
-<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a>exname: example_schoice</span>
-<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a>extitle: molmass and lightest element</span>
-<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a>extype: cloze</span>
-<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a>exsolution: <span class="in">`r paste(solutions, collapse = "|")`</span></span>
-<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>exclozetype: <span class="in">`r paste(types, collapse = "|")`</span></span>
-<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a>exshuffle: TRUE</span>
-<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a>exversion: v1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If the “code” above is evaluated, the section looks like this:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Meta-information</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">================</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>exname: example_schoice</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>extitle: molmass and lightest element</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>extype: cloze</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>exsolution: <span class="in">`r paste(solutions, collapse = "|")`</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>exclozetype: <span class="in">`r paste(types, collapse = "|")`</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>exshuffle: TRUE</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>exversion: v1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="meta-information" class="level1">
+<h1>Meta-information</h1>
+<p>exname: Advanced 2 extitle: Advanced 2 sun_plant extype: cloze exsolution: 10|4.96333333333333|39.6533333333333|10|0.702850554633851|10|1000 exclozetype: schoice|num|num|schoice|num|schoice|schoice extol: 0|0|0|0|3|0|0 exshuffle: TRUE exversion: v1</p>
 
 
 </section>

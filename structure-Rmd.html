@@ -339,7 +339,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#data-generation" id="toc-data-generation" class="nav-link" data-scroll-target="#data-generation">Data Generation</a>
   <ul class="collapse">
-  <li><a href="#description-of-the-lists" id="toc-description-of-the-lists" class="nav-link" data-scroll-target="#description-of-the-lists">Description of the lists</a></li>
+  <li><a href="#list-description" id="toc-list-description" class="nav-link" data-scroll-target="#list-description">Description of the lists</a></li>
   <li><a href="#creating-the-lists" id="toc-creating-the-lists" class="nav-link" data-scroll-target="#creating-the-lists">Creating the lists</a></li>
   </ul></li>
   <li><a href="#question" id="toc-question" class="nav-link" data-scroll-target="#question">Question</a>
@@ -348,8 +348,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution">Solution</a>
   <ul class="collapse">
-  <li><a href="#actual-solutions-as-explanations" id="toc-actual-solutions-as-explanations" class="nav-link" data-scroll-target="#actual-solutions-as-explanations">Actual Solutions as explanations</a></li>
+  <li><a href="#actual-solutions" id="toc-actual-solutions" class="nav-link" data-scroll-target="#actual-solutions">Actual Solutions as explanations</a></li>
   <li><a href="#other-types-of-explanations" id="toc-other-types-of-explanations" class="nav-link" data-scroll-target="#other-types-of-explanations">Other types of explanations</a></li>
+  <li><a href="#some-necessary-adjustments-for-conversion" id="toc-some-necessary-adjustments-for-conversion" class="nav-link" data-scroll-target="#some-necessary-adjustments-for-conversion">Some necessary adjustments for conversion</a></li>
   </ul></li>
   <li><a href="#meta-information" id="toc-meta-information" class="nav-link" data-scroll-target="#meta-information">Meta-information</a>
   <ul class="collapse">
@@ -384,7 +385,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>The .Rmd is the main file, where all the information about the exercise is contained. It follows a basic structure, with four sections, “Data Generation”, “Question”, “Solution” and “Meta-information”. Their purpose will be described in detail in the following sections.</p>
 <p>An empty template containing only the necessary structure can be downloaded here:</p>
-<p><a href="#dnldts4726" onclick="fetch('data:text/plain;base64,YGBge3IsIGRhdGEgZ2VuZXJhdGlvbiwgZWNobyA9IEZBTFNFfQpsaWJyYXJ5KGV4YW1zKQpxdWVzdGlvbnMgPC0gbGlzdCgpIApzb2x1dGlvbnMgPC0gbGlzdCgpIAp0eXBlcyA8LSBsaXN0KCkKZXhwbGFuYXRpb25zIDwtIGxpc3QoKSAKdG9sZXJhbmNlcyA8LSBsaXN0KCkKCmBgYAoKUXVlc3Rpb24KPT09PT09PT0KCmBgYHtyLCBxdWVzdGlvbnMsIGVjaG8gPSBGQUxTRX0KYW5zd2VybGlzdCh1bmxpc3QocXVlc3Rpb25zKSwgbWFya3VwID0gIm1hcmtkb3duIikKYGBgIAoKU29sdXRpb24KPT09PT09PT0KCmBgYHtyLCBzb2x1dGlvbnMsIGVjaG8gPSBGQUxTRX0KYW5zd2VybGlzdCh1bmxpc3QoZXhwbGFuYXRpb25zKSwgbWFya3VwID0gIm1hcmtkb3duIikKYGBgCgpNZXRhLWluZm9ybWF0aW9uIAo9PT09PT09PT09PT09PT09CmV4bmFtZToKZXh0aXRsZTogCmV4dHlwZTogY2xvemUKZXhzb2x1dGlvbjogYHIgcGFzdGUoc29sdXRpb25zLCBjb2xsYXBzZSA9ICJ8IilgCmV4Y2xvemV0eXBlOiBgciBwYXN0ZSh0eXBlcywgY29sbGFwc2UgPSAifCIpYApleHRvbDogYHIgcGFzdGUodG9sZXJhbmNlcywgY29sbGFwc2UgPSAifCIpYApleHNodWZmbGU6IFRSVUUKZXh2ZXJzaW9uOiB2MQ==').then(res => res.blob()).then(blob => {
+<p><a href="#dnldts64301" onclick="fetch('data:text/plain;base64,YGBge3IsIGRhdGEgZ2VuZXJhdGlvbiwgZWNobyA9IEZBTFNFfQpsaWJyYXJ5KGV4YW1zKQphbnN3ZXJzIDwtIGxpc3QoKSAKc29sdXRpb25zIDwtIGxpc3QoKSAKdHlwZXMgPC0gbGlzdCgpCmV4cGxhbmF0aW9ucyA8LSBsaXN0KCkgCnRvbGVyYW5jZXMgPC0gbGlzdCgpCgpgYGAKClF1ZXN0aW9uCj09PT09PT09CgpJTVBPUlRBTlQhISEgUGxlYXNlIHJlbW92ZSB0aGUga25pdHItdGFnICJldmFsID0gRkFMU0UsIiBmcm9tIGV2ZXJ5IGNvZGUgYmxvY2sgYmVsb3csIHRoZXNlIHNob3VsZCBOT1QgYmUgdXNlZCB3aGVuIHdvcmtpbmcgd2l0aCB0aGlzIHRlbXBsYXRlLCBidXQgYXJlIG5lY2Vzc2FyeSBmb3IgcHJvdmlkaW5nIHN1Y2ggYW4gZW1wdHkgdGVtcGxhdGUgZm9yIGRvd25sb2FkLiAKCgpgYGB7ciBxdWVzdGlvbmxpc3QsIGV2YWwgPSBGQUxTRSwgZWNobyA9IEZBTFNFLCByZXN1bHRzID0gImFzaXMifQojIE51bWVyaWNhbCBhbmQgdGV4dCBleGVyY2lzZXMgcmVxdWlyZSBhbiBlbXB0eSBhbnN3ZXJsaXN0IGVudHJ5CmZvciAoeCBpbiAxOmxlbmd0aCh0eXBlcykpIHsKICBpZiAodHlwZXNbeF0gJWluJSBjKCJudW0iLCAic3RyaW5nIikpIHsKICAgIGFuc3dlcnNbeF0gPC0gIiIKICB9Cn0KCmFuc3dlcmxpc3QodW5saXN0KGFuc3dlcnMpLCBtYXJrdXAgPSAibWFya2Rvd24iKQpgYGAKClNvbHV0aW9uCj09PT09PT09CgpgYGB7ciBzb2x1dGlvbmxpc3QsIGV2YWwgPSBGQUxTRSwgZWNobyA9IEZBTFNFLCByZXN1bHRzID0gImFzaXMifQojIENoYW5nZSB0aGUgZmVlZGJhY2sgZm9ybWF0IGZyb20gYSB2ZWN0b3Igb2YgVC9GIHRvIChtb3JlIGxlZ2lhYmxlKSBzdHJpbmdzCmZvciAoeCBpbiAxOmxlbmd0aChzb2x1dGlvbnMpKSB7CiAgaWYgKHR5cGVzW3hdICVpbiUgYygic2Nob2ljZSIsICJtY2hvaWNlIikpIHsKICAgIGV4cGxhbmF0aW9uc1t4XSA8LSBzb2x1dGlvbnNbeF0gfD4gbGFwcGx5KGZ1bmN0aW9uKHgpIGlmZWxzZSh4LCAiVHJ1ZSIsICJGYWxzZSIpKQogIH0gZWxzZSB7CiAgICBleHBsYW5hdGlvbnNbeF0gPC0gc29sdXRpb25zW3hdCiAgfQp9CgojIEFuc3dlcnMgYXJlIGRpc3BsYXllZCBpbiB0aGUgZmVlZGJhY2sgCmFuc3dlcmxpc3QodW5saXN0KGV4cGxhbmF0aW9ucyksIG1hcmt1cCA9ICJtYXJrZG93biIpCmBgYAoKYGBge3IgbWV0YSwgZXZhbCA9IEZBTFNFLCBlY2hvID0gRkFMU0UsIHJlc3VsdHMgPSAiaGlkZSJ9CiMgQ29udmVydCB0aGUgZm9ybWF0IG9mIHNpbmdsZS9tdWx0aXBsZSBjaG9pY2UgZnJvbSBUL0YgdG8gMS8wCmZvciAoeCBpbiAxOmxlbmd0aChzb2x1dGlvbnMpKSB7CiAgaWYgKHR5cGVzW3hdICVpbiUgYygic2Nob2ljZSIsICJtY2hvaWNlIikpIHsKICAgIHNvbHV0aW9uc1t4XSA8LSBzb2x1dGlvbnNbeF0gfD4KICAgICAgdW5saXN0KCkgfD4KICAgICAgbWNob2ljZTJzdHJpbmcoKQogIH0KfQoKIyBTZXQgYWxsIHVuZGVmaW5lZCB0b2xlcmFuY2VzIHRvIGEgZGVmYXVsdCB2YWx1ZQpmb3IgKHggaW4gMTpsZW5ndGgoc29sdXRpb25zKSkgewogIGlmICh0b2xlcmFuY2VzW3hdIHw+IHVubGlzdCgpIHw+IGlzLm51bGwoKSkgewogICAgdG9sZXJhbmNlc1t4XSA8LSAwCiAgfQp9CgpgYGAKCk1ldGEtaW5mb3JtYXRpb24gCj09PT09PT09PT09PT09PT0KZXhuYW1lOgpleHRpdGxlOiAKZXh0eXBlOiBjbG96ZQpleHNvbHV0aW9uOiBgciBwYXN0ZShzb2x1dGlvbnMsIGNvbGxhcHNlID0gInwiKWAKZXhjbG96ZXR5cGU6IGByIHBhc3RlKHR5cGVzLCBjb2xsYXBzZSA9ICJ8IilgCmV4dG9sOiBgciBwYXN0ZSh0b2xlcmFuY2VzLCBjb2xsYXBzZSA9ICJ8IilgCmV4c2h1ZmZsZTogVFJVRQpleHZlcnNpb246IHYx').then(res => res.blob()).then(blob => {
       const downloadURL = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       document.body.appendChild(a);
@@ -392,7 +393,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       a.download = 'Template.Rmd'; a.click();
       window.URL.revokeObjectURL(downloadURL);
       document.body.removeChild(a);
-        });"><button class="btn btn-default downloadthis  " id="dnldts4726"><i class="bi bi-download"></i> Download </button></a></p>
+        });"><button class="btn btn-default downloadthis  " id="dnldts64301"><i class="bi bi-download"></i> Download </button></a></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>After downloading the template, please remove every instance of “eval = FALSE” from the <code>knitr-tags</code>. This tag is necessary to provide such an empty template for download, but should not be used for creating the exercises!</p>
+</div>
+</div>
 <section id="basic-structure" class="level1">
 <h1>Basic Structure</h1>
 <ul>
@@ -402,9 +416,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Meta-information</p></li>
 </ul>
 <p>The first section Data Generation, is marked by a code chunk, which is different from the other three sections.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="in"># code is placed here </span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval=TRUE, echo=FALSE}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="in"># code is placed here, evaluated, but not echoed in the final document</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Inside the curly braces <code>{}</code>it needs to be specified that the following code is written in R. In addition, so called <code>knitr-tags</code> can be used to alter the appearance of the code and its output within the code chunk. For a detailed overview of <code>knitr-tags</code> see <a href="https://yihui.org/knitr/options/">this website here</a>. A brief overview can be found <a href="./add-ons.html">here</a> in the section about <code>knitr-tags</code>.</p>
+</div>
+</div>
 <p>The other three sections are marked as follows</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Question</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">========</span></span>
@@ -420,11 +447,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="data-generation" class="level2">
 <h2 class="anchored" data-anchor-id="data-generation">Data Generation</h2>
 <p>In this section of the .Rmd-file, the answer options for single/multiple choice questions, solutions, the types of questions, explanations and tolerances for solutions are created and stored in list objects for later. In addition there are many additional possibilities, like sampling data, creating graphs, importing pictures etc. which are described on the following page: <a href="./add-ons.html">Add-ons</a></p>
-<section id="description-of-the-lists" class="level3">
-<h3 class="anchored" data-anchor-id="description-of-the-lists">Description of the lists</h3>
+<section id="list-description" class="level3">
+<h3 class="anchored" data-anchor-id="list-description">Description of the lists</h3>
 <p>The five necessary lists are <code>answers</code>, <code>solutions</code>, <code>types</code>, <code>explanations</code> and <code>tolerances</code>, which all have the same length, which is equal to the number of questions in the exercise. For example, in an exam with 5 multiple choice questions, the length of the lists is 5.</p>
-<p>Depending on the type and simplicity of the question, some of the lists might not be necessary. (see ??????)</p>
-<p>The list <code>answers</code> contains the answer options for single choice/multiple choice questions, not the questions itself. The actual questions are written down in the section “Question”. For numeric and string questions, this list contains placeholders ““, since no answer options are given. (more on the types of questions see ??????)</p>
+<p>Depending on the type and simplicity of the question, some of the lists might not be of equal length, however</p>
+<p>The list <code>answers</code> contains the answer options for single choice/multiple choice questions, not the questions itself. The actual questions are written down in the section “Question”. For numeric and string questions, this list contains placeholders <code>""</code>, since no answer options are given. More on the types of questions see below.</p>
 <p>The list <code>solutions</code> contains the solutions for all the questions. For numeric questions, that is a number, (e.g: <code>123</code>), for string questions a string like <code>"hello world"</code> is expected. The solution for single &amp; multiple choiche questions is a boolean vector containing <code>TRUE/FALSE</code>. For each answer option, one instance of <code>TRUE</code> or <code>FALSE</code> is needed. For example, a single choice question with 5 answer options, where one option (in this case the second answer option) is correct, would have a solution vector like this:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The list <code>types</code> specifies the type of question for each individual question. Possible values are</p>
@@ -434,7 +461,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>single choice (“schoice”)</p></li>
 <li><p>multiple choice (“mchoice”)</p></li>
 </ul>
-<p>The optional list <code>explanations</code> contains the feedback that is shown. This can be the complete solutions (it should be then formatted as a list) or additional information like the seed, that was used to create this exercise, session info, etc., which can be written in the “Solution” section. (see ??????)</p>
+<p>There are other options avaible, also depending on the output type, see the official <a href="https://www.r-exams.org"><code>R/exams</code> documentation</a> for more information.</p>
+<p>The optional list <code>explanations</code> contains the feedback that is shown. This can be the complete solutions (it should be then formatted as a list) or additional information like the seed, that was used to create this exercise, session info, etc., which can be written in the “Solution” section. See the <a href="#solution">Solution section</a> for more details.</p>
 <p>The list <code>tolerances</code> is only necessary for numeric questions, where it is desired to have an interval, in which the solution is accepted as correct, even though the numbers are not perfectly equal. This is important for accommodating rounding differences.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -512,29 +540,34 @@ mchoice example
 </div>
 </div>
 <p>For more examples, see the section “Basic Examples” <a href="./example1.html">here</a>.</p>
-<p>The function <code>answerlist()</code> from <code>R/exams</code> package converts the answer options, which are stored in the list object <code>answers</code> into the necessary format.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">answerlist</span>(<span class="fu">unlist</span>(answers), <span class="at">markup =</span> <span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The function <code>answerlist()</code> from <code>R/exams</code> package converts the answer options, which are stored in the list object <code>answers</code> into the necessary format. Additionally, the placeholders needed for numeric/string questions in the <code>answers</code> list are automatically added into the list in this code chunk.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (x <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(types)) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (types[x] <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"num"</span>, <span class="st">"string"</span>)) {</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    answers[x] <span class="ot">&lt;-</span> <span class="st">""</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">answerlist</span>(<span class="fu">unlist</span>(answers), <span class="at">markup =</span> <span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="solution" class="level2">
 <h2 class="anchored" data-anchor-id="solution">Solution</h2>
 <p>The section “Solution” can be used to provide solutions in the form of explanations. It does not create the solutions to the questions and nor is it responsible for assessing/grading questions. Instead it can be used as a reference to review questions or provide feedback. This type of information is created in this section.</p>
-<p>The <code>solutions</code> <strong>list</strong> contains the actual solutions to the questions, which are used for deeming an answer correct/incorrect, however these are <strong>not directly displayed in this section</strong>.</p>
-<p>The <code>explanations</code> list <strong>holds any information that can be possibly given as feedback</strong>. This can, but does not have to, include the actual solutions, depending on the type of exam one is aiming for. This list is optional, general feedback can be normally written as text in this section. See ???? two sections below</p>
-<section id="actual-solutions-as-explanations" class="level3">
-<h3 class="anchored" data-anchor-id="actual-solutions-as-explanations">Actual Solutions as explanations</h3>
+<p>The <code>solutions</code> list contains the actual solutions to the questions, which are used for deeming an answer correct/incorrect, however these are <strong>not directly displayed in this section</strong>.</p>
+<p>The <code>explanations</code> list <strong>holds any information that can be possibly given as feedback</strong>. This can, but does not have to, include the actual solutions, depending on the type of exam one is aiming for. This list is optional, general feedback can be normally written as text in this section, see more details on <a href="#actual-solutions">the actual solutions as feedback</a> and <a href="#other-types-of-explanations">other types of explanations</a> below.</p>
+<section id="actual-solutions" class="level3">
+<h3 class="anchored" data-anchor-id="actual-solutions">Actual Solutions as explanations</h3>
 <p>The correct solutions to the questions can be displayed in the appropriate format in the generated output.</p>
 <p>Some solutions need to be converted to a more understandable format before being displayed. The solutions to schoice/mchoice questions are stored as <code>TRUE/FALSE</code> vectors and in the following code chunk they are converted to “True” and “False” strings, which are then displayed as explanations to the schoice and mchoice questions.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (x <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(solutions)) {</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (types[x] <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"schoice"</span>, <span class="st">"mchoice"</span>) { </span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    explanations[x] <span class="ot">&lt;-</span> solutions[x] <span class="sc">|&gt;</span> <span class="fu">lapply</span>(<span class="cf">function</span>(x) <span class="fu">ifelse</span>(x, <span class="st">"True"</span>, <span class="st">"False"</span>))</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  } </span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> {</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    explanations[x] <span class="ot">&lt;-</span> solutions[x]</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (types[x] <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"schoice"</span>, <span class="st">"mchoice"</span>)) {</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    explanations[x] <span class="ot">&lt;-</span> solutions[x] <span class="sc">|&gt;</span> <span class="fu">lapply</span>(<span class="cf">function</span>(x) <span class="fu">ifelse</span>(x, <span class="st">"True"</span>, <span class="st">"False"</span>))</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    explanations[x] <span class="ot">&lt;-</span> solutions[x]</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">answerlist</span>(<span class="fu">unlist</span>(explanations), <span class="at">markup =</span> <span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Then the function <code>answerlist()</code> from <code>R/exams</code> processes the <code>explanations</code> list to adjust it to the format needed for conversion of the .Rmd-file to the desired output.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">answerlist</span>(<span class="fu">unlist</span>(explanations), <span class="at">markup =</span> <span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
@@ -571,8 +604,27 @@ mchoice example
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>Option B, however, is incorrect because .....</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<p>In some cases it can be useful to document the seed used, for example when randomly generating numbers or doing any kind of sampling. Providing this information in the “Solution” section to either students or even oneself, when for example reviewing questions, can ensure reproducibility.</p>
+<p>In some cases it can be useful to document the seed used, for example when randomly generating numbers or doing any kind of sampling. Providing this information in the “Solution” section to either students or oneself, when for example reviewing questions, can ensure reproducibility.</p>
 <p>See the page about <a href="./add-ons.html">add-ons</a> for more information on how to dynamically display R objects (like seeds) in the exam.</p>
+</section>
+<section id="some-necessary-adjustments-for-conversion" class="level3">
+<h3 class="anchored" data-anchor-id="some-necessary-adjustments-for-conversion">Some necessary adjustments for conversion</h3>
+<p>The following code chunk, which is labelled <code>meta</code> in the template, converts the solutions of single/multiple choice questions into the necessary <code>1|0</code> format. In addition, the second part changes <code>NULL</code> elements in the <code>tolerances</code> list to 0, in order to avoid an error during the conversion process.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the format of single/multiple choice from T/F to 1/0</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (x <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(solutions)) {</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (types[x] <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"schoice"</span>, <span class="st">"mchoice"</span>)) {</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    solutions[x] <span class="ot">&lt;-</span> solutions[x] <span class="sc">|&gt;</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">unlist</span>() <span class="sc">|&gt;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">mchoice2string</span>()</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Set all undefined tolerances to a default value</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (x <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(solutions)) {</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (tolerances[x] <span class="sc">|&gt;</span> <span class="fu">unlist</span>() <span class="sc">|&gt;</span> <span class="fu">is.null</span>()) {</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    tolerances[x] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="meta-information" class="level2">
@@ -643,20 +695,20 @@ mchoice example
 <section id="exsolution" class="level4">
 <h4 class="anchored" data-anchor-id="exsolution">exsolution</h4>
 <p>contains the correct solutions for the exam in the necessary format for the conversion of the .Rmd-file. When more than one question (and therefore more than one solution) is created, all solutions need to be in the order of the questions and separated by “|”. This can either be achieved by manually writing down all solutions or with the following code chunk:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(solutions, <span class="at">collapse =</span> <span class="st">"|"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The resulting R object needs to be dynmically included in the .Rmd-file (see ?????? for details).</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(solutions, <span class="at">collapse =</span> <span class="st">"|"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The resulting R object needs to be dynmically included in the .Rmd-file (see the section about <a href="./add-ons.html#inline-code">inline code</a> for details).</p>
 </section>
 <section id="exclozetypes" class="level4">
 <h4 class="anchored" data-anchor-id="exclozetypes">exclozetypes</h4>
 <p>When creating an exam of the type “cloze” (the exam contains different types of questions), the type of each question has to be specified. This information is stored in the list <code>types</code>from above. When more than one question (and therefore more than one type) is created, all types need to be in the order of the questions and separated by “|”. This can either be achieved by manually writing down all solutions or with the following code chunk:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(types, <span class="at">collapse =</span> <span class="st">"|"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The resulting R object needs to be dynmically included in the .Rmd-file (see ?????? for details).</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(types, <span class="at">collapse =</span> <span class="st">"|"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The resulting R object needs to be dynmically included in the .Rmd-file (see the section about <a href="./add-ons.html#inline-code">inline code</a> for details).</p>
 </section>
 <section id="extol" class="level4">
 <h4 class="anchored" data-anchor-id="extol">extol</h4>
-<p>contains the tolerances used for the answers to numeric questions. When creating an exam of type “cloze”, the tolerances are stored in the list <code>tolerances</code>. They need to be in the order of the questions with empty interations for questions where tolerances are not applicable, e.g.&nbsp;string questions. For details see ??????? (subsetting the lists). All tolerances need to be seperated by “|”. This can either be achieved by manually writing down all solutions or with the following code chunk:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(tolerances, <span class="at">collapse =</span> <span class="st">"|"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The resulting R object needs to be dynamically included in the .Rmd-file (see ?????? for details).</p>
+<p>contains the tolerances used for the answers to numeric questions. When creating an exam of type “cloze”, the tolerances are stored in the list <code>tolerances</code>. They need to be in the order of the questions with 0 for questions where tolerances are not applicable, e.g.&nbsp;string questions. For details see the section about <a href="./creation-Rmd.html#creation-tolerances">setting tolerances</a>. All tolerances need to be seperated by “|”. This can either be achieved by manually writing down all solutions or with the following code chunk:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(tolerances, <span class="at">collapse =</span> <span class="st">"|"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The resulting R object needs to be dynamically included in the .Rmd-file (see the section about <a href="./add-ons.html#inline-code">inline code</a> for details).</p>
 </section>
 <section id="exshuffle" class="level4">
 <h4 class="anchored" data-anchor-id="exshuffle">exshuffle</h4>
@@ -676,14 +728,14 @@ Example
 </div>
 <div class="callout-body-container callout-body">
 <p>This is the meta-information of a very simple exam, containing one numeric question, one single choice and one multiple choice question with three answer options, without any automation using the lists and <code>paste()</code>.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="an">exname:</span><span class="co"> homework_1</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="an">extitle:</span><span class="co"> Homework 1: Topic A  </span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="an">extype:</span><span class="co"> cloze</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="an">exsolution:</span><span class="co"> 42.1|TRUE|c(FALSE,TRUE, FALSE)</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="an">exclozetype:</span><span class="co"> num|schoice|mchoice</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="an">extol:</span><span class="co"> 0.5|0|0</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="an">exshuffle:</span><span class="co"> TRUE</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="an">exversion:</span><span class="co"> v1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="an">exname:</span><span class="co"> homework_1</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="an">extitle:</span><span class="co"> Homework 1: Topic A  </span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="an">extype:</span><span class="co"> cloze</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="an">exsolution:</span><span class="co"> 42.1|TRUE|c(FALSE,TRUE, FALSE)</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="an">exclozetype:</span><span class="co"> num|schoice|mchoice</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="an">extol:</span><span class="co"> 0.5|0|0</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="an">exshuffle:</span><span class="co"> TRUE</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="an">exversion:</span><span class="co"> v1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -691,16 +743,16 @@ Example
 <section id="exemplary-structure-of-the-meta-information" class="level3">
 <h3 class="anchored" data-anchor-id="exemplary-structure-of-the-meta-information">Exemplary structure of the Meta-information</h3>
 <p>Below is an example of how the “meta-information” section could look with some of the <code>R/exams</code> tags explained above, as well as automatic conversion of the <code>solutions</code>, <code>types</code> and <code>tolerances</code> list to the correct format using <code>paste()</code>.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>Meta-information</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">================</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>exname: Abcde</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>extitle: Abcde: topic xyz </span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>extype: cloze</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>exsolution: <span class="in">`r paste(solutions, collapse = "|")`</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>exclozetype: <span class="in">`r paste(types, collapse = "|")`</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>extol: <span class="in">`r paste(tolerances, collapse = "|")`</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>exshuffle: TRUE</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>exversion: v1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>Meta-information</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">================</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>exname: Abcde</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>extitle: Abcde: topic xyz </span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>extype: cloze</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>exsolution: <span class="in">`r paste(solutions, collapse = "|")`</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>exclozetype: <span class="in">`r paste(types, collapse = "|")`</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>extol: <span class="in">`r paste(tolerances, collapse = "|")`</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>exshuffle: TRUE</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>exversion: v1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>

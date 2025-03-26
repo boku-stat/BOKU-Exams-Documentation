@@ -374,7 +374,7 @@ window.Quarto = {
   <li><a href="#solutions-list" id="toc-solutions-list" class="nav-link" data-scroll-target="#solutions-list">Solutions list</a></li>
   <li><a href="#types" id="toc-types" class="nav-link" data-scroll-target="#types">Types</a></li>
   <li><a href="#explanations" id="toc-explanations" class="nav-link" data-scroll-target="#explanations">Explanations</a></li>
-  <li><a href="#tolerances" id="toc-tolerances" class="nav-link" data-scroll-target="#tolerances">Tolerances</a></li>
+  <li><a href="#creation-tolerances" id="toc-creation-tolerances" class="nav-link" data-scroll-target="#creation-tolerances">Tolerances</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -402,10 +402,11 @@ window.Quarto = {
 
 
 <p>This page explains the process of subsetting the lists in the .Rmd-file and what type of content is required.</p>
+<p>A template can be downloaded <a href="./templates.html">here</a>.</p>
 <section id="subsetting" class="level1">
 <h1>Subsetting</h1>
 <p>The lists used in the .Rmd to contain the answer options, solutions, etc. can be altered via subsetting.</p>
-<p>The lists can be initialized as empty lists using <code>list()</code></p>
+<p>The lists are initialized as empty lists using <code>list()</code></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>answers <span class="ot">&lt;-</span> <span class="fu">list</span>() </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>solutions <span class="ot">&lt;-</span> <span class="fu">list</span>() </span>
@@ -426,24 +427,24 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>There are other ways of accessing elements in a list, such as <code>[]</code>and <code>$</code>, however for simplicity reasons, this documentation focuses on <code>[[]]</code>. The other two have their own applications, which are not necessary for using <code>R/exams</code> in the way it is described here.</p>
+<p>There are other ways of accessing elements in a list, however for simplicity reasons, this documentation focuses on <code>[[]]</code>. The other two have their own applications, which are not necessary for using <code>R/exams</code> in the way it is described here.</p>
 </div>
 </div>
-<p>For example, this accesses the first element of the <code>answers</code> list.</p>
+<p>For example, this accesses the first element (of the first element) of the <code>answers</code> list.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>answers[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Accessing multiple elements:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>answers[[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)]] <span class="co">#1st, 3rd, 5th element </span></span>
+<p>Accessing multiple elements, note the use of <code>[]</code> instead of <code>[[]]</code>, which is necessary to access the elements of list instead of the elements of the elements of the list.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>answers[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)] <span class="co">#1st, 3rd, 5th element </span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>answers[[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]] <span class="co">#1st to 5th element </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>answers[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>] <span class="co">#1st to 5th element </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="assigning-and-altering-elements" class="level2">
 <h2 class="anchored" data-anchor-id="assigning-and-altering-elements">Assigning and Altering Elements</h2>
-<p>When elements are accessed, they can also be altered.</p>
+<p>When elements are accessed, they can also be altered, note the use of <code>[]</code> instead of <code>[[]]</code> when accessing multiple elements, which is necessary to access the elements of list instead of the elements of the elements of the list.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>solutions[[<span class="dv">1</span>]] <span class="ot">&lt;-</span> <span class="dv">5</span> <span class="co">#first element of the answer list is 5 </span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>solutions[[<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>)]] <span class="ot">&lt;-</span> <span class="st">"A"</span> <span class="co">#2nd and 4th answer is "A"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>solutions[<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>)] <span class="ot">&lt;-</span> <span class="st">"A"</span> <span class="co">#2nd and 4th answer is "A"</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>tolerances[[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]] <span class="ot">&lt;-</span> <span class="dv">0</span> <span class="co">#Tolerances for all questions are 0. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>tolerances[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>] <span class="ot">&lt;-</span> <span class="dv">0</span> <span class="co">#Tolerances for all questions are 0. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -472,9 +473,16 @@ Note
 </ul>
 <p>These questions will be pasted in the <strong>question text section</strong> directly in the .Rmd-file.</p>
 <p>So the three answer options for the single choice question would be for example: “Ti”, “Au” and “Ag”, which are stored in the <code>answers</code> list.</p>
-<p>For the numeric question, no answer options are needed, therefore an empty string <code>""</code> is placed there instead. (When creating larger exams with many numeric questions, this can be done automatically for all questions at once, see here ???? )</p>
+<p>For the numeric question, no answer options are needed, therefore an empty string <code>""</code> is placed there instead. When creating larger exams with many numeric questions, this can be done automatically for all questions at once, see below:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>answers[[<span class="dv">1</span>]] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Ti"</span>, <span class="st">"Au"</span>, <span class="st">"Ag"</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>answers[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="st">""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>answers[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="st">""</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#placeholders for numeric and string questions</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (x <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(types)) {</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (types[x] <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"num"</span>, <span class="st">"string"</span>)) {</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    answers[x] <span class="ot">&lt;-</span> <span class="st">""</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="solutions-list" class="level2">
 <h2 class="anchored" data-anchor-id="solutions-list">Solutions list</h2>
@@ -484,7 +492,7 @@ Note
 </section>
 <section id="types" class="level2">
 <h2 class="anchored" data-anchor-id="types">Types</h2>
-<p>For each question its type needs to be specified, see here for all possibile options ????. For this example, we have a single choice and a numeric question.</p>
+<p>For each question its type needs to be specified, see <a href="./structure-Rmd.html#list-description">this section</a> for a description of types. For this example, we have a single choice and a numeric question.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>types[[<span class="dv">1</span>]] <span class="ot">&lt;-</span> <span class="st">"schoice"</span> </span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>types[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="st">"num"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
@@ -507,10 +515,16 @@ Important
 </div>
 </div>
 </section>
-<section id="tolerances" class="level2">
-<h2 class="anchored" data-anchor-id="tolerances">Tolerances</h2>
-<p>Tolerances are only needed for numeric questions, for all other types, the element in the list is simply left empty.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tolerances[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="fl">0.001</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="creation-tolerances" class="level2">
+<h2 class="anchored" data-anchor-id="creation-tolerances">Tolerances</h2>
+<p>Tolerances are only needed for numeric questions, they can be 0 or any other value. For all other types, the element in the list is set to 0 by the second part of the code chunk below.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tolerances[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="fl">0.001</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (x <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(solutions)) {</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (tolerances[x] <span class="sc">|&gt;</span> <span class="fu">unlist</span>() <span class="sc">|&gt;</span> <span class="fu">is.null</span>()) {</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    tolerances[x] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
