@@ -1,0 +1,21 @@
+---
+title: "Moodle Upload"
+---
+
+This page will describe how to import the created exercises into a moodle course. 
+
+## The Upload Process 
+
+Once the .xml files are created, either using the conversion scripts or the wrapper, they can be imported into moodle into the queston bank and from there the exercises can be assigned to different tasks in moodle.
+
+![The questionbank tab](images/questionbank.png)
+
+![The drop-down menu which gives access to the import tab](images/import.png)
+
+![Choosing the correct file typ: .xml](images/importformat.png)
+
+![Settings and upload point](images/importfile.png)
+
+The import category can be chosen from a drop down menu (if the desired category has already been created in the moodle course) or can be taken from the .xml directly, which can be controlled via the `exams2moodle()` argument `iname = TRUE`. See more using `?exams::exams2moodle()`.
+
+The upload process can take a while, particularly when the exercises contain images or large .csv files or a large number of questions is being imported.

@@ -32,6 +32,6 @@ If this file should be part of an R project, do not forget to save it in the cor
 When refering to any other files/pictures/etc., it is advisble to use relative paths.
 This is necessary so these paths are still valid when sharing the projcet or files with other people and when converting the exercise files to the desired output. 
 
-folders of images 
-number of differnt exercises 
+When including pictures or files, it is best to store them in a seperate folder alongside the exercises. 
+
 

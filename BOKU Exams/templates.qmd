@@ -6,7 +6,7 @@ filters:
 
 This page will serve as a download centre and provide a script to create custom .Rmd-templates through an interface.
 
-# Custom .Rmd-Templates 
+# Custom .Rmd-Templates (in progress)
 
 The following button downloads an .R-file, which contains the code to a shiny app. When run, the shiny app allows the creation of custom templates. (more features to come)
 

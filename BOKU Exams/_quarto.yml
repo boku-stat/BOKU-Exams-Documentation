@@ -27,24 +27,22 @@ website:
       - href: setup.qmd
         text: Project Setup
       
-      - section: Rmd-file
+      - section: .Rmd-file
         contents: 
         - href: structure-Rmd.qmd
           text: Structure
         - href: creation-Rmd.qmd
-          text: Creation of the .Rmd-file
-          
-      - section: R-file 
-        contents: 
-        - href: structure-R.qmd
-          text: Structure of the .R-file 
+          text: Creation 
         - href: conversion.qmd
-          text: Conversion of .Rmd-file 
+        - text: Conversion 
           
       - section: Add-ons 
         contents: 
         - href: add-ons.qmd
           text: Add-ons to .Rmd-files
+          
+      - href: moodle.qmd
+        text: Moodle Upload 
             
         
       - section:  Basic Examples 
@@ -62,6 +60,8 @@ website:
         contents: 
         - href: advanced1.qmd
           text: Example 1
+        - href: advanced2.qmd
+          text: Example 2 
           
       - href: ref.qmd 
         text: Further References

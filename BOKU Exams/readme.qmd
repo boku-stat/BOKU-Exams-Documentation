@@ -27,9 +27,9 @@ For each exercise/exam, there is one .Rmd-file which contains all the questions 
 | [R Project Setup](setup.qmd) | How to set up an R Project and create .Rmd and .R files |
 | [.Rmd-file: Structure](structure-Rmd.qmd) | Gives the structure and "skeleton" for the main .Rmd-file | 
 | [.Rmd-file: Creation](creation-Rmd.qmd) | How to utilize the basic strucutre and incorporate the desired content | 
-| [.R-file: Strucutre](structure-R.qmd) | Structure for the conversion script | 
-| [.R-file: Conversion](conversion.qmd) | Process of conversion | 
-| [Add-ons](add-ons.qmd) | Brief how-to for including pictures, links, etc. in .Rmd-files | 
+| [.Rmd-file: Conversion](conversion.qmd) | Process of conversion |
+| [Add-ons](add-ons.qmd) | Brief how-to for including pictures, links, etc. in .Rmd-files |
+| [Moodle Upload](moodle.qmd) | Guide on import of exercises into Moodle |
 | [Basic Examples](example1.qmd) | Short examples to illustrate simple use cases | 
 | [Advanced Examples](advanced1.qmd) | More complex Examples | 
 | [Further References](ref.qmd) | Links to existing documentation, examples, etc. | 
@@ -53,7 +53,7 @@ If you have questions, do not hesitate to ask, simply leave a comment on the Git
 
 - Create an .R file and write the script for conversion or download the template [here](templates.qmd). 
 
-- Convert the .Rmd to the desire output. 
+- Convert the .Rmd to the desired output. 
 
 
 

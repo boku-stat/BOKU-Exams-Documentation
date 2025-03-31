@@ -14,9 +14,9 @@ It uses several add-ons described [here](add-ons.qmd), such as:
 - including a picture 
 
 
-The whole example as an .Rmd-file can be downloaded here: 
+The whole example as an .Rmd-file and the included image can be downloaded here: 
 
-{{< downloadthis examples/advanced1.Rmd dname="advanced_example_1" >}}
+{{< downloadthis examples/advanced1.zip dname="advanced_example_1" >}}
 
 # Data Generation 
 

@@ -19,7 +19,7 @@ It depends, but it can be done without. Without any prior experiencing with any 
 ::: 
 
 ::: {.callout-note title="Does the course need to teach R and/or statistics?" collapse="true"}
-No, R is just the software to create the exams, however the content is completely adjustable. There are different formats available, see several [basic](example1.qmd) and [advanced](advanced1.qmd] examples. 
+No, R is just the software to create the exams, however the content is completely adjustable. There are different formats available, see several [basic](example1.qmd) and [advanced](advanced1.qmd) examples. 
 ::: 
 
 # Installation  
@@ -57,11 +57,11 @@ Additionally, for markdown exercises, Pandoc is required, however this automatic
 # Setup 
 
 ::: {.callout-note title="How and why should I setup an R project?" collapse="true"}
-
+R projects can be used for organizing and working with several files in an easy and efficient way. See [here](setup.qmd) for an explanation on how to setup the project. 
 ::: 
 
-
 ::: {.callout-note title="How can I create an .R or .Rmd file?" collapse="true"}
+See [this page](setup.qmd) for a step-by-step guide. 
 ::: 
 
 # Creating Exercises 
@@ -83,8 +83,8 @@ $\alpha = \frac{1}{100}$
 produces this: $\alpha = \frac{1}{100}$
 ::: 
 
-::: {.callout-note title="How do I include a picture in my exercise?" collapse="true"}
-
+::: {.callout-note title="How do I include a picture in my exercise?" collapse="true"} 
+See the section about including pictures [here](add-ons.qmd#add-pcitures)
 :::  
 
 ::: {.callout-note title="How do I embed a link in my exercise?" collapse="true"}
@@ -92,7 +92,7 @@ produces this: $\alpha = \frac{1}{100}$
 ::: 
 
 ::: {.callout-note title="Where can I find a template?" collapse="true"}
-
+Templates for both the .Rmd-file and the converison script can be found [here](templates.qmd). 
 ::: 
 
 # Conversion and Output 
@@ -102,11 +102,11 @@ The most common ones are PDF, HTML and .xml for the import in Moodle. However th
 ::: 
 
 ::: {.callout-note title="How do I generate an exam?" collapse="true"}
-
+The conversion into the desired format is done by using a `exams2xyz()`function from the `R/exams` package. The process is explained in more detail on the [conversion page](conversion.qmd)
 ::: 
 
 ::: {.callout-note title="How can I upload my .xml-file to Moodle" collapse="true"}
-
+See a step-by-step guide on [this page](moodle.qmd) on the upload to Moodle.
 :::  
 
 # Common Problems 

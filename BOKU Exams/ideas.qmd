@@ -4,7 +4,7 @@ title: "Ideas"
 
 This is the page for future ideas and important notes for documentation, for internal use. 
 
-Notes, Stand 25.03 
+Notes, Stand 31.03 
 
 Allgemein: 
 
@@ -18,19 +18,19 @@ Allgemein:
 - R code: formatiert mit Farben oder including knitr tags, zb auf structure .Rmd page (also direkt auf der Seite oder mit filter include)
 - Advanced examples (mit cloze, csv files, data generation, stories etc. ??? )
 - Auf moodle: interne doku und bsp aus statistik zur verfügung als advanced examples? 
-- Soll folder structure (wurde nur bei Coaches verwendet) teil der doku sein bzw des how to? überhaupt notwendig? 
+- ~~Soll folder structure (wurde nur bei Coaches verwendet) teil der doku sein bzw des how to? überhaupt notwendig? -> nein, in die interne doku~~
 
 Shiny App: 
 
 - weiter verfolgen? 
 - hosten? wenn ja wo? (Quarto macht probleme), shinyapps.io? 
-- nicht hosten? -> wie bekommt man zugriff dazu? 
+- nicht hosten? -> wie bekommt man zugriff dazu?
 - welche features? 
 - gehört neu strukturiert und aufgesetzt mit (fast) allen features in mind 
 
 Upload Moodle 
 
-- seite erstellen 
+- ~~seite erstellen~~ 
 - anleitung schreiben 
 
 Home: 
@@ -42,7 +42,7 @@ Home:
 
 First Steps: 
 
-- letzer abschnitt 
+- ~~letzer abschnitt~~ 
 
 R-info: 
 
@@ -50,7 +50,7 @@ R-info:
 
 Project Setup: 
 
-- Anleitungen schreiben
+- ~~Anleitungen schreiben~~
 
 Structure Rmd: 
 
@@ -64,25 +64,23 @@ Creation Rmd:
 - umbenennen? 
 - ~~fertig schreiben~~ 
 
-Structure R: 
+Conversion:  
 
 - ~~basic structure schreiben~~
 - advanced structure schreiben 
 - templates erstellen und einfügen 
-
-Conversion: 
-
 - ~~gehört in der form eigentlich in die interne doku~~ 
-- basic method (basic umwandlung ohne "schnickschnack")
+- ~~basic method (basic umwandlung ohne "schnickschnack")~~
 - advanced method (Lukas' script verallgemeinert)
-- vielleicht zusammenlegen mit Strucutre R-file ? -> eher nein 
+- ~~vielleicht zusammenlegen mit Strucutre R-file ? ja~~  
+- explain exams2moodle arugments in advanced method 
 
 
 Add ons: 
 
 - ~~Abschnitt über graphs hinzufügen und schreiben~~ 
-- abschnitt für dynamic context ("stories")
-- include_supplement beschreiben (bei bildern)
+- ~~abschnitt für dynamic context ("stories")~~
+- ~~include_supplement beschreiben (bei bildern)~~
 
 Basic Examples: 
 

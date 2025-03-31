@@ -2,9 +2,10 @@
 title: "Add-ons of .Rmd-files"
 filters:
    - include-code-files
+   - downloadthis
 ---
 
-This will describe how to include additional things, e.g: tables, pictures, graphs, csv-files, etc.
+This page gives an overview of additional possibitilies when creating exercises, such as including tables and pictures, creating graphs and storing data in csv-files. 
 
 ## Inline R Code {#inline-code}
 
@@ -60,14 +61,14 @@ Different types of elements of a story can include:
 - units 
 - etc. 
 
-One way of implementing this is using another .R file, which contains the stories and which then can be sourced and sampled from. See here ????? for an example. 
+One way of implementing this is using another .R file, which contains the stories and which then can be sourced and sampled from. See [here](advanced2.qmd) for an example. 
 
 
 ## Tables 
 
 ### Manual Creation
 
-The `|` do not need to be vertically aligned, it just makes it more readable when creating the table. 
+Tables, which are later rendered using markdown can be created using `|`, which seperates the columns of the table in each row and a row of `-`, which seperates the header row from the rest of the table. The lines `|` do not need to be vertically aligned, it just makes it more readable when creating the table. 
 
 Inline code can also be included in the table. 
 
@@ -99,7 +100,7 @@ When rendered it appears like this:
 |------:|:-----|---------|:------:|
 |x1|y1|z1|a1|
 
-### Automatic Creation of tables
+### Automatic Creation of tables 
 
 Using the function `kable()`from the `knitr`package, objects like dataframes or matrices can be converted automatically to a table for display. For example, this code chunk converts the data frame `data` into a markdown table automatically including the column names as headers in this case. 
 
@@ -117,9 +118,9 @@ knitr::kable(data)
 ```
 
 
-There are many more (styling) options for markdown tables, see here the help page for kable, `?kable`, and here for more ???? 
+There are many more (styling) options for markdown tables, such as adding captions and labels. See for example the help page for kable, `?kable`, for more information.   
 
-## Pictures 
+## Pictures {#add-pictures}
 
 Pictures can be included as well, by using the following syntax: 
 
@@ -144,7 +145,7 @@ Additonal parameters, like (relative) height, width, etc. can be specified as we
 ![alt text](path_or_link/to/file){width="40%"}
 ```
 
-See here for more info ?????? 
+See this page for [more size options](https://bookdown.org/yihui/rmarkdown-cookbook/figure-size.html). 
 
 ## Embedding files for download
 
@@ -171,7 +172,7 @@ You might want to add e.g. a data file which is generated individually for each 
 To make an individually generated CSV data file available for download, you can use the following code. The arguments `row.names` and `col.names` control whether to show the respective labels. The `file` argument determines the file name under which it will be saved to disc. With the `sep` argument, the separator for the files can be set, e.g. use `","` for comma-separated values or `"\t"` for tab-separated values. 
 
 ::: callout-important 
-Place this following code in an R code chunk! 
+The following code needs to be placed in a code chunk inside a markdown to work as intended. 
 :::
 
 ``` r
@@ -209,6 +210,7 @@ y <- x + runif(50, min = -1, max = 1)
 plot(x, y, main = "Scatterplot") 
 abline(a = 0, b = 1, col = "red")
 ```
+
 ## Links 
 
 Links to webpages can be included with the following syntax: 
@@ -251,6 +253,13 @@ When rendered, it looks like this:
 **bold text** 
 
 
-More markdown options can be found here ????? 
+More markdown options can be found [here](https://rmarkdown.rstudio.com/lesson-8.html)
+
+An `rmarkdown` cheat sheet by RStudio can be downloaded here: 
+
+{{< downloadthis files/markdown-cheat-sheet.pdf dname="Markdown Cheat Sheet" >}}
+
+
+
 
 

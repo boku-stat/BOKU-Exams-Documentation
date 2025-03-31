@@ -24,11 +24,11 @@ Generally, a structure of folders and files are used, which all have a specific 
 
 ## What is in the files?
 
-The .Rmd-file contains the questions, answers and other necessary parameters for creating the exam. These components are created by the person wanting to create an exam, however they need to be written according to a certain structure, see [Structure of an .Rmd-file](structure-Rmd.qmd) and [Creation of the .Rmd-file](creation.qmd). 
+The .Rmd-file contains the questions, answers and other necessary parameters for creating the exam. These components are created by the person wanting to create an exam, however they need to be written according to a certain structure, see [Structure of an .Rmd-file](structure-Rmd.qmd) and [Creation of the .Rmd-file](creation-Rmd.qmd).
 
 The .R file contains the code, which converts the questions that are written in the .Rmd-file into the actual exam in a certain output format. Several formats are possible, such as .pdf, HTML and .xml for Moodle quizzes. See [here](structure-R.qmd) for more info. This code is based on the functionality of the `R/exams` package.
 
-An additonal separate .R-file can contain other R objects, which are then (dynamically) used in exam questions, however this is not a necessary component. For more information about add-ons see [this page](add-ons.qmd) and for advanced examples using this, see here ????.  
+An additonal separate .R-file can contain other R objects, which are then (dynamically) used in exam questions, however this is not a necessary component. For more information about add-ons see [this page](add-ons.qmd) and for advanced examples using this, see [here](advanced2.qmd).  
 
 ## What does the exam look like?
 
@@ -58,15 +58,19 @@ Numbers or data can also be randomly sampled, meaning each student will get indi
 
 It is also possible to create a pool of True/False statements which are then randomly drawn when creating an exam. In addition, the answer options for multiple choice questions can be individualized in a similar way. 
 
-For implementations and tutorials see ????
+For implementations and tutorials see the following pages: 
+
+Examples: [Basic](example1.qmd) and [Advanced](advanced1.qmd)
+
+Websites: [`R/exams`: Dynamic Exercises](https://www.r-exams.org/intro/dynamic/)
 
 ## How can the exams be corrected?
 
 For each output format, there is a different method for correcting the exams.
 
-For Moodle quizzes, the correct solutions are imported automatically as well, meaning they are graded automatically. The allocation of points can also be adjusted using R/exams. See ????
+For Moodle quizzes, the correct solutions are imported automatically as well, meaning they are graded automatically. The allocation of points can also be adjusted using the expoints tag in the .Rmd-file. 
 
-For pdf exams, an answer sheet is provided, but it is also possible to automatically grade scans of the students' multiple choice exams using R/exams. See ????
+For pdf exams, an answer sheet is provided, but it is also possible to automatically grade scans of the students' multiple choice exams using `R/exams`. An instruction on how to generate and grade these paper exams can be found [here](https://www.r-exams.org/tutorials/exams2nops/)
 
 ## How do I get started? 
 
@@ -74,13 +78,13 @@ See other pages for:
 
 - [Examples](example1.qmd)
 
-- [(Custom) Template Download](template.qmd)
+- [(Custom) Template Download](templates.qmd)
 
 - [More documentation, useful links](ref.qmd)
 
 - [How to set up the project](setup.qmd)
 
-
+- [Explanations of the process](structure-Rmd.qmd)
 
 
 

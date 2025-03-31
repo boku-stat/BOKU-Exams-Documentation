@@ -2,7 +2,7 @@
 title: "R, RStudio and R/exams"
 ---
 
-This page gives a bit more information about R, RStudio and R/exams, however in general the documentation focuses on the parts of R/exams that are relevant for creating the exams at BOKU. It is by no mean comprehensive and there already exists a lot of documentation for R, RStudio and R/exams.
+This page gives a bit more information about R, RStudio and R/exams, however in general the documentation focuses on the parts of R/exams that are relevant for creating the exams like it is done at BOKU. It is by no mean comprehensive and there already exists a lot of much more comprehensive documentation for R, RStudio and R/exams.
 
 # R
 
