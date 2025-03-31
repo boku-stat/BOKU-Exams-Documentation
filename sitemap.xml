@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/setup.html</loc>
-    <lastmod>2025-03-15T20:24:43.162Z</lastmod>
+    <lastmod>2025-03-31T13:41:10.207Z</lastmod>
   </url>
   <url>
-    <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/creation-Rmd.html</loc>
-    <lastmod>2025-03-26T12:58:03.672Z</lastmod>
+    <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/first-steps.html</loc>
+    <lastmod>2025-03-31T13:46:58.454Z</lastmod>
   </url>
   <url>
-    <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/templates/template_empty.html</loc>
-    <lastmod>2025-03-26T11:46:22.900Z</lastmod>
+    <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/add-ons.html</loc>
+    <lastmod>2025-03-31T14:28:32.786Z</lastmod>
   </url>
   <url>
-    <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/structure-R.html</loc>
-    <lastmod>2025-02-13T15:48:49.810Z</lastmod>
+    <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/ref.html</loc>
+    <lastmod>2025-03-26T13:00:47.464Z</lastmod>
   </url>
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/examples/example_schoice.html</loc>
@@ -34,7 +34,7 @@
   </url>
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/r-exams.html</loc>
-    <lastmod>2025-02-16T19:08:51.829Z</lastmod>
+    <lastmod>2025-03-26T16:30:55.539Z</lastmod>
   </url>
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/about.html</loc>
@@ -46,23 +46,27 @@
   </url>
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/conversion.html</loc>
-    <lastmod>2025-02-13T15:57:59.929Z</lastmod>
+    <lastmod>2025-03-31T13:14:40.141Z</lastmod>
   </url>
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/advanced1.html</loc>
-    <lastmod>2025-02-19T08:53:46.036Z</lastmod>
+    <lastmod>2025-03-31T15:31:01.536Z</lastmod>
   </url>
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/example3.html</loc>
     <lastmod>2025-01-15T11:17:57.658Z</lastmod>
   </url>
   <url>
+    <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/example2.html</loc>
+    <lastmod>2025-01-15T11:21:22.137Z</lastmod>
+  </url>
+  <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/example4.html</loc>
     <lastmod>2025-01-15T12:56:16.343Z</lastmod>
   </url>
   <url>
-    <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/example2.html</loc>
-    <lastmod>2025-01-15T11:21:22.137Z</lastmod>
+    <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/advanced2.html</loc>
+    <lastmod>2025-03-26T16:44:40.794Z</lastmod>
   </url>
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/example1.html</loc>
@@ -70,7 +74,7 @@
   </url>
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/ideas.html</loc>
-    <lastmod>2025-03-25T15:42:10.009Z</lastmod>
+    <lastmod>2025-03-31T15:18:55.703Z</lastmod>
   </url>
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/structure-Rmd.html</loc>
@@ -78,11 +82,11 @@
   </url>
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/templates.html</loc>
-    <lastmod>2025-03-26T12:37:30.106Z</lastmod>
+    <lastmod>2025-03-31T13:36:03.938Z</lastmod>
   </url>
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/faq.html</loc>
-    <lastmod>2025-03-15T20:09:02.940Z</lastmod>
+    <lastmod>2025-03-31T14:32:38.956Z</lastmod>
   </url>
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/examples/example_string.html</loc>
@@ -102,18 +106,18 @@
   </url>
   <url>
     <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/readme.html</loc>
-    <lastmod>2025-03-15T20:43:33.100Z</lastmod>
+    <lastmod>2025-03-31T15:26:50.819Z</lastmod>
   </url>
   <url>
-    <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/ref.html</loc>
-    <lastmod>2025-03-26T13:00:47.464Z</lastmod>
+    <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/templates/template_empty.html</loc>
+    <lastmod>2025-03-26T11:46:22.900Z</lastmod>
   </url>
   <url>
-    <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/add-ons.html</loc>
-    <lastmod>2025-03-26T12:15:19.283Z</lastmod>
+    <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/creation-Rmd.html</loc>
+    <lastmod>2025-03-26T12:58:03.672Z</lastmod>
   </url>
   <url>
-    <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/first-steps.html</loc>
-    <lastmod>2025-03-15T20:39:08.561Z</lastmod>
+    <loc>https://boku-stat.github.io/BOKU-Exams-Documentation/moodle.html</loc>
+    <lastmod>2025-03-31T15:17:49.899Z</lastmod>
   </url>
 </urlset>

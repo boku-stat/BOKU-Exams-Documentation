@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>First Steps – BOKU Exams</title>
+<title>Moodle Upload – BOKU Exams</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./first-steps.html">First Steps</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./moodle.html">Moodle Upload</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -141,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./first-steps.html" class="sidebar-item-text sidebar-link active">
+  <a href="./first-steps.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">First Steps</span></a>
   </div>
 </li>
@@ -208,7 +208,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./moodle.html" class="sidebar-item-text sidebar-link">
+  <a href="./moodle.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Moodle Upload</span></a>
   </div>
 </li>
@@ -298,17 +298,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#purpose-of-rexams" id="toc-purpose-of-rexams" class="nav-link active" data-scroll-target="#purpose-of-rexams">Purpose of <code>R/exams</code></a></li>
-  <li><a href="#using-rexams" id="toc-using-rexams" class="nav-link" data-scroll-target="#using-rexams">Using <code>R/exams</code></a>
-  <ul class="collapse">
-  <li><a href="#what-program-and-what-files-are-used" id="toc-what-program-and-what-files-are-used" class="nav-link" data-scroll-target="#what-program-and-what-files-are-used">What program and what files are used?</a></li>
-  <li><a href="#what-is-in-the-files" id="toc-what-is-in-the-files" class="nav-link" data-scroll-target="#what-is-in-the-files">What is in the files?</a></li>
-  <li><a href="#what-does-the-exam-look-like" id="toc-what-does-the-exam-look-like" class="nav-link" data-scroll-target="#what-does-the-exam-look-like">What does the exam look like?</a></li>
-  <li><a href="#how-can-rexams-prohibit-cheating" id="toc-how-can-rexams-prohibit-cheating" class="nav-link" data-scroll-target="#how-can-rexams-prohibit-cheating">How can R/exams prohibit cheating?</a></li>
-  <li><a href="#in-what-ways-can-an-exam-be-individualized" id="toc-in-what-ways-can-an-exam-be-individualized" class="nav-link" data-scroll-target="#in-what-ways-can-an-exam-be-individualized">In what ways can an exam be individualized?</a></li>
-  <li><a href="#how-can-the-exams-be-corrected" id="toc-how-can-the-exams-be-corrected" class="nav-link" data-scroll-target="#how-can-the-exams-be-corrected">How can the exams be corrected?</a></li>
-  <li><a href="#how-do-i-get-started" id="toc-how-do-i-get-started" class="nav-link" data-scroll-target="#how-do-i-get-started">How do I get started?</a></li>
-  </ul></li>
+  <li><a href="#the-upload-process" id="toc-the-upload-process" class="nav-link active" data-scroll-target="#the-upload-process">The Upload Process</a></li>
   </ul>
 </nav>
     </div>
@@ -317,7 +307,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">First Steps</h1>
+<h1 class="title">Moodle Upload</h1>
 </div>
 
 
@@ -334,71 +324,38 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="purpose-of-rexams" class="level1">
-<h1>Purpose of <code>R/exams</code></h1>
-<p><code>R/exams</code> is used to automatically generate and evaluate exam questions. See <a href="./r-exams.html">here</a> for more info about R and <code>R/exams</code>.</p>
-<p>At BOKU, it is used by the Institute for Statistics in several courses. Homework, review exercises and exams are all created with R/exams, both on paper as well as online quizzes, for example on BOKUlearn. Currently this is mostly used for courses in statistics, however the application is not limited to statistical applications at all.</p>
-<p>This documentation should serve as a basic first introduction and a how-to for anyone interested in using <code>R/exams</code> for teaching their courses at BOKU.</p>
-</section>
-<section id="using-rexams" class="level1">
-<h1>Using <code>R/exams</code></h1>
-<section id="what-program-and-what-files-are-used" class="level2">
-<h2 class="anchored" data-anchor-id="what-program-and-what-files-are-used">What program and what files are used?</h2>
-<p>The generation of the exams is happening within RStudio. See <a href="https://statistik.boku.ac.at/stat-lehre/doku.php?id=statistik_mit_r:rstudio:rstudio_installation:start">how to install R and RStudio</a>.</p>
-<p>Generally, a structure of folders and files are used, which all have a specific purpose. For a basic implementation, two types of files are necessary, namely .R-files and .Rmd-files. See a description for each and a template here: <a href="./structure-Rmd.html">.Rmd-file</a> and <a href="structure-R.qmd">.R-file</a></p>
-<p>.R-files are scripts written in R, where R code is written and evaluated.</p>
-<p>.Rmd-files are files written in markdown, a markup language, where it is possible to process normal text, (R) code and other components and generate reports in various formats (pdf, Word etc.) as well as web applications such as HTML pages.</p>
-</section>
-<section id="what-is-in-the-files" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-in-the-files">What is in the files?</h2>
-<p>The .Rmd-file contains the questions, answers and other necessary parameters for creating the exam. These components are created by the person wanting to create an exam, however they need to be written according to a certain structure, see <a href="./structure-Rmd.html">Structure of an .Rmd-file</a> and <a href="./creation-Rmd.html">Creation of the .Rmd-file</a>.</p>
-<p>The .R file contains the code, which converts the questions that are written in the .Rmd-file into the actual exam in a certain output format. Several formats are possible, such as .pdf, HTML and .xml for Moodle quizzes. See <a href="structure-R.qmd">here</a> for more info. This code is based on the functionality of the <code>R/exams</code> package.</p>
-<p>An additonal separate .R-file can contain other R objects, which are then (dynamically) used in exam questions, however this is not a necessary component. For more information about add-ons see <a href="./add-ons.html">this page</a> and for advanced examples using this, see <a href="./advanced2.html">here</a>.</p>
-</section>
-<section id="what-does-the-exam-look-like" class="level2">
-<h2 class="anchored" data-anchor-id="what-does-the-exam-look-like">What does the exam look like?</h2>
-<p>An exam can contain many different types of questions. <code>R/exams</code> is suitable for creating not only calculation questions, but also multiple or single choice questions, open answer questions (single word or essay questions) or including upload points in Moodle exams. It is possible to use any combination in one exam, eg. two numeric and three multiple choice questions.</p>
-<p>For basic examples see these pages:</p>
-<ul>
-<li><p><a href="./example1.html">Numeric example</a></p></li>
-<li><p><a href="./example2.html">String example</a></p></li>
-<li><p><a href="./example3.html">Single choice example</a></p></li>
-<li><p><a href="./example4.html">Multiple choice example</a></p></li>
-</ul>
-<p><code>R/exams</code> does not only have statistical applications, the look of the exam is entirely customizable. It is also possible to include data, graphs, pictures and other things, see the page about <a href="./add-ons.html">add-ons</a>.</p>
-</section>
-<section id="how-can-rexams-prohibit-cheating" class="level2">
-<h2 class="anchored" data-anchor-id="how-can-rexams-prohibit-cheating">How can R/exams prohibit cheating?</h2>
-<p>With R/exams it is possible to create a (very) large number of different versions of the same exam, see <a href="./conversion.html">this page</a> for the conversion process. Slight automatic alterations lead to an individualized exam for each student. For example, this can be used to be able to use the same materials for different exercise groups or to prohibit cheating by having slightly different questions for each student.</p>
-</section>
-<section id="in-what-ways-can-an-exam-be-individualized" class="level2">
-<h2 class="anchored" data-anchor-id="in-what-ways-can-an-exam-be-individualized">In what ways can an exam be individualized?</h2>
-<p>There are multiple ways of individualizing an exam, for example dynamically changing the (con)text of the questions. This is also particularly useful when creating exams used for multiple study programs at BOKU in order to have tailored exams for each of them.</p>
-<p>Numbers or data can also be randomly sampled, meaning each student will get individual results.</p>
-<p>It is also possible to create a pool of True/False statements which are then randomly drawn when creating an exam. In addition, the answer options for multiple choice questions can be individualized in a similar way.</p>
-<p>For implementations and tutorials see the following pages:</p>
-<p>Examples: <a href="./example1.html">Basic</a> and <a href="./advanced1.html">Advanced</a></p>
-<p>Websites: <a href="https://www.r-exams.org/intro/dynamic/"><code>R/exams</code>: Dynamic Exercises</a></p>
-</section>
-<section id="how-can-the-exams-be-corrected" class="level2">
-<h2 class="anchored" data-anchor-id="how-can-the-exams-be-corrected">How can the exams be corrected?</h2>
-<p>For each output format, there is a different method for correcting the exams.</p>
-<p>For Moodle quizzes, the correct solutions are imported automatically as well, meaning they are graded automatically. The allocation of points can also be adjusted using the expoints tag in the .Rmd-file.</p>
-<p>For pdf exams, an answer sheet is provided, but it is also possible to automatically grade scans of the students’ multiple choice exams using <code>R/exams</code>. An instruction on how to generate and grade these paper exams can be found <a href="https://www.r-exams.org/tutorials/exams2nops/">here</a></p>
-</section>
-<section id="how-do-i-get-started" class="level2">
-<h2 class="anchored" data-anchor-id="how-do-i-get-started">How do I get started?</h2>
-<p>See other pages for:</p>
-<ul>
-<li><p><a href="./example1.html">Examples</a></p></li>
-<li><p><a href="./templates.html">(Custom) Template Download</a></p></li>
-<li><p><a href="./ref.html">More documentation, useful links</a></p></li>
-<li><p><a href="./setup.html">How to set up the project</a></p></li>
-<li><p><a href="./structure-Rmd.html">Explanations of the process</a></p></li>
-</ul>
+<p>This page will describe how to import the created exercises into a moodle course.</p>
+<section id="the-upload-process" class="level2">
+<h2 class="anchored" data-anchor-id="the-upload-process">The Upload Process</h2>
+<p>Once the .xml files are created, either using the conversion scripts or the wrapper, they can be imported into moodle into the queston bank and from there the exercises can be assigned to different tasks in moodle.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/questionbank.png" class="img-fluid figure-img"></p>
+<figcaption>The questionbank tab</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/import.png" class="img-fluid figure-img"></p>
+<figcaption>The drop-down menu which gives access to the import tab</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/importformat.png" class="img-fluid figure-img"></p>
+<figcaption>Choosing the correct file typ: .xml</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/importfile.png" class="img-fluid figure-img"></p>
+<figcaption>Settings and upload point</figcaption>
+</figure>
+</div>
+<p>The import category can be chosen from a drop down menu (if the desired category has already been created in the moodle course) or can be taken from the .xml directly, which can be controlled via the <code>exams2moodle()</code> argument <code>iname = TRUE</code>. See more using <code>?exams::exams2moodle()</code>.</p>
+<p>The upload process can take a while, particularly when the exercises contain images or large .csv files or a large number of questions is being imported.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
