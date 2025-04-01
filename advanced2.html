@@ -38,6 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-ab0cb694dc529bc22bc21ea6a39d7b95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/downloadthis-1.9.1/downloadthis.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -181,12 +182,9 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./conversion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Conversion of an .Rmd-file</span></a>
+ <span class="menu-text">Conversion</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
- <span class="menu-text">Conversion</span>
-  </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -293,8 +291,18 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#data-generation" id="toc-data-generation" class="nav-link active" data-scroll-target="#data-generation">Data Generation</a></li>
+  <li><a href="#questions-solutions" id="toc-questions-solutions" class="nav-link" data-scroll-target="#questions-solutions">Questions/ Solutions</a></li>
+  <li><a href="#question" id="toc-question" class="nav-link" data-scroll-target="#question">Question</a></li>
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution">Solution</a></li>
+  <li><a href="#meta-information" id="toc-meta-information" class="nav-link" data-scroll-target="#meta-information">Meta Information</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -318,8 +326,43 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>TO-DO: create zip file, insert code chunks</p>
+<p>This example includes numeric and single choice questions, a .csv-file with the data is generated and the concept of “stories” (see <a href="./add-ons.html#stories">here</a> for more information) is used.</p>
+<p>The whole example as an .Rmd-file and the included story file can be downloaded here as a zip-archive:</p>
+<p><a href="#dnldts2559" onclick="fetch('data:text/plain;base64,YGBge3IgZGF0YSBnZW5lcmF0aW9uLCBlY2hvPUZBTFNFLCByZXN1bHRzID0naGlkZSd9CmxpYnJhcnkoZXhhbXMpCmluY2x1ZGVfc3VwcGxlbWVudCgiYWQyc3Rvcmllcy5SIiwgZGlyICA9ICJkYXRhIikKIyBpbXBvcnQgYWxsIHN0b3J5IGVsZW1lbnRzLCBzYW1wbGluZyBwcm9jZXNzLCBRNiwgb3RoZXIgc2VjdGlvbnMgCgojc2FtcGxlIHBhcmFtZXRlcnMKbiA8LSBzYW1wbGUoMjA6MzAsIHNpemUgPSAxKSAjIG51bWJlciBvZiBkYXRhIHBvaW50cyAKYWxwaGEgPC0gc2FtcGxlKGMoMC4wMDEsIDAuMDEsIDAuMDUsIDAuMSksIHNpemUgPSAxKSAKCiNpbXBvcnQgc3Rvcmllcwpzb3VyY2UoImFkMnN0b3JpZXMuUiIsIGxvY2FsID0gVFJVRSkKCnN0b3J5IDwtIHNhbXBsZShzdG9yaWVzLCBzaXplID0gMSlbWzFdXSAjIHNhbXBsZSBhIHN0b3J5IAoKI3JlbmFtZSBwYXJhbWV0ZXJzIGZvciBiZXR0ZXIgcmVhZGFiaWxpdHkgCm5hbWUgPC0gc3RvcnkkbmFtZQp0ZXh0IDwtIHN0b3J5JHRleHQKdmFyIDwtIHN0b3J5JHZhciAKdW5pdCA8LSBzdG9yeSR1bml0Cm11IDwtIHN0b3J5JG11CnNpZ21hIDwtIHN0b3J5JHNpZ21hCm0gPC0gc3RvcnkkbSAKYyA8LSBzdG9yeSRjCmRpZ2l0IDwtIHN0b3J5JGRpZ2l0CgojZGF0YSBnZW5lcmF0aW9uIChyYW5kb20sIG5vIHJlYWwgZGF0YSkKeCA8LSByb3VuZChybm9ybShuID0gbiwgbWVhbiA9IG11LCBzZCA9IHNpZ21hKSwgZGlnaXRzID0gZGlnaXQpCnkgPC0gcm91bmQoYyArIG0gKiB4ICsgcm5vcm0obiA9IG4sIG1lYW4gPSAwLCBzZCA9IDUpLCBkaWdpdHMgPSBpZmVsc2UobmFtZSA9PSAicnVuX2hlYXJ0IiwgZGlnaXQgLSAxLCBkaWdpdCkpICNiYXNlZCBvbiB4IGJ1dCB3aXRoIHZhcmlhdGlvbiAKZGF0YSA8LSBkYXRhLmZyYW1lKHgsIHkpCm5hbWVzKGRhdGEpIDwtIHZhcgoKI3Bsb3QoeCx5KQptb2RlbCA8LSBsbSh5IH4geCkKcF92YWx1ZSA8LSBjb2VmKHN1bW1hcnkobW9kZWwpKVsyLCA0XQpyMiA8LSBzdW1tYXJ5KG1vZGVsKSRyLnNxdWFyZWQKCgp3cml0ZS5jc3YyKGRhdGEsIGZpbGUgPSAiYWQyX2RhdGEuY3N2IikKYGBgCgpgYGB7ciBxdWVzdGlvbnMvc29sdXRpb25zLCBlY2hvPUZBTFNFLCByZXN1bHRzID0gImhpZGUifQphbnN3ZXJzIDwtIHNvbHV0aW9ucyA8LSBleHBsYW5hdGlvbnMgPC0gdHlwZXMgPC0gbGlzdCgpCiAgCnRvbGVyYW5jZXMgPC0gbGlzdCgpIAoKI2luZC4gdmFyIAphbnN3ZXJzW1sxXV0gPC0gdmFyCnNvbHV0aW9uc1tbMV1dIDwtIGMoVFJVRSwgRkFMU0UpCnR5cGVzW1sxXV0gPC0gInNjaG9pY2UiCgojbWVhbiB2YXIxCmFuc3dlcnNbWzJdXSA8LSAiIgpzb2x1dGlvbnNbWzJdXSA8LSBtZWFuKHgpCnR5cGVzW1syXV0gPC0gIm51bSIKdG9sZXJhbmNlc1tbMl1dIDwtIDAKCiNtZWFuIHZhcjIgCmFuc3dlcnNbWzNdXSA8LSAiIgpzb2x1dGlvbnNbWzNdXSA8LSBtZWFuKHkpCnR5cGVzW1szXV0gPC0gIm51bSIKdG9sZXJhbmNlc1tbM11dIDwtIDAKCiMgc2lnbmlmaWNhbnQgCmFuc3dlcnNbWzRdXSA8LSBjKCJ5ZXMiLCAibm8iKQpzb2x1dGlvbnNbWzRdXSA8LSBpZihwX3ZhbHVlIDwgYWxwaGEpIGMoVFJVRSwgRkFMU0UpIGVsc2UgYyhGQUxTRSwgVFJVRSkKdHlwZXNbWzRdXSA8LSAic2Nob2ljZSIKCiMgUl4yIAphbnN3ZXJzW1s1XV0gPC0gIiIKc29sdXRpb25zW1s1XV0gPC0gcjIKdHlwZXNbWzVdXSA8LSAibnVtIgp0b2xlcmFuY2VzW1s1XV0gPC0gMwoKIyBtb3JlL2xlc3MgdmFyaWF0aW9uIAphbnN3ZXJzW1s2XV0gPC0gYygibW9yZSIsICJsZXNzIikKc29sdXRpb25zW1s2XV0gPC0gYyhUUlVFLCBGQUxTRSkKdHlwZXNbWzZdXSA8LSAic2Nob2ljZSIKCiNwZXJmZWN0IFJeMgphbnN3ZXJzW1s3XV0gPC0gYygiMSIsICIwIikKc29sdXRpb25zW1s3XV0gPC0gYyhUUlVFLCBGQUxTRSkKdHlwZXNbWzddXSA8LSAic2Nob2ljZSIKCgpgYGAKCgpRdWVzdGlvbgo9PT09PT09PT0KCmByIHRleHRgIFRoZSBjb2xsZWN0ZWQgZGF0YSBjYW4gYmUgc2VlbiBpbiB0aGUgdGFibGUgYmVsb3cuIFRoZSBgciB2YXJbMV1gIGlzIGdpdmVuIGluIGByIHVuaXRbMV1gIGFuZCB0aGUgYHIgdmFyWzJdYCBpcyBnaXZlbiBpbiBgciB1bml0WzJdYC4gCgpgYGB7ciB0YWJsZSwgZWNobyA9IEZBTFNFLCByZXN1bHRzPSJhc2lzIn0Ka25pdHI6OmthYmxlKGRhdGEsIGZvcm1hdCA9ICJtYXJrZG93biIpCmBgYAoKCltkYXRhLmNzdl0oYWQyX2RhdGEuY3N2KQoKQW5zd2VyIHRoZSBmb2xsb3dpbmcgcXVlc3Rpb25zLiAKCldoaWNoIHdhcyB0aGUgaW5kZXBlbmRlbnQgdmFyaWFibGUgaW4gdGhlIGV4cGVyaW1lbnQ/ICMjQU5TV0VSMSMjIAoKV2hhdCBpcyB0aGUgbWVhbiBgciB2YXJbMV1gPyAjI0FOU1dFUjIjIyAKCldoYXQgaXMgdGhlIG1lYW4gYHIgdmFyWzJdYD8gIyNBTlNXRVIzIyMgCgpVc2UgdGhlIGZ1bmN0aW9uIGBsbSgpYCB0byBkbyBhIHNpbXBsZSBsaW5lYXIgcmVncmVzc2lvbiBvbiB0aGUgZGF0YS4gCgpJcyB0aGUgY29lZmZpY2llbnQgZm9yIHRoZSBpbmRlcGVuZGVudCB2YXJpYWJsZSBzaWduaWZpY2FudCBhdCB0aGUgc2lnbmlmaWNhbmNlIGxldmVsICRcYWxwaGEgPSBgciBhbHBoYWAkPyAjI0FOU1dFUjQjIyAKCldoYXQgaXMgdGhlICRSXjIkIG9mIHRoZSBtb2RlbD8gIyNBTlNXRVI1IyMgCgpUaGUgaGlnaGVyIHRoZSAkUl4yJCwgdGhlICMjQU5TV0VSNiMjIHZhcmlhdGlvbiBpcyBleHBsYWluZWQgYnkgdGhlIG1vZGVsLgoKVGhlIG1heGltdW0gdmFsdWUgb2YgdGhlICRSXjIkIChtZWFuaW5nIGEgcGVyZmVjdCBjb3JyZWxhdGlvbiBpbiB0aGUgbW9kZWwpIGlzICMjQU5TV0VSNyMjLiAKCgpgYGB7ciBxdWVzdGlvbmxpc3QsIGVjaG8gPSBGQUxTRSwgcmVzdWx0cyA9ICJhc2lzIn0KIyBOdW1lcmljYWwgYW5kIHRleHQgZXhlcmNpc2VzIHJlcXVpcmUgYW4gZW1wdHkgYW5zd2VybGlzdCBlbnRyeQpmb3IgKHggaW4gMTpsZW5ndGgodHlwZXMpKSB7CiAgaWYgKHR5cGVzW3hdICVpbiUgYygibnVtIiwgInN0cmluZyIpKSB7CiAgICBhbnN3ZXJzW3hdIDwtICIiCiAgfQp9CgphbnN3ZXJsaXN0KHVubGlzdChhbnN3ZXJzKSwgbWFya3VwID0gIm1hcmtkb3duIikKYGBgCgpTb2x1dGlvbiAKPT09PT09PT09IAoKYGBge3Igc29sdXRpb25saXN0LCBlY2hvID0gRkFMU0UsIHJlc3VsdHMgPSAiYXNpcyJ9CiMgQ2hhbmdlIHRoZSBmZWVkYmFjayBmb3JtYXQgZnJvbSBhIHZlY3RvciBvZiBUL0YgdG8gc3RyaW5ncwpleHBsYW5hdGlvbnMgPC0gbGlzdCgpCmZvciAoeCBpbiAxOmxlbmd0aChzb2x1dGlvbnMpKSB7CiAgaWYgKHR5cGVzW3hdICVpbiUgYygic2Nob2ljZSIsICJtY2hvaWNlIikpIHsKICAgIGV4cGxhbmF0aW9uc1t4XSA8LSBzb2x1dGlvbnNbeF0gfD4gbGFwcGx5KGZ1bmN0aW9uKHgpIGlmZWxzZSh4LCAiVHJ1ZSIsICJGYWxzZSIpKQogIH0gZWxzZSB7CiAgICBleHBsYW5hdGlvbnNbeF0gPC0gc29sdXRpb25zW3hdCiAgfQp9CgojIFdlIGRvbid0IHdhbnQgdG8gZGlzcGxheSB0aGUgYW5zd2VycyBpbiB0aGUgZmVlZGJhY2sKYW5zd2VybGlzdCh1bmxpc3QoZXhwbGFuYXRpb25zKSwgbWFya3VwID0gIm1hcmtkb3duIikKYGBgCgpgYGB7ciBtZXRhLCBlY2hvID0gRkFMU0UsIHJlc3VsdHMgPSAiaGlkZSJ9CiMgQ29udmVydCB0aGUgZm9ybWF0IG9mIHNpbmdsZS9tdWx0aXBsZSBjaG9pY2UgZnJvbSBUL0YgdG8gMS8wCmZvciAoeCBpbiAxOmxlbmd0aChzb2x1dGlvbnMpKSB7CiAgaWYgKHR5cGVzW3hdICVpbiUgYygic2Nob2ljZSIsICJtY2hvaWNlIikpIHsKICAgIHNvbHV0aW9uc1t4XSA8LSBzb2x1dGlvbnNbeF0gfD4KICAgICAgdW5saXN0KCkgfD4KICAgICAgbWNob2ljZTJzdHJpbmcoKQogIH0KfQoKIyBTZXQgYWxsIHVuZGVmaW5lZCB0b2xlcmFuY2VzIHRvIGEgZGVmYXVsdCB2YWx1ZQpmb3IgKHggaW4gMTpsZW5ndGgoc29sdXRpb25zKSkgewogIGlmICh0b2xlcmFuY2VzW3hdIHw+IHVubGlzdCgpIHw+IGlzLm51bGwoKSkgewogICAgdG9sZXJhbmNlc1t4XSA8LSAwCiAgfQp9CgpgYGAKCgpNZXRhLWluZm9ybWF0aW9uIAo9PT09PT09PT09PT09PT09CmV4bmFtZTogQWR2YW5jZWQgRXhhbXBsZSAyCmV4dGl0bGU6IEFkdmFuY2VkIEV4YW1wbGUgMiBgciBuYW1lYApleHR5cGU6IGNsb3plCmV4c29sdXRpb246IGByIHBhc3RlKHNvbHV0aW9ucywgY29sbGFwc2UgPSAifCIpYApleGNsb3pldHlwZTogYHIgcGFzdGUodHlwZXMsIGNvbGxhcHNlID0gInwiKWAKZXh0b2w6IGByIHBhc3RlKHRvbGVyYW5jZXMsIGNvbGxhcHNlID0gInwiKWAKZXhzaHVmZmxlOiBUUlVFCmV4dmVyc2lvbjogdjEKCgoKCgo=').then(res => res.blob()).then(blob => {
+      const downloadURL = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      document.body.appendChild(a);
+      a.href = downloadURL;
+      a.download = 'advanced_example_2.Rmd'; a.click();
+      window.URL.revokeObjectURL(downloadURL);
+      document.body.removeChild(a);
+        });"><button class="btn btn-default downloadthis  " id="dnldts2559"><i class="bi bi-download"></i> Download </button></a></p>
+<section id="data-generation" class="level1">
+<h1>Data Generation</h1>
+<p>In order to use objects in R, which were created in a different file, in this case these are the stories, the following two functions are used: <code>include_supplement()</code> and <code>source()</code>.</p>
+<p>In the other file “adstories.R” the object “stories” is created, which contains several different contexts for the same exercise. So one of these stories is sampled randomly and then its parameters are used for creating the exercise. These parameters, such as “name”, “text”, “mu”, “sigma” etc. are stored in objects outside the story for convenience. Then data is generated according to this stories particular parameters. (Note, this process is completely arbitrary amd not based on real data). The data is stored in a data frame (later on a csv file is created). In this code chunk some necessary objects are also created from the regression output, which are part of the solutions later on.</p>
+</section>
+<section id="questions-solutions" class="level1">
+<h1>Questions/ Solutions</h1>
+<p>This part defines the 5 lists, for <code>answers</code>, <code>solutions</code> and <code>types</code>, these are created individually in this section. Some of the tolerances and the explanations are created automatically later on.</p>
+</section>
+<section id="question" class="level1">
+<h1>Question</h1>
+<p>This section contains the main question text, which is dymamically adjusted based on the story using inline code (an explanation can be found <a href="./add-ons.html#inline-code">here</a>), the data, and the questions in this exercise.</p>
+<p>The last code chunk fills in (possibly missing) placeholders for the <code>answers</code> list for numeric and string questions and formats the answer options correctly.</p>
+</section>
+<section id="solution" class="level1">
+<h1>Solution</h1>
+<p>explanations created, solutions listed</p>
+<p>T/F coonverted missing tolerances set</p>
+</section>
+<section id="meta-information" class="level1">
+<h1>Meta Information</h1>
+<p>Meta information TODO: add missing tags</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
