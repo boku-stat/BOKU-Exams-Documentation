@@ -39,7 +39,19 @@ When creating exercises in the .xml format, they can only be viewed sensibly in 
 
 # Advanced Form 
 
+There are many ways to optimize the conversion process. 
+
 Options 
+
+
 Parameters 
 Preview
 output 
+
+One way is to create a system of a conversion script and a config file. This way, the conversion script remains unchanged for runs with different parameters and the desired parameters can be changed in the config file. Possible parameters include: 
+
+- Seed 
+- Input and output directory 
+- Number of copies of the exercises 
+- Output type 
+

@@ -1,4 +1,43 @@
 ---
 title: "Advanced Example 2"
+filters: 
+  - downloadthis
 ---
+TO-DO: create zip file, insert code chunks 
+
+This example includes numeric and single choice questions, a .csv-file with the data is generated and the concept of "stories" (see [here](add-ons.qmd#stories) for more information) is used. 
+
+The whole example as an .Rmd-file and the included story file can be downloaded here as a zip-archive: 
+
+{{< downloadthis examples/advanced2.Rmd dname="advanced_example_2" >}}
+
+# Data Generation 
+
+In order to use objects in R, which were created in a different file, in this case these are the stories, the following two functions are used: `include_supplement()` and `source()`. 
+
+In the other file "adstories.R" the object "stories" is created, which contains several different contexts for the same exercise. So one of these stories is sampled randomly and then its parameters are used for creating the exercise. These parameters, such as "name", "text", "mu", "sigma" etc. are stored in objects outside the story for convenience. Then data is generated according to this stories particular parameters. (Note, this process is completely arbitrary amd not based on real data). The data is stored in a data frame (later on a csv file is created). In this code chunk some necessary objects are also created from the regression output, which are part of the solutions later on. 
+
+
+# Questions/ Solutions 
+
+This part defines the 5 lists, for `answers`, `solutions` and `types`, these are created individually in this section. Some of the tolerances and the explanations are created automatically later on. 
+
+
+# Question
+
+This section contains the main question text, which is dymamically adjusted based on the story using inline code (an explanation can be found [here](add-ons.qmd#inline-code)), the data, and the questions in this exercise. 
+
+The last code chunk fills in (possibly missing) placeholders for the `answers` list for numeric and string questions and formats the answer options correctly. 
+
+# Solution 
+
+explanations created, solutions listed 
+
+T/F coonverted 
+missing tolerances set 
+
+# Meta Information 
+
+Meta information 
+TODO: add missing tags 
 

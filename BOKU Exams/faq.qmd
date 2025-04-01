@@ -119,6 +119,7 @@ Make sure to have LaTeX installed, see for example the package [`R/tinytex`](htt
 
 - Make sure the image is stored in the correct folder. 
 - Use relative paths (./path_to_pic/picture.png). 
+- Check whether `include_supplement()` is used correctly. 
 ::: 
 
 # Advanced Options 

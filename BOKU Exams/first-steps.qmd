@@ -16,7 +16,7 @@ This documentation should serve as a basic first introduction and a how-to for a
 
 The generation of the exams is happening within RStudio. See [how to install R and RStudio](https://statistik.boku.ac.at/stat-lehre/doku.php?id=statistik_mit_r:rstudio:rstudio_installation:start).
 
-Generally, a structure of folders and files are used, which all have a specific purpose. For a basic implementation, two types of files are necessary, namely .R-files and .Rmd-files. See a description for each and a template here: [.Rmd-file](structure-Rmd.qmd) and [.R-file](structure-R.qmd)
+Generally, a structure of folders and files are used, which all have a specific purpose. For a basic implementation, two types of files are necessary, namely .R-files and .Rmd-files. See a description for each and a template here: [.Rmd-file](structure-Rmd.qmd) and the [.R-file as a conversions script](conversion.qmd). 
 
 .R-files are scripts written in R, where R code is written and evaluated.
 

@@ -1,7 +1,7 @@
 ```{r data generation, echo=FALSE, results ='hide'}
 library(exams)
 include_supplement("ad2stories.R", dir  = "data")
-#TODO: import all story elements, sampling process, Q6, other sections 
+# import all story elements, sampling process, Q6, other sections 
 
 #sample parameters
 n <- sample(20:30, size = 1) # number of data points 
@@ -9,6 +9,7 @@ alpha <- sample(c(0.001, 0.01, 0.05, 0.1), size = 1)
 
 #import stories
 source("ad2stories.R", local = TRUE)
+
 story <- sample(stories, size = 1)[[1]] # sample a story 
 
 #rename parameters for better readability 
@@ -33,13 +34,11 @@ model <- lm(y ~ x)
 p_value <- coef(summary(model))[2, 4]
 r2 <- summary(model)$r.squared
 
+
+write.csv2(data, file = "ad2_data.csv")
 ```
 
-```{r}
-write.csv2(data, file = "ad2_data.csv")
-``` 
-
-```{r questions/solutions, echo=FALSE}
+```{r questions/solutions, echo=FALSE, results = "hide"}
 answers <- solutions <- explanations <- types <- list()
   
 tolerances <- list() 
@@ -78,20 +77,20 @@ solutions[[6]] <- c(TRUE, FALSE)
 types[[6]] <- "schoice"
 
 #perfect R^2
-answers[[7]] <- c(1, 0, "$Inf$", -1)
-solutions[[7]] <- c(TRUE, FALSE, FALSE, FALSE)
+answers[[7]] <- c("1", "0")
+solutions[[7]] <- c(TRUE, FALSE)
 types[[7]] <- "schoice"
 
 
 ```
 
 
-Questions
+Question
 =========
 
 `r text` The collected data can be seen in the table below. The `r var[1]` is given in `r unit[1]` and the `r var[2]` is given in `r unit[2]`. 
 
-```{r, table, results="asis"}
+```{r table, echo = FALSE, results="asis"}
 knitr::kable(data, format = "markdown")
 ```
 
@@ -108,7 +107,7 @@ What is the mean `r var[2]`? ##ANSWER3##
 
 Use the function `lm()` to do a simple linear regression on the data. 
 
-Is the coefficient for the independent variable significant at the significance level $\alpha = `r alpha`$? #ANSWER4# 
+Is the coefficient for the independent variable significant at the significance level $\alpha = `r alpha`$? ##ANSWER4## 
 
 What is the $R^2$ of the model? ##ANSWER5## 
 
@@ -117,48 +116,59 @@ The higher the $R^2$, the ##ANSWER6## variation is explained by the model.
 The maximum value of the $R^2$ (meaning a perfect correlation in the model) is ##ANSWER7##. 
 
 
-```{r questions, echo=FALSE}
-answerlist(unlist(answers), markup = "markdown")
+```{r questionlist, echo = FALSE, results = "asis"}
+# Numerical and text exercises require an empty answerlist entry
+for (x in 1:length(types)) {
+  if (types[x] %in% c("num", "string")) {
+    answers[x] <- ""
+  }
+}
 
+answerlist(unlist(answers), markup = "markdown")
 ```
 
-Solutions 
+Solution 
 ========= 
 
 ```{r solutionlist, echo = FALSE, results = "asis"}
-# feedback format changed from TRUE/FALSE in a vector to strings "True" and "False"
+# Change the feedback format from a vector of T/F to strings
+explanations <- list()
 for (x in 1:length(solutions)) {
-  if (types[x] == "schoice") { # only applicable for schoice/mchoice questions
+  if (types[x] %in% c("schoice", "mchoice")) {
     explanations[x] <- solutions[x] |> lapply(function(x) ifelse(x, "True", "False"))
   } else {
     explanations[x] <- solutions[x]
   }
 }
 
-answerlist(unlist(explanations), markup = "markdown") # answerlist for exams2html/exams2moodle created from solutions/explanations list -> feedback
+# We don't want to display the answers in the feedback
+answerlist(unlist(explanations), markup = "markdown")
 ```
 
-```{r meta, echo = FALSE, results = 'hide'}
-# change solution format from TRUE/FALSE vector to 1/0 string
+```{r meta, echo = FALSE, results = "hide"}
+# Convert the format of single/multiple choice from T/F to 1/0
 for (x in 1:length(solutions)) {
-  if (types[x] == "schoice") { # only applicable for schoice/mchoice questions
+  if (types[x] %in% c("schoice", "mchoice")) {
     solutions[x] <- solutions[x] |>
       unlist() |>
       mchoice2string()
   }
 }
 
+# Set all undefined tolerances to a default value
 for (x in 1:length(solutions)) {
   if (tolerances[x] |> unlist() |> is.null()) {
     tolerances[x] <- 0
-  }}
+  }
+}
+
 ```
 
 
 Meta-information 
 ================
-exname: Advanced 2
-extitle: Advanced 2 `r name`
+exname: Advanced Example 2
+extitle: Advanced Example 2 `r name`
 extype: cloze
 exsolution: `r paste(solutions, collapse = "|")`
 exclozetype: `r paste(types, collapse = "|")`
