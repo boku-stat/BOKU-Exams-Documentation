@@ -347,7 +347,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#other-types-of-explanations" id="toc-other-types-of-explanations" class="nav-link" data-scroll-target="#other-types-of-explanations">Other types of explanations</a></li>
   <li><a href="#some-necessary-adjustments-for-conversion" id="toc-some-necessary-adjustments-for-conversion" class="nav-link" data-scroll-target="#some-necessary-adjustments-for-conversion">Some necessary adjustments for conversion</a></li>
   </ul></li>
-  <li><a href="#meta-information" id="toc-meta-information" class="nav-link" data-scroll-target="#meta-information">Meta-information</a>
+  <li><a href="#meta-info" id="toc-meta-info" class="nav-link" data-scroll-target="#meta-info">Meta-information</a>
   <ul class="collapse">
   <li><a href="#types-of-meta-information-tags" id="toc-types-of-meta-information-tags" class="nav-link" data-scroll-target="#types-of-meta-information-tags">Types of Meta-information tags</a></li>
   <li><a href="#exemplary-structure-of-the-meta-information" id="toc-exemplary-structure-of-the-meta-information" class="nav-link" data-scroll-target="#exemplary-structure-of-the-meta-information">Exemplary structure of the Meta-information</a></li>
@@ -380,7 +380,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>The .Rmd is the main file, where all the information about the exercise is contained. It follows a basic structure, with four sections, “Data Generation”, “Question”, “Solution” and “Meta-information”. Their purpose will be described in detail in the following sections.</p>
 <p>An empty template containing only the necessary structure can be downloaded here:</p>
-<p><a href="#dnldts46912" onclick="fetch('data:text/plain;base64,YGBge3IsIGRhdGEgZ2VuZXJhdGlvbiwgZWNobyA9IEZBTFNFfQpsaWJyYXJ5KGV4YW1zKQphbnN3ZXJzIDwtIGxpc3QoKSAKc29sdXRpb25zIDwtIGxpc3QoKSAKdHlwZXMgPC0gbGlzdCgpCmV4cGxhbmF0aW9ucyA8LSBsaXN0KCkgCnRvbGVyYW5jZXMgPC0gbGlzdCgpCgpgYGAKClF1ZXN0aW9uCj09PT09PT09CgpJTVBPUlRBTlQhISEgUGxlYXNlIHJlbW92ZSB0aGUga25pdHItdGFnICJldmFsID0gRkFMU0UsIiBmcm9tIGV2ZXJ5IGNvZGUgYmxvY2sgYmVsb3csIHRoZXNlIHNob3VsZCBOT1QgYmUgdXNlZCB3aGVuIHdvcmtpbmcgd2l0aCB0aGlzIHRlbXBsYXRlLCBidXQgYXJlIG5lY2Vzc2FyeSBmb3IgcHJvdmlkaW5nIHN1Y2ggYW4gZW1wdHkgdGVtcGxhdGUgZm9yIGRvd25sb2FkLiAKCgpgYGB7ciBxdWVzdGlvbmxpc3QsIGV2YWwgPSBGQUxTRSwgZWNobyA9IEZBTFNFLCByZXN1bHRzID0gImFzaXMifQojIE51bWVyaWNhbCBhbmQgdGV4dCBleGVyY2lzZXMgcmVxdWlyZSBhbiBlbXB0eSBhbnN3ZXJsaXN0IGVudHJ5CmZvciAoeCBpbiAxOmxlbmd0aCh0eXBlcykpIHsKICBpZiAodHlwZXNbeF0gJWluJSBjKCJudW0iLCAic3RyaW5nIikpIHsKICAgIGFuc3dlcnNbeF0gPC0gIiIKICB9Cn0KCmFuc3dlcmxpc3QodW5saXN0KGFuc3dlcnMpLCBtYXJrdXAgPSAibWFya2Rvd24iKQpgYGAKClNvbHV0aW9uCj09PT09PT09CgpgYGB7ciBzb2x1dGlvbmxpc3QsIGV2YWwgPSBGQUxTRSwgZWNobyA9IEZBTFNFLCByZXN1bHRzID0gImFzaXMifQojIENoYW5nZSB0aGUgZmVlZGJhY2sgZm9ybWF0IGZyb20gYSB2ZWN0b3Igb2YgVC9GIHRvIChtb3JlIGxlZ2lhYmxlKSBzdHJpbmdzCmZvciAoeCBpbiAxOmxlbmd0aChzb2x1dGlvbnMpKSB7CiAgaWYgKHR5cGVzW3hdICVpbiUgYygic2Nob2ljZSIsICJtY2hvaWNlIikpIHsKICAgIGV4cGxhbmF0aW9uc1t4XSA8LSBzb2x1dGlvbnNbeF0gfD4gbGFwcGx5KGZ1bmN0aW9uKHgpIGlmZWxzZSh4LCAiVHJ1ZSIsICJGYWxzZSIpKQogIH0gZWxzZSB7CiAgICBleHBsYW5hdGlvbnNbeF0gPC0gc29sdXRpb25zW3hdCiAgfQp9CgojIEFuc3dlcnMgYXJlIGRpc3BsYXllZCBpbiB0aGUgZmVlZGJhY2sgCmFuc3dlcmxpc3QodW5saXN0KGV4cGxhbmF0aW9ucyksIG1hcmt1cCA9ICJtYXJrZG93biIpCmBgYAoKYGBge3IgbWV0YSwgZXZhbCA9IEZBTFNFLCBlY2hvID0gRkFMU0UsIHJlc3VsdHMgPSAiaGlkZSJ9CiMgQ29udmVydCB0aGUgZm9ybWF0IG9mIHNpbmdsZS9tdWx0aXBsZSBjaG9pY2UgZnJvbSBUL0YgdG8gMS8wCmZvciAoeCBpbiAxOmxlbmd0aChzb2x1dGlvbnMpKSB7CiAgaWYgKHR5cGVzW3hdICVpbiUgYygic2Nob2ljZSIsICJtY2hvaWNlIikpIHsKICAgIHNvbHV0aW9uc1t4XSA8LSBzb2x1dGlvbnNbeF0gfD4KICAgICAgdW5saXN0KCkgfD4KICAgICAgbWNob2ljZTJzdHJpbmcoKQogIH0KfQoKIyBTZXQgYWxsIHVuZGVmaW5lZCB0b2xlcmFuY2VzIHRvIGEgZGVmYXVsdCB2YWx1ZQpmb3IgKHggaW4gMTpsZW5ndGgoc29sdXRpb25zKSkgewogIGlmICh0b2xlcmFuY2VzW3hdIHw+IHVubGlzdCgpIHw+IGlzLm51bGwoKSkgewogICAgdG9sZXJhbmNlc1t4XSA8LSAwCiAgfQp9CgpgYGAKCk1ldGEtaW5mb3JtYXRpb24gCj09PT09PT09PT09PT09PT0KZXhuYW1lOgpleHRpdGxlOiAKZXh0eXBlOiBjbG96ZQpleHNvbHV0aW9uOiBgciBwYXN0ZShzb2x1dGlvbnMsIGNvbGxhcHNlID0gInwiKWAKZXhjbG96ZXR5cGU6IGByIHBhc3RlKHR5cGVzLCBjb2xsYXBzZSA9ICJ8IilgCmV4dG9sOiBgciBwYXN0ZSh0b2xlcmFuY2VzLCBjb2xsYXBzZSA9ICJ8IilgCmV4c2h1ZmZsZTogVFJVRQpleHZlcnNpb246IHYx').then(res => res.blob()).then(blob => {
+<p><a href="#dnldts3718" onclick="fetch('data:text/plain;base64,YGBge3IsIGRhdGEgZ2VuZXJhdGlvbiwgZWNobyA9IEZBTFNFLCByZXN1bHRzID0gImhpZGUifQpsaWJyYXJ5KGV4YW1zKQphbnN3ZXJzIDwtIGxpc3QoKSAKc29sdXRpb25zIDwtIGxpc3QoKSAKdHlwZXMgPC0gbGlzdCgpCmV4cGxhbmF0aW9ucyA8LSBsaXN0KCkgCnRvbGVyYW5jZXMgPC0gbGlzdCgpCgpgYGAKClF1ZXN0aW9uCj09PT09PT09CgpJTVBPUlRBTlQhISEgUGxlYXNlIHJlbW92ZSB0aGUga25pdHItdGFnICJldmFsID0gRkFMU0UsIiBmcm9tIGV2ZXJ5IGNvZGUgYmxvY2sgYmVsb3csIHRoZXNlIHNob3VsZCBOT1QgYmUgdXNlZCB3aGVuIHdvcmtpbmcgd2l0aCB0aGlzIHRlbXBsYXRlLCBidXQgYXJlIG5lY2Vzc2FyeSBmb3IgcHJvdmlkaW5nIHN1Y2ggYW4gZW1wdHkgdGVtcGxhdGUgZm9yIGRvd25sb2FkLiAKCgpgYGB7ciBxdWVzdGlvbmxpc3QsIGV2YWwgPSBGQUxTRSwgZWNobyA9IEZBTFNFLCByZXN1bHRzID0gImFzaXMifQojIE51bWVyaWNhbCBhbmQgdGV4dCBleGVyY2lzZXMgcmVxdWlyZSBhbiBlbXB0eSBhbnN3ZXJsaXN0IGVudHJ5CmZvciAoeCBpbiAxOmxlbmd0aCh0eXBlcykpIHsKICBpZiAodHlwZXNbeF0gJWluJSBjKCJudW0iLCAic3RyaW5nIikpIHsKICAgIGFuc3dlcnNbeF0gPC0gIiIKICB9Cn0KCmFuc3dlcmxpc3QodW5saXN0KGFuc3dlcnMpLCBtYXJrdXAgPSAibWFya2Rvd24iKQpgYGAKClNvbHV0aW9uCj09PT09PT09CgpgYGB7ciBzb2x1dGlvbmxpc3QsIGV2YWwgPSBGQUxTRSwgZWNobyA9IEZBTFNFLCByZXN1bHRzID0gImFzaXMifQojIENoYW5nZSB0aGUgZmVlZGJhY2sgZm9ybWF0IGZyb20gYSB2ZWN0b3Igb2YgVC9GIHRvIChtb3JlIGxlZ2lhYmxlKSBzdHJpbmdzCmZvciAoeCBpbiAxOmxlbmd0aChzb2x1dGlvbnMpKSB7CiAgaWYgKHR5cGVzW3hdICVpbiUgYygic2Nob2ljZSIsICJtY2hvaWNlIikpIHsKICAgIGV4cGxhbmF0aW9uc1t4XSA8LSBzb2x1dGlvbnNbeF0gfD4gbGFwcGx5KGZ1bmN0aW9uKHgpIGlmZWxzZSh4LCAiVHJ1ZSIsICJGYWxzZSIpKQogIH0gZWxzZSB7CiAgICBleHBsYW5hdGlvbnNbeF0gPC0gc29sdXRpb25zW3hdCiAgfQp9CgojIEFuc3dlcnMgYXJlIGRpc3BsYXllZCBpbiB0aGUgZmVlZGJhY2sgCmFuc3dlcmxpc3QodW5saXN0KGV4cGxhbmF0aW9ucyksIG1hcmt1cCA9ICJtYXJrZG93biIpCmBgYAoKYGBge3IgbWV0YSwgZXZhbCA9IEZBTFNFLCBlY2hvID0gRkFMU0UsIHJlc3VsdHMgPSAiaGlkZSJ9CiMgQ29udmVydCB0aGUgZm9ybWF0IG9mIHNpbmdsZS9tdWx0aXBsZSBjaG9pY2UgZnJvbSBUL0YgdG8gMS8wCmZvciAoeCBpbiAxOmxlbmd0aChzb2x1dGlvbnMpKSB7CiAgaWYgKHR5cGVzW3hdICVpbiUgYygic2Nob2ljZSIsICJtY2hvaWNlIikpIHsKICAgIHNvbHV0aW9uc1t4XSA8LSBzb2x1dGlvbnNbeF0gfD4KICAgICAgdW5saXN0KCkgfD4KICAgICAgbWNob2ljZTJzdHJpbmcoKQogIH0KfQoKIyBTZXQgYWxsIHVuZGVmaW5lZCB0b2xlcmFuY2VzIHRvIGEgZGVmYXVsdCB2YWx1ZQpmb3IgKHggaW4gMTpsZW5ndGgoc29sdXRpb25zKSkgewogIGlmICh0b2xlcmFuY2VzW3hdIHw+IHVubGlzdCgpIHw+IGlzLm51bGwoKSkgewogICAgdG9sZXJhbmNlc1t4XSA8LSAwCiAgfQp9CgpgYGAKCk1ldGEtaW5mb3JtYXRpb24gCj09PT09PT09PT09PT09PT0KZXhuYW1lOgpleHRpdGxlOiAKZXh0eXBlOiBjbG96ZQpleHNvbHV0aW9uOiBgciBwYXN0ZShzb2x1dGlvbnMsIGNvbGxhcHNlID0gInwiKWAKZXhjbG96ZXR5cGU6IGByIHBhc3RlKHR5cGVzLCBjb2xsYXBzZSA9ICJ8IilgCmV4dG9sOiBgciBwYXN0ZSh0b2xlcmFuY2VzLCBjb2xsYXBzZSA9ICJ8IilgCmV4c2h1ZmZsZTogVFJVRQpleHZlcnNpb246IHYx').then(res => res.blob()).then(blob => {
       const downloadURL = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       document.body.appendChild(a);
@@ -388,7 +388,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       a.download = 'Template.Rmd'; a.click();
       window.URL.revokeObjectURL(downloadURL);
       document.body.removeChild(a);
-        });"><button class="btn btn-default downloadthis  " id="dnldts46912"><i class="bi bi-download"></i> Download </button></a></p>
+        });"><button class="btn btn-default downloadthis  " id="dnldts3718"><i class="bi bi-download"></i> Download </button></a></p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -475,7 +475,7 @@ Warning
 </section>
 <section id="creating-the-lists" class="level3">
 <h3 class="anchored" data-anchor-id="creating-the-lists">Creating the lists</h3>
-<p>They are initialized as empty lists, which are later filled with the desired information via sub-setting. see ?????</p>
+<p>They are initialized as empty lists, which are later filled with the desired information via sub-setting. See <a href="./creation-Rmd.html">Creation of the .Rmd-file</a> for more details.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>answers <span class="ot">&lt;-</span> <span class="fu">list</span>() </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>solutions <span class="ot">&lt;-</span> <span class="fu">list</span>() </span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>types <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
@@ -534,7 +534,7 @@ mchoice example
 <p>Possible answer options are “greater than”, “smaller than”, “equal to”, which would be displayed instead of the answer field. In moodle all answer options are shown as tickable boxes.</p>
 </div>
 </div>
-<p>For more examples, see the section “Basic Examples” <a href="./example1.html">here</a>.</p>
+<p>For more examples, see the section “Basic Examples” <a href="./example1.html">here</a> and the “Advanced Examples <a href="./advanced1.html">here</a>.</p>
 <p>The function <code>answerlist()</code> from <code>R/exams</code> package converts the answer options, which are stored in the list object <code>answers</code> into the necessary format. Additionally, the placeholders needed for numeric/string questions in the <code>answers</code> list are automatically added into the list in this code chunk.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (x <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(types)) {</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (types[x] <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"num"</span>, <span class="st">"string"</span>)) {</span>
@@ -560,9 +560,7 @@ mchoice example
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    explanations[x] <span class="ot">&lt;-</span> solutions[x]</span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">answerlist</span>(<span class="fu">unlist</span>(explanations), <span class="at">markup =</span> <span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Then the function <code>answerlist()</code> from <code>R/exams</code> processes the <code>explanations</code> list to adjust it to the format needed for conversion of the .Rmd-file to the desired output.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">answerlist</span>(<span class="fu">unlist</span>(explanations), <span class="at">markup =</span> <span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
@@ -604,7 +602,7 @@ mchoice example
 </section>
 <section id="some-necessary-adjustments-for-conversion" class="level3">
 <h3 class="anchored" data-anchor-id="some-necessary-adjustments-for-conversion">Some necessary adjustments for conversion</h3>
-<p>The following code chunk, which is labelled <code>meta</code> in the template, converts the solutions of single/multiple choice questions into the necessary <code>1|0</code> format. In addition, the second part changes <code>NULL</code> elements in the <code>tolerances</code> list to 0, in order to avoid an error during the conversion process.</p>
+<p>The following code chunk, which is labelled <code>meta</code> in the template, converts the solutions of single/multiple choice questions into the necessary <code>1/0</code> format. In addition, the second part changes <code>NULL</code> elements in the <code>tolerances</code> list to 0, in order to avoid an error during the conversion process.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the format of single/multiple choice from T/F to 1/0</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (x <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(solutions)) {</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (types[x] <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"schoice"</span>, <span class="st">"mchoice"</span>)) {</span>
@@ -622,8 +620,8 @@ mchoice example
 <span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="meta-information" class="level2">
-<h2 class="anchored" data-anchor-id="meta-information">Meta-information</h2>
+<section id="meta-info" class="level2">
+<h2 class="anchored" data-anchor-id="meta-info">Meta-information</h2>
 <p>This section contains all the information necessary for the conversion from an .Rmd-file to the desired output (HTML, Moodle (xml), pdf, …). The conversion process is decribed <a href="./conversion.html">here</a></p>
 <table class="caption-top table">
 <caption>Meta-information</caption>
@@ -672,7 +670,7 @@ mchoice example
 </tr>
 </tbody>
 </table>
-<p>Also see vignette <code>R/exams</code> for additional tags and more information.</p>
+<p>Also see <code>vignette("exams2", package = "exams")</code> for additional tags and more information.</p>
 <section id="types-of-meta-information-tags" class="level3">
 <h3 class="anchored" data-anchor-id="types-of-meta-information-tags">Types of Meta-information tags</h3>
 <section id="exname" class="level4">
@@ -712,6 +710,15 @@ mchoice example
 <section id="exversion" class="level4">
 <h4 class="anchored" data-anchor-id="exversion">exversion</h4>
 <p>Specifies the version of the exam, useful for distinction when altering the .Rmd-file and creating a new set of exercises.</p>
+</section>
+<section id="exsection" class="level4">
+<h4 class="anchored" data-anchor-id="exsection">exsection</h4>
+<p>Specifies the category, which is chosen for the Moodle import.</p>
+<p>More meta-information parameters can most conveniently seen <a href="https://stackoverflow.com/questions/73713203/possible-meta-informations-in-r-exams">on this post by Achim Zeileis on stackoverflow.com</a></p>
+</section>
+</section>
+<section id="exemplary-structure-of-the-meta-information" class="level3">
+<h3 class="anchored" data-anchor-id="exemplary-structure-of-the-meta-information">Exemplary structure of the Meta-information</h3>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -733,10 +740,6 @@ Example
 <span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="an">exversion:</span><span class="co"> v1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-</section>
-</section>
-<section id="exemplary-structure-of-the-meta-information" class="level3">
-<h3 class="anchored" data-anchor-id="exemplary-structure-of-the-meta-information">Exemplary structure of the Meta-information</h3>
 <p>Below is an example of how the “meta-information” section could look with some of the <code>R/exams</code> tags explained above, as well as automatic conversion of the <code>solutions</code>, <code>types</code> and <code>tolerances</code> list to the correct format using <code>paste()</code>.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>Meta-information</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">================</span></span>

@@ -342,14 +342,14 @@ ul.task-list li input[type="checkbox"] {
 <section id="what-program-and-what-files-are-used" class="level2">
 <h2 class="anchored" data-anchor-id="what-program-and-what-files-are-used">What program and what files are used?</h2>
 <p>The generation of the exams is happening within RStudio. See <a href="https://statistik.boku.ac.at/stat-lehre/doku.php?id=statistik_mit_r:rstudio:rstudio_installation:start">how to install R and RStudio</a>.</p>
-<p>Generally, a structure of folders and files are used, which all have a specific purpose. For a basic implementation, two types of files are necessary, namely .R-files and .Rmd-files. See a description for each and a template here: <a href="./structure-Rmd.html">.Rmd-file</a> and <a href="structure-R.qmd">.R-file</a></p>
+<p>Generally, a structure of folders and files are used, which all have a specific purpose. For a basic implementation, two types of files are necessary, namely .R-files and .Rmd-files. See a description for each and a template here: <a href="./structure-Rmd.html">.Rmd-file</a> and the <a href="./conversion.html">.R-file as a conversions script</a>.</p>
 <p>.R-files are scripts written in R, where R code is written and evaluated.</p>
 <p>.Rmd-files are files written in markdown, a markup language, where it is possible to process normal text, (R) code and other components and generate reports in various formats (pdf, Word etc.) as well as web applications such as HTML pages.</p>
 </section>
 <section id="what-is-in-the-files" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-in-the-files">What is in the files?</h2>
 <p>The .Rmd-file contains the questions, answers and other necessary parameters for creating the exam. These components are created by the person wanting to create an exam, however they need to be written according to a certain structure, see <a href="./structure-Rmd.html">Structure of an .Rmd-file</a> and <a href="./creation-Rmd.html">Creation of the .Rmd-file</a>.</p>
-<p>The .R file contains the code, which converts the questions that are written in the .Rmd-file into the actual exam in a certain output format. Several formats are possible, such as .pdf, HTML and .xml for Moodle quizzes. See <a href="structure-R.qmd">here</a> for more info. This code is based on the functionality of the <code>R/exams</code> package.</p>
+<p>The .R file contains the code, which converts the questions that are written in the .Rmd-file into the actual exam in a certain output format. Several formats are possible, such as .pdf, HTML and .xml for Moodle quizzes. See <a href="./conversion.html">here</a> for more info. This code is based on the functionality of the <code>R/exams</code> package.</p>
 <p>An additonal separate .R-file can contain other R objects, which are then (dynamically) used in exam questions, however this is not a necessary component. For more information about add-ons see <a href="./add-ons.html">this page</a> and for advanced examples using this, see <a href="./advanced2.html">here</a>.</p>
 </section>
 <section id="what-does-the-exam-look-like" class="level2">
