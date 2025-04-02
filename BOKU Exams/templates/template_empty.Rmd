@@ -1,4 +1,4 @@
-```{r, data generation, echo = FALSE}
+```{r, data generation, echo = FALSE, results = "hide"}
 library(exams)
 answers <- list() 
 solutions <- list() 

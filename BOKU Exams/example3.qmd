@@ -5,8 +5,6 @@ filters:
    - downloadthis
 ---
 
-TODO: Leerzeilen aus Rmd files löschen und zeilen anpassen 
-
 This is an exercise containing two single choice questions about molar massses. 
 
 The whole example as an .Rmd-file can be downloaded here: 
@@ -34,10 +32,31 @@ After conversion with `R/exams` the exercise looks like this for different outpu
 This section creates and fills the lists which contain the questions, answers, etc.. The `answers` list contains the answer options for the questions. The solution to the question, the type of question, as well as a more elaborate explanation are specified for each question. 
 
 ::: callout-warning 
-The following code has to be placed within a code chunk in the .Rmd-file. See here ????? 
+The following code has to be placed within a code chunk in the .Rmd-file. See the first problem in [this section of the FAQ](faq.qmd#common-problems) 
 :::
 
-```{.markdown include="examples/example_schoice.Rmd" start-line=1 end-line=24}
+```{r answers/solutions, results = "hide"} 
+library(exams)
+# Initialize lists for the questions, answers, solutions, types, explanations (tolerances are not needed if there are no numeric questions)
+answers <- list()
+solutions <- list()
+types <- list()
+explanations <- list()
+
+# Define Question 1: What does the term "molar mass" refer to?
+answers[[1]] <- c(
+  "The number of molecules in one mole of a substance",
+  "The mass of one mole of a substance",
+  "The number of atoms in one mole of a substance",
+  "The charge of a mole of ions"
+)
+solutions[[1]] <- explanations[[1]] <- c(FALSE, TRUE, FALSE, FALSE) # The second option is correct
+types[[1]] <- "schoice"
+
+# Define Question 2: Which of the following is the lightest element?
+answers[[2]] <- c("Oxygen", "Hydrogen", "Carbon", "Helium")
+solutions[[2]] <- explanations[[2]] <- c(FALSE, TRUE, FALSE, FALSE) # The second option (Hydrogen) is correct
+types[[2]] <- "schoice"
 ```
 
 
@@ -59,11 +78,11 @@ In this section, additional information and/or the exact solutions can be given.
 
 ## Meta-Information 
 
-This contains the meta information needed for conversion. See here ????? 
+The next section contains the meta information needed for conversion. See [here](structure-Rmd.qmd#meta-info) for an explanation of the meta-information. 
 
 The "source code" is written in markdown and contains inline R code.
 
-```{.markdown include="examples/example_schoice.Rmd" start-line=64 end-line=72}
+```{.markdown include="examples/example_schoice.Rmd" start-line=63 end-line=72}
 ```
 
 If the "code" above is evaluated, the section looks like this: 

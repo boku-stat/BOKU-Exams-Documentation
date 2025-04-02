@@ -4,7 +4,6 @@ filters:
    - include-code-files
    - downloadthis
 ---
-TODO: code chunks darstellung vereinheitlichen für alle examples, warning section hinzufügen/löschen 
 
 This is an exercise containing two text questions about the periodic table. 
 
@@ -33,7 +32,7 @@ This section creates and fills the lists which contain the questions, answers, e
 The solution to the question, the type of question, as well as a more elaborate explanation are specified for each question. 
 
 ::: callout-warning 
-The following code has to be placed within a code chunk in the .Rmd-file. See here ????? 
+The following code has to be placed within a code chunk in the .Rmd-file. See the first problem in [this section of the FAQ](faq.qmd#common-problems).
 :::
 
 ```{r answers/solutions, results = "hide"}
@@ -76,7 +75,7 @@ In this section, additional information and/or the exact solutions can be given.
 
 ## Meta Information Section 
 
-This contains the meta information needed for conversion. See here ????? 
+The next section contains the meta information needed for conversion. See [here](structure-Rmd.qmd#meta-info) for an explanation of the meta-information. 
 
 The "source code" is written in markdown and contains inline R code.
 ```{.markdown include="examples/example_string.Rmd" start-line=42 end-line=51}

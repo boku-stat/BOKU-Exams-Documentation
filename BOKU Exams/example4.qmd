@@ -30,10 +30,10 @@ After conversion with `R/exams` the exercise looks like this for different outpu
 This section creates and fills the lists which contain the questions, answers, etc.. The `answers` list contains the answer options for the questions. The solution to the question, the type of question, as well as a more elaborate explanation are specified for each question. 
 
 ::: callout-warning 
-The following code has to be placed within a code chunk in the .Rmd-file. See here ????? 
+The following code has to be placed within a code chunk in the .Rmd-file. See the first problem in [this section of the FAQ](faq.qmd#common-problems) 
 :::
 
-```{r answers/solutions, echo = FALSE, results = "hide"}
+```{r answers/solutions, results = "hide"}
 library(exams)
 
 # Initialize lists for the questions, answers, solutions, types, explanations (tolerances are not needed if there are no numeric questions)
@@ -72,7 +72,7 @@ In this section, additional information and/or the exact solutions can be given.
 
 # Meta-information Section 
 
-This contains the meta information needed for conversion. See here ????? 
+The next section contains the meta information needed for conversion. See [here](structure-Rmd.qmd#meta-info) for an explanation of the meta-information. 
 
 The "source code" is written in markdown and contains inline R code.
 

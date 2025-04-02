@@ -91,7 +91,7 @@ Proceed with caution when random generating numbers and setting an (absolute) to
 
 ### Creating the lists
 
-They are initialized as empty lists, which are later filled with the desired information via sub-setting. see ?????
+They are initialized as empty lists, which are later filled with the desired information via sub-setting. See [Creation of the .Rmd-file](creation-Rmd.qmd) for more details. 
 
 ``` r
 answers <- list() 
@@ -139,7 +139,7 @@ Multiple choice question with text components as answer options: The number 3 is
 Possible answer options are "greater than", "smaller than", "equal to", which would be displayed instead of the answer field. In moodle all answer options are shown as tickable boxes.
 :::
 
-For more examples, see the section "Basic Examples" [here](example1.qmd).
+For more examples, see the section "Basic Examples" [here](example1.qmd) and the "Advanced Examples [here](advanced1.qmd).
 
 The function `answerlist()` from `R/exams` package converts the answer options, which are stored in the list object `answers` into the necessary format. Additionally, the placeholders needed for numeric/string questions in the `answers` list are automatically added into the list in this code chunk. 
 
@@ -175,8 +175,6 @@ for (x in 1:length(solutions)) {
     explanations[x] <- solutions[x]
   }
 }
-
-answerlist(unlist(explanations), markup = "markdown")
 ```
 
 Then the function `answerlist()` from `R/exams` processes the `explanations` list to adjust it to the format needed for conversion of the .Rmd-file to the desired output.
@@ -216,7 +214,7 @@ See the page about [add-ons](add-ons.qmd) for more information on how to dynamic
 
 ### Some necessary adjustments for conversion 
 
-The following code chunk, which is labelled `meta` in the template, converts the solutions of single/multiple choice questions into the necessary `1|0` format. In addition, the second part changes `NULL` elements in the `tolerances` list to 0, in order to avoid an error during the conversion process. 
+The following code chunk, which is labelled `meta` in the template, converts the solutions of single/multiple choice questions into the necessary `1/0` format. In addition, the second part changes `NULL` elements in the `tolerances` list to 0, in order to avoid an error during the conversion process. 
 
 ```r 
 # Convert the format of single/multiple choice from T/F to 1/0
@@ -236,7 +234,7 @@ for (x in 1:length(solutions)) {
 }
 ```
 
-## Meta-information
+## Meta-information {#meta-info}
 
 This section contains all the information necessary for the conversion from an .Rmd-file to the desired output (HTML, Moodle (xml), pdf, ...). The conversion process is decribed [here](conversion.qmd)
 
@@ -253,7 +251,7 @@ This section contains all the information necessary for the conversion from an .
 
 : Meta-information
 
-Also see vignette `R/exams` for additional tags and more information.
+Also see `vignette("exams2", package = "exams")` for additional tags and more information.
 
 ### Types of Meta-information tags
 
@@ -307,6 +305,14 @@ Can be a logical or an integer and determines if or how the answer options are s
 
 Specifies the version of the exam, useful for distinction when altering the .Rmd-file and creating a new set of exercises.
 
+#### exsection 
+
+Specifies the category, which is chosen for the Moodle import. 
+
+More meta-information parameters can most conveniently seen [on this post by Achim Zeileis on stackoverflow.com](https://stackoverflow.com/questions/73713203/possible-meta-informations-in-r-exams)
+
+### Exemplary structure of the Meta-information
+
 ::: callout-tip
 #### Example
 
@@ -324,10 +330,7 @@ exversion: v1
 ```
 :::
 
-### Exemplary structure of the Meta-information
-
 Below is an example of how the "meta-information" section could look with some of the `R/exams` tags explained above, as well as automatic conversion of the `solutions`, `types` and `tolerances` list to the correct format using `paste()`.
-
 
 ``` markdown
 Meta-information

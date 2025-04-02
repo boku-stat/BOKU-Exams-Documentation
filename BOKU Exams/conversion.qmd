@@ -42,8 +42,6 @@ When creating exercises in the .xml format, they can only be viewed sensibly in 
 There are many ways to optimize the conversion process. 
 
 Options 
-
-
 Parameters 
 Preview
 output 

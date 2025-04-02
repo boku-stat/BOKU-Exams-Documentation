@@ -60,7 +60,6 @@ solutions <- lapply(solutions, mchoice2string)
 answerlist(unlist(explanations), markup = "markdown")
 ```
 
-
 Meta-information
 ================
 exname: example_schoice

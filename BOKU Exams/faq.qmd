@@ -109,7 +109,17 @@ The conversion into the desired format is done by using a `exams2xyz()`function 
 See a step-by-step guide on [this page](moodle.qmd) on the upload to Moodle.
 :::  
 
-# Common Problems 
+# Common Problems {#common-problems}
+
+::: {.callout-note title="My code is not being recognized as code within the .Rmd-file." collapse="true"} 
+It is necessary to mark the beginning and the end of the code chunk using three backticks (\`) and `{r}`. 
+
+````markdown 
+```{{r}}
+# place code here
+```
+````
+:::
 
 ::: {.callout-note title="The conversion to pdf format fails." collapse="true"}
 Make sure to have LaTeX installed, see for example the package [`R/tinytex`](https://cran.r-project.org/package=tinytex)

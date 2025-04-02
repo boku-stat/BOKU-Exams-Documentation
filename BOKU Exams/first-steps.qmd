@@ -26,7 +26,7 @@ Generally, a structure of folders and files are used, which all have a specific 
 
 The .Rmd-file contains the questions, answers and other necessary parameters for creating the exam. These components are created by the person wanting to create an exam, however they need to be written according to a certain structure, see [Structure of an .Rmd-file](structure-Rmd.qmd) and [Creation of the .Rmd-file](creation-Rmd.qmd).
 
-The .R file contains the code, which converts the questions that are written in the .Rmd-file into the actual exam in a certain output format. Several formats are possible, such as .pdf, HTML and .xml for Moodle quizzes. See [here](structure-R.qmd) for more info. This code is based on the functionality of the `R/exams` package.
+The .R file contains the code, which converts the questions that are written in the .Rmd-file into the actual exam in a certain output format. Several formats are possible, such as .pdf, HTML and .xml for Moodle quizzes. See [here](conversion.qmd) for more info. This code is based on the functionality of the `R/exams` package.
 
 An additonal separate .R-file can contain other R objects, which are then (dynamically) used in exam questions, however this is not a necessary component. For more information about add-ons see [this page](add-ons.qmd) and for advanced examples using this, see [here](advanced2.qmd).  
 
