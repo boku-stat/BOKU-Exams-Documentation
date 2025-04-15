@@ -4,7 +4,7 @@ title: "README"
 
 This website aims to give an overview of how to use `R/exams` for the creation of exercises. 
 
-Disclaimer: Internal cross-references, marked by ????, are (for the most part) not implemented yet. 
+Disclaimer: Internal cross-references, marked by ???? are not fully implemented yet. 
 
 ### What is R/exams? 
 
@@ -13,6 +13,8 @@ Disclaimer: Internal cross-references, marked by ????, are (for the most part) n
 ### What is it used for? 
 
 It can be used to automatically create several different types of exercises, with a large number of possibilites for customization to various output types. 
+
+![](images/graph_rexams.png)
 
 ### How does it work? 
 

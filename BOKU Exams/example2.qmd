@@ -11,9 +11,21 @@ The whole example as an .Rmd-file can be downloaded here:
 
 {{< downloadthis examples/example_string.Rmd dname="string_example" >}}
 
+The content of the file can be viewed by expanding the following field. 
+
+::: {.callout-tip title="Example Code" collapse="true"}
+Note that the displayed code below is not highlighted as it would be in the downloaded file, so downloading it is recommended for better readability!
+
+```{.markdown include="examples/example_string.Rmd"}
+```
+::: 
+
 After conversion with `R/exams` the exercise looks like this for different output types. 
 
 ::: {.panel-tabset}
+
+### Moodle
+![](images/string_moodle.png)
 
 ### HTML 
 ![](images/string_html.png)
@@ -21,8 +33,6 @@ After conversion with `R/exams` the exercise looks like this for different outpu
 ### PDF 
 ![](images/string_pdf.png)
 
-### Moodle
-![](images/string_moodle.png)
 
 ::: 
 

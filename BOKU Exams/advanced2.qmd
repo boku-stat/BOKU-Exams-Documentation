@@ -3,13 +3,31 @@ title: "Advanced Example 2"
 filters: 
   - downloadthis
 ---
-TO-DO: create zip file, insert code chunks 
+TO-DO: insert code chunks, insert screen shots of output 
 
 This example includes numeric and single choice questions, a .csv-file with the data is generated and the concept of "stories" (see [here](add-ons.qmd#stories) for more information) is used. 
 
 The whole example as an .Rmd-file and the included story file can be downloaded here as a zip-archive: 
 
-{{< downloadthis examples/advanced2.Rmd dname="advanced_example_2" >}}
+{{< downloadthis examples/advanced2.zip dname="advanced_example_2" >}}
+
+::: {.callout-tip title="Example Code" collapse="true"}
+Note that the displayed code below is not highlighted as it would be in the downloaded file, so downloading it is recommended for better readability!
+
+```{.markdown include="examples/advanced2.Rmd"}
+```
+::: 
+
+After conversion with `R/exams` the exercise looks like this for different output types. 
+
+::: {.panel-tabset}
+### Moodle 
+
+
+### HTML 
+
+### PDF 
+:::
 
 # Data Generation 
 

@@ -11,18 +11,27 @@ The whole example as an .Rmd-file can be downloaded here:
 
 {{< downloadthis examples/example_num.Rmd dname="numeric_example" >}} 
 
+The content of the file can be viewed by expanding the following field. 
+
+::: {.callout-tip title="Example Code" collapse="true"}
+Note that the displayed code below is not highlighted as it would be in the downloaded file, so downloading it is recommended for better readability!
+
+```{.markdown include="examples/example_numeric.Rmd"}
+```
+::: 
+
 After conversion with `R/exams` the exercise looks like this for different output types. 
 
 ::: {.panel-tabset}
+
+### Moodle
+![](images/num_moodle.png)
 
 ### HTML 
 ![](images/num_html.png)
 
 ### PDF 
 ![](images/num_pdf.png)
-
-### Moodle
-![](images/num_moodle.png)
 
 ::: 
 

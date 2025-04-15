@@ -1,0 +1,65 @@
+---
+title: "BOKUExams Workshop"
+format: revealjs
+---
+# Introduction 
+
+## What is `R/exams`? 
+
+- Package for R
+- Designed for dynmaic and customized creation of exams 
+
+## Why do we use `R/exams`? 
+
+- Create 200 slightly different versions of 10 review exercises, 4 homework examples, exams *each year* 
+
+- "Skeleton" stays the same, (con)text and numbers are changed randomly 
+
+- Each student gets a different version 
+
+![](../BOKU Exams/images/graph_rexams.png)
+
+## Simple Example 
+
+code + output 
+
+# General Structure 
+
+## Structure 
+
+script with questions -> conversion -> output format (simple graphical representation ) 
+
+should show where randomization happens, multiples of the output 
+
+## Types of Questions 
+
+- numeric 
+- text-based (string)
+- single choice 
+- multiple choice 
+- ... 
+
+with examples 
+
+## Output Formats 
+
+- Moodle 
+- PDF 
+- HTML (preview) 
+- .... 
+
+
+# Randomization Aspects 
+
+# Add-ons 
+
+## Code 
+
+## Formulas 
+
+## Pictures 
+
+
+
+
+ 

@@ -11,20 +11,30 @@ The whole example as an .Rmd-file can be downloaded here:
 
 {{< downloadthis examples/example_schoice.Rmd dname="single_choice_example" >}}
 
+The content of the file can be viewed by expanding the following field. 
+
+::: {.callout-tip title="Example Code" collapse="true"}
+Note that the displayed code below is not highlighted as it would be in the downloaded file, so downloading it is recommended for better readability!
+
+```{.markdown include="examples/example_schoice.Rmd"}
+```
+::: 
+
 After conversion with `R/exams` the exercise looks like this for different output types.
 
 ::: {.panel-tabset}
+
+#### Moodle 
+![](images/schoice_moodle1.png)
+
+![](images/schoice_moodle2.png)
+
 #### HTML 
 ![](images/schoice_html.png)
 
 #### PDF 
 ![](images/schoice_pdf.png)
 
-#### Moodle 
-![](images/schoice_moodle1.png)
-
-
-![](images/schoice_moodle2.png)
 :::
 
 ## Creating the List Structure  

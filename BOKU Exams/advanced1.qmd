@@ -18,6 +18,40 @@ The whole example as an .Rmd-file and the included image can be downloaded here:
 
 {{< downloadthis examples/advanced1.zip dname="advanced_example_1" >}}
 
+::: {.callout-tip title="Example Code" collapse="true"}
+Note that the displayed code below is not highlighted as it would be in the downloaded file, so downloading it is recommended for better readability!
+
+```{.markdown include="examples/advanced1.Rmd"}
+```
+::: 
+
+After conversion with `R/exams` the exercise looks like this for different output types. 
+
+::: {.panel-tabset}
+
+### Moodle 
+
+![](images/adv1_moodle1.png)
+
+![](images/adv1_moodle2.png)
+
+### HTML 
+
+![](images/adv1_html1.png)
+
+![](images/adv1_html2.png)
+
+### PDF 
+
+::: callout-warning 
+Please note that the embedded .csv-file, which is intended for Moodle/HTML output, cannot be downloaded from the pdf. 
+:::
+
+![](images/adv1_pdf1.png)
+
+![](images/adv1_pdf2.png)
+:::
+
 # Data Generation 
 
 In this first code chunk the data for the example is generated from a normal distribution. Certain parameters are set by the user to create the desired exercise: 

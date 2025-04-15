@@ -4,7 +4,7 @@ title: "Ideas"
 
 This is the page for future ideas and important notes for documentation, for internal use. 
 
-Notes, Stand 2.4 
+Notes, Stand 15.4 
 
 Allgemein: 
 
@@ -99,7 +99,7 @@ Advanced Examples:
 - Examples ausdenken 
 - Einfach nur zur homepage verlinken?? -> nein 
 - Ideen: random sample, stories, csv file, bilder 
-- download: zip file mit bild 
+- ~download: zip file mit bild~ 
 
 FAQ: 
 
