@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -326,18 +360,50 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>TO-DO: create zip file, insert code chunks</p>
+<p>TO-DO: insert code chunks, insert screen shots of output</p>
 <p>This example includes numeric and single choice questions, a .csv-file with the data is generated and the concept of “stories” (see <a href="./add-ons.html#stories">here</a> for more information) is used.</p>
 <p>The whole example as an .Rmd-file and the included story file can be downloaded here as a zip-archive:</p>
-<p><a href="#dnldts25857" onclick="fetch('data:text/plain;base64,YGBge3IgZGF0YSBnZW5lcmF0aW9uLCBlY2hvPUZBTFNFLCByZXN1bHRzID0naGlkZSd9CmxpYnJhcnkoZXhhbXMpCmluY2x1ZGVfc3VwcGxlbWVudCgiYWQyc3Rvcmllcy5SIiwgZGlyICA9ICJkYXRhIikKIyBpbXBvcnQgYWxsIHN0b3J5IGVsZW1lbnRzLCBzYW1wbGluZyBwcm9jZXNzLCBRNiwgb3RoZXIgc2VjdGlvbnMgCgojc2FtcGxlIHBhcmFtZXRlcnMKbiA8LSBzYW1wbGUoMjA6MzAsIHNpemUgPSAxKSAjIG51bWJlciBvZiBkYXRhIHBvaW50cyAKYWxwaGEgPC0gc2FtcGxlKGMoMC4wMDEsIDAuMDEsIDAuMDUsIDAuMSksIHNpemUgPSAxKSAKCiNpbXBvcnQgc3Rvcmllcwpzb3VyY2UoImFkMnN0b3JpZXMuUiIsIGxvY2FsID0gVFJVRSkKCnN0b3J5IDwtIHNhbXBsZShzdG9yaWVzLCBzaXplID0gMSlbWzFdXSAjIHNhbXBsZSBhIHN0b3J5IAoKI3JlbmFtZSBwYXJhbWV0ZXJzIGZvciBiZXR0ZXIgcmVhZGFiaWxpdHkgCm5hbWUgPC0gc3RvcnkkbmFtZQp0ZXh0IDwtIHN0b3J5JHRleHQKdmFyIDwtIHN0b3J5JHZhciAKdW5pdCA8LSBzdG9yeSR1bml0Cm11IDwtIHN0b3J5JG11CnNpZ21hIDwtIHN0b3J5JHNpZ21hCm0gPC0gc3RvcnkkbSAKYyA8LSBzdG9yeSRjCmRpZ2l0IDwtIHN0b3J5JGRpZ2l0CgojZGF0YSBnZW5lcmF0aW9uIChyYW5kb20sIG5vIHJlYWwgZGF0YSkKeCA8LSByb3VuZChybm9ybShuID0gbiwgbWVhbiA9IG11LCBzZCA9IHNpZ21hKSwgZGlnaXRzID0gZGlnaXQpCnkgPC0gcm91bmQoYyArIG0gKiB4ICsgcm5vcm0obiA9IG4sIG1lYW4gPSAwLCBzZCA9IDUpLCBkaWdpdHMgPSBpZmVsc2UobmFtZSA9PSAicnVuX2hlYXJ0IiwgZGlnaXQgLSAxLCBkaWdpdCkpICNiYXNlZCBvbiB4IGJ1dCB3aXRoIHZhcmlhdGlvbiAKZGF0YSA8LSBkYXRhLmZyYW1lKHgsIHkpCm5hbWVzKGRhdGEpIDwtIHZhcgoKI3Bsb3QoeCx5KQptb2RlbCA8LSBsbSh5IH4geCkKcF92YWx1ZSA8LSBjb2VmKHN1bW1hcnkobW9kZWwpKVsyLCA0XQpyMiA8LSBzdW1tYXJ5KG1vZGVsKSRyLnNxdWFyZWQKCgp3cml0ZS5jc3YyKGRhdGEsIGZpbGUgPSAiYWQyX2RhdGEuY3N2IikKYGBgCgpgYGB7ciBxdWVzdGlvbnMvc29sdXRpb25zLCBlY2hvPUZBTFNFLCByZXN1bHRzID0gImhpZGUifQphbnN3ZXJzIDwtIHNvbHV0aW9ucyA8LSBleHBsYW5hdGlvbnMgPC0gdHlwZXMgPC0gbGlzdCgpCiAgCnRvbGVyYW5jZXMgPC0gbGlzdCgpIAoKI2luZC4gdmFyIAphbnN3ZXJzW1sxXV0gPC0gdmFyCnNvbHV0aW9uc1tbMV1dIDwtIGMoVFJVRSwgRkFMU0UpCnR5cGVzW1sxXV0gPC0gInNjaG9pY2UiCgojbWVhbiB2YXIxCmFuc3dlcnNbWzJdXSA8LSAiIgpzb2x1dGlvbnNbWzJdXSA8LSBtZWFuKHgpCnR5cGVzW1syXV0gPC0gIm51bSIKdG9sZXJhbmNlc1tbMl1dIDwtIDAKCiNtZWFuIHZhcjIgCmFuc3dlcnNbWzNdXSA8LSAiIgpzb2x1dGlvbnNbWzNdXSA8LSBtZWFuKHkpCnR5cGVzW1szXV0gPC0gIm51bSIKdG9sZXJhbmNlc1tbM11dIDwtIDAKCiMgc2lnbmlmaWNhbnQgCmFuc3dlcnNbWzRdXSA8LSBjKCJ5ZXMiLCAibm8iKQpzb2x1dGlvbnNbWzRdXSA8LSBpZihwX3ZhbHVlIDwgYWxwaGEpIGMoVFJVRSwgRkFMU0UpIGVsc2UgYyhGQUxTRSwgVFJVRSkKdHlwZXNbWzRdXSA8LSAic2Nob2ljZSIKCiMgUl4yIAphbnN3ZXJzW1s1XV0gPC0gIiIKc29sdXRpb25zW1s1XV0gPC0gcjIKdHlwZXNbWzVdXSA8LSAibnVtIgp0b2xlcmFuY2VzW1s1XV0gPC0gMwoKIyBtb3JlL2xlc3MgdmFyaWF0aW9uIAphbnN3ZXJzW1s2XV0gPC0gYygibW9yZSIsICJsZXNzIikKc29sdXRpb25zW1s2XV0gPC0gYyhUUlVFLCBGQUxTRSkKdHlwZXNbWzZdXSA8LSAic2Nob2ljZSIKCiNwZXJmZWN0IFJeMgphbnN3ZXJzW1s3XV0gPC0gYygiMSIsICIwIikKc29sdXRpb25zW1s3XV0gPC0gYyhUUlVFLCBGQUxTRSkKdHlwZXNbWzddXSA8LSAic2Nob2ljZSIKCgpgYGAKCgpRdWVzdGlvbgo9PT09PT09PT0KCmByIHRleHRgIFRoZSBjb2xsZWN0ZWQgZGF0YSBjYW4gYmUgc2VlbiBpbiB0aGUgdGFibGUgYmVsb3cuIFRoZSBgciB2YXJbMV1gIGlzIGdpdmVuIGluIGByIHVuaXRbMV1gIGFuZCB0aGUgYHIgdmFyWzJdYCBpcyBnaXZlbiBpbiBgciB1bml0WzJdYC4gCgpgYGB7ciB0YWJsZSwgZWNobyA9IEZBTFNFLCByZXN1bHRzPSJhc2lzIn0Ka25pdHI6OmthYmxlKGRhdGEsIGZvcm1hdCA9ICJtYXJrZG93biIpCmBgYAoKCltkYXRhLmNzdl0oYWQyX2RhdGEuY3N2KQoKQW5zd2VyIHRoZSBmb2xsb3dpbmcgcXVlc3Rpb25zLiAKCldoaWNoIHdhcyB0aGUgaW5kZXBlbmRlbnQgdmFyaWFibGUgaW4gdGhlIGV4cGVyaW1lbnQ/ICMjQU5TV0VSMSMjIAoKV2hhdCBpcyB0aGUgbWVhbiBgciB2YXJbMV1gPyAjI0FOU1dFUjIjIyAKCldoYXQgaXMgdGhlIG1lYW4gYHIgdmFyWzJdYD8gIyNBTlNXRVIzIyMgCgpVc2UgdGhlIGZ1bmN0aW9uIGBsbSgpYCB0byBkbyBhIHNpbXBsZSBsaW5lYXIgcmVncmVzc2lvbiBvbiB0aGUgZGF0YS4gCgpJcyB0aGUgY29lZmZpY2llbnQgZm9yIHRoZSBpbmRlcGVuZGVudCB2YXJpYWJsZSBzaWduaWZpY2FudCBhdCB0aGUgc2lnbmlmaWNhbmNlIGxldmVsICRcYWxwaGEgPSBgciBhbHBoYWAkPyAjI0FOU1dFUjQjIyAKCldoYXQgaXMgdGhlICRSXjIkIG9mIHRoZSBtb2RlbD8gIyNBTlNXRVI1IyMgCgpUaGUgaGlnaGVyIHRoZSAkUl4yJCwgdGhlICMjQU5TV0VSNiMjIHZhcmlhdGlvbiBpcyBleHBsYWluZWQgYnkgdGhlIG1vZGVsLgoKVGhlIG1heGltdW0gdmFsdWUgb2YgdGhlICRSXjIkIChtZWFuaW5nIGEgcGVyZmVjdCBjb3JyZWxhdGlvbiBpbiB0aGUgbW9kZWwpIGlzICMjQU5TV0VSNyMjLiAKCgpgYGB7ciBxdWVzdGlvbmxpc3QsIGVjaG8gPSBGQUxTRSwgcmVzdWx0cyA9ICJhc2lzIn0KIyBOdW1lcmljYWwgYW5kIHRleHQgZXhlcmNpc2VzIHJlcXVpcmUgYW4gZW1wdHkgYW5zd2VybGlzdCBlbnRyeQpmb3IgKHggaW4gMTpsZW5ndGgodHlwZXMpKSB7CiAgaWYgKHR5cGVzW3hdICVpbiUgYygibnVtIiwgInN0cmluZyIpKSB7CiAgICBhbnN3ZXJzW3hdIDwtICIiCiAgfQp9CgphbnN3ZXJsaXN0KHVubGlzdChhbnN3ZXJzKSwgbWFya3VwID0gIm1hcmtkb3duIikKYGBgCgpTb2x1dGlvbiAKPT09PT09PT09IAoKYGBge3Igc29sdXRpb25saXN0LCBlY2hvID0gRkFMU0UsIHJlc3VsdHMgPSAiYXNpcyJ9CiMgQ2hhbmdlIHRoZSBmZWVkYmFjayBmb3JtYXQgZnJvbSBhIHZlY3RvciBvZiBUL0YgdG8gc3RyaW5ncwpleHBsYW5hdGlvbnMgPC0gbGlzdCgpCmZvciAoeCBpbiAxOmxlbmd0aChzb2x1dGlvbnMpKSB7CiAgaWYgKHR5cGVzW3hdICVpbiUgYygic2Nob2ljZSIsICJtY2hvaWNlIikpIHsKICAgIGV4cGxhbmF0aW9uc1t4XSA8LSBzb2x1dGlvbnNbeF0gfD4gbGFwcGx5KGZ1bmN0aW9uKHgpIGlmZWxzZSh4LCAiVHJ1ZSIsICJGYWxzZSIpKQogIH0gZWxzZSB7CiAgICBleHBsYW5hdGlvbnNbeF0gPC0gc29sdXRpb25zW3hdCiAgfQp9CgojIFdlIGRvbid0IHdhbnQgdG8gZGlzcGxheSB0aGUgYW5zd2VycyBpbiB0aGUgZmVlZGJhY2sKYW5zd2VybGlzdCh1bmxpc3QoZXhwbGFuYXRpb25zKSwgbWFya3VwID0gIm1hcmtkb3duIikKYGBgCgpgYGB7ciBtZXRhLCBlY2hvID0gRkFMU0UsIHJlc3VsdHMgPSAiaGlkZSJ9CiMgQ29udmVydCB0aGUgZm9ybWF0IG9mIHNpbmdsZS9tdWx0aXBsZSBjaG9pY2UgZnJvbSBUL0YgdG8gMS8wCmZvciAoeCBpbiAxOmxlbmd0aChzb2x1dGlvbnMpKSB7CiAgaWYgKHR5cGVzW3hdICVpbiUgYygic2Nob2ljZSIsICJtY2hvaWNlIikpIHsKICAgIHNvbHV0aW9uc1t4XSA8LSBzb2x1dGlvbnNbeF0gfD4KICAgICAgdW5saXN0KCkgfD4KICAgICAgbWNob2ljZTJzdHJpbmcoKQogIH0KfQoKIyBTZXQgYWxsIHVuZGVmaW5lZCB0b2xlcmFuY2VzIHRvIGEgZGVmYXVsdCB2YWx1ZQpmb3IgKHggaW4gMTpsZW5ndGgoc29sdXRpb25zKSkgewogIGlmICh0b2xlcmFuY2VzW3hdIHw+IHVubGlzdCgpIHw+IGlzLm51bGwoKSkgewogICAgdG9sZXJhbmNlc1t4XSA8LSAwCiAgfQp9CgpgYGAKCgpNZXRhLWluZm9ybWF0aW9uIAo9PT09PT09PT09PT09PT09CmV4bmFtZTogQWR2YW5jZWQgRXhhbXBsZSAyCmV4dGl0bGU6IEFkdmFuY2VkIEV4YW1wbGUgMiBgciBuYW1lYApleHR5cGU6IGNsb3plCmV4c29sdXRpb246IGByIHBhc3RlKHNvbHV0aW9ucywgY29sbGFwc2UgPSAifCIpYApleGNsb3pldHlwZTogYHIgcGFzdGUodHlwZXMsIGNvbGxhcHNlID0gInwiKWAKZXh0b2w6IGByIHBhc3RlKHRvbGVyYW5jZXMsIGNvbGxhcHNlID0gInwiKWAKZXhzaHVmZmxlOiBUUlVFCmV4dmVyc2lvbjogdjEKCgoKCgo=').then(res => res.blob()).then(blob => {
+<p><a href="#dnldts48374" onclick="fetch('data:application/zip;base64,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').then(res => res.blob()).then(blob => {
       const downloadURL = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       document.body.appendChild(a);
       a.href = downloadURL;
-      a.download = 'advanced_example_2.Rmd'; a.click();
+      a.download = 'advanced_example_2.zip'; a.click();
       window.URL.revokeObjectURL(downloadURL);
       document.body.removeChild(a);
-        });"><button class="btn btn-default downloadthis  " id="dnldts25857"><i class="bi bi-download"></i> Download </button></a></p>
+        });"><button class="btn btn-default downloadthis  " id="dnldts48374"><i class="bi bi-download"></i> Download </button></a></p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Example Code">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example Code
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Note that the displayed code below is not highlighted as it would be in the downloaded file, so downloading it is recommended for better readability!</p>
+<div class="sourceCode" id="cb1" data-include="examples/advanced2.Rmd"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>After conversion with <code>R/exams</code> the exercise looks like this for different output types.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Moodle</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">HTML</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">PDF</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+
+</div>
+</div>
+</div>
 <section id="data-generation" class="level1">
 <h1>Data Generation</h1>
 <p>In order to use objects in R, which were created in a different file, in this case these are the stories, the following two functions are used: <code>include_supplement()</code> and <code>source()</code>.</p>
