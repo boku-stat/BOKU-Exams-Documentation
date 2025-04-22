@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -298,9 +332,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#what-is-rexams" id="toc-what-is-rexams" class="nav-link active" data-scroll-target="#what-is-rexams">What is R/exams?</a></li>
   <li><a href="#what-is-it-used-for" id="toc-what-is-it-used-for" class="nav-link" data-scroll-target="#what-is-it-used-for">What is it used for?</a></li>
   <li><a href="#how-does-it-work" id="toc-how-does-it-work" class="nav-link" data-scroll-target="#how-does-it-work">How does it work?</a></li>
+  <li><a href="#short-example" id="toc-short-example" class="nav-link" data-scroll-target="#short-example">Short Example</a></li>
+  <li><a href="#quick-guide-basic-workflow" id="toc-quick-guide-basic-workflow" class="nav-link" data-scroll-target="#quick-guide-basic-workflow">Quick Guide (Basic Workflow)</a></li>
   <li><a href="#table-of-contents" id="toc-table-of-contents" class="nav-link" data-scroll-target="#table-of-contents">Table of contents</a></li>
   <li><a href="#how-to-give-feedback-or-ask-questions" id="toc-how-to-give-feedback-or-ask-questions" class="nav-link" data-scroll-target="#how-to-give-feedback-or-ask-questions">How to give feedback or ask questions?</a></li>
-  <li><a href="#quick-guide" id="toc-quick-guide" class="nav-link" data-scroll-target="#quick-guide">Quick Guide</a></li>
   </ul>
 </nav>
     </div>
@@ -340,6 +375,123 @@ ul.task-list li input[type="checkbox"] {
 <section id="how-does-it-work" class="level3">
 <h3 class="anchored" data-anchor-id="how-does-it-work">How does it work?</h3>
 <p>For each exercise/exam, there is one .Rmd-file which contains all the questions and their solutions. This file is then converted to the desired output type through a script written in an .R-file.</p>
+<p>It is also possible to includes certain elements, which are sampled randomly for each copy of the exercise so they all slightly differ (in order to prevent cheating for example).</p>
+<p><img src="images/graph_random.png" class="img-fluid"></p>
+</section>
+<section id="short-example" class="level3">
+<h3 class="anchored" data-anchor-id="short-example">Short Example</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Code (.Rmd-file)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Output (Moodle)</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>Complete code of a basic numeric example, see <a href="./example1.html">here</a> for the downloadable file and a detailed explanation of the code.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Numeric Example Code">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Numeric Example Code
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r data generation, echo = FALSE, results = "hide"}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="in">library(exams)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="in">#atomic number of H</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="in">n_H &lt;- 1</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="in"># Define the molar masses of hydrogen (H) and oxygen (O)</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="in">m_h &lt;- 1.008 # molar mass of hydrogen in g/mol</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="in">m_o &lt;- 16.00 # molar mass of oxygen in g/mol</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="in"># Calculate the molar mass of the water molecule (H2O)</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="in">m_h2o &lt;- 2 * m_h + m_o</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="in">```{r answers/solutions, echo = FALSE, results = "hide"}</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="in"># Create lists for necessary information</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="in">answers &lt;- list()</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="in">solutions &lt;- list()</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="in">types &lt;- list()</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="in">explanations &lt;- list()</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="in">tolerances &lt;- list()</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="in"># Define Question 1: atomic number of hydrogen</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="in">answers[[1]] &lt;- ""  # No predefined answer for numeric</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="in">solutions[[1]] &lt;- n_H</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="in">types[[1]] &lt;- "num" #numeric</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="in">explanations[[1]] &lt;- "The atomic number of hydrogen is $1$ because it has one proton in its nucleus."</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="in">tolerances[[1]] &lt;- 0  # No tolerance</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="in"># Define Question 2: molar mass of water</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="in">answers[[2]] &lt;- "" # no predefined answer for numeric</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="in">solutions[[2]] &lt;- m_h2o</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="in">types[[2]] &lt;- "num" </span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="in">explanations[[2]] &lt;- "The molar mass of H2O is calculated by adding the molar masses of two hydrogen atoms and one oxygen atom."</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="in">tolerances[[2]] &lt;- 0.5 # Allow for small rounding errors</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>Question</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="fu">========</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>*Question 1*</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>What is the atomic number of hydrogen in the periodic table? ##ANSWER1##</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>*Question 2*</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>Calculate the molar mass of water ($H_2O$). Use the following molar masses:</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Hydrogen ($H$): <span class="in">`r m_h`</span> $g/mol$</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Oxygen ($O$): <span class="in">`r m_o`</span> $g/mol$</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>Provide your answer in grams per mole ($g/mol$). ##ANSWER2##</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="in">```{r questionlist, echo = FALSE, results = "asis"}</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="in">answerlist(unlist(answers), markup = "markdown")</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>Solution</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="fu">========</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="in">```{r solutionlist, echo = FALSE, results = "asis"}</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="in">answerlist(unlist(explanations), markup = "markdown")</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>$M_{H_{2}O} = 2 \cdot M_H + M_O = 2 \cdot <span class="in">`r m_h`</span> + <span class="in">`r m_o`</span> = <span class="in">`r m_h2o`</span>$ (g/mol)</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>Meta-information</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="fu">================</span></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>exname: example_num </span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>extitle: molmass of water </span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>extype: cloze </span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>exsolution: <span class="in">`r paste(solutions, collapse = "|")`</span> </span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>exclozetype: <span class="in">`r paste(types, collapse = "|")`</span> </span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>extol: <span class="in">`r paste(tolerances, collapse = "|")`</span> </span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>exshuffle: TRUE </span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>exversion: v1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p><img src="images/num_moodle.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="quick-guide-basic-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="quick-guide-basic-workflow">Quick Guide (Basic Workflow)</h3>
+<ul>
+<li><p>Create a new R project (optional but advisable)</p></li>
+<li><p>Create an .Rmd file or download a (custom) template <a href="./templates.html">here</a>.</p></li>
+<li><p>Write the questions/solutions into the .Rmd-file in the necessary format (see more on the <a href="./structure-Rmd.html">structure</a> and <a href="./creation-Rmd.html">format</a>).</p></li>
+<li><p>Create an .R file and write the script for conversion or download the template <a href="./templates.html">here</a>.</p></li>
+<li><p>Convert the .Rmd to the desired output.</p></li>
+<li><p>For Moodle: upload the output file and import the questions into Moodle.</p></li>
+</ul>
 </section>
 <section id="table-of-contents" class="level3">
 <h3 class="anchored" data-anchor-id="table-of-contents">Table of contents</h3>
@@ -410,16 +562,6 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="how-to-give-feedback-or-ask-questions">How to give feedback or ask questions?</h3>
 <p>This project is ongoing and we would be happy to receive feedback. Click <a href="https://github.com/boku-stat/BOKU-Exams-Documentation/discussions">here</a> and simply write a post to our discussion forum on github.</p>
 <p>If you have questions, do not hesitate to ask, simply leave a comment on the Github discussion forum.</p>
-</section>
-<section id="quick-guide" class="level3">
-<h3 class="anchored" data-anchor-id="quick-guide">Quick Guide</h3>
-<ul>
-<li><p>Create a new R project (optional but advisable)</p></li>
-<li><p>Create an .Rmd file or download a (custom) template <a href="./templates.html">here</a>.</p></li>
-<li><p>Write the questions/solutions into the .Rmd-file in the necessary format (see more on the <a href="./structure-Rmd.html">structure</a> and <a href="./creation-Rmd.html">format</a>).</p></li>
-<li><p>Create an .R file and write the script for conversion or download the template <a href="./templates.html">here</a>.</p></li>
-<li><p>Convert the .Rmd to the desired output.</p></li>
-</ul>
 
 
 </section>
