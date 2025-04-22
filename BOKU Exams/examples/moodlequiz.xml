@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+
+<question type="category">
+<category>
+<text>$course$/moodlequiz/Exercise 1</text>
+</category>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> Q1 : Advanced Example 2 run_heart </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>An experiment was conducted to study the relationship between a person’s running speed and their heartrate.
+21 participants were asked to run 100m and their maximum speed and their maximum heart rate were recorded. The collected data can be seen in the table below.</p>
+<p>The running speed is given in km/h and the heart rate is given in bpm.</p>
+<table class="table_shade">
+<thead>
+<tr class="header">
+<th style="text-align: right;">running speed</th>
+<th style="text-align: right;">heart rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">23.7</td>
+<td style="text-align: right;">150</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">21.3</td>
+<td style="text-align: right;">154</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">21.2</td>
+<td style="text-align: right;">144</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">23.4</td>
+<td style="text-align: right;">147</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">23.3</td>
+<td style="text-align: right;">155</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">26.0</td>
+<td style="text-align: right;">170</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">22.7</td>
+<td style="text-align: right;">152</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">23.5</td>
+<td style="text-align: right;">160</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">22.9</td>
+<td style="text-align: right;">151</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">22.7</td>
+<td style="text-align: right;">151</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">26.9</td>
+<td style="text-align: right;">166</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">22.6</td>
+<td style="text-align: right;">136</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">21.5</td>
+<td style="text-align: right;">145</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">21.6</td>
+<td style="text-align: right;">152</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">22.6</td>
+<td style="text-align: right;">142</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">22.5</td>
+<td style="text-align: right;">154</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">23.5</td>
+<td style="text-align: right;">151</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">24.1</td>
+<td style="text-align: right;">162</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">24.5</td>
+<td style="text-align: right;">152</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">22.1</td>
+<td style="text-align: right;">146</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">24.9</td>
+<td style="text-align: right;">159</td>
+</tr>
+</tbody>
+</table>
+<p>The data can be downloaded as a .csv-file here:</p>
+<p><a href="@@PLUGINFILE@@/ad2_data.csv">data.csv</a></p>
+<p>Answer the following questions.</p>
+<p>Which was the independent variable in the experiment? {1:MULTICHOICE:%-50%heart rate~=running speed}</p>
+<p>What is the mean running speed?  {1:NUMERICAL:=23.2142857142857:0}</p>
+<p>What is the mean heart rate?  {1:NUMERICAL:=152.333333333333:0}</p>
+<p>Use the function <code>lm()</code> to do a simple linear regression on the data.</p>
+<p>Is the coefficient for the independent variable significant at the significance level <span class="math inline">\(\alpha = 0.001\)</span>? {1:MULTICHOICE:=yes~%-50%no}</p>
+<p>What is the <span class="math inline">\(R^2\)</span> of the model?  {1:NUMERICAL:=0.512094296280825:3}</p>
+<p>The higher the <span class="math inline">\(R^2\)</span>, the {1:MULTICHOICE:%-50%less~=more} variation is explained by the model.</p>
+<p>The maximum value of the <span class="math inline">\(R^2\)</span> (meaning a perfect correlation in the model) is {1:MULTICHOICE:%-50%0~=1}.</p>
+</p>]]></text>
+<file name="ad2_data.csv" encoding="base64">IiI7InJ1bm5pbmcgc3BlZWQiOyJoZWFydCByYXRlIgoiMSI7MjMsNzsxNTAKIjIiOzIxLDM7MTU0CiIzIjsyMSwyOzE0NAoiNCI7MjMsNDsxNDcKIjUiOzIzLDM7MTU1CiI2IjsyNjsxNzAKIjciOzIyLDc7MTUyCiI4IjsyMyw1OzE2MAoiOSI7MjIsOTsxNTEKIjEwIjsyMiw3OzE1MQoiMTEiOzI2LDk7MTY2CiIxMiI7MjIsNjsxMzYKIjEzIjsyMSw1OzE0NQoiMTQiOzIxLDY7MTUyCiIxNSI7MjIsNjsxNDIKIjE2IjsyMiw1OzE1NAoiMTciOzIzLDU7MTUxCiIxOCI7MjQsMTsxNjIKIjE5IjsyNCw1OzE1MgoiMjAiOzIyLDE7MTQ2CiIyMSI7MjQsOTsxNTkK</file>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<ul>
+<li> False / True </li>
+<li> 23.2142857142857 </li>
+<li> 152.333333333333 </li>
+<li> True / False </li>
+<li> 0.512094296280825 </li>
+<li> False / True </li>
+<li> False / True </li>
+</ul>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>7</defaultgrade>
+</question>
+
+</quiz>

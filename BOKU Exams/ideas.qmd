@@ -4,7 +4,7 @@ title: "Ideas"
 
 This is the page for future ideas and important notes for documentation, for internal use. 
 
-Notes, Stand 15.4 
+Notes, Stand 22.4 
 
 Allgemein: 
 
@@ -31,7 +31,7 @@ Shiny App:
 Upload Moodle 
 
 - ~~seite erstellen~~ 
-- anleitung schreiben 
+- ~~anleitung schreiben~~ 
 
 Home: 
 

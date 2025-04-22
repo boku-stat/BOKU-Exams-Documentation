@@ -16,7 +16,7 @@ The content of the file can be viewed by expanding the following field.
 ::: {.callout-tip title="Example Code" collapse="true"}
 Note that the displayed code below is not highlighted as it would be in the downloaded file, so downloading it is recommended for better readability!
 
-```{.markdown include="examples/example_numeric.Rmd"}
+```{.markdown include="examples/example_num.Rmd"}
 ```
 ::: 
 

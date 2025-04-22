@@ -1,5 +1,7 @@
 ---
 title: "README"
+filters:
+   - include-code-files
 ---
 
 This website aims to give an overview of how to use `R/exams` for the creation of exercises. 
@@ -19,6 +21,44 @@ It can be used to automatically create several different types of exercises, wit
 ### How does it work? 
 
 For each exercise/exam, there is one .Rmd-file which contains all the questions and their solutions. This file is then converted to the desired output type through a script written in an .R-file. 
+
+It is also possible to includes certain elements, which are sampled randomly for each copy of the exercise so they all slightly differ (in order to prevent cheating for example). 
+
+![](images/graph_random.png)
+
+### Short Example 
+
+::: {.panel-tabset}
+
+### Code (.Rmd-file)
+
+Complete code of a basic numeric example, see [here](example1.qmd) for the downloadable file and a detailed explanation of the code. 
+
+::: {.callout-tip title="Numeric Example Code" collapse="true"}
+```{.markdown include="examples/example_num.Rmd"}
+```
+:::
+
+### Output (Moodle)
+
+![](images/num_moodle.png)
+:::
+
+
+### Quick Guide (Basic Workflow)
+
+- Create a new R project (optional but advisable)
+
+- Create an .Rmd file or download a (custom) template [here](templates.qmd). 
+
+- Write the questions/solutions into the .Rmd-file in the necessary format (see more on the [structure](structure-Rmd.qmd) and [format](creation-Rmd.qmd)). 
+
+- Create an .R file and write the script for conversion or download the template [here](templates.qmd). 
+
+- Convert the .Rmd to the desired output. 
+
+- For Moodle: upload the output file and import the questions into Moodle. 
+
 
 ### Table of contents 
 
@@ -44,19 +84,3 @@ This project is ongoing and we would be happy to receive feedback.
 Click [here](https://github.com/boku-stat/BOKU-Exams-Documentation/discussions) and simply write a post to our discussion forum on github. 
 
 If you have questions, do not hesitate to ask, simply leave a comment on the Github discussion forum. 
-
-### Quick Guide 
-
-- Create a new R project (optional but advisable)
-
-- Create an .Rmd file or download a (custom) template [here](templates.qmd). 
-
-- Write the questions/solutions into the .Rmd-file in the necessary format (see more on the [structure](structure-Rmd.qmd) and [format](creation-Rmd.qmd)). 
-
-- Create an .R file and write the script for conversion or download the template [here](templates.qmd). 
-
-- Convert the .Rmd to the desired output. 
-
-
-
-

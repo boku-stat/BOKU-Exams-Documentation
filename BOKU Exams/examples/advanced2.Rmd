@@ -1,7 +1,6 @@
 ```{r data generation, echo=FALSE, results ='hide'}
 library(exams)
-include_supplement("ad2stories.R", dir  = "data")
-# import all story elements, sampling process, Q6, other sections 
+include_supplement("ad2stories.R", dir  = "data") # necessary for includong object from other file 
 
 #sample parameters
 n <- sample(20:30, size = 1) # number of data points 
@@ -29,22 +28,20 @@ y <- round(c + m * x + rnorm(n = n, mean = 0, sd = 5), digits = ifelse(name == "
 data <- data.frame(x, y)
 names(data) <- var
 
-#plot(x,y)
+#create necessary objects 
 model <- lm(y ~ x)
 p_value <- coef(summary(model))[2, 4]
 r2 <- summary(model)$r.squared
-
 
 write.csv2(data, file = "ad2_data.csv")
 ```
 
 ```{r questions/solutions, echo=FALSE, results = "hide"}
 answers <- solutions <- explanations <- types <- list()
-  
 tolerances <- list() 
 
 #ind. var 
-answers[[1]] <- var
+answers[[1]] <- var # answer options stored in var 
 solutions[[1]] <- c(TRUE, FALSE)
 types[[1]] <- "schoice"
 
@@ -81,19 +78,20 @@ answers[[7]] <- c("1", "0")
 solutions[[7]] <- c(TRUE, FALSE)
 types[[7]] <- "schoice"
 
-
 ```
-
 
 Question
 =========
 
-`r text` The collected data can be seen in the table below. The `r var[1]` is given in `r unit[1]` and the `r var[2]` is given in `r unit[2]`. 
+`r text` The collected data can be seen in the table below. 
+
+The `r var[1]` is given in `r unit[1]` and the `r var[2]` is given in `r unit[2]`. 
 
 ```{r table, echo = FALSE, results="asis"}
 knitr::kable(data, format = "markdown")
 ```
 
+The data can be downloaded as a .csv-file here: 
 
 [data.csv](ad2_data.csv)
 
@@ -141,7 +139,6 @@ for (x in 1:length(solutions)) {
   }
 }
 
-# We don't want to display the answers in the feedback
 answerlist(unlist(explanations), markup = "markdown")
 ```
 
@@ -164,17 +161,19 @@ for (x in 1:length(solutions)) {
 
 ```
 
-
 Meta-information 
 ================
 exname: Advanced Example 2
 extitle: Advanced Example 2 `r name`
+exsection: section_1/regression_exam
 extype: cloze
 exsolution: `r paste(solutions, collapse = "|")`
 exclozetype: `r paste(types, collapse = "|")`
 extol: `r paste(tolerances, collapse = "|")`
 exshuffle: TRUE
 exversion: v1
+exextra[numwidth,numeric]: 16
+exextra[stringwidth,numeric]: 16
 
 
 

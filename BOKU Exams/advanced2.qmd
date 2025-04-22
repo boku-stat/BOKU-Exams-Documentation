@@ -2,8 +2,8 @@
 title: "Advanced Example 2"
 filters: 
   - downloadthis
+  - include-code-files
 ---
-TO-DO: insert code chunks, insert screen shots of output 
 
 This example includes numeric and single choice questions, a .csv-file with the data is generated and the concept of "stories" (see [here](add-ons.qmd#stories) for more information) is used. 
 
@@ -16,6 +16,7 @@ Note that the displayed code below is not highlighted as it would be in the down
 
 ```{.markdown include="examples/advanced2.Rmd"}
 ```
+
 ::: 
 
 After conversion with `R/exams` the exercise looks like this for different output types. 
@@ -23,23 +24,124 @@ After conversion with `R/exams` the exercise looks like this for different outpu
 ::: {.panel-tabset}
 ### Moodle 
 
+![](images/adv2_moodle1.png)
+
+![](images/adv2_moodle2.png)
 
 ### HTML 
 
+![](images/adv2_html1.png)
+
+![](images/adv2_html2.png)
+
 ### PDF 
+
+![](images/adv2_pdf1.png)
+
+![](images/adv2_pdf2.png)
+
+![](images/adv2_pdf3.png)
 :::
 
 # Data Generation 
 
 In order to use objects in R, which were created in a different file, in this case these are the stories, the following two functions are used: `include_supplement()` and `source()`. 
 
-In the other file "adstories.R" the object "stories" is created, which contains several different contexts for the same exercise. So one of these stories is sampled randomly and then its parameters are used for creating the exercise. These parameters, such as "name", "text", "mu", "sigma" etc. are stored in objects outside the story for convenience. Then data is generated according to this stories particular parameters. (Note, this process is completely arbitrary amd not based on real data). The data is stored in a data frame (later on a csv file is created). In this code chunk some necessary objects are also created from the regression output, which are part of the solutions later on. 
+In the other file `adstories.R` the object `stories` is created, which contains several different contexts for the same exercise. So one of these stories is sampled randomly and then its parameters are used for creating the exercise. These parameters, such as "name", "text", "mu", "sigma" etc. are stored in objects outside the story for convenience. Then data is generated according to this stories particular parameters. (Note, this process is completely arbitrary amd not based on real data). The data is stored in a data frame (later on a csv file is created). In this code chunk some necessary objects are also created from the regression output, which are part of the solutions later on. 
 
+::: callout-important
+Code needs to be placed within a code chunk within in an .Rmd-file to work correctly and the "eval = FALSE"-tag needs to be removed.
+:::
+
+```{r data generation, eval = FALSE}
+library(exams)
+include_supplement("ad2stories.R", dir  = "data") # necessary for includong object from other file 
+
+#sample parameters
+n <- sample(20:30, size = 1) # number of data points 
+alpha <- sample(c(0.001, 0.01, 0.05, 0.1), size = 1) # significance level
+
+#import stories
+source("ad2stories.R", local = TRUE)
+
+story <- sample(stories, size = 1)[[1]] # sample a story 
+
+#rename parameters for better readability 
+name <- story$name
+text <- story$text
+var <- story$var 
+unit <- story$unit
+mu <- story$mu
+sigma <- story$sigma
+m <- story$m 
+c <- story$c
+digit <- story$digit
+
+#data generation (random, no real data)
+x <- round(rnorm(n = n, mean = mu, sd = sigma), digits = digit)
+y <- round(c + m * x + rnorm(n = n, mean = 0, sd = 5), digits = ifelse(name == "run_heart", digit - 1, digit)) #based on x but with variation 
+data <- data.frame(x, y)
+names(data) <- var
+
+#create necessary objects 
+model <- lm(y ~ x)
+p_value <- coef(summary(model))[2, 4]
+r2 <- summary(model)$r.squared
+
+write.csv2(data, file = "ad2_data.csv")
+```
 
 # Questions/ Solutions 
 
 This part defines the 5 lists, for `answers`, `solutions` and `types`, these are created individually in this section. Some of the tolerances and the explanations are created automatically later on. 
 
+::: callout-important
+Code needs to be placed within a code chunk within in an .Rmd-file to work correctly and the "eval = FALSE"-tag needs to be removed. 
+:::
+
+```{r questions/solutions, eval = FALSE}
+answers <- solutions <- explanations <- types <- list()
+tolerances <- list() 
+
+#ind. var 
+answers[[1]] <- var # answer options stored in var 
+solutions[[1]] <- c(TRUE, FALSE)
+types[[1]] <- "schoice"
+
+#mean var1
+answers[[2]] <- ""
+solutions[[2]] <- mean(x)
+types[[2]] <- "num"
+tolerances[[2]] <- 0
+
+#mean var2 
+answers[[3]] <- ""
+solutions[[3]] <- mean(y)
+types[[3]] <- "num"
+tolerances[[3]] <- 0
+
+# significant 
+answers[[4]] <- c("yes", "no")
+solutions[[4]] <- if(p_value < alpha) c(TRUE, FALSE) else c(FALSE, TRUE)
+types[[4]] <- "schoice"
+
+# R^2 
+answers[[5]] <- ""
+solutions[[5]] <- r2
+types[[5]] <- "num"
+tolerances[[5]] <- 3
+
+# more/less variation 
+answers[[6]] <- c("more", "less")
+solutions[[6]] <- c(TRUE, FALSE)
+types[[6]] <- "schoice"
+
+#perfect R^2
+answers[[7]] <- c("1", "0")
+solutions[[7]] <- c(TRUE, FALSE)
+types[[7]] <- "schoice"
+
+```
 
 # Question
 
@@ -47,15 +149,20 @@ This section contains the main question text, which is dymamically adjusted base
 
 The last code chunk fills in (possibly missing) placeholders for the `answers` list for numeric and string questions and formats the answer options correctly. 
 
+```{.markdown include="examples/advanced2.Rmd" start-line=83 end-line=127}
+``` 
+
 # Solution 
 
-explanations created, solutions listed 
+The explanations are simply created from the solutions and displayed in this section. Additionally the format for choice questions is altered for the conversion and missing tolerances are set to 0. 
 
-T/F coonverted 
-missing tolerances set 
+```{.markdown include="examples/advanced2.Rmd" start-line=128 end-line=163}
+```
 
 # Meta Information 
 
-Meta information 
-TODO: add missing tags 
+The meta-information contains all the necessary information for conversion. exsection is used for the import in Moodle and allows the exercises to be imported automatically in the specified category. The extra arguments regarding numwidth and stringwidth specify the length of the answer boxes that are shown in Moodle.
+
+```{.markdown include="examples/advanced2.Rmd" start-line=164 end-line=174}
+```
 

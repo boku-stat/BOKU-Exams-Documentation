@@ -120,6 +120,31 @@ knitr::kable(data)
 
 There are many more (styling) options for markdown tables, such as adding captions and labels. See for example the help page for kable, `?kable`, for more information.   
 
+
+## Math Formulas 
+
+Formulas and mathematical expressions can easily be included in the exam by using LaTeX syntax within math mode, which is marked by `$`. 
+
+When wrapping it in `$$`, the math experession are centered, using only one `$` creates inline math expresssions. 
+
+The following text looks like this when rendered: 
+````markdown
+$$ 
+c^2 = a^2 + b^2
+$$
+````
+$$ 
+c^2 = a^2 + b^2
+$$
+Another example: 
+
+```markdown
+The circumference of a circle can be calculated using the following formula: $C = 2 \pi r$
+```
+The circumference of a circle can be calculated using the following formula: $C = 2 \pi r$
+
+A short introduction to math mode expressions can be found [here](https://www.rpubs.com/aaaaaa1234sta/1197405). 
+
 ## Pictures {#add-pictures}
 
 Pictures can be included as well, by using the following syntax: 
