@@ -7,31 +7,37 @@ format: revealjs
 ## What is `R/exams`? 
 
 - Package for R
+- Created by Achim Zeileis, Bettina Grün, Friedrich Leisch and others 
 - Designed for dynmaic and customized creation of exams 
 
 ## Why do we use `R/exams`? 
 
-- Create 200 slightly different versions of 10 review exercises, 4 homework examples, exams *each year* 
+- Goal: Create 200 slightly different versions of 10 review exercises, 4 homework examples and 1 exam **each year** 
 
 - "Skeleton" stays the same, (con)text and numbers are changed randomly 
 
-- Each student gets a different version 
+- Each student gets a different version -> prevents cheating within and between cohorts 
 
-![](../BOKU Exams/images/graph_rexams.png)
+## Basic Concept
 
-## Simple Example 
+![](images/graph_rexams.png)
 
-code + output 
 
-# General Structure 
+# Basic Workflow 
 
-## Structure 
+## What is an .Rmd-file? 
 
-script with questions -> conversion -> output format (simple graphical representation ) 
+- Markdown file, where text, code and other things are combined 
 
-should show where randomization happens, multiples of the output 
+- Contains the "skeleton" which the different versions of the exam are based on 
 
-## Types of Questions 
+- Certain aspects are randomized using R code 
+
+## Randomization Process 
+
+![](images/graph_random.png)
+
+## What types of questions can be used? 
 
 - numeric 
 - text-based (string)
@@ -39,25 +45,64 @@ should show where randomization happens, multiples of the output
 - multiple choice 
 - ... 
 
-with examples 
+## Numeric Example
 
-## Output Formats 
+![](images/num_moodle.png)
+
+## String Example
+
+![](images/string_moodle.png)
+
+## Single Choice Example
+
+![](images/schoice_moodle1.png)
+
+## Multiple Choice Example
+
+![](images/mchoice_moodle.png){height=600}
+
+## What output formats are available? 
 
 - Moodle 
 - PDF 
 - HTML (preview) 
 - .... 
 
+# Creating the Questions 
 
-# Randomization Aspects 
+## .Rmd file 
 
-# Add-ons 
+- fixed structure 
+
+  - Data Generation (within code chunks)
+  - Question Text 
+  - Solution Text 
+  - Meta Information 
+  
+
+  
+## "Skeleton"
+
+
+
+
+## Randomization Aspects 
+
+
+# Advanced Features 
 
 ## Code 
 
 ## Formulas 
 
 ## Pictures 
+
+## Examples 
+
+code + output 
+
+# Questions and Walkthrough 
+
 
 
 
