@@ -8,7 +8,7 @@ format: revealjs
 
 - Package for R
 - Created by Achim Zeileis, Bettina Grün, Friedrich Leisch and others 
-- Designed for dynmaic and customized creation of exams 
+- Designed for dynamic and customized creation of exams 
 
 ## Why do we use `R/exams`? 
 
@@ -72,34 +72,120 @@ format: revealjs
 
 ## .Rmd file 
 
-- fixed structure 
+Fixed structure 
 
-  - Data Generation (within code chunks)
-  - Question Text 
-  - Solution Text 
-  - Meta Information 
+- Data Generation (within code chunks)
+- Question Text 
+- Solution Text 
+- Meta Information 
   
 
-  
 ## "Skeleton"
 
 
-
-
 ## Randomization Aspects 
+
+- Generated data/sampled subsets 
+- Text ("stories")
+- Answer options 
+- ...
 
 
 # Advanced Features 
 
 ## Code 
 
+Code chunks: 
+
+````markdown 
+```{{r example chunk, eval = TRUE, echo = FALSE}}
+#place code here 
+```
+````
+
+Inline Code: 
+
+````markdown 
+`r object_x`
+````
+
 ## Formulas 
+
+This is an inline formula: $C = 2\pi r$
+
+This is a centered formula: $$c^2 = a^2 + b^2$$
+
+::: {.callout-note}
+
+### Markdown Syntax
+
+```markdown 
+This is an inline formula: $C = 2\pi r$
+This is a centered formula: $$c^2 = a^2 + b^2$$
+```
+:::
 
 ## Pictures 
 
-## Examples 
+```markdown
+![](images/BOKU_Hauptlogo_RGB.png)
+```
+![](images/BOKU_Hauptlogo_RGB.png)
 
-code + output 
+# Examples
+
+## Example 1 
+![](images/adv1_moodle1.png){height=600}
+
+## Example 1 
+![](images/adv1_moodle2.png)
+
+
+## Example 2: Different Versions 
+
+![](images/coach4_story1.png)
+
+![](images/coach4_story2.png)
+
+![](images/coach4_story3.png) 
+
+## Example 2: Markdown Text 
+
+```markdown
+`r text`
+
+`r data`
+
+[ttest_onesample.csv](ttest_onesample.csv)
+
+Prüfen Sie zum Niveau $\alpha = `r 1 - alpha[1]`$, ob `r sta` `r temp_text[1]`. 
+
+Prüfen Sie zum Niveau $\alpha = `r 1 - alpha[2]`$, ob die Standardabweichung `r stg` `r temp_text[2]`. 
+```
+
+- `text` stores introductory sentence
+- `data` has the generated data 
+- `alpha` is sampled 
+- Other text blocks based on sampled options (Null-/Alternativhypothese, ...)
+
+## Example 2: "Data" Generation
+
+```r
+n <- sample(16:20, 1)
+alpha <- sample(c(0.9, 0.95, 0.99), size = 2, replace = TRUE) # significance level
+side <- sample(c("two.sided", "less", "greater"), 2, replace = TRUE) 
+
+hypothese_text[1] <- if (side[1] == "two.sided") "ist (Nullhypothese)" else "ist (Alternativhypothese)"
+
+hypothese[1] <- switch(side[1],
+  less = "kleiner",
+  greater = "größer",
+  two.sided = "gleich"
+)
+
+temp_text[1] <- paste(hypothese[1], mu, unit, hypothese_text[1], sep = " ")
+
+```
 
 # Questions and Walkthrough 
 
