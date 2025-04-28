@@ -70,9 +70,7 @@ format: revealjs
 
 # Creating the Questions 
 
-## .Rmd file 
-
-Fixed structure 
+## Structure of the .Rmd file 
 
 - Data Generation (within code chunks)
 - Question Text 
@@ -82,6 +80,31 @@ Fixed structure
 
 ## "Skeleton"
 
+````markdown 
+```{{r, data generation, echo = FALSE, results = "hide"}}
+library(exams)
+answers <- list() 
+solutions <- list() 
+types <- list()
+explanations <- list() 
+tolerances <- list()
+```
+
+Question
+========
+....
+
+Solution
+========
+.... 
+
+Meta-information 
+================
+exname: example1
+extitle: Example Title
+extype: cloze
+....
+````
 
 ## Randomization Aspects 
 
@@ -92,22 +115,6 @@ Fixed structure
 
 
 # Advanced Features 
-
-## Code 
-
-Code chunks: 
-
-````markdown 
-```{{r example chunk, eval = TRUE, echo = FALSE}}
-#place code here 
-```
-````
-
-Inline Code: 
-
-````markdown 
-`r object_x`
-````
 
 ## Formulas 
 
@@ -131,6 +138,22 @@ This is a centered formula: $$c^2 = a^2 + b^2$$
 ![](images/BOKU_Hauptlogo_RGB.png)
 ```
 ![](images/BOKU_Hauptlogo_RGB.png)
+
+## Code 
+
+Code chunks: 
+
+````markdown 
+```{{r example chunk, eval = TRUE, echo = FALSE}}
+#place code here 
+```
+````
+
+Inline Code: 
+
+````markdown 
+`r object_x`
+````
 
 # Examples
 
