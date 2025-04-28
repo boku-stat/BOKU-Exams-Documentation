@@ -1,6 +1,8 @@
 
 #### UPDATED VERSION OF THIS FUNCTION IN app.R 
 
+#####!!!!!!!!!!!!!!!!!!!!!!!!!
+
 # create an automatic .Rmd template for R/exams -> later integration into website with adjustable parameters?
 
 # basic template  generation
@@ -26,8 +28,8 @@ basic_template <- function(n, meta_name, meta_title, meta_version, types = NULL,
   content <- paste0(content, question, questionlist_code_1, questionlist_code_2)
   
   solution <- "Solution\n========\n\n*Write the feedback here*\n\n"
-  solution_list <- "\`\`\`{r solutionlist, echo = FALSE, results = \"asis\"}  \nfor (x in 1:length(solutions)) {  \n  if (types[x] == \"schoice\") {\n    explanations[x] <- solutions[x] |> lapply(function(x) ifelse(x, \"True\", \"False\"))  \n  } else {  \n    explanations[x] <- solutions[x]  \n  }  \n}  \nanswerlist(unlist(explanations), markup = \"markdown\")  \n\`\`\`\n\n"
-  meta_list <- "\`\`\`{r meta, echo = FALSE, results = 'hide'}\nfor (x in 1:length(solutions)) {\n  if (types[x] == \"schoice\") {\n    solutions[x] <- solutions[x] |>\n      unlist() |>\n      mchoice2string()\n  }\n}\n\`\`\`\n\n"
+  solution_list <- "\`\`\`{r solutionlist, echo = FALSE, results = \"asis\"}  \nfor (x in 1:length(solutions)) {  \n  if (types[x] %in% c(\"schoice\", \"mchoice\")) {\n    explanations[x] <- solutions[x] |> lapply(function(x) ifelse(x, \"True\", \"False\"))  \n  } else {  \n    explanations[x] <- solutions[x]  \n  }  \n}  \nanswerlist(unlist(explanations), markup = \"markdown\")  \n\`\`\`\n\n"
+  meta_list <- "\`\`\`{r meta, echo = FALSE, results = 'hide'}\nfor (x in 1:length(solutions)) {\n  if (types[x] %in% c(\"schoice\", \"mchoice\")) {\n    solutions[x] <- solutions[x] |>\n      unlist() |>\n      mchoice2string()\n  }\n}\n\nfor (x in 1:length(solutions)) {\n    if (tolerances[x] |> unlist() |> is.null()) {\n    tolerances[x] <- 0\n  }\n}\`\`\`\n\n"
   
   content <- paste0(content, solution, solution_list, meta_list)
   

@@ -143,7 +143,9 @@ Make sure to have LaTeX installed, see for example the package [`R/tinytex`](htt
 ::: 
 
 ::: {.callout-note title="How can I grade the exams?" collapse="true"}
+For Moodle exams, the settings for grading are within Moodle. 
 
+For single/multiple choice questions, `exams2nops` can be used to create exercises on paper (NOPS format), which can then be scanned and graded automatically. See [here](https://www.r-exams.org/tutorials/exams2nops/) for more information. 
 ::: 
 
 

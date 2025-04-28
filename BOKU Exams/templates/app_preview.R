@@ -1,3 +1,12 @@
+# this app tests a preview of the code 
+# problems: 
+# input$n is default at 1 -> default should be NULL, otherwise it needs to be changed manually for download and the preview shows question structure even though no was chosen 
+# req() should be implemented 
+# preview does not update back once "yes" was chosen for question structure 
+# improve type_tabs
+# set up testing environment 
+
+
 # shiny ui
 library(shiny)
 library(bslib)
@@ -9,7 +18,7 @@ basic_template <- function(n = NULL, meta_name, meta_title, meta_version, types 
   header <- "\`\`\`{r data generation, echo = FALSE, results = \"hide\"}\n"
   lists <- "answers <- list()\nsolutions <- list()\ntypes <- list()\nexplanations <- list() \ntolerances <- list()\n\n"
   lists_assignment <- NULL
-  if (!is.null(n)) {
+  if (!is.null(n) && is.null(types)) {
     for (i in 1:n) {
       lists_assignment <- paste0(lists_assignment, "answers[[", i, "]] <- \nsolutions[[", i, "]] <- \ntypes[[", i, "]] <- \"", types[i], "\"", "\nexplanations[[", i, "]] <- \ntolerances[[", i, "]] <- \n\n")
       end <- "\n\n\`\`\`\n\n"
@@ -63,7 +72,7 @@ question_tabs <- tabsetPanel(
   tabPanel("no"), 
   tabPanel(
     "yes", # include question structure: yes -> more inputs appear 
-    numericInput("n", "Number of Questions", value = 1, min = 1),
+    numericInput("n", "Number of Questions", value = NULL, min = 1),
     selectInput("same_type", "Should all questions have the same type?", choices = c("", "yes", "no"), selected = ""),
     type_tabs
   )
@@ -85,7 +94,8 @@ ui <- fluidPage(
       fileInput("file1", "Choose an image to include (Must be stored in the same folder as the downloaded template!)"),
       downloadButton("download", "Download Template"),
     ),
-    mainPanel("Download a customizable template. Disclaimer: app is still in progress.")
+    mainPanel(h4("Template Preview"),
+              verbatimTextOutput("preview"))
   )
 )
 
@@ -114,13 +124,75 @@ server <- function(input, output, session) {
 
 
 
-  # dynmaic inputs
+  # dynamic inputs
   observeEvent(input$question_choice, {
     updateTabsetPanel(inputId = "questions", selected = input$question_choice)
   })
   observeEvent(input$same_type, {
     updateTabsetPanel(inputId = "types", selected = input$same_type)
   })
+  
+  
+  
+  output$preview <- renderText({
+    req(input$meta_name, input$meta_title, input$meta_version)
+    
+    # Handle if questions are included
+    if (input$question_choice == "yes") {
+      req(input$n, input$same_type)
+      
+      if (input$same_type == "yes") {
+        req(input$type_for_all_questions) # Must wait until selected
+        type <- switch(input$type_for_all_questions,
+                       "numeric" = "num",
+                       "text" = "string",
+                       "single choice" = "schoice",
+                       "multiple choice" = "mchoice"
+        )
+        types <- rep(type, input$n)
+        ex_type <- type
+      } else if (input$same_type == "no") {
+        # Must check that all individual questions have type selected
+        types <- NULL
+        for (i in 1:input$n) {
+          question_type <- input[[paste0("type_question", i)]]
+          if (is.null(question_type)) {
+            return(NULL)  # If any type missing, don't generate yet
+          }
+          types[i] <- switch(question_type,
+                             "numeric" = "num",
+                             "text" = "string",
+                             "single choice" = "schoice",
+                             "multiple choice" = "mchoice"
+          )
+        }
+        ex_type <- "cloze"
+      } else {
+        return(NULL) # No selection yet
+      }
+    } else if (input$question_choice == "no") {
+      types <- NULL
+      ex_type <- "cloze"
+    } else {
+      return(NULL) # No question choice yet
+    }
+    
+    # Handle image
+    image_path <- if (!is.null(input$file1)) input$file1$name else NULL
+    
+    # Now safe to generate template
+    basic_template(
+      n = if (!is.null(input$n)) input$n else NULL,
+      meta_name = input$meta_name,
+      meta_title = input$meta_title,
+      meta_version = input$meta_version,
+      types = types,
+      ex_type = ex_type,
+      image = image_path
+    )
+  })
+  
+  
 
 
   # create template for download
@@ -152,7 +224,6 @@ server <- function(input, output, session) {
           ex_type <- "cloze"
         }
       } else {
-        input$n <- NULL
         ex_type <- NULL
         types <- NULL
       }
