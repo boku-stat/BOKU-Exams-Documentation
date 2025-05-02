@@ -139,21 +139,51 @@ This is a centered formula: $$c^2 = a^2 + b^2$$
 ```
 ![](images/BOKU_Hauptlogo_RGB.png)
 
-## Code 
+## Links 
+
+Link to a website: 
+
+```markdown
+![](https://boku.ac.at)
+```
+Link to a file: 
+
+```markdown 
+![](data.csv)
+```
+## Tables 
+
+```markdown
+| right | left | default | center |
+|------:|:-----|---------|:------:|
+|x1     |y1    |z1       |a1      |
+```
+Result: 
+
+| right | left | default | center |
+|------:|:-----|---------|:------:|
+|x1|y1|z1|a1|
+
+## Dynamic Elements 
 
 Code chunks: 
 
 ````markdown 
 ```{{r example chunk, eval = TRUE, echo = FALSE}}
-#place code here 
+object_x <- c(3.5, 2, 4.1) 
 ```
 ````
 
-Inline Code: 
+Inline code: 
 
 ````markdown 
-`r object_x`
+This is a vector:`r object_x` 
 ````
+
+Result: 
+
+This is a vector: `c(3.5, 2, 4.1)`
+
 
 # Examples
 
