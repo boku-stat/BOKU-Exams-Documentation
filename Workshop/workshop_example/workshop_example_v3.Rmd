@@ -1,0 +1,111 @@
+---
+title: "workshop_example_v3"
+author: "Dorian"
+date: "2024-11-30"
+output: html_document
+---
+```{r data generation, echo = FALSE, results = "hide"}
+library(exams)
+
+# Random selection for element
+element <- sample(c("H", "O"), 1)
+
+# Atomnummern
+atomic_numbers <- list(H = 1, O = 8)
+
+# Fragetext abhängig vom gewählten Element
+element_text <- switch(
+  element,
+  H = "hydrogen",
+  O = "oxygen"
+)
+
+# Define the molar masses of hydrogen (H) and oxygen (O)
+m_h <- 1.008 # molar mass of hydrogen in g/mol
+m_o <- 16.00 # molar mass of oxygen in g/mol
+
+# Define possible compounds of hydrogen and oxygen
+compounds <- list(
+  H2O = list(name = "water ($H_2O$)", H = 2, O = 1),
+  H2O2 = list(name = "hydrogen peroxide ($H_2O_2$)", H = 2, O = 2),
+  OH = list(name = "hydroxide ion ($OH^-$)", H = 1, O = 1)
+)
+
+# Randomly choose one compound for the molar mass question
+chosen_compound <- sample(names(compounds), 1)
+compound_data <- compounds[[chosen_compound]]
+
+# Calculate the molar mass of the chosen compound
+m_compound <- compound_data$H * m_h + compound_data$O * m_o
+
+# Dynamically set the question text for molar mass
+compound_text <- compound_data$name
+```
+
+```{r answers/solutions, echo = FALSE, results = "hide"}
+# Create lists for necessary information
+answers <- list()
+solutions <- list()
+types <- list()
+explanations <- list()
+tolerances <- list()
+
+# Define Question 1: atomic number of chosen element
+answers[[1]] <- ""  # No predefined answer for numeric
+solutions[[1]] <- atomic_numbers[[element]]
+types[[1]] <- "num" #numeric
+explanations[[1]] <- paste0("The atomic number of ", element_text,
+                            " is ", atomic_numbers[[element]], 
+                            " because it has that many protons in its nucleus.")
+tolerances[[1]] <- 0  # No tolerance
+
+# Define Question 2: molar mass of chosen compound
+answers[[2]] <- "" # no predefined answer for numeric
+solutions[[2]] <- m_compound
+types[[2]] <- "num" 
+explanations[[2]] <- paste0("The molar mass of ", compound_text," is calculated by adding the molar masses of ", compound_data$H, " hydrogen atoms and  ", compound_data$O, " oxygen atom.")
+tolerances[[2]] <- 0.5 # Allow for small rounding errors
+```
+
+Question
+========
+
+*Questions 1*
+
+What is the atomic number of `r element_text` in the periodic table?
+##ANSWER1##
+
+*Question 2*
+
+Calculate the molar mass of `r compound_text`. Use the following molar masses:
+
+- Hydrogen ($H$): `r m_h` $g/mol$
+
+- Oxygen ($O$): `r m_o` $g/mol$
+
+Provide your answer in grams per mole ($g/mol$).
+##ANSWER2##
+
+```{r questionlist, echo = FALSE, results = "asis", results = "hide"}
+answerlist(unlist(answers), markup = "markdown")
+```
+
+Solution
+========
+```{r solutionlist, echo = FALSE, results = "asis"}
+answerlist(unlist(explanations), markup = "markdown")
+```
+
+$M_{H_{2}O} = 2 \cdot M_H + M_O = 2 \cdot `r m_h` + `r m_o` = `r m_h2o`$ (g/mol)
+
+
+Meta-information
+================
+exname: example_num
+extitle: molmass of water 
+extype: cloze
+exsolution: `r paste(solutions, collapse = "|")`
+exclozetype: `r paste(types, collapse = "|")`
+extol: `r paste(tolerances, collapse = "|")`
+exshuffle: TRUE
+exversion: v1
