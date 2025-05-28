@@ -18,8 +18,6 @@ website:
         text: Home
       - href: readme.qmd
         text: README
-      - href: ideas.qmd
-        text: Notes
       - href: first-steps.qmd
         text: First Steps 
       - href: r-exams.qmd
