@@ -3,6 +3,7 @@ title: "BOKUExams"
 format: 
     revealjs: 
       echo: true
+      theme: default
 filters:
    - include-code-files
 ---
@@ -18,7 +19,6 @@ filters:
 - Intended for dynmaic and costumized creation of exams. 
 - While the structure is the same for all, the context and numbers can be automatically changed for each student 
 - Different version for each student 
-
 
 # How are tests created? 
 
@@ -79,13 +79,12 @@ explanations[[2]] <- "The molar mass of H2O is calculated by adding the molar ma
 tolerances[[2]] <- 0.5 # Allow for small rounding errors
 ```
 
-## The Question and Solution Section 
-
-- Seperated Sections 
-- Contain the text shown as question and feedback 
+## The Question Section 
 
 ```{.markdown include="examples/example_num.Rmd" start-line=36 end-line=55}
 ``` 
+
+## The Solution Section 
 
 ```{.markdown include="examples/example_num.Rmd" start-line=57 end-line=64}
 ```
@@ -98,21 +97,33 @@ tolerances[[2]] <- 0.5 # Allow for small rounding errors
 ``` 
 
 
-# The `exams2moodle()`function 
+# `exams2moodle()`
 
-## Important aruments 
+## Important aruments and basic conversion 
 
 - `file`: exercise file paths
 - `n`: number of variants per exam 
-
-## Basic Conversion Script 
 
 ```{r, eval = FALSE}
 library(exams) 
 
 setwd("path/to/Rmd/files") #change working directory 
 
-exams2moodle(file = "name_of_file.Rmd", n = 10 ) #ouput: xml for moodle import 
+exams2moodle(file = "name_of_file.Rmd", n = 10 ) #ouput: xml 
 ```
 
-# How are they used in Moodle? 
+## How are they used in Moodle? 
+
+![](images/questionbank.png)
+
+---
+
+![](images/import.png)
+
+--- 
+
+![](images/importformat.png)
+
+--- 
+
+![](images/importfile.png)
