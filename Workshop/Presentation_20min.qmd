@@ -1,0 +1,118 @@
+---
+title: "BOKUExams"
+format: 
+    revealjs: 
+      echo: true
+filters:
+   - include-code-files
+---
+# Introduction 
+
+- Write an .Rmd exercise file 
+- Use `exams2moodle()` to create XML output 
+- Upload the XML file to BOKUlearn 
+
+# What is R/exams? 
+
+- Package for R 
+- Intended for dynmaic and costumized creation of exams. 
+- While the structure is the same for all, the context and numbers can be automatically changed for each student 
+- Different version for each student 
+
+
+# How are tests created? 
+
+## Basic concept 
+
+![](images/graph_rexams.png) 
+
+## Types of Questions 
+
+- numeric 
+- string (text)
+- single choice 
+- multiple choice 
+- etc. 
+
+## Example 1 (numeric) 
+
+![](images/num_moodle.png) 
+
+## Data Generation 
+
+```{r data generation, echo = TRUE} 
+library(exams) #exams package needs to be loaded for all functions to be available 
+
+#atomic number of H
+n_H <- 1
+
+# Define the molar masses of hydrogen (H) and oxygen (O)
+m_h <- 1.008 # molar mass of hydrogen in g/mol
+m_o <- 16.00 # molar mass of oxygen in g/mol
+
+# Calculate the molar mass of the water molecule (H2O)
+m_h2o <- 2 * m_h + m_o
+```
+
+## Answer/Solution 
+
+```{r answers/solutions, results = "hide"}
+# Create lists for necessary information
+answers <- list()
+solutions <- list()
+types <- list()
+explanations <- list()
+tolerances <- list()
+
+# Define Question 1: atomic number of hydrogen
+answers[[1]] <- ""  # No answer options needed for numeric questions
+solutions[[1]] <- n_H
+types[[1]] <- "num" #numeric
+explanations[[1]] <- "The atomic number of hydrogen is $1$ because it has one proton in its nucleus."
+tolerances[[1]] <- 0  # No tolerance
+
+# Define Question 2: molar mass of water
+answers[[2]] <- "" # no answer options needed for numeric questions. 
+solutions[[2]] <- m_h2o
+types[[2]] <- "num" 
+explanations[[2]] <- "The molar mass of H2O is calculated by adding the molar masses of two hydrogen atoms and one oxygen atom."
+tolerances[[2]] <- 0.5 # Allow for small rounding errors
+```
+
+## The Question and Solution Section 
+
+- Seperated Sections 
+- Contain the text shown as question and feedback 
+
+```{.markdown include="examples/example_num.Rmd" start-line=36 end-line=55}
+``` 
+
+```{.markdown include="examples/example_num.Rmd" start-line=57 end-line=64}
+```
+
+## Meta-information 
+
+- Additional information necessary for conversion
+
+```{.markdown include="examples/example_num.Rmd" start-line=66 end-line=81}
+``` 
+
+
+# The `exams2moodle()`function 
+
+## Important aruments 
+
+- `file`: exercise file paths
+- `n`: number of variants per exam 
+
+## Basic Conversion Script 
+
+```{r, eval = FALSE}
+library(exams) 
+
+setwd("path/to/Rmd/files") #change working directory 
+
+exams2moodle(file = "name_of_file.Rmd", n = 10 ) #ouput: xml for moodle import 
+```
+
+# How are they used in Moodle? 
