@@ -1,0 +1,83 @@
+---
+title: "numeric_example"
+author: "Dorian"
+date: "2024-11-30"
+output: html_document
+---
+```{r data generation, echo = FALSE, results = "hide"}
+library(exams)
+#atomic number of H
+n_H <- 1
+# Define the molar masses of hydrogen (H) and oxygen (O)
+m_h <- 1.008 # molar mass of hydrogen in g/mol
+m_o <- 16.00 # molar mass of oxygen in g/mol
+
+# Calculate the molar mass of the water molecule (H2O)
+m_h2o <- 2 * m_h + m_o
+```
+
+```{r answers/solutions, echo = FALSE, results = "hide"}
+# Create lists for necessary information
+answers <- list()
+solutions <- list()
+types <- list()
+explanations <- list()
+tolerances <- list()
+
+# Define Question 1: atomic number of hydrogen
+answers[[1]] <- ""  # No predefined answer for numeric
+solutions[[1]] <- n_H
+types[[1]] <- "num" #numeric
+explanations[[1]] <- "The atomic number of hydrogen is $1$ because it has one proton in its nucleus."
+tolerances[[1]] <- 0  # No tolerance
+
+# Define Question 2: molar mass of water
+answers[[2]] <- "" # no predefined answer for numeric
+solutions[[2]] <- m_h2o
+types[[2]] <- "num" 
+explanations[[2]] <- "The molar mass of H2O is calculated by adding the molar masses of two hydrogen atoms and one oxygen atom."
+tolerances[[2]] <- 0.5 # Allow for small rounding errors
+```
+
+Question
+========
+
+*Questions 1*
+
+What is the atomic number of hydrogen in the periodic table?
+##ANSWER1##
+
+*Question 2*
+
+Calculate the molar mass of water ($H_2O$). Use the following molar masses:
+
+- Hydrogen ($H$): `r m_h` $g/mol$
+
+- Oxygen ($O$): `r m_o` $g/mol$
+
+Provide your answer in grams per mole ($g/mol$).
+##ANSWER2##
+
+```{r questionlist, echo = FALSE, results = "asis", results = "hide"}
+answerlist(unlist(answers), markup = "markdown")
+```
+
+Solution
+========
+```{r solutionlist, echo = FALSE, results = "asis"}
+answerlist(unlist(explanations), markup = "markdown")
+```
+
+$M_{H_{2}O} = 2 \cdot M_H + M_O = 2 \cdot `r m_h` + `r m_o` = `r m_h2o`$ (g/mol)
+
+
+Meta-information
+================
+exname: example_num
+extitle: molmass of water 
+extype: cloze
+exsolution: `r paste(solutions, collapse = "|")`
+exclozetype: `r paste(types, collapse = "|")`
+extol: `r paste(tolerances, collapse = "|")`
+exshuffle: TRUE
+exversion: v1

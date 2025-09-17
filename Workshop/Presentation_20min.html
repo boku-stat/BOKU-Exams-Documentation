@@ -280,48 +280,98 @@
 <span id="cb2-20"><a href=""></a>tolerances[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="fl">0.5</span> <span class="co"># Allow for small rounding errors</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="the-question-and-solution-section" class="slide level2">
-<h2>The Question and Solution Section</h2>
-<ul>
-<li>Seperated Sections</li>
-<li>Contain the text shown as question and feedback</li>
-</ul>
-<div class="sourceCode" id="cb3" data-start-line="36" data-end-line="55"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb4" data-start-line="57" data-end-line="64"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="the-question-section" class="slide level2">
+<h2>The Question Section</h2>
+<div class="sourceCode" id="cb3" data-startfrom="36"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown" style="counter-reset: source-line 35;"><span id="cb3-36"><a href=""></a>solutions[<span class="co">[</span><span class="ot">2</span><span class="co">]</span>] &lt;- m_h2o</span>
+<span id="cb3-37"><a href=""></a>types[<span class="co">[</span><span class="ot">2</span><span class="co">]</span>] &lt;- "num" </span>
+<span id="cb3-38"><a href=""></a>explanations[<span class="co">[</span><span class="ot">2</span><span class="co">]</span>] &lt;- "The molar mass of H2O is calculated by adding the molar masses of two hydrogen atoms and one oxygen atom."</span>
+<span id="cb3-39"><a href=""></a>tolerances[<span class="co">[</span><span class="ot">2</span><span class="co">]</span>] &lt;- 0.5 # Allow for small rounding errors</span>
+<span id="cb3-40"><a href=""></a><span class="in">```</span></span>
+<span id="cb3-41"><a href=""></a></span>
+<span id="cb3-42"><a href=""></a><span class="in">Question</span></span>
+<span id="cb3-43"><a href=""></a><span class="in">========</span></span>
+<span id="cb3-44"><a href=""></a></span>
+<span id="cb3-45"><a href=""></a><span class="in">*Questions 1*</span></span>
+<span id="cb3-46"><a href=""></a></span>
+<span id="cb3-47"><a href=""></a><span class="in">What is the atomic number of hydrogen in the periodic table?</span></span>
+<span id="cb3-48"><a href=""></a><span class="in">##ANSWER1##</span></span>
+<span id="cb3-49"><a href=""></a></span>
+<span id="cb3-50"><a href=""></a><span class="in">*Question 2*</span></span>
+<span id="cb3-51"><a href=""></a></span>
+<span id="cb3-52"><a href=""></a><span class="in">Calculate the molar mass of water ($H_2O$). Use the following molar masses:</span></span>
+<span id="cb3-53"><a href=""></a></span>
+<span id="cb3-54"><a href=""></a><span class="in">- Hydrogen ($H$): `r m_h` $g/mol$</span></span>
+<span id="cb3-55"><a href=""></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="the-solution-section" class="slide level2">
+<h2>The Solution Section</h2>
+<div class="sourceCode" id="cb4" data-startfrom="57"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown" style="counter-reset: source-line 56;"><span id="cb4-57"><a href=""></a></span>
+<span id="cb4-58"><a href=""></a>Provide your answer in grams per mole ($g/mol$).</span>
+<span id="cb4-59"><a href=""></a>##ANSWER2##</span>
+<span id="cb4-60"><a href=""></a></span>
+<span id="cb4-61"><a href=""></a><span class="in">```{r questionlist, echo = FALSE, results = "asis", results = "hide"}</span></span>
+<span id="cb4-62"><a href=""></a><span class="in">answerlist(unlist(answers), markup = "markdown")</span></span>
+<span id="cb4-63"><a href=""></a><span class="in">```</span></span>
+<span id="cb4-64"><a href=""></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="meta-information" class="slide level2">
 <h2>Meta-information</h2>
 <ul>
 <li>Additional information necessary for conversion</li>
 </ul>
-<div class="sourceCode" id="cb5" data-startfrom="66"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown" style="counter-reset: source-line 65;"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5" data-startfrom="66"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown" style="counter-reset: source-line 65;"><span id="cb5-66"><a href=""></a><span class="fu">========</span></span>
+<span id="cb5-67"><a href=""></a><span class="in">```{r solutionlist, echo = FALSE, results = "asis"}</span></span>
+<span id="cb5-68"><a href=""></a><span class="in">answerlist(unlist(explanations), markup = "markdown")</span></span>
+<span id="cb5-69"><a href=""></a><span class="in">```</span></span>
+<span id="cb5-70"><a href=""></a></span>
+<span id="cb5-71"><a href=""></a>$M_{H_{2}O} = 2 \cdot M_H + M_O = 2 \cdot <span class="in">`r m_h`</span> + <span class="in">`r m_o`</span> = <span class="in">`r m_h2o`</span>$ (g/mol)</span>
+<span id="cb5-72"><a href=""></a></span>
+<span id="cb5-73"><a href=""></a></span>
+<span id="cb5-74"><a href=""></a>Meta-information</span>
+<span id="cb5-75"><a href=""></a><span class="fu">================</span></span>
+<span id="cb5-76"><a href=""></a>exname: example_num</span>
+<span id="cb5-77"><a href=""></a>extitle: molmass of water </span>
+<span id="cb5-78"><a href=""></a>extype: cloze</span>
+<span id="cb5-79"><a href=""></a>exsolution: <span class="in">`r paste(solutions, collapse = "|")`</span></span>
+<span id="cb5-80"><a href=""></a>exclozetype: <span class="in">`r paste(types, collapse = "|")`</span></span>
+<span id="cb5-81"><a href=""></a>extol: <span class="in">`r paste(tolerances, collapse = "|")`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section>
-<section id="the-exams2moodlefunction" class="title-slide slide level1 center">
-<h1>The <code>exams2moodle()</code>function</h1>
+<section id="exams2moodle" class="title-slide slide level1 center">
+<h1><code>exams2moodle()</code></h1>
 
 </section>
-<section id="important-aruments" class="slide level2">
-<h2>Important aruments</h2>
+<section id="important-aruments-and-basic-conversion" class="slide level2">
+<h2>Important aruments and basic conversion</h2>
 <ul>
 <li><code>file</code>: exercise file paths</li>
 <li><code>n</code>: number of variants per exam</li>
 </ul>
-</section>
-<section id="basic-conversion-script" class="slide level2">
-<h2>Basic Conversion Script</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">library</span>(exams) </span>
 <span id="cb6-2"><a href=""></a></span>
 <span id="cb6-3"><a href=""></a><span class="fu">setwd</span>(<span class="st">"path/to/Rmd/files"</span>) <span class="co">#change working directory </span></span>
 <span id="cb6-4"><a href=""></a></span>
-<span id="cb6-5"><a href=""></a><span class="fu">exams2moodle</span>(<span class="at">file =</span> <span class="st">"name_of_file.Rmd"</span>, <span class="at">n =</span> <span class="dv">10</span> ) <span class="co">#ouput: xml for moodle import </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-5"><a href=""></a><span class="fu">exams2moodle</span>(<span class="at">file =</span> <span class="st">"name_of_file.Rmd"</span>, <span class="at">n =</span> <span class="dv">10</span> ) <span class="co">#ouput: xml </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section></section>
-<section id="how-are-they-used-in-moodle" class="title-slide slide level1 center">
-<h1>How are they used in Moodle?</h1>
-
 </section>
+<section id="how-are-they-used-in-moodle" class="slide level2">
+<h2>How are they used in Moodle?</h2>
+
+<img data-src="images/questionbank.png" class="r-stretch"></section>
+<section class="slide level2">
+
+
+<img data-src="images/import.png" class="r-stretch"></section>
+<section class="slide level2">
+
+
+<img data-src="images/importformat.png" class="r-stretch"></section>
+<section class="slide level2">
+
+
+
+<img data-src="images/importfile.png" class="r-stretch"></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
