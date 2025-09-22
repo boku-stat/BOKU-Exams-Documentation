@@ -7,9 +7,6 @@ format:
 filters:
    - include-code-files
 ---
-# Welcome/Introduction
-
-- 
 
 # Basic Examples 
 
@@ -95,7 +92,6 @@ filters:
   - different numbers 
   - different "story" 
 - 10 tries, students know which sub-questions are correct/false 
-
 
 # Deep dive 
 
