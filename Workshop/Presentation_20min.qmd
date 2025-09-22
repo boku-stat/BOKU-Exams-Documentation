@@ -7,10 +7,9 @@ format:
 filters:
    - include-code-files
 ---
-# Welcome 
+# Welcome/Introduction
 
-
-
+- 
 
 # Basic Examples 
 
@@ -51,9 +50,28 @@ filters:
 
 # How are these exercises created? 
 
-- Use a packge for R called `r/exams`
+- Use a packge for R called `R/exams`
 - Developed for automatic and individualized creation of exams 
-- Certain elements vary for each student 
+- Lots of documentation
+
+## Official `R/exams` webpage
+
+![](images/rexams_web.png)
+
+## Documentation written by us 
+
+![](images/docu_web.png)
+
+## Advantages of `R/exams`
+
+- A large number of slightly different exercises can be created from just one file 
+- Numbers, context, etc. vary for each student 
+- Question pool 
+- Automatic evaluation in combination with BOKUlearn 
+
+## Basic concept 
+
+![](images/graph_rexams.png) 
 
 # How does it work? 
 
@@ -63,15 +81,23 @@ filters:
 - The `exams2moodle()` function allows conversion from an .Rmd file to XML 
 - XML files are imported into BOKUlearn 
 
+# Automatic Evaluation 
 
+- Tests in BOKUlearn can be automatically evaluated 
+- Feedback can be provided using the .Rmd file 
 
-## Basic concept 
+![](images/feedback_num.png)
 
-![](images/graph_rexams.png) 
+# Personal Use Case: Coaches 
+
+- Coaches are used as extra practice 
+- 200 versions of each exercise 
+  - different numbers 
+  - different "story" 
+- 10 tries, students know which sub-questions are correct/false 
+
 
 # Deep dive 
-
-
 
 ## Data Generation 
 
@@ -144,7 +170,7 @@ library(exams)
 
 setwd("path/to/Rmd/files") #change working directory 
 
-exams2moodle(file = "name_of_file.Rmd", n = 10 ) #ouput: xml 
+exams2moodle(file = "name_of_file.Rmd", n = 200) #ouput: xml 
 ```
 
 ## How are they used in Moodle? 

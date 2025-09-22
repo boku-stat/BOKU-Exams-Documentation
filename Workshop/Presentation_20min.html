@@ -197,6 +197,13 @@
 </div>
 
 </section>
+<section id="welcome" class="title-slide slide level1 center">
+<h1>Welcome</h1>
+<ul>
+<li></li>
+</ul>
+</section>
+
 <section>
 <section id="basic-examples" class="title-slide slide level1 center">
 <h1>Basic Examples</h1>
@@ -235,21 +242,42 @@
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
-<p><img data-src="images/first_steps_euro.png"> ##</p>
-<p><img data-src="images/adv1_moodle1.png"></p>
-</section></section>
+
+<img data-src="images/first_steps_euro.png" class="r-stretch"></section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+
+<img data-src="images/adv1_moodle1.png" class="r-stretch"></section></section>
+<section>
 <section id="how-are-these-exercises-created" class="title-slide slide level1 center">
 <h1>How are these exercises created?</h1>
 <ul>
-<li>Use a packge for R called <code>r/exams</code></li>
-<li>Developed for automatic and individualized creation of exams
-<ul>
-<li>Certain elements vary for each student</li>
-</ul></li>
+<li>Use a packge for R called <code>R/exams</code></li>
+<li>Developed for automatic and individualized creation of exams</li>
+<li>Lots of documentation</li>
 </ul>
 </section>
+<section id="official-rexams-webpage" class="slide level2">
+<h2>Official <code>R/exams</code> webpage</h2>
 
-<section>
+<img data-src="images/rexams_web.png" class="r-stretch"></section>
+<section id="documentation-written-by-us" class="slide level2">
+<h2>Documentation written by us</h2>
+
+<img data-src="images/docu_web.png" class="r-stretch"></section>
+<section id="advantages-of-rexams" class="slide level2">
+<h2>Advantages of <code>R/exams</code></h2>
+<ul>
+<li>A large number of slightly different exercises can be created from just one file</li>
+<li>Numbers, context, etc. vary for each student</li>
+<li>Question pool</li>
+<li>Automatic evaluation in combination with BOKUlearn</li>
+</ul>
+</section>
+<section id="basic-concept" class="slide level2">
+<h2>Basic concept</h2>
+
+<img data-src="images/graph_rexams.png" class="r-stretch"></section></section>
 <section id="how-does-it-work" class="title-slide slide level1 center">
 <h1>How does it work?</h1>
 <ul>
@@ -262,10 +290,36 @@
 <li>XML files are imported into BOKUlearn</li>
 </ul>
 </section>
-<section id="basic-concept" class="slide level2">
-<h2>Basic concept</h2>
 
-<img data-src="images/graph_rexams.png" class="r-stretch"></section></section>
+<section id="automatic-evaluation" class="title-slide slide level1 center">
+<h1>Automatic Evaluation</h1>
+<ul>
+<li>Tests in BOKUlearn can be automatically evaluated</li>
+<li>Feedback can be provided using the .Rmd file</li>
+</ul>
+
+<img data-src="images/feedback_num.png" class="r-stretch"></section>
+
+<section id="personal-use-case-coaches" class="title-slide slide level1 center">
+<h1>Personal Use Case: Coaches</h1>
+<ul>
+<li>Coaches are used as extra practice</li>
+<li>200 versions of each exercise
+<ul>
+<li>differnt numbers</li>
+<li>different “story”</li>
+</ul></li>
+<li>10 tries, students know which sub-questions are correct/false</li>
+</ul>
+</section>
+
+<section id="exams" class="title-slide slide level1 center">
+<h1>Exams</h1>
+<ul>
+<li></li>
+</ul>
+</section>
+
 <section>
 <section id="deep-dive" class="title-slide slide level1 center">
 <h1>Deep dive</h1>
@@ -384,7 +438,7 @@
 <span id="cb6-2"><a href=""></a></span>
 <span id="cb6-3"><a href=""></a><span class="fu">setwd</span>(<span class="st">"path/to/Rmd/files"</span>) <span class="co">#change working directory </span></span>
 <span id="cb6-4"><a href=""></a></span>
-<span id="cb6-5"><a href=""></a><span class="fu">exams2moodle</span>(<span class="at">file =</span> <span class="st">"name_of_file.Rmd"</span>, <span class="at">n =</span> <span class="dv">10</span> ) <span class="co">#ouput: xml </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-5"><a href=""></a><span class="fu">exams2moodle</span>(<span class="at">file =</span> <span class="st">"name_of_file.Rmd"</span>, <span class="at">n =</span> <span class="dv">200</span>) <span class="co">#ouput: xml </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="how-are-they-used-in-moodle" class="slide level2">
