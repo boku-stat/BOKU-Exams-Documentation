@@ -9,7 +9,7 @@
 <link href="Presentation_20min_files/libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.39">
 
-  <title>BOKUExams</title>
+  <title>Student Assessment and Data Science</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -191,54 +191,86 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">BOKUExams</h1>
+  <h1 class="title">Student Assessment and Data Science</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="introduction" class="title-slide slide level1 center">
-<h1>Introduction</h1>
+<section>
+<section id="basic-examples" class="title-slide slide level1 center">
+<h1>Basic Examples</h1>
+
+</section>
+<section id="asking-for-a-number" class="slide level2">
+<h2>Asking for a number</h2>
+
+<img data-src="images/num_moodle.png" class="r-stretch"></section>
+<section id="asking-for-a-word-answer" class="slide level2">
+<h2>Asking for a word answer</h2>
+
+<img data-src="images/string_moodle.png" class="r-stretch"></section>
+<section id="single-choice" class="slide level2">
+<h2>Single Choice</h2>
+<p><img data-src="images/schoice_moodle1.png" height="300"> <img data-src="images/schoice_moodle2.png" height="300"></p>
+</section>
+<section id="multiple-choice" class="slide level2">
+<h2>Multiple Choice</h2>
+
+<img data-src="images/mchoice_moodle.png" class="r-stretch"></section></section>
+<section>
+<section id="more-complex-examples" class="title-slide slide level1 center">
+<h1>More Complex Examples</h1>
+
+</section>
+<section id="additional-possible-features" class="slide level2">
+<h2>Additional possible features:</h2>
 <ul>
-<li>Write an .Rmd exercise file</li>
-<li>Use <code>exams2moodle()</code> to create XML output</li>
-<li>Upload the XML file to BOKUlearn</li>
+<li>combine several types of questions</li>
+<li>include photos/diagrams</li>
+<li>include links and data</li>
+<li>tables</li>
+<li>…</li>
 </ul>
 </section>
-
-<section id="what-is-rexams" class="title-slide slide level1 center">
-<h1>What is R/exams?</h1>
+<section id="section" class="slide level2">
+<h2></h2>
+<p><img data-src="images/first_steps_euro.png"> ##</p>
+<p><img data-src="images/adv1_moodle1.png"></p>
+</section></section>
+<section id="how-are-these-exercises-created" class="title-slide slide level1 center">
+<h1>How are these exercises created?</h1>
 <ul>
-<li>Package for R</li>
-<li>Intended for dynmaic and costumized creation of exams.</li>
-<li>While the structure is the same for all, the context and numbers can be automatically changed for each student</li>
-<li>Different version for each student</li>
+<li>Use a packge for R called <code>r/exams</code></li>
+<li>Developed for automatic and individualized creation of exams
+<ul>
+<li>Certain elements vary for each student</li>
+</ul></li>
 </ul>
 </section>
 
 <section>
-<section id="how-are-tests-created" class="title-slide slide level1 center">
-<h1>How are tests created?</h1>
-
+<section id="how-does-it-work" class="title-slide slide level1 center">
+<h1>How does it work?</h1>
+<ul>
+<li>One R markdown file per question
+<ul>
+<li>Consists of “fixed” building blocks</li>
+<li>Content is defined by the user</li>
+</ul></li>
+<li>The <code>exams2moodle()</code> function allows conversion from an .Rmd file to XML</li>
+<li>XML files are imported into BOKUlearn</li>
+</ul>
 </section>
 <section id="basic-concept" class="slide level2">
 <h2>Basic concept</h2>
 
-<img data-src="images/graph_rexams.png" class="r-stretch"></section>
-<section id="types-of-questions" class="slide level2">
-<h2>Types of Questions</h2>
-<ul>
-<li>numeric</li>
-<li>string (text)</li>
-<li>single choice</li>
-<li>multiple choice</li>
-<li>etc.</li>
-</ul>
-</section>
-<section id="example-1-numeric" class="slide level2">
-<h2>Example 1 (numeric)</h2>
+<img data-src="images/graph_rexams.png" class="r-stretch"></section></section>
+<section>
+<section id="deep-dive" class="title-slide slide level1 center">
+<h1>Deep dive</h1>
 
-<img data-src="images/num_moodle.png" class="r-stretch"></section>
+</section>
 <section id="data-generation" class="slide level2">
 <h2>Data Generation</h2>
 <div class="cell">
@@ -341,8 +373,8 @@
 <h1><code>exams2moodle()</code></h1>
 
 </section>
-<section id="important-aruments-and-basic-conversion" class="slide level2">
-<h2>Important aruments and basic conversion</h2>
+<section id="important-arguments-and-basic-conversion" class="slide level2">
+<h2>Important arguments and basic conversion</h2>
 <ul>
 <li><code>file</code>: exercise file paths</li>
 <li><code>n</code>: number of variants per exam</li>
@@ -370,8 +402,15 @@
 <section class="slide level2">
 
 
+<img data-src="images/importfile.png" class="r-stretch"></section>
+<section id="resources" class="slide level2">
+<h2>Resources</h2>
+<ul>
+<li><a href="https://boku-stat.github.io/BOKU-Exams-Documentation/">BOKU Exams Documentation</a></li>
+<li><a href="https://www.r-exams.org">Official <code>r/exams</code> documentation</a></li>
+</ul>
 
-<img data-src="images/importfile.png" class="r-stretch"></section></section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

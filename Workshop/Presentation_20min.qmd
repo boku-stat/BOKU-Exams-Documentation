@@ -1,5 +1,5 @@
 ---
-title: "BOKUExams"
+title: "Student Assessment and Data Science"
 format: 
     revealjs: 
       echo: true
@@ -7,36 +7,71 @@ format:
 filters:
    - include-code-files
 ---
-# Introduction 
+# Welcome 
 
-- Write an .Rmd exercise file 
-- Use `exams2moodle()` to create XML output 
-- Upload the XML file to BOKUlearn 
 
-# What is R/exams? 
 
-- Package for R 
-- Intended for dynmaic and costumized creation of exams. 
-- While the structure is the same for all, the context and numbers can be automatically changed for each student 
-- Different version for each student 
 
-# How are tests created? 
+# Basic Examples 
+
+## Asking for a number 
+
+![](images/num_moodle.png)  
+
+## Asking for a word answer 
+
+![](images/string_moodle.png) 
+
+## Single Choice 
+
+![](images/schoice_moodle1.png){height=300}
+![](images/schoice_moodle2.png){height=300}
+
+## Multiple Choice 
+
+![](images/mchoice_moodle.png) 
+
+# More Complex Examples
+
+## Additional possible features: 
+
+- combine several types of questions 
+- include photos/diagrams 
+- include links and data 
+- tables 
+- ... 
+
+## 
+
+![](images/first_steps_euro.png)
+
+## 
+
+![](images/adv1_moodle1.png)
+
+# How are these exercises created? 
+
+- Use a packge for R called `r/exams`
+- Developed for automatic and individualized creation of exams 
+- Certain elements vary for each student 
+
+# How does it work? 
+
+- One R markdown file per question
+  - Consists of "fixed" building blocks 
+  - Content is defined by the user 
+- The `exams2moodle()` function allows conversion from an .Rmd file to XML 
+- XML files are imported into BOKUlearn 
+
+
 
 ## Basic concept 
 
 ![](images/graph_rexams.png) 
 
-## Types of Questions 
+# Deep dive 
 
-- numeric 
-- string (text)
-- single choice 
-- multiple choice 
-- etc. 
 
-## Example 1 (numeric) 
-
-![](images/num_moodle.png) 
 
 ## Data Generation 
 
@@ -99,7 +134,7 @@ tolerances[[2]] <- 0.5 # Allow for small rounding errors
 
 # `exams2moodle()`
 
-## Important aruments and basic conversion 
+## Important arguments and basic conversion 
 
 - `file`: exercise file paths
 - `n`: number of variants per exam 
@@ -127,3 +162,8 @@ exams2moodle(file = "name_of_file.Rmd", n = 10 ) #ouput: xml
 --- 
 
 ![](images/importfile.png)
+
+## Resources 
+
+- [BOKU Exams Documentation](https://boku-stat.github.io/BOKU-Exams-Documentation/) 
+- [Official `r/exams` documentation](https://www.r-exams.org)

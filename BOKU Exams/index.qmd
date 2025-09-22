@@ -17,7 +17,7 @@ Authors:
 
 Konstanze Lauseker [Github](https://github.com/konsch12)
 
-Lukas Schönmann [Github](https://github.com/SpaceCowboy-71)
+Lukas Schönmann [Github](https://github.com/lschoenm)
 
 Dorian Stefenelli [Github](https://github.com/nairod7)
 
