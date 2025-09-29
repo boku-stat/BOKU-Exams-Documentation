@@ -10,27 +10,45 @@ filters:
 
 ## Background
 
-At the Institute of Statistics we teach Statistics with R
+At the *Institute of Statistics* we teach Statistics with **R**
 
-- Continuous practice of the methods learned is essential
+- **Continuous practice** of the methods learned is essential
 
-- Manual correction unfeasible for hundreds of students
+- Manual correction unfeasible for **hundreds of students**
 
-- Feedback for the students during practice is crucial
+- **Feedback** for the students during practice is crucial
 
-- Limited options in BOKUlearn.
+- Limited options in BOKUlearn
+
+
+<div style="display: flex; justify-content: space-around;">
+  <img src="images/devices.png" width="30%">
+  <img src="images/exam.jpg" width="30%">
+  <img src="images/exercise.jpg" width="30%">
+</div>
+
+
+
 
 ## Goal
 
-- Large pool of questions
+- **Large** pool of questions
 
-- Full calculation is available such that intermediate results can also be evaluated
+- Full calculation is available such that **intermediate results** can also be evaluated
 
-- Use randomization to generate individual assignments for each student
+- Use randomization to generate **individual assignments** 
 
-- Possibility of allowing multiple trials with feedback
+- Possibility of allowing **multiple trials** with feedback
 
 - Use same system to generate written exams
+
+<div style="display: flex; justify-content: space-around;">
+  <img src="images/devices.png" width="30%">
+  <img src="images/exam.jpg" width="30%">
+  <img src="images/exercise.jpg" width="30%">
+</div>
+
+
 
 # Basic Examples 
 
